@@ -290,26 +290,4 @@ const App = (() => {
 
 document.addEventListener('DOMContentLoaded', () => {
   App.init();
-  
-  // FAQ Accordion functionality
-  const faqButtons = document.querySelectorAll('.faq__question');
-  
-  faqButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.closest('.faq__item');
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-      
-      // Toggle current item
-      button.setAttribute('aria-expanded', !isExpanded);
-      faqItem.classList.toggle('active');
-    });
-    
-    // Keyboard accessibility
-    button.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        button.click();
-      }
-    });
-  });
 });

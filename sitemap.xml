@@ -6,27 +6,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://toonifyit.com/blog/</loc>
+    <loc>https://toonifyit.com/blog.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://toonifyit.com/about/</loc>
+    <loc>https://toonifyit.com/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toonifyit.com/contact/</loc>
+    <loc>https://toonifyit.com/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toonifyit.com/privacy/</loc>
+    <loc>https://toonifyit.com/privacy.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://toonifyit.com/terms/</loc>
+    <loc>https://toonifyit.com/terms.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

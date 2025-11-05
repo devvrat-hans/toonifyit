@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore TOON format tutorials, guides, and best practices. Learn how to optimize LLM token usage with our comprehensive blog.">
+  <meta name="keywords" content="toon blog, toon tutorials, json to toon, llm optimization, token efficiency, prompt engineering">
+  <meta name="author" content="Toonifyit">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toonifyit.com/blog.html">
+  <meta property="og:title" content="Blog - Toonifyit | TOON Format Guides & Tutorials">
+  <meta property="og:description" content="Learn TOON format with our tutorials, comparisons, and guides. Optimize your LLM token usage.">
+  <meta property="og:site_name" content="Toonifyit">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toonifyit.com/blog.html">
+  <meta name="twitter:title" content="Blog - Toonifyit | TOON Format Guides & Tutorials">
+  <meta name="twitter:description" content="Learn TOON format with our tutorials, comparisons, and guides.">
+  
+  <title>Blog - Toonifyit | TOON Format Guides & Tutorials</title>
+  <link rel="canonical" href="https://toonifyit.com/blog.html">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="/css/cta.css">
+  <script src="/js/templates.js"></script>
+  <script src="/js/theme.js"></script>
+  <script src="/js/blog.js" defer></script>
+</head>
+<body>
+  <div data-template="navbar"></div>
+
+  <main class="main">
+    <section class="policy">
+      <div class="container">
+        <h1 class="policy__title">Blog</h1>
+        <p class="policy__subtitle">Learn TOON format, LLM optimization, and best practices</p>
+        
+        <div class="policy__content">
+          <!-- Search Bar -->
+          <div class="blog__search">
+            <input 
+              type="text" 
+              id="blog-search" 
+              class="blog__search-input" 
+              placeholder="Search blog posts..."
+              aria-label="Search blog posts"
+            >
+          </div>
+
+          <!-- Category Filters -->
+          <div class="blog__filters">
+            <button class="blog__filter active" data-filter="all">All Posts</button>
+            <button class="blog__filter" data-filter="tutorial">Tutorials</button>
+            <button class="blog__filter" data-filter="comparison">Comparisons</button>
+            <button class="blog__filter" data-filter="guide">Guides</button>
+            <button class="blog__filter" data-filter="optimization">Optimization</button>
+            <button class="blog__filter" data-filter="use-cases">Use Cases</button>
+          </div>
+
+          <!-- Blog Posts Grid -->
+          <div id="blog-grid" class="blog__grid">
+            <!-- Blog posts will be dynamically inserted here by blog.js -->
+            
+            <!-- Empty State (shown when no posts are available) -->
+            <div class="blog__empty">
+              <div class="blog__empty-icon">📝</div>
+              <h3 class="blog__empty-title">Blog Posts Coming Soon</h3>
+              <p class="blog__empty-text">We're working on creating comprehensive guides, tutorials, and articles about TOON format. In the meantime, explore our documentation or try the converter!</p>
+              <div style="display: flex; gap: 16px; justify-content: center; margin-top: 24px;">
+                <a href="/docs/" class="btn btn--primary">Read Documentation</a>
+                <a href="/" class="btn btn--secondary">Try Converter</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming Soon Section -->
+          <section style="margin-top: 64px; padding: 48px; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+            <h2 style="font-size: 1.75rem; font-weight: 600; color: var(--text-primary); margin-bottom: 16px;">What's Coming</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px;">
+              We're preparing comprehensive content across multiple categories to help you master TOON format:
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+              <div>
+                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--accent); margin-bottom: 8px;">📚 TOON Basics</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                  <li>• What is TOON Format?</li>
+                  <li>• TOON Syntax Guide</li>
+                  <li>• How to Read TOON</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--accent); margin-bottom: 8px;">⚖️ Comparisons</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                  <li>• TOON vs JSON</li>
+                  <li>• TOON vs YAML</li>
+                  <li>• Token Count Benchmarks</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--accent); margin-bottom: 8px;">🚀 LLM Optimization</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                  <li>• Prompt Engineering with TOON</li>
+                  <li>• Reducing Token Costs</li>
+                  <li>• Context Window Optimization</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--accent); margin-bottom: 8px;">💼 Use Cases</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                  <li>• E-commerce Data</li>
+                  <li>• Analytics & Metrics</li>
+                  <li>• API Response Optimization</li>
+                </ul>
+              </div>
+            </div>
+
+            <p style="color: var(--text-secondary); margin-top: 32px; text-align: center;">
+              Want to be notified when we publish new posts? 
+              <a href="/contact/" style="color: var(--accent); text-decoration: underline;">Contact us</a> to subscribe to our newsletter.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-template="cta"></div>
+  <div data-template="footer"></div>
+
+</body>
+</html>

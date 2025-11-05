@@ -1,0 +1,34 @@
+json:
+
+{
+  "project": "Chunking in Chess",
+  "team": [
+    {
+      "name": "Student A",
+      "roles": ["Data Collection", "Modelling"],
+      "metrics": {
+        "accuracy": [0.82, 0.88, 0.93],
+        "average_time_ms": {
+          "opening": 1500,
+          "middle_game": 2000,
+          "end_game": 1200
+        }
+      }
+    },
+    {
+      "name": "Professor",
+      "roles": ["Guidance"],
+      "availability": null
+    }
+  ]
+}
+
+
+Toon given:
+
+project: Chunking in Chess
+team: items[2]{name,roles,metrics}:
+    Student A,Data Collection,Modelling,[object Object]
+    Professor,Guidance,undefined
+
+issue: It clearly doesn't contain all the data. 

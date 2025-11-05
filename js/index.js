@@ -180,8 +180,20 @@ const App = (() => {
       try {
         const output = Converter.jsonToToon(input);
         elements.outputArea.value = output;
+        
+        // Calculate and show stats
+        const jsonTokens = Converter.estimateTokens(input);
+        const toonTokens = Converter.estimateTokens(output);
+        const saved = jsonTokens > 0 ? Math.round(((jsonTokens - toonTokens) / jsonTokens) * 100) : 0;
+        const tokensSavedCount = jsonTokens - toonTokens;
+        
         updateStats(input, output);
         clearError();
+        
+        // Show toast notification with stats
+        if (jsonTokens > 0 && tokensSavedCount > 0) {
+          showToast(`✨ Saved ${tokensSavedCount} tokens (${saved}% reduction)`);
+        }
       } catch (error) {
         showError('Invalid JSON: ' + error.message);
         elements.outputArea.value = '';
@@ -246,9 +258,6 @@ const App = (() => {
         const jsonString = JSON.stringify(example.data, null, 2);
         elements.inputArea.value = jsonString;
         
-        // Show toast with example name
-        UI.showToast(`Loaded: ${example.name}`);
-        
         // Move to next example (cycle back to 0 when at end)
         state.currentExampleIndex = (state.currentExampleIndex + 1) % examples.length;
         
@@ -290,26 +299,4 @@ const App = (() => {
 
 document.addEventListener('DOMContentLoaded', () => {
   App.init();
-  
-  // FAQ Accordion functionality
-  const faqButtons = document.querySelectorAll('.faq__question');
-  
-  faqButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.closest('.faq__item');
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-      
-      // Toggle current item
-      button.setAttribute('aria-expanded', !isExpanded);
-      faqItem.classList.toggle('active');
-    });
-    
-    // Keyboard accessibility
-    button.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        button.click();
-      }
-    });
-  });
 });

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete TOON (Token-Oriented Object Notation) documentation. Learn the format, syntax, API, and how to reduce LLM token usage by 30-60%.">
+  <meta name="keywords" content="toon documentation, toon format, json to toon, llm optimization, token efficiency, toon syntax, toon api">
+  <meta name="author" content="Toonifyit">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toonifyit.com/docs.html">
+  <meta property="og:title" content="TOON Documentation - Token-Oriented Object Notation">
+  <meta property="og:description" content="Complete guide to TOON format. Reduce LLM token usage by 30-60% with this compact, human-readable serialization format.">
+  <meta property="og:site_name" content="Toonifyit">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toonifyit.com/docs.html">
+  <meta name="twitter:title" content="TOON Documentation - Token-Oriented Object Notation">
+  <meta name="twitter:description" content="Complete guide to TOON format. Learn syntax, API, and best practices.">
+  
+  <title>TOON Documentation | Token-Oriented Object Notation</title>
+  <link rel="canonical" href="https://toonifyit.com/docs.html">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/docs.css">
+  <link rel="stylesheet" href="/css/cta.css">
+  <script src="/js/templates.js"></script>
+  <script src="/js/theme.js"></script>
+  <script src="/js/docs.js" defer></script>
+</head>
+<body>
+  <div data-template="navbar"></div>
+
+  <main class="main">
+    <section class="policy">
+      <div class="container">
+        <h1 class="policy__title">TOON Documentation</h1>
+        <p class="policy__subtitle">Token-Oriented Object Notation - Complete Guide</p>
+        
+        <div class="policy__layout">
+          <div class="policy__content">
+            
+            <!-- Introduction -->
+            <section id="introduction" class="policy__section">
+              <h2>Introduction</h2>
+              <p><strong>Token-Oriented Object Notation (TOON)</strong> is a compact, human-readable serialization format designed for passing structured data to Large Language Models with significantly reduced token usage. It's intended for <em>LLM input</em> as a lossless, drop-in representation of JSON data.</p>
+              <p>TOON's sweet spot is <strong>uniform arrays of objects</strong> – multiple fields per row, same structure across items. It borrows YAML's indentation-based structure for nested objects and CSV's tabular format for uniform data rows, then optimizes both for token efficiency in LLM contexts.</p>
+              
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Key Concept</div>
+                <div class="docs__note-content">Think of TOON as a translation layer: use JSON programmatically, convert to TOON for LLM input.</div>
+              </div>
+            </section>
+
+            <!-- Why TOON -->
+            <section id="why-toon" class="policy__section">
+              <h2>Why TOON?</h2>
+              <p>AI is becoming cheaper and more accessible, but larger context windows allow for larger data inputs as well. <strong>LLM tokens still cost money</strong> – and standard JSON is verbose and token-expensive.</p>
+              
+              <h3>Before (JSON - 125 tokens)</h3>
+              <pre><code>{
+  "users": [
+    { "id": 1, "name": "Alice", "role": "admin" },
+    { "id": 2, "name": "Bob", "role": "user" }
+  ]
+}</code></pre>
+
+              <h3>After (TOON - 54 tokens)</h3>
+              <pre><code>users[2]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user</code></pre>
+
+              <p><strong>Result:</strong> 57% fewer tokens for the same data!</p>
+            </section>
+
+            <!-- Key Features -->
+            <section id="key-features" class="policy__section">
+              <h2>Key Features</h2>
+              <ul>
+                <li>💸 <strong>Token-efficient:</strong> typically 30–60% fewer tokens than JSON</li>
+                <li>🤿 <strong>LLM-friendly guardrails:</strong> explicit lengths and fields enable validation</li>
+                <li>🍱 <strong>Minimal syntax:</strong> removes redundant punctuation (braces, brackets, most quotes)</li>
+                <li>📐 <strong>Indentation-based structure:</strong> like YAML, uses whitespace instead of braces</li>
+                <li>🧺 <strong>Tabular arrays:</strong> declare keys once, stream data as rows</li>
+              </ul>
+            </section>
+
+            <!-- Benchmarks -->
+            <section id="benchmarks" class="policy__section">
+              <h2>Benchmarks</h2>
+              <p>Token counts are measured using the GPT-5 <code>o200k_base</code> tokenizer. Actual savings vary by model and tokenizer.</p>
+              
+              <div class="docs__benchmark">
+                <div class="docs__benchmark-title">⭐ GitHub Repositories (100 repos)</div>
+                <div class="docs__benchmark-bar">
+                  <span class="docs__benchmark-label">TOON</span>
+                  <div class="docs__benchmark-visual" style="width: 57.7%; background: var(--accent);"></div>
+                  <span class="docs__benchmark-value">8,745 tokens</span>
+                </div>
+                <div class="docs__benchmark-bar">
+                  <span class="docs__benchmark-label">JSON</span>
+                  <div class="docs__benchmark-visual" style="width: 100%; background: var(--text-secondary);"></div>
+                  <span class="docs__benchmark-value">15,145 tokens</span>
+                </div>
+                <p style="margin-top: 12px; color: var(--accent); font-weight: 600;">Savings: 42.3% (6,400 tokens)</p>
+              </div>
+
+              <div class="docs__benchmark">
+                <div class="docs__benchmark-title">📈 Daily Analytics (180 days)</div>
+                <div class="docs__benchmark-bar">
+                  <span class="docs__benchmark-label">TOON</span>
+                  <div class="docs__benchmark-visual" style="width: 41.1%; background: var(--accent);"></div>
+                  <span class="docs__benchmark-value">4,507 tokens</span>
+                </div>
+                <div class="docs__benchmark-bar">
+                  <span class="docs__benchmark-label">JSON</span>
+                  <div class="docs__benchmark-visual" style="width: 100%; background: var(--text-secondary);"></div>
+                  <span class="docs__benchmark-value">10,977 tokens</span>
+                </div>
+                <p style="margin-top: 12px; color: var(--accent); font-weight: 600;">Savings: 58.9% (6,470 tokens)</p>
+              </div>
+
+              <div class="docs__benchmark">
+                <div class="docs__benchmark-title">🛒 E-Commerce Order</div>
+                <div class="docs__benchmark-bar">
+                  <span class="docs__benchmark-label">TOON</span>
+                  <div class="docs__benchmark-visual" style="width: 64.6%; background: var(--accent);"></div>
+                  <span class="docs__benchmark-value">166 tokens</span>
+                </div>
+                <div class="docs__benchmark-bar">
+                  <span class="docs__benchmark-label">JSON</span>
+                  <div class="docs__benchmark-visual" style="width: 100%; background: var(--text-secondary);"></div>
+                  <span class="docs__benchmark-value">257 tokens</span>
+                </div>
+                <p style="margin-top: 12px; color: var(--accent); font-weight: 600;">Savings: 35.4% (91 tokens)</p>
+              </div>
+            </section>
+
+            <!-- Installation -->
+            <section id="installation" class="policy__section">
+              <h2>Installation & Quick Start</h2>
+              
+              <h3>Using npm</h3>
+              <pre><code>npm install @toon-format/toon</code></pre>
+
+              <h3>Using pnpm</h3>
+              <pre><code>pnpm add @toon-format/toon</code></pre>
+
+              <h3>Using yarn</h3>
+              <pre><code>yarn add @toon-format/toon</code></pre>
+
+              <h3>Example Usage</h3>
+              <pre><code>import { encode } from '@toon-format/toon'
+
+const data = {
+  users: [
+    { id: 1, name: 'Alice', role: 'admin' },
+    { id: 2, name: 'Bob', role: 'user' }
+  ]
+}
+
+console.log(encode(data))
+// Output:
+// users[2]{id,name,role}:
+//   1,Alice,admin
+//   2,Bob,user</code></pre>
+            </section>
+
+            <!-- Format Overview -->
+            <section id="format-overview" class="policy__section">
+              <h2>Format Overview</h2>
+              
+              <h3>Objects</h3>
+              <p>Simple objects with primitive values:</p>
+              <pre><code>// Input
+{ id: 123, name: 'Ada', active: true }
+
+// Output
+id: 123
+name: Ada
+active: true</code></pre>
+
+              <p>Nested objects:</p>
+              <pre><code>// Input
+{ user: { id: 123, name: 'Ada' } }
+
+// Output
+user:
+  id: 123
+  name: Ada</code></pre>
+
+              <h3>Arrays</h3>
+              
+              <h4>Primitive Arrays (Inline)</h4>
+              <pre><code>// Input
+{ tags: ['admin', 'ops', 'dev'] }
+
+// Output
+tags[3]: admin,ops,dev</code></pre>
+
+              <h4>Arrays of Objects (Tabular)</h4>
+              <p>When all objects share the same primitive fields, TOON uses an efficient tabular format:</p>
+              <pre><code>// Input
+{ items: [
+  { sku: 'A1', qty: 2, price: 9.99 },
+  { sku: 'B2', qty: 1, price: 14.5 }
+]}
+
+// Output
+items[2]{sku,qty,price}:
+  A1,2,9.99
+  B2,1,14.5</code></pre>
+
+              <h4>Mixed and Non-Uniform Arrays</h4>
+              <p>Arrays that don't meet tabular requirements use list format:</p>
+              <pre><code>// Input
+{ items: [1, { a: 1 }, 'text'] }
+
+// Output
+items[3]:
+  - 1
+  - a: 1
+  - text</code></pre>
+            </section>
+
+            <!-- Quoting Rules -->
+            <section id="quoting-rules" class="policy__section">
+              <h2>Quoting Rules</h2>
+              <p>TOON quotes strings <strong>only when necessary</strong> to maximize token efficiency.</p>
+              
+              <h3>Strings That Require Quotes</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Condition</th>
+                    <th>Examples</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Empty string</td>
+                    <td><code>""</code></td>
+                  </tr>
+                  <tr>
+                    <td>Leading/trailing spaces</td>
+                    <td><code>" padded "</code>, <code>"  "</code></td>
+                  </tr>
+                  <tr>
+                    <td>Contains delimiter, colon, quotes</td>
+                    <td><code>"a,b"</code>, <code>"a:b"</code>, <code>"say \"hi\""</code></td>
+                  </tr>
+                  <tr>
+                    <td>Looks like boolean/number/null</td>
+                    <td><code>"true"</code>, <code>"42"</code>, <code>"null"</code></td>
+                  </tr>
+                  <tr>
+                    <td>Starts with list syntax</td>
+                    <td><code>"- item"</code></td>
+                  </tr>
+                  <tr>
+                    <td>Looks like structural token</td>
+                    <td><code>"[5]"</code>, <code>"{key}"</code></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3>Strings That Don't Need Quotes</h3>
+              <ul>
+                <li>Unicode and emoji: <code>hello 👋 world</code></li>
+                <li>Strings with inner spaces: <code>hello world</code></li>
+                <li>Alphanumeric with punctuation: <code>user_name</code>, <code>user.name</code></li>
+              </ul>
+            </section>
+
+            <!-- API Reference -->
+            <section id="api-reference" class="policy__section">
+              <h2>API Reference</h2>
+              
+              <h3>encode(value, options?)</h3>
+              <p>Converts any JSON-serializable value to TOON format.</p>
+              
+              <h4>Parameters</h4>
+              <ul>
+                <li><code>value</code> (any) – JSON-serializable value</li>
+                <li><code>options</code> (optional) – Encoding options:
+                  <ul>
+                    <li><code>indent</code> (number) – Spaces per indentation level (default: 2)</li>
+                    <li><code>delimiter</code> (string) – Array delimiter: <code>','</code>, <code>'\t'</code>, <code>'|'</code> (default: <code>','</code>)</li>
+                    <li><code>lengthMarker</code> (boolean) – Add <code>#</code> prefix to array lengths (default: false)</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h4>Example</h4>
+              <pre><code>import { encode } from '@toon-format/toon'
+
+// Basic encoding
+const data = { users: [{ id: 1, name: 'Alice' }] }
+console.log(encode(data))
+
+// With options
+console.log(encode(data, { 
+  delimiter: '\t', 
+  lengthMarker: '#' 
+}))</code></pre>
+
+              <h3>decode(input, options?)</h3>
+              <p>Converts a TOON-formatted string back to JavaScript values.</p>
+              
+              <h4>Parameters</h4>
+              <ul>
+                <li><code>input</code> (string) – TOON-formatted string</li>
+                <li><code>options</code> (optional) – Decoding options:
+                  <ul>
+                    <li><code>indent</code> (number) – Expected indentation (default: 2)</li>
+                    <li><code>strict</code> (boolean) – Enable strict validation (default: true)</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h4>Example</h4>
+              <pre><code>import { decode } from '@toon-format/toon'
+
+const toon = `users[2]{id,name}:
+  1,Alice
+  2,Bob`
+
+const data = decode(toon)
+// { users: [{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }] }</code></pre>
+            </section>
+
+            <!-- CLI -->
+            <section id="cli" class="policy__section">
+              <h2>Command Line Interface</h2>
+              <p>TOON includes a CLI tool for converting between JSON and TOON formats.</p>
+              
+              <h3>Basic Usage</h3>
+              <pre><code>npx @toon-format/cli [options] [input]</code></pre>
+
+              <h3>Examples</h3>
+              <pre><code># Encode JSON to TOON
+npx @toon-format/cli input.json -o output.toon
+
+# Decode TOON to JSON
+npx @toon-format/cli data.toon -o output.json
+
+# Pipe from stdin
+cat data.json | npx @toon-format/cli
+
+# Show token savings
+npx @toon-format/cli data.json --stats
+
+# Use tab delimiter
+npx @toon-format/cli data.json --delimiter "\t"</code></pre>
+
+              <h3>Options</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Option</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>-o, --output</code></td>
+                    <td>Output file path (stdout if omitted)</td>
+                  </tr>
+                  <tr>
+                    <td><code>-e, --encode</code></td>
+                    <td>Force encode mode</td>
+                  </tr>
+                  <tr>
+                    <td><code>-d, --decode</code></td>
+                    <td>Force decode mode</td>
+                  </tr>
+                  <tr>
+                    <td><code>--delimiter</code></td>
+                    <td>Array delimiter: comma, tab, pipe</td>
+                  </tr>
+                  <tr>
+                    <td><code>--indent</code></td>
+                    <td>Indentation size (default: 2)</td>
+                  </tr>
+                  <tr>
+                    <td><code>--length-marker</code></td>
+                    <td>Add # prefix to array lengths</td>
+                  </tr>
+                  <tr>
+                    <td><code>--stats</code></td>
+                    <td>Show token count and savings</td>
+                  </tr>
+                  <tr>
+                    <td><code>--no-strict</code></td>
+                    <td>Disable strict validation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <!-- Using in LLM Prompts -->
+            <section id="llm-prompts" class="policy__section">
+              <h2>Using TOON in LLM Prompts</h2>
+              <p>TOON works best when you show the format instead of describing it. The structure is self-documenting – models parse it naturally once they see the pattern.</p>
+              
+              <h3>Sending TOON to LLMs (Input)</h3>
+              <p>Wrap your encoded data in a fenced code block and label it as <code>toon</code>:</p>
+              <pre><code>```toon
+users[3]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user
+  3,Charlie,user
+```
+
+Question: How many users have the role "user"?</code></pre>
+
+              <h3>Generating TOON from LLMs (Output)</h3>
+              <p>When you want the model to generate TOON, be explicit about the rules:</p>
+              <pre><code>Task: Return only users with role "user" as TOON.
+
+Rules:
+- 2-space indent
+- No trailing spaces
+- [N] must match row count
+- Use header format: users[N]{id,name,role}:
+
+Output only the TOON code block.</code></pre>
+
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Tip</div>
+                <div class="docs__note-content">For large uniform tables, use tab delimiters: <code>encode(data, { delimiter: '\t' })</code>. Tabs often tokenize better than commas.</div>
+              </div>
+            </section>
+
+            <!-- Notes and Limitations -->
+            <section id="limitations" class="policy__section">
+              <h2>Notes and Limitations</h2>
+              
+              <h3>When TOON Excels</h3>
+              <ul>
+                <li>Uniform arrays of objects (same fields, primitive values)</li>
+                <li>Large datasets with consistent structure</li>
+                <li>Tabular data with 10+ rows</li>
+                <li>Time-series analytics data</li>
+                <li>API responses with repeated structures</li>
+              </ul>
+
+              <h3>When JSON is Better</h3>
+              <ul>
+                <li>Non-uniform data with varying field sets</li>
+                <li>Deeply nested structures (3+ levels)</li>
+                <li>Small datasets (&lt;10 items)</li>
+                <li>Objects with mixed or nested array values</li>
+              </ul>
+
+              <h3>Important Considerations</h3>
+              <ul>
+                <li>Token counts vary by tokenizer and model</li>
+                <li>Benchmarks use GPT-style tokenizers (cl100k/o200k)</li>
+                <li>TOON is designed for LLM input, not APIs or storage</li>
+                <li>Real-world performance depends on your data structure</li>
+              </ul>
+            </section>
+
+            <!-- Syntax Cheatsheet -->
+            <section id="syntax-cheatsheet" class="policy__section">
+              <h2>Syntax Cheatsheet</h2>
+              
+              <table>
+                <thead>
+                  <tr>
+                    <th>Input (JSON)</th>
+                    <th>Output (TOON)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>{ id: 1, name: 'Ada' }</code></td>
+                    <td><pre><code>id: 1
+name: Ada</code></pre></td>
+                  </tr>
+                  <tr>
+                    <td><code>{ user: { id: 1 } }</code></td>
+                    <td><pre><code>user:
+  id: 1</code></pre></td>
+                  </tr>
+                  <tr>
+                    <td><code>{ tags: ['foo', 'bar'] }</code></td>
+                    <td><code>tags[2]: foo,bar</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>{ items: [{ id: 1, qty: 5 }, { id: 2, qty: 3 }] }</code></td>
+                    <td><pre><code>items[2]{id,qty}:
+  1,5
+  2,3</code></pre></td>
+                  </tr>
+                  <tr>
+                    <td><code>{ items: [1, { a: 1 }, 'x'] }</code></td>
+                    <td><pre><code>items[3]:
+  - 1
+  - a: 1
+  - x</code></pre></td>
+                  </tr>
+                  <tr>
+                    <td><code>['x', 'y']</code></td>
+                    <td><code>[2]: x,y</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>{}</code></td>
+                    <td>(empty output)</td>
+                  </tr>
+                  <tr>
+                    <td><code>{ items: [] }</code></td>
+                    <td><code>items[0]:</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <!-- Full Specification -->
+            <section id="full-specification" class="policy__section">
+              <h2>Full Specification</h2>
+              <p>For precise formatting rules, edge cases, and implementation details, see the official TOON specification:</p>
+              <p><a href="https://github.com/toon-format/spec/blob/main/SPEC.md" target="_blank" rel="noopener">📋 TOON Format Specification v1.3</a></p>
+              <p>The specification includes:</p>
+              <ul>
+                <li>Detailed syntax rules</li>
+                <li>Edge case handling</li>
+                <li>Conformance tests</li>
+                <li>Implementation guidelines</li>
+                <li>Format versioning</li>
+              </ul>
+            </section>
+
+            <!-- Other Implementations -->
+            <section id="implementations" class="policy__section">
+              <h2>Other Implementations</h2>
+              
+              <h3>Official Implementations</h3>
+              <ul>
+                <li><strong>JavaScript:</strong> <a href="https://github.com/toon-format/toon" target="_blank" rel="noopener">@toon-format/toon</a></li>
+                <li><strong>Python:</strong> <a href="https://github.com/toon-format/toon-python" target="_blank" rel="noopener">toon_format</a> (in development)</li>
+                <li><strong>Rust:</strong> <a href="https://github.com/toon-format/toon-rust" target="_blank" rel="noopener">toon_format</a> (in development)</li>
+              </ul>
+
+              <h3>Community Implementations</h3>
+              <ul>
+                <li><strong>.NET:</strong> <a href="https://github.com/0xZunia/ToonSharp" target="_blank" rel="noopener">ToonSharp</a></li>
+                <li><strong>C++:</strong> <a href="https://github.com/mohammadraziei/ctoon" target="_blank" rel="noopener">ctoon</a></li>
+                <li><strong>Crystal:</strong> <a href="https://github.com/mamantoha/toon-crystal" target="_blank" rel="noopener">toon-crystal</a></li>
+                <li><strong>Dart:</strong> <a href="https://github.com/wisamidris77/toon" target="_blank" rel="noopener">toon</a></li>
+                <li><strong>Elixir:</strong> <a href="https://github.com/kentaro/toon_ex" target="_blank" rel="noopener">toon_ex</a></li>
+                <li><strong>Gleam:</strong> <a href="https://github.com/axelbellec/toon_codec" target="_blank" rel="noopener">toon_codec</a></li>
+                <li><strong>Go:</strong> <a href="https://github.com/alpkeskin/gotoon" target="_blank" rel="noopener">gotoon</a></li>
+                <li><strong>Java:</strong> <a href="https://github.com/felipestanzani/JToon" target="_blank" rel="noopener">JToon</a></li>
+                <li><strong>PHP:</strong> <a href="https://github.com/HelgeSverre/toon-php" target="_blank" rel="noopener">toon-php</a></li>
+                <li><strong>Ruby:</strong> <a href="https://github.com/andrepcg/toon-ruby" target="_blank" rel="noopener">toon-ruby</a></li>
+                <li><strong>Swift:</strong> <a href="https://github.com/mattt/TOONEncoder" target="_blank" rel="noopener">TOONEncoder</a></li>
+              </ul>
+            </section>
+
+          </div>
+
+          <!-- Table of Contents (Sticky Sidebar) -->
+          <aside class="policy__toc">
+            <h3 class="policy__toc-title">On This Page</h3>
+            <ul class="policy__toc-list">
+              <li class="policy__toc-item"><a href="#introduction" class="policy__toc-link">Introduction</a></li>
+              <li class="policy__toc-item"><a href="#why-toon" class="policy__toc-link">Why TOON?</a></li>
+              <li class="policy__toc-item"><a href="#key-features" class="policy__toc-link">Key Features</a></li>
+              <li class="policy__toc-item"><a href="#benchmarks" class="policy__toc-link">Benchmarks</a></li>
+              <li class="policy__toc-item"><a href="#installation" class="policy__toc-link">Installation</a></li>
+              <li class="policy__toc-item"><a href="#format-overview" class="policy__toc-link">Format Overview</a></li>
+              <li class="policy__toc-item"><a href="#quoting-rules" class="policy__toc-link">Quoting Rules</a></li>
+              <li class="policy__toc-item"><a href="#api-reference" class="policy__toc-link">API Reference</a></li>
+              <li class="policy__toc-item"><a href="#cli" class="policy__toc-link">CLI</a></li>
+              <li class="policy__toc-item"><a href="#llm-prompts" class="policy__toc-link">LLM Prompts</a></li>
+              <li class="policy__toc-item"><a href="#limitations" class="policy__toc-link">Limitations</a></li>
+              <li class="policy__toc-item"><a href="#syntax-cheatsheet" class="policy__toc-link">Syntax Cheatsheet</a></li>
+              <li class="policy__toc-item"><a href="#full-specification" class="policy__toc-link">Full Specification</a></li>
+              <li class="policy__toc-item"><a href="#implementations" class="policy__toc-link">Implementations</a></li>
+              <li class="policy__toc-item"><a href="#get-started" class="policy__toc-link">Get Started</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-template="cta"></div>
+  <div data-template="footer"></div>
+
+</body>
+</html>

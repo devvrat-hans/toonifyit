@@ -73,16 +73,14 @@ const ThemeManager = (() => {
     });
   };
 
-  // Apply theme immediately to prevent flash
-  if (state.theme === 'dark') {
-    document.body.classList.add('dark-mode');
+  // Wait for DOM to be ready before applying theme
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      init();
+    });
   } else {
-    document.body.classList.add('light-mode');
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
     init();
-  });
+  }
 
   return {
     init,
