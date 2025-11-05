@@ -16,6 +16,7 @@
   <meta name="twitter:description" content="Convert JSON to TOON format instantly. Save 30-60% on LLM tokens.">
   
   <link rel="canonical" href="https://toonifyit.com/">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
   
   <title>Toonifyit - JSON to TOON Converter | Save 50% LLM Tokens</title>
   
@@ -58,14 +59,6 @@
       },
       {
         "@type": "Question",
-        "name": "Can I convert TOON back to JSON?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, the converter supports bidirectional conversion. Simply select 'TOON → JSON' from the format dropdown, paste your TOON data, and get JSON output. This makes it easy to work with both formats."
-        }
-      },
-      {
-        "@type": "Question",
         "name": "What's the difference between TOON and JSON?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -76,7 +69,8 @@
   }
   </script>
   
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/cta.css">
   <script src="/js/templates.js"></script>
   <script src="/js/theme.js"></script>
@@ -105,12 +99,6 @@
           <div class="converter__panel">
             <div class="converter__header">
               <label for="input-json" class="converter__label">JSON Input</label>
-              <div class="converter__actions">
-                <select class="select select--small" data-option="format">
-                  <option value="json">JSON → TOON</option>
-                  <option value="toon">TOON → JSON</option>
-                </select>
-              </div>
             </div>
             <textarea 
               id="input-json" 
@@ -294,44 +282,72 @@
         <h2 class="section__title">Frequently Asked Questions</h2>
         <div class="faq__list">
           <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="faq__question" itemprop="name">What is TOON format?</h3>
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              What is TOON format?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
             <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">TOON (Token-Oriented Object Notation) is a data serialization format designed specifically for LLM prompts. It reduces token usage by 30-60% compared to JSON while maintaining readability and structure. TOON uses a tabular format for arrays and minimal syntax for objects.</p>
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON (Token-Oriented Object Notation) is a data serialization format designed specifically for LLM prompts. It reduces token usage by 30-60% compared to JSON while maintaining readability and structure. TOON uses a tabular format for arrays and minimal syntax for objects.</p>
+              </div>
             </div>
           </div>
           
           <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="faq__question" itemprop="name">How much can I save with TOON?</h3>
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              How much can I save with TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
             <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">TOON typically saves 30-60% on LLM tokens compared to JSON. For large datasets or API responses, this can translate to significant cost savings when using APIs like GPT-4 or Claude. The exact savings depend on your data structure.</p>
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON typically saves 30-60% on LLM tokens compared to JSON. For large datasets or API responses, this can translate to significant cost savings when using APIs like GPT-4 or Claude. The exact savings depend on your data structure.</p>
+              </div>
             </div>
           </div>
           
           <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="faq__question" itemprop="name">Is TOON compatible with all LLMs?</h3>
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Is TOON compatible with all LLMs?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
             <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">Yes, TOON works with all major LLMs including GPT-4, Claude, Gemini, and LLaMA. Since TOON is a text format, any LLM can read and understand it. Most modern LLMs can parse TOON format with simple instructions in your prompt.</p>
+              <div class="faq__answer-content">
+                <p itemprop="text">Yes, TOON works with all major LLMs including GPT-4, Claude, Gemini, and LLaMA. Since TOON is a text format, any LLM can read and understand it. Most modern LLMs can parse TOON format with simple instructions in your prompt.</p>
+              </div>
             </div>
           </div>
           
           <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="faq__question" itemprop="name">Is my data safe when using this converter?</h3>
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Is my data safe when using this converter?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
             <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">Absolutely. All conversions happen locally in your browser using JavaScript. Your data never leaves your device or gets sent to any server. The converter works completely offline once the page is loaded.</p>
+              <div class="faq__answer-content">
+                <p itemprop="text">Absolutely. All conversions happen locally in your browser using JavaScript. Your data never leaves your device or gets sent to any server. The converter works completely offline once the page is loaded.</p>
+              </div>
             </div>
           </div>
           
           <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="faq__question" itemprop="name">Can I convert TOON back to JSON?</h3>
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              What's the difference between TOON and JSON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
             <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">Yes, the converter supports bidirectional conversion. Simply select "TOON → JSON" from the format dropdown, paste your TOON data, and get JSON output. This makes it easy to work with both formats.</p>
-            </div>
-          </div>
-          
-          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="faq__question" itemprop="name">What's the difference between TOON and JSON?</h3>
-            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <p itemprop="text">TOON uses a more compact syntax designed for token efficiency. It represents arrays as tables with headers, uses minimal punctuation, and eliminates redundant characters. JSON is more verbose with brackets, quotes, and commas. For LLM prompts, TOON's efficiency significantly reduces costs.</p>
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON uses a more compact syntax designed for token efficiency. It represents arrays as tables with headers, uses minimal punctuation, and eliminates redundant characters. JSON is more verbose with brackets, quotes, and commas. For LLM prompts, TOON's efficiency significantly reduces costs.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -345,6 +361,6 @@
 
   <div class="toast" data-toast></div>
 
-  <script src="/js/main.js" defer></script>
+  <script src="/js/index.js" defer></script>
 </body>
 </html>

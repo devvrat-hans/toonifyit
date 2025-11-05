@@ -1,20 +1,76 @@
 .cta {
-  padding: 5rem 0;
+  padding: 6rem 0;
   text-align: center;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+  opacity: 0.3;
+}
+
+.cta .container {
+  position: relative;
+  z-index: 1;
 }
 
 .cta__title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  color: var(--text-primary);
+  color: white;
   letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cta__text {
-  font-size: 1.3rem;
-  color: var(--text-secondary);
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2.5rem;
   font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta .btn--primary {
+  background: white;
+  color: var(--accent);
+  border: none;
+  font-size: 1.1rem;
+  padding: 1.2rem 3rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cta .btn--primary:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 4rem 0;
+  }
+  
+  .cta__title {
+    font-size: 2.2rem;
+  }
+  
+  .cta__text {
+    font-size: 1.1rem;
+  }
+  
+  .cta .btn--primary {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
 }

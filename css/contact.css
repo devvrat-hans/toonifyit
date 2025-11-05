@@ -1,0 +1,37 @@
+/* Contact Page Styles - toonifyit.com */
+
+.contact__content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact__section {
+  margin-bottom: 3rem;
+}
+
+.contact__section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.contact__section p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 0.8rem;
+}
+
+.contact__link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact__link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}

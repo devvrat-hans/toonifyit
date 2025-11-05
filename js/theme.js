@@ -2,12 +2,16 @@ const ThemeManager = (() => {
   const THEME_KEY = 'toonifyit-theme';
   
   const state = {
-    theme: localStorage.getItem(THEME_KEY) || 
-           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    theme: localStorage.getItem(THEME_KEY) || 'dark'
   };
 
   const applyTheme = (theme) => {
-    document.body.classList.toggle('dark-mode', theme === 'dark');
+    document.body.classList.remove('dark-mode', 'light-mode');
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.add('light-mode');
+    }
     state.theme = theme;
     localStorage.setItem(THEME_KEY, theme);
     updateThemeIcons(theme);
@@ -41,8 +45,15 @@ const ThemeManager = (() => {
   const setupThemeToggle = () => {
     const themeToggle = document.querySelector('[data-action="toggle-theme"]');
     if (themeToggle) {
-      themeToggle.removeEventListener('click', toggleTheme);
-      themeToggle.addEventListener('click', toggleTheme);
+      // Remove all existing listeners by cloning the element
+      const newThemeToggle = themeToggle.cloneNode(true);
+      themeToggle.parentNode.replaceChild(newThemeToggle, themeToggle);
+      
+      // Add fresh listener
+      newThemeToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleTheme();
+      });
       updateThemeIcons(state.theme);
     }
   };
@@ -50,12 +61,6 @@ const ThemeManager = (() => {
   const init = () => {
     applyTheme(state.theme);
     
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem(THEME_KEY)) {
-        applyTheme(e.matches ? 'dark' : 'light');
-      }
-    });
-
     setupThemeToggle();
     
     const observer = new MutationObserver(() => {
@@ -68,12 +73,15 @@ const ThemeManager = (() => {
     });
   };
 
+  // Apply theme immediately to prevent flash
   if (state.theme === 'dark') {
     document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.add('light-mode');
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(init, 200);
+    init();
   });
 
   return {

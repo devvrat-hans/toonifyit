@@ -1,0 +1,183 @@
+/* Terms of Service Page Styles - toonifyit.com */
+/* This file uses the same layout as privacy.css for consistency */
+
+.policy {
+  padding: 4rem 0;
+  background: var(--bg-primary);
+}
+
+.policy__layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.policy__toc {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.policy__toc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.policy__toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy__toc-list li {
+  margin-bottom: 0.6rem;
+}
+
+.policy__toc-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.policy__toc-link:hover {
+  background: var(--bg-tertiary);
+  color: var(--accent);
+  padding-left: 1rem;
+}
+
+.policy__main {
+  min-width: 0;
+}
+
+.policy__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.policy__subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.policy__date {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+}
+
+.policy__content {
+  margin-top: 2rem;
+}
+
+.policy__section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 100px;
+}
+
+.policy__section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.policy__section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+}
+
+.policy__section p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.policy__section p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.policy__section a {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.policy__section a:hover {
+  opacity: 0.8;
+}
+
+.policy__section ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.policy__section li {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 0.8rem;
+}
+
+.policy__contact {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.policy__contact p {
+  margin-bottom: 0.5rem;
+}
+
+.policy__acknowledgment {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--bg-tertiary);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .policy__layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .policy__toc {
+    position: static;
+    max-height: none;
+  }
+}
