@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert JSON to TOON format instantly. TOON reduces LLM token usage by 30-60% while maintaining readability. Free, fast, and privacy-focused converter tool.">
+  <meta name="keywords" content="JSON to TOON, TOON converter, LLM optimization, token efficiency, prompt engineering">
+  
+  <meta property="og:title" content="Toonifyit - JSON to TOON Converter">
+  <meta property="og:description" content="Convert JSON to TOON format instantly. Save 30-60% on LLM tokens.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toonifyit.com/">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Toonifyit - JSON to TOON Converter">
+  <meta name="twitter:description" content="Convert JSON to TOON format instantly. Save 30-60% on LLM tokens.">
+  
+  <link rel="canonical" href="https://toonifyit.com/">
+  
+  <title>Toonifyit - JSON to TOON Converter | Save 50% LLM Tokens</title>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is TOON format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON (Token-Oriented Object Notation) is a data serialization format designed specifically for LLM prompts. It reduces token usage by 30-60% compared to JSON while maintaining readability and structure. TOON uses a tabular format for arrays and minimal syntax for objects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I save with TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON typically saves 30-60% on LLM tokens compared to JSON. For large datasets or API responses, this can translate to significant cost savings when using APIs like GPT-4 or Claude. The exact savings depend on your data structure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is TOON compatible with all LLMs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, TOON works with all major LLMs including GPT-4, Claude, Gemini, and LLaMA. Since TOON is a text format, any LLM can read and understand it. Most modern LLMs can parse TOON format with simple instructions in your prompt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data safe when using this converter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. All conversions happen locally in your browser using JavaScript. Your data never leaves your device or gets sent to any server. The converter works completely offline once the page is loaded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert TOON back to JSON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the converter supports bidirectional conversion. Simply select 'TOON → JSON' from the format dropdown, paste your TOON data, and get JSON output. This makes it easy to work with both formats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between TOON and JSON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON uses a more compact syntax designed for token efficiency. It represents arrays as tables with headers, uses minimal punctuation, and eliminates redundant characters. JSON is more verbose with brackets, quotes, and commas. For LLM prompts, TOON's efficiency significantly reduces costs."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/cta.css">
+  <script src="/js/templates.js"></script>
+  <script src="/js/theme.js"></script>
+  <script src="/js/cta.js"></script>
+</head>
+<body>
+  <div data-template="navbar"></div>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title">JSON to TOON Converter</h1>
+        <p class="hero__subtitle">Reduce LLM token usage by 30-60% with TOON format</p>
+        <p class="hero__description">Fast, free, and privacy-focused. All conversions happen in your browser.</p>
+      </div>
+    </section>
+
+    <section class="converter">
+      <div class="container">
+        <div class="converter__controls">
+          <button class="btn btn--secondary" data-action="load-example">Load Example</button>
+          <button class="btn btn--secondary" data-action="clear">Clear All</button>
+        </div>
+
+        <div class="converter__grid">
+          <div class="converter__panel">
+            <div class="converter__header">
+              <label for="input-json" class="converter__label">JSON Input</label>
+              <div class="converter__actions">
+                <select class="select select--small" data-option="format">
+                  <option value="json">JSON → TOON</option>
+                  <option value="toon">TOON → JSON</option>
+                </select>
+              </div>
+            </div>
+            <textarea 
+              id="input-json" 
+              class="textarea" 
+              placeholder='Paste your JSON here...'
+              spellcheck="false"
+              data-input="main"
+            ></textarea>
+            <div class="converter__error" data-error="input"></div>
+          </div>
+
+          <div class="converter__panel">
+            <div class="converter__header">
+              <label for="output-toon" class="converter__label">TOON Output</label>
+              <div class="converter__actions">
+                <button class="btn btn--small" data-action="copy">Copy</button>
+                <button class="btn btn--small" data-action="download">Download</button>
+              </div>
+            </div>
+            <textarea 
+              id="output-toon" 
+              class="textarea" 
+              placeholder='Converted output will appear here...'
+              readonly
+              spellcheck="false"
+              data-output="main"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="converter__options">
+          <h3 class="converter__options-title">Options</h3>
+          <div class="converter__options-grid">
+            <label class="option">
+              <span class="option__label">Delimiter</span>
+              <select class="select" data-option="delimiter">
+                <option value=",">Comma (,)</option>
+                <option value="\t">Tab</option>
+                <option value="|">Pipe (|)</option>
+              </select>
+            </label>
+            <label class="option">
+              <span class="option__label">Indentation</span>
+              <select class="select" data-option="indent">
+                <option value="2">2 spaces</option>
+                <option value="4">4 spaces</option>
+              </select>
+            </label>
+            <label class="option">
+              <input type="checkbox" class="checkbox" data-option="length-marker" checked>
+              <span class="option__label">Show length markers (#)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stats__item">
+            <span class="stats__label">JSON Tokens:</span>
+            <span class="stats__value" data-stat="json-tokens">0</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__label">TOON Tokens:</span>
+            <span class="stats__value" data-stat="toon-tokens">0</span>
+          </div>
+          <div class="stats__item stats__item--highlight">
+            <span class="stats__label">Saved:</span>
+            <span class="stats__value" data-stat="saved">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-to-use">
+      <div class="container">
+        <h2 class="section__title">How to Use</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h3 class="step__title">Paste Your JSON</h3>
+              <p class="step__text">Copy your JSON data and paste it into the input area on the left. You can also click "Load Example" to see a sample.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h3 class="step__title">Customize Options</h3>
+              <p class="step__text">Choose your preferred delimiter (comma, tab, or pipe), indentation size, and toggle length markers to suit your needs.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h3 class="step__title">Get TOON Output</h3>
+              <p class="step__text">Watch as your JSON is instantly converted to TOON format. The output appears in real-time as you type.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h3 class="step__title">Copy or Download</h3>
+              <p class="step__text">Use the "Copy" button to copy the TOON output to your clipboard, or click "Download" to save it as a file.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section__title">Why TOON?</h2>
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature__title">Token Efficient</h3>
+            <p class="feature__text">Save 30-60% on LLM tokens compared to JSON while maintaining readability.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="feature__title">Privacy First</h3>
+            <p class="feature__text">All conversions happen locally in your browser. Your data never leaves your device.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature__title">Blazing Fast</h3>
+            <p class="feature__text">Instant conversion with real-time output as you type. No server delays.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="feature__title">Structured Data</h3>
+            <p class="feature__text">Perfect for tabular data, API responses, and large datasets in LLM prompts.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature__title">Easy to Read</h3>
+            <p class="feature__text">Human-readable format that's intuitive for both developers and LLMs to understand.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature__title">Cost Effective</h3>
+            <p class="feature__text">Reduce API costs by up to 60% with more efficient token usage in your LLM applications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2 class="section__title">Frequently Asked Questions</h2>
+        <div class="faq__list">
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq__question" itemprop="name">What is TOON format?</h3>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">TOON (Token-Oriented Object Notation) is a data serialization format designed specifically for LLM prompts. It reduces token usage by 30-60% compared to JSON while maintaining readability and structure. TOON uses a tabular format for arrays and minimal syntax for objects.</p>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq__question" itemprop="name">How much can I save with TOON?</h3>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">TOON typically saves 30-60% on LLM tokens compared to JSON. For large datasets or API responses, this can translate to significant cost savings when using APIs like GPT-4 or Claude. The exact savings depend on your data structure.</p>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq__question" itemprop="name">Is TOON compatible with all LLMs?</h3>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes, TOON works with all major LLMs including GPT-4, Claude, Gemini, and LLaMA. Since TOON is a text format, any LLM can read and understand it. Most modern LLMs can parse TOON format with simple instructions in your prompt.</p>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq__question" itemprop="name">Is my data safe when using this converter?</h3>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Absolutely. All conversions happen locally in your browser using JavaScript. Your data never leaves your device or gets sent to any server. The converter works completely offline once the page is loaded.</p>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq__question" itemprop="name">Can I convert TOON back to JSON?</h3>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes, the converter supports bidirectional conversion. Simply select "TOON → JSON" from the format dropdown, paste your TOON data, and get JSON output. This makes it easy to work with both formats.</p>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="faq__question" itemprop="name">What's the difference between TOON and JSON?</h3>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">TOON uses a more compact syntax designed for token efficiency. It represents arrays as tables with headers, uses minimal punctuation, and eliminates redundant characters. JSON is more verbose with brackets, quotes, and commas. For LLM prompts, TOON's efficiency significantly reduces costs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div data-template="cta"></div>
+  </main>
+
+  <div data-template="footer"></div>
+
+  <div class="toast" data-toast></div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
