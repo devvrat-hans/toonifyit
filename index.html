@@ -73,9 +73,8 @@
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/faq.css">
   <link rel="stylesheet" href="/css/cta.css">
-  <script src="/js/templates.js"></script>
-  <script src="/js/theme.js"></script>
-  <script src="/js/cta.js"></script>
+    <script src="/js/templates.js"></script>
+  <script src="/js/main.js" defer></script>
 </head>
 <body>
   <div data-template="navbar"></div>
@@ -364,44 +363,5 @@
 
   <script src="/js/index.js"></script>
   <script src="/js/faq.js"></script>
-  <script>
-    // Backup FAQ initialization in case external script fails
-    (function() {
-      'use strict';
-      
-      function initFAQ() {
-        const faqButtons = document.querySelectorAll('.faq__question');
-        
-        if (faqButtons.length === 0) return;
-        
-        faqButtons.forEach(function(button) {
-          // Remove any existing listeners by cloning
-          const newButton = button.cloneNode(true);
-          button.parentNode.replaceChild(newButton, button);
-          
-          newButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const faqItem = newButton.closest('.faq__item');
-            const isExpanded = newButton.getAttribute('aria-expanded') === 'true';
-            
-            newButton.setAttribute('aria-expanded', String(!isExpanded));
-            
-            if (!isExpanded) {
-              faqItem.classList.add('active');
-            } else {
-              faqItem.classList.remove('active');
-            }
-          });
-        });
-      }
-      
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initFAQ);
-      } else {
-        initFAQ();
-      }
-    })();
-  </script>
 </body>
 </html>

@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Log the attempted URL for debugging
-  console.log('404 Error - Requested URL:', window.location.href);
-
   // Handle search form submission
   const searchForm = document.querySelector('.search-form');
   const searchInput = document.getElementById('search-input');

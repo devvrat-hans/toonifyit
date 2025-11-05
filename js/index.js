@@ -310,10 +310,6 @@ const App = (() => {
           e.preventDefault();
           convert();
         }
-        if ((e.ctrlKey || e.metaKey) && e.key === '.') {
-          e.preventDefault();
-          elements.themeToggle.click();
-        }
         if ((e.ctrlKey || e.metaKey) && e.key === 'l') {
           e.preventDefault();
           elements.inputArea.focus();

@@ -91,5 +91,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial render
   renderPosts();
 });
-
-console.log('Blog page loaded successfully');

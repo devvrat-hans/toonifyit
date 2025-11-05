@@ -11,7 +11,7 @@ const Templates = (() => {
         target.innerHTML = html;
       }
     } catch (error) {
-      console.error(`Error loading template ${templateName}:`, error);
+      // Template loading failed - fail silently
     }
   };
 

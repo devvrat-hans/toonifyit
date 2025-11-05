@@ -100,7 +100,7 @@
             button.style.color = 'var(--text-primary)';
           }, 2000);
         } catch (err) {
-          console.error('Failed to copy:', err);
+          // Copy failed - fail silently
         }
       });
     });

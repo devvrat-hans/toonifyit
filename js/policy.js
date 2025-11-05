@@ -1,8 +1,8 @@
-// Cookie Policy Page JavaScript
-// Handles table of contents highlighting on scroll
+/* Policy Pages JavaScript - toonifyit.com */
+/* Shared TOC highlighting for Privacy, Terms, Disclaimer, and Cookie Policy pages */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tocLinks = document.querySelectorAll('.policy__toc a');
+  const tocLinks = document.querySelectorAll('.policy__toc-link, .policy__toc a');
   const sections = document.querySelectorAll('.policy__section');
 
   // Highlight active TOC link based on scroll position
@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
       if (window.pageYOffset >= sectionTop - 150) {
         current = section.getAttribute('id');
       }
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Update TOC on scroll with throttling
+  // Update TOC on scroll with requestAnimationFrame for smooth updates
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {

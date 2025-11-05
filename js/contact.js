@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Copy to clipboard
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(email).then(() => {
-          showToast(`Email copied: ${email}`);
+          Toast.show(`Email copied: ${email}`);
         }).catch(err => {
-          console.error('Failed to copy email:', err);
+          // Copy failed - fail silently
         });
       }
     });
@@ -26,26 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   externalLinks.forEach(link => {
     link.addEventListener('click', () => {
-      console.log('External link clicked:', link.href);
-      // Add analytics tracking here if needed
+      if (link.hostname !== window.location.hostname) {
+        // External link tracking could be added here if needed
+      }
     });
   });
 });
-
-// Toast notification helper
-function showToast(message, duration = 3000) {
-  const toast = document.querySelector('.toast') || createToast();
-  toast.textContent = message;
-  toast.classList.add('show');
-  
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, duration);
-}
-
-function createToast() {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  document.body.appendChild(toast);
-  return toast;
-}
