@@ -45,10 +45,19 @@
   align-items: center;
   transition: all 0.2s ease;
   font-family: inherit;
+  outline: none;
 }
 
 .faq__question:hover {
   background: var(--bg-tertiary);
+}
+
+.faq__question:focus {
+  outline: none;
+}
+
+.faq__question:focus-visible {
+  outline: none;
 }
 
 .faq__question[aria-expanded="true"] {
