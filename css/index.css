@@ -299,36 +299,14 @@ body.light-mode .select:hover {
   overflow: hidden;
 }
 
-.stats__item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
 .stats__item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(77, 166, 255, 0.2);
-  border-color: var(--accent);
-}
-
-.stats__item:hover::before {
-  transform: scaleX(1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(77, 166, 255, 0.15);
 }
 
 .stats__item--highlight {
   background: linear-gradient(135deg, rgba(77, 166, 255, 0.1), rgba(77, 166, 255, 0.05));
   border-color: var(--accent);
-}
-
-.stats__item--highlight::before {
-  background: linear-gradient(90deg, var(--success), #45b754);
 }
 
 .stats__label {
@@ -351,16 +329,6 @@ body.light-mode .select:hover {
 .stats__item--highlight .stats__value {
   color: var(--success);
   font-size: 3rem;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
 }
 
 /* How To Use Section */

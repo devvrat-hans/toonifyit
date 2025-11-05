@@ -2,16 +2,15 @@
 
 // Blog posts data (will be populated as posts are created)
 const blogPosts = [
-  // Example structure - actual posts will be added here
-  // {
-  //   title: "TOON vs JSON: Complete Comparison",
-  //   slug: "toon-vs-json-comparison",
-  //   excerpt: "Discover the key differences between TOON and JSON formats...",
-  //   category: "Comparison",
-  //   date: "2025-01-15",
-  //   readTime: "8 min",
-  //   icon: "⚖️"
-  // }
+  {
+    title: "What is TOON Format? A Complete Guide to Token-Efficient Data Serialization",
+    slug: "what-is-toon",
+    excerpt: "Learn how TOON format reduces LLM token usage by 30-60% compared to JSON. Complete guide with examples, benchmarks, and best practices for optimizing your AI applications.",
+    category: "tutorial",
+    date: "2025-01-15",
+    readTime: "12 min",
+    icon: "📚"
+  }
 ];
 
 // Initialize blog page
@@ -57,12 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </span>
           </div>
           <h2 class="blog__card-title">
-            <a href="/blog/${post.slug}/">${post.title}</a>
+            <a href="/blog/${post.slug}.html">${post.title}</a>
           </h2>
           <p class="blog__card-excerpt">${post.excerpt}</p>
           <div class="blog__card-footer">
             <span class="blog__card-read-time">⏱️ ${post.readTime} read</span>
-            <a href="/blog/${post.slug}/" class="blog__card-link">
+            <a href="/blog.html${post.slug}.html" class="blog__card-link">
               Read more →
             </a>
           </div>

@@ -59,6 +59,12 @@
   padding-left: 1rem;
 }
 
+.policy__toc-link.active {
+  background: var(--bg-tertiary);
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .policy__main {
   min-width: 0;
 }

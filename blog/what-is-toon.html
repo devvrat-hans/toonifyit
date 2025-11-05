@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover TOON (Token-Oriented Object Notation), a compact data format that reduces LLM token usage by 30-60%. Learn how TOON helps optimize costs and improve efficiency when working with Large Language Models.">
+  <meta name="keywords" content="TOON format, Token-Oriented Object Notation, LLM optimization, reduce tokens, AI efficiency, JSON alternative, data serialization">
+  <meta name="author" content="Toonifyit">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://toonifyit.com/blog/what-is-toon.html">
+  <meta property="og:title" content="What is TOON Format? A Complete Guide to Token-Efficient Data Serialization">
+  <meta property="og:description" content="Learn how TOON format reduces LLM token usage by 30-60% compared to JSON. Complete guide with examples, benchmarks, and best practices.">
+  <meta property="og:site_name" content="Toonifyit">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toonifyit.com/blog/what-is-toon.html">
+  <meta name="twitter:title" content="What is TOON Format? A Complete Guide to Token-Efficient Data Serialization">
+  <meta name="twitter:description" content="Reduce LLM costs with TOON format. 30-60% fewer tokens than JSON.">
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "What is TOON Format? A Complete Guide to Token-Efficient Data Serialization",
+    "description": "Learn how TOON format reduces LLM token usage by 30-60% compared to JSON. Complete guide with examples, benchmarks, and best practices.",
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-01-15",
+    "author": {
+      "@type": "Person",
+      "name": "Toonifyit Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Toonifyit"
+    },
+    "keywords": "TOON format, LLM optimization, token efficiency, JSON alternative"
+  }
+  </script>
+  
+  <title>What is TOON Format? Complete Guide to Token-Efficient Data | Toonifyit</title>
+  <link rel="canonical" href="https://toonifyit.com/blog/what-is-toon.html">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/docs.css">
+  <link rel="stylesheet" href="/css/blogposts.css">
+  <link rel="stylesheet" href="/css/cta.css">
+  <script src="/js/templates.js"></script>
+  <script src="/js/theme.js"></script>
+  <script src="/js/blogposts.js" defer></script>
+</head>
+<body>
+  <div data-template="navbar"></div>
+
+  <main class="main">
+    <article class="policy">
+      <div class="container">
+        <h1 class="policy__title">What is TOON Format?</h1>
+        <p class="policy__subtitle">A Complete Guide to Token-Efficient Data Serialization for Large Language Models</p>
+        
+        <div class="policy__layout">
+          <div class="policy__content">
+            
+            <!-- Introduction -->
+            <section id="introduction" class="policy__section">
+              <p><strong>Token-Oriented Object Notation (TOON)</strong> is a compact, human-readable serialization format designed specifically for passing structured data to Large Language Models with significantly reduced token usage. If you're working with LLMs and dealing with large datasets, TOON can help you reduce costs by 30-60% compared to traditional JSON.</p>
+              
+              <p>In this comprehensive guide, we'll explore what TOON is, why it was created, how it works, and when you should use it for your LLM applications.</p>
+            </section>
+
+            <!-- What is TOON -->
+            <section id="what-is-toon" class="policy__section">
+              <h2>What is TOON?</h2>
+              <p>TOON stands for <strong>Token-Oriented Object Notation</strong>. It's a data serialization format optimized for LLM input that combines the best aspects of several formats:</p>
+              
+              <ul>
+                <li><strong>YAML's indentation-based structure</strong> for nested objects (eliminating braces)</li>
+                <li><strong>CSV's tabular format</strong> for uniform data rows (declaring fields once)</li>
+                <li><strong>Minimal syntax</strong> that removes redundant punctuation</li>
+              </ul>
+
+              <p>TOON is intended as a <em>translation layer</em>: you use JSON programmatically in your application, then convert to TOON when passing data to an LLM. This keeps your codebase clean while optimizing token usage where it matters most.</p>
+              
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Key Insight</div>
+                <div class="docs__note-content">TOON's sweet spot is <strong>uniform arrays of objects</strong> – multiple fields per row, same structure across items. Think database query results, analytics data, API responses, etc.</div>
+              </div>
+            </section>
+
+            <!-- Why TOON -->
+            <section id="why-toon" class="policy__section">
+              <h2>Why TOON? The Problem with JSON</h2>
+              <p>As AI becomes more accessible and context windows grow larger, developers are passing more data to LLMs. However, <strong>LLM tokens still cost money</strong>, and standard JSON is verbose and token-expensive.</p>
+
+              <h3>The Token Cost Problem</h3>
+              <p>Consider this simple JSON example representing user data:</p>
+              
+              <pre><code>{
+  "users": [
+    { "id": 1, "name": "Alice", "role": "admin" },
+    { "id": 2, "name": "Bob", "role": "user" },
+    { "id": 3, "name": "Charlie", "role": "user" }
+  ]
+}</code></pre>
+
+              <p><strong>Token count:</strong> ~125 tokens (GPT-5 o200k_base tokenizer)</p>
+
+              <p>Notice the repetition? The keys <code>"id"</code>, <code>"name"</code>, and <code>"role"</code> appear three times – once for each user. This redundancy compounds dramatically with larger datasets.</p>
+
+              <h3>The TOON Solution</h3>
+              <p>TOON conveys the same information with fewer tokens:</p>
+              
+              <pre><code>users[3]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user
+  3,Charlie,user</code></pre>
+
+              <p><strong>Token count:</strong> ~54 tokens</p>
+              <p><strong>Savings:</strong> 57% fewer tokens!</p>
+
+              <p>TOON declares the field names once in the header (<code>{id,name,role}</code>) and then lists only the values as rows. This pattern becomes even more powerful at scale.</p>
+            </section>
+
+            <!-- How it Works -->
+            <section id="how-it-works" class="policy__section">
+              <h2>How TOON Works</h2>
+              <p>TOON uses a simple but powerful approach to reduce token usage while maintaining readability and structure.</p>
+
+              <h3>1. Tabular Arrays (The Core Optimization)</h3>
+              <p>When TOON encounters an array of objects with:</p>
+              <ul>
+                <li>Identical keys across all objects</li>
+                <li>Only primitive values (no nested objects/arrays)</li>
+              </ul>
+              <p>It automatically converts it to tabular format:</p>
+              
+              <pre><code>array_name[count]{field1,field2,field3}:
+  value1,value2,value3
+  value1,value2,value3</code></pre>
+
+              <p>This is where the token savings come from – keys are declared once instead of repeating for every row.</p>
+
+              <h3>2. Indentation-Based Structure</h3>
+              <p>For nested objects, TOON uses indentation (like YAML) instead of curly braces:</p>
+              
+              <pre><code>user:
+  name: Alice
+  profile:
+    age: 30
+    city: New York</code></pre>
+
+              <p>vs JSON:</p>
+              
+              <pre><code>{
+  "user": {
+    "name": "Alice",
+    "profile": {
+      "age": 30,
+      "city": "New York"
+    }
+  }
+}</code></pre>
+
+              <h3>3. Minimal Quoting</h3>
+              <p>TOON only quotes strings when necessary (when they contain delimiters, colons, or look like numbers/booleans). This eliminates unnecessary quote characters that consume tokens.</p>
+            </section>
+
+            <!-- Key Features -->
+            <section id="key-features" class="policy__section">
+              <h2>Key Features</h2>
+              
+              <div class="features__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                  <h3 style="color: var(--accent); margin-bottom: 0.5rem;">💸 Token-Efficient</h3>
+                  <p>Typically 30–60% fewer tokens than JSON, with even greater savings for large uniform datasets.</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                  <h3 style="color: var(--accent); margin-bottom: 0.5rem;">🤿 LLM-Friendly</h3>
+                  <p>Explicit lengths and field declarations enable better validation and parsing by LLMs.</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                  <h3 style="color: var(--accent); margin-bottom: 0.5rem;">🍱 Minimal Syntax</h3>
+                  <p>Removes redundant punctuation – no unnecessary braces, brackets, or quotes.</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                  <h3 style="color: var(--accent); margin-bottom: 0.5rem;">📐 Human-Readable</h3>
+                  <p>Indentation-based structure makes data easy to read and understand at a glance.</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                  <h3 style="color: var(--accent); margin-bottom: 0.5rem;">🧺 Lossless</h3>
+                  <p>Drop-in replacement for JSON – all data converts back perfectly without loss.</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                  <h3 style="color: var(--accent); margin-bottom: 0.5rem;">⚡ Fast Conversion</h3>
+                  <p>Lightweight encoder/decoder with minimal overhead – convert on the fly.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Benchmarks -->
+            <section id="benchmarks" class="policy__section">
+              <h2>Real-World Benchmarks</h2>
+              <p>Token counts are measured using the GPT-5 <code>o200k_base</code> tokenizer. Savings are calculated against formatted JSON (2-space indentation). Actual savings vary by model and tokenizer.</p>
+
+              <h3>GitHub Repositories (100 repos)</h3>
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <strong>TOON</strong>
+                  <span>8,745 tokens</span>
+                </div>
+                <div style="background: var(--bg-tertiary); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="width: 57.7%; height: 100%; background: var(--accent);"></div>
+                </div>
+                <div style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                  <div>vs JSON: 15,145 tokens (-42.3%)</div>
+                  <div>vs JSON compact: 11,455 tokens (-23.7%)</div>
+                  <div>vs YAML: 13,129 tokens (-33.4%)</div>
+                </div>
+              </div>
+
+              <h3>Daily Analytics (365 days)</h3>
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <strong>TOON</strong>
+                  <span>4,507 tokens</span>
+                </div>
+                <div style="background: var(--bg-tertiary); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="width: 41.1%; height: 100%; background: var(--accent);"></div>
+                </div>
+                <div style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                  <div>vs JSON: 10,977 tokens (-58.9%)</div>
+                  <div>vs JSON compact: 7,013 tokens (-35.7%)</div>
+                  <div>vs YAML: 8,810 tokens (-48.8%)</div>
+                </div>
+              </div>
+
+              <div class="docs__note docs__note--warning">
+                <div class="docs__note-title">⚠️ Important</div>
+                <div class="docs__note-content">These benchmarks use datasets optimized for TOON's strengths (uniform tabular data). Real-world performance depends on your data structure. Deeply nested or non-uniform data may not benefit as much.</div>
+              </div>
+            </section>
+
+            <!-- When to Use -->
+            <section id="when-to-use" class="policy__section">
+              <h2>When to Use TOON</h2>
+              
+              <h3>✅ TOON is Perfect For:</h3>
+              <ul>
+                <li><strong>Database Query Results:</strong> Rows of uniform data from SQL queries</li>
+                <li><strong>Analytics Data:</strong> Time-series metrics, logs, usage statistics</li>
+                <li><strong>API Responses:</strong> List of products, users, orders, etc.</li>
+                <li><strong>E-commerce Data:</strong> Product catalogs, inventory lists</li>
+                <li><strong>CSV-like Data:</strong> Any tabular data with consistent fields</li>
+                <li><strong>High-Volume LLM Calls:</strong> When making hundreds/thousands of API requests</li>
+              </ul>
+
+              <h3>❌ When to Stick with JSON:</h3>
+              <ul>
+                <li><strong>Deeply Nested Objects:</strong> 3+ levels of nesting</li>
+                <li><strong>Non-Uniform Data:</strong> Objects with varying fields</li>
+                <li><strong>Small Datasets:</strong> Less than 10 items (overhead isn't worth it)</li>
+                <li><strong>Programmatic Use:</strong> When you need native language support</li>
+                <li><strong>Tool Compatibility:</strong> When working with tools that require JSON</li>
+              </ul>
+
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Best Practice</div>
+                <div class="docs__note-content">Use JSON in your application logic, then convert to TOON right before sending data to an LLM. This keeps your codebase maintainable while optimizing token usage.</div>
+              </div>
+            </section>
+
+            <!-- Getting Started -->
+            <section id="getting-started" class="policy__section">
+              <h2>Getting Started</h2>
+              
+              <div class="blogpost__cta">
+                <h3>Online Converter</h3>
+                <p>The easiest way to try TOON is using our free online converter:</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                  <a href="/" class="btn btn--primary btn--large">Try the Converter</a>
+                </div>
+              </div>
+
+              <h3>JavaScript/Node.js</h3>
+              <pre><code>npm install @toon-format/toon</code></pre>
+              <pre><code>import { encode, decode } from '@toon-format/toon';
+
+const data = {
+  users: [
+    { id: 1, name: 'Alice', role: 'admin' },
+    { id: 2, name: 'Bob', role: 'user' }
+  ]
+};
+
+const toon = encode(data);
+console.log(toon);</code></pre>
+
+              <h3>Python</h3>
+              <pre><code>pip install toon-format</code></pre>
+              <pre><code>from toon_format import encode, decode
+
+data = {
+    'users': [
+        {'id': 1, 'name': 'Alice', 'role': 'admin'},
+        {'id': 2, 'name': 'Bob', 'role': 'user'}
+    ]
+}
+
+toon = encode(data)
+print(toon)</code></pre>
+
+              <h3>Using with LLMs</h3>
+              <p>Here's how to use TOON in your LLM prompts:</p>
+              <pre><code>const prompt = `Analyze this user data:
+
+${encode(userData)}
+
+Provide insights on user roles and activity.`;</code></pre>
+            </section>
+
+            <!-- Conclusion -->
+            <section id="conclusion" class="policy__section">
+              <h2>Conclusion</h2>
+              <p>TOON Format offers a powerful solution for reducing LLM token usage without sacrificing data structure or readability. By optimizing how we represent uniform tabular data, TOON can reduce your token costs by 30-60% compared to JSON.</p>
+
+              <p>Whether you're building AI applications, working with analytics data, or making frequent LLM API calls, TOON provides a practical way to optimize costs while maintaining data integrity.</p>
+            </section>
+
+          </div>
+
+          <!-- Sidebar TOC -->
+          <aside class="policy__toc">
+            <div class="policy__toc-sticky">
+              <h3 class="policy__toc-title">On This Page</h3>
+              <nav>
+                <a href="#introduction">Introduction</a>
+                <a href="#what-is-toon">What is TOON?</a>
+                <a href="#why-toon">Why TOON?</a>
+                <a href="#how-it-works">How TOON Works</a>
+                <a href="#key-features">Key Features</a>
+                <a href="#benchmarks">Benchmarks</a>
+                <a href="#when-to-use">When to Use TOON</a>
+                <a href="#getting-started">Getting Started</a>
+                <a href="#conclusion">Conclusion</a>
+              </nav>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div data-template="cta"></div>
+  <div data-template="footer"></div>
+
+</body>
+</html>

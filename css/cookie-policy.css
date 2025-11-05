@@ -1,0 +1,229 @@
+/* Cookie Policy Page - Additional Styles */
+/* Base styles inherited from docs.css */
+
+/* Override layout to match privacy page (TOC on left) */
+.policy__layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.policy__toc {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  max-height: none;
+  overflow-y: visible;
+}
+
+.policy__toc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.policy__toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy__toc-list li {
+  margin-bottom: 0.6rem;
+}
+
+.policy__toc-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.policy__toc-link:hover {
+  background: var(--bg-tertiary);
+  color: var(--accent);
+  padding-left: 1rem;
+}
+
+.policy__toc-link.active {
+  background: var(--bg-tertiary);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Cookie Table Styling */
+.cookie-table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.cookie-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-secondary);
+  font-size: 0.9rem;
+}
+
+.cookie-table thead {
+  background: var(--bg-tertiary);
+  border-bottom: 2px solid var(--border);
+}
+
+.cookie-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.cookie-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.cookie-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cookie-table tbody tr:hover {
+  background: var(--bg-tertiary);
+}
+
+.cookie-table code {
+  background: var(--bg-tertiary);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 0.85em;
+  color: var(--accent);
+}
+
+/* Browser Guide Styling */
+.browser-guide {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.browser-guide h4 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.browser-guide h4:first-child {
+  margin-top: 0;
+}
+
+.browser-guide ol {
+  margin-left: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.browser-guide ol li {
+  margin-bottom: 0.5rem;
+}
+
+.browser-guide code {
+  background: var(--bg-tertiary);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 0.9em;
+  color: var(--accent);
+}
+
+.browser-guide strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Contact Info Box */
+.contact-info {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  margin: 1.5rem 0;
+}
+
+.contact-info p {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-info strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .cookie-table {
+    font-size: 0.8rem;
+  }
+
+  .cookie-table th,
+  .cookie-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .browser-guide {
+    padding: 1rem;
+  }
+
+  .browser-guide ol {
+    margin-left: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .policy__toc {
+    display: none;
+  }
+
+  .cookie-table {
+    border: 1px solid #000;
+  }
+
+  .cookie-table th {
+    background: #f0f0f0;
+  }
+}

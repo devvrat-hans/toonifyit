@@ -82,6 +82,5 @@ AddDefaultCharset UTF-8
   Header unset X-Powered-By
 </IfModule>
 
-# Custom error pages (optional)
-# ErrorDocument 404 /404.html
-# ErrorDocument 500 /500.html
+# Custom error pages
+ErrorDocument 404 /404.html

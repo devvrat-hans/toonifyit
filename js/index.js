@@ -95,6 +95,37 @@ const App = (() => {
       return convertToToon(data, 0);
     };
 
+    const isTabularArray = (arr) => {
+      if (arr.length === 0) return false;
+      
+      const firstItem = arr[0];
+      if (typeof firstItem !== 'object' || firstItem === null || Array.isArray(firstItem)) {
+        return false;
+      }
+      
+      const keys = Object.keys(firstItem);
+      
+      for (const item of arr) {
+        if (typeof item !== 'object' || item === null || Array.isArray(item)) {
+          return false;
+        }
+        
+        const itemKeys = Object.keys(item);
+        if (itemKeys.length !== keys.length || !itemKeys.every(k => keys.includes(k))) {
+          return false;
+        }
+        
+        // Check all values are primitives (not objects or arrays)
+        for (const value of Object.values(item)) {
+          if (value !== null && typeof value === 'object') {
+            return false;
+          }
+        }
+      }
+      
+      return true;
+    };
+
     const convertToToon = (data, depth) => {
       const indent = ' '.repeat(state.options.indent * depth);
       const delimiter = state.options.delimiter === '\\t' ? '\t' : state.options.delimiter;
@@ -102,8 +133,9 @@ const App = (() => {
       if (Array.isArray(data)) {
         if (data.length === 0) return '[]';
         
-        const firstItem = data[0];
-        if (typeof firstItem === 'object' && firstItem !== null && !Array.isArray(firstItem)) {
+        // Check if this is a tabular array (all objects with only primitive values)
+        if (isTabularArray(data)) {
+          const firstItem = data[0];
           const keys = Object.keys(firstItem);
           const lengthMarker = state.options.lengthMarker ? `[${data.length}]` : '';
           let result = `items${lengthMarker}{${keys.join(delimiter)}}:\n`;
@@ -111,7 +143,7 @@ const App = (() => {
           data.forEach(item => {
             const values = keys.map(key => {
               const val = item[key];
-              if (val === null) return '';
+              if (val === null || val === undefined) return '';
               if (typeof val === 'string') return val;
               return String(val);
             });
@@ -119,8 +151,17 @@ const App = (() => {
           });
           return result;
         } else {
+          // Use list format for non-tabular arrays
           const lengthMarker = state.options.lengthMarker ? `[${data.length}]` : '';
-          return `items${lengthMarker}: ${data.map(item => JSON.stringify(item)).join(delimiter)}`;
+          let result = `items${lengthMarker}:\n`;
+          data.forEach(item => {
+            if (Array.isArray(item) || (typeof item === 'object' && item !== null)) {
+              result += indent + '  - ' + convertToToon(item, depth + 1).trimStart();
+            } else {
+              result += indent + '  - ' + (item === null ? '' : String(item)) + '\n';
+            }
+          });
+          return result;
         }
       } else if (typeof data === 'object' && data !== null) {
         let result = '';
@@ -192,7 +233,7 @@ const App = (() => {
         
         // Show toast notification with stats
         if (jsonTokens > 0 && tokensSavedCount > 0) {
-          showToast(`✨ Saved ${tokensSavedCount} tokens (${saved}% reduction)`);
+          showToast(` Saved ${tokensSavedCount} tokens (${saved}% reduction)`);
         }
       } catch (error) {
         showError('Invalid JSON: ' + error.message);

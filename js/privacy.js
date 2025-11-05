@@ -1,4 +1,4 @@
-/* Terms of Service Page JavaScript - toonifyit.com */
+/* Privacy Policy Page JavaScript - toonifyit.com */
 /* This file handles TOC active link highlighting on scroll */
 
 document.addEventListener('DOMContentLoaded', () => {
