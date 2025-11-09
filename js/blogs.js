@@ -186,11 +186,19 @@ function clearSearch() {
 }
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
+function initBlogPage() {
   // Only run if we're on the blog page
   const container = document.getElementById('blog-posts-container');
   if (container) {
     renderBlogPosts();
     setupSearch();
   }
-});
+}
+
+// Initialize with multiple triggers to ensure it runs
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initBlogPage);
+} else {
+  // DOM is already loaded
+  initBlogPage();
+}

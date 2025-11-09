@@ -4,27 +4,51 @@ const Templates = (() => {
 
   const loadTemplate = async (templateName, targetSelector) => {
     try {
+      // Get the current page's location
       const currentPath = window.location.pathname;
-      const isInBlogSubdir = currentPath.includes('/blog/');
       
-      // Determine correct path based on current location
-      let templatePath;
-      if (isInBlogSubdir) {
-        // For pages in blog/ subdirectory, go up one level
-        templatePath = `../templates/${templateName}.html`;
+      // Determine if we're in a subdirectory (blog/, etc.)
+      const pathSegments = currentPath.split('/').filter(segment => segment);
+      const isInSubdir = pathSegments.length > 1 || (pathSegments.length === 1 && pathSegments[0].includes('.html'));
+      const isInBlogDir = currentPath.includes('/blog/');
+      
+      // Try multiple paths in order of likelihood
+      const pathsToTry = [];
+      
+      if (isInBlogDir) {
+        // For blog subdirectory pages
+        pathsToTry.push(`../templates/${templateName}.html`);
+        pathsToTry.push(`/templates/${templateName}.html`);
       } else {
-        // For root-level pages
-        templatePath = `/templates/${templateName}.html`;
+        // For root level pages
+        pathsToTry.push(`/templates/${templateName}.html`);
+        pathsToTry.push(`./templates/${templateName}.html`);
+        pathsToTry.push(`templates/${templateName}.html`);
       }
       
-      const response = await fetch(templatePath);
+      let html = null;
+      let successPath = null;
       
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      // Try each path until one works
+      for (const path of pathsToTry) {
+        try {
+          const response = await fetch(path);
+          if (response.ok) {
+            html = await response.text();
+            successPath = path;
+            break;
+          }
+        } catch (err) {
+          // Continue to next path
+          continue;
+        }
       }
       
-      const html = await response.text();
+      if (!html) {
+        throw new Error(`Could not load template ${templateName} from any path`);
+      }
       
+      // Insert the template
       const target = document.querySelector(targetSelector);
       if (target) {
         target.innerHTML = html;
@@ -83,11 +107,20 @@ const Templates = (() => {
   return { loadAll };
 })();
 
-// Auto-initialize templates
+// Auto-initialize templates with multiple triggers to ensure it runs
 (function initTemplates() {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => Templates.loadAll());
-  } else {
+  // Try immediately if DOM is already loaded
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
     Templates.loadAll();
+  } else {
+    // Otherwise wait for DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => Templates.loadAll());
   }
+  
+  // Also try on window load as a fallback
+  window.addEventListener('load', () => {
+    if (!Templates.isLoaded) {
+      Templates.loadAll();
+    }
+  });
 })();
