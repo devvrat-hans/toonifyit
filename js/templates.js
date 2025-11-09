@@ -16,16 +16,31 @@ const Templates = (() => {
   };
 
   const loadAll = async () => {
+    // Load templates using ID placeholders
     await Promise.all([
-      loadTemplate('navbar', '[data-template="navbar"]'),
-      loadTemplate('footer', '[data-template="footer"]'),
-      loadTemplate('cta', '[data-template="cta"]')
+      loadTemplate('navbar', '#navbar-placeholder'),
+      loadTemplate('footer', '#footer-placeholder'),
+      loadTemplate('cta', '#cta-placeholder')
     ]);
+
+    // Also support data-template attribute format
+    const dataTemplateElements = document.querySelectorAll('[data-template]');
+    await Promise.all(
+      Array.from(dataTemplateElements).map(element => {
+        const templateName = element.getAttribute('data-template');
+        return loadTemplate(templateName, `[data-template="${templateName}"]`);
+      })
+    );
   };
 
   return { loadAll };
 })();
 
-document.addEventListener('DOMContentLoaded', async () => {
-  await Templates.loadAll();
-});
+// Load templates when DOM is ready, but don't block other scripts
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', async () => {
+    await Templates.loadAll();
+  });
+} else {
+  Templates.loadAll();
+}

@@ -3,65 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore TOON format tutorials, guides, and best practices. Learn how to optimize LLM token usage with our comprehensive blog.">
-  <meta name="keywords" content="toon blog, toon tutorials, json to toon, llm optimization, token efficiency, prompt engineering">
+  <meta name="description" content="Explore the Toonifyit blog for comprehensive guides on JSON to TOON conversion, LLM optimization, token reduction strategies, and TOON format best practices.">
+  <meta name="keywords" content="json to toon blog, toon format articles, llm optimization guides, token reduction tips, json to toon converter blog, toon tutorials">
   <meta name="author" content="Toonifyit">
   
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toonifyit.com/blog.html">
-  <meta property="og:title" content="Blog - Toonifyit | TOON Format Guides & Tutorials">
-  <meta property="og:description" content="Learn TOON format with our tutorials, comparisons, and guides. Optimize your LLM token usage.">
+  <meta property="og:title" content="Toonifyit Blog - JSON to TOON Conversion & LLM Optimization">
+  <meta property="og:description" content="Learn about TOON format, JSON to TOON conversion, LLM token optimization, and best practices for reducing AI costs.">
   <meta property="og:site_name" content="Toonifyit">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://toonifyit.com/blog.html">
-  <meta name="twitter:title" content="Blog - Toonifyit | TOON Format Guides & Tutorials">
-  <meta name="twitter:description" content="Learn TOON format with our tutorials, comparisons, and guides.">
+  <meta name="twitter:title" content="Toonifyit Blog - JSON to TOON Conversion & LLM Optimization">
+  <meta name="twitter:description" content="Expert guides on TOON format and LLM token optimization.">
   
-  <title>Blog - Toonifyit | TOON Format Guides & Tutorials</title>
+  <!-- Canonical -->
   <link rel="canonical" href="https://toonifyit.com/blog.html">
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Toonifyit Blog",
+    "description": "Expert guides and tutorials on JSON to TOON conversion, LLM optimization, and token reduction strategies",
+    "url": "https://toonifyit.com/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Toonifyit"
+    },
+    "keywords": "json to toon, toon format, llm optimization, token reduction"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://toonifyit.com/"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://toonifyit.com/blog.html"
+    }]
+  }
+  </script>
+  
+  <title>Toonifyit Blog - JSON to TOON Conversion & LLM Optimization Guides</title>
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/blog.css">
   <link rel="stylesheet" href="/css/cta.css">
-  <script src="/js/templates.js"></script>
-  <script src="/js/search-blogs.js" defer></script>
-  <script src="/js/blog.js" defer></script>
 </head>
 <body>
-  <div data-template="navbar"></div>
+  <!-- Navigation -->
+  <div id="navbar-placeholder"></div>
 
-  <main class="main">
-    <section class="policy">
-      <div class="container">
-        <h1 class="policy__title">Blog</h1>
-        <p class="policy__subtitle">Learn TOON format, LLM optimization, and best practices</p>
-        
-        <div class="policy__content">
-          <!-- Search Bar -->
-          <div class="blog__search">
+  <!-- Main Content -->
+  <main class="blog-page">
+    <div class="container">
+      <!-- Page Header -->
+      <header class="blog-page__header">
+        <h1 class="blog-page__title">Blog</h1>
+        <p class="blog-page__subtitle">Expert guides on JSON to TOON conversion, LLM optimization, and token reduction</p>
+      </header>
+
+      <!-- Search Section -->
+      <section class="blog__search-section">
+        <div class="blog__search-container">
+          <div class="blog__search-wrapper">
+            <svg class="blog__search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             <input 
-              type="text" 
-              id="blog-search-input" 
+              type="search" 
+              id="blog-search" 
               class="blog__search-input" 
-              placeholder="Search blog posts..."
+              placeholder="Search articles about TOON, JSON conversion, LLM optimization..."
               aria-label="Search blog posts"
             >
+            <button id="blog-clear-search" class="blog__clear-search" style="display: none;" aria-label="Clear search">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
           </div>
-
-          <!-- Blog Posts Container -->
-          <div class="blog-posts-container">
-            <!-- Blog posts will be dynamically inserted here by search-blogs.js -->
-          </div>
+          <button id="blog-search-btn" class="blog__search-btn">Search</button>
         </div>
-      </div>
-    </section>
+        <p id="search-results-info" class="blog__search-results"></p>
+      </section>
+
+      <!-- Blog Posts Grid -->
+      <section class="blog__posts">
+        <div id="blog-posts-container" class="blog__grid">
+          <!-- Blog posts will be dynamically rendered here by blog.js -->
+        </div>
+      </section>
+    </div>
   </main>
 
-  <div data-template="cta"></div>
-  <div data-template="footer"></div>
+  <!-- CTA Section -->
+  <div id="cta-placeholder"></div>
 
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="/js/common.js" defer></script>
+  <script src="/js/templates.js" defer></script>
+  <script src="/js/blog.js" defer></script>
 </body>
 </html>
