@@ -12,7 +12,7 @@ const SearchEngine = {
     },
     {
       title: 'Blog - Toonifyit',
-      url: '/blog.html',
+      url: '/blogs.html',
       keywords: 'blog articles tutorials guides toon json format',
       description: 'Read articles and tutorials about TOON format and token optimization'
     },
