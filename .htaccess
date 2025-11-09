@@ -6,6 +6,10 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} ^GET\ /[^?\s]+\.html
 RewriteRule ^(.*)\.html$ /$1 [R=301,L,NE]
 
+# Special case: Prioritize blog.html over blog/ directory
+RewriteCond %{REQUEST_URI} ^/blog/?$
+RewriteRule ^blog/?$ /blog.html [L]
+
 # Serve .html file when extensionless URL is requested
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
