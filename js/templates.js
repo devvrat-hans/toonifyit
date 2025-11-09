@@ -2,25 +2,98 @@ const Templates = (() => {
   let isLoading = false;
   let isLoaded = false;
 
+  // Detect current language from URL
+  const getCurrentLanguage = () => {
+    const path = window.location.pathname;
+    if (path.startsWith('/es/') || path.startsWith('/es')) {
+      return 'es';
+    }
+    if (path.startsWith('/pt/') || path.startsWith('/pt')) {
+      return 'pt';
+    }
+    if (path.startsWith('/hi/') || path.startsWith('/hi')) {
+      return 'hi';
+    }
+    if (path.startsWith('/ur/') || path.startsWith('/ur')) {
+      return 'ur';
+    }
+    if (path.startsWith('/de/') || path.startsWith('/de')) {
+      return 'de';
+    }
+    return 'en';
+  };
+
   const loadTemplate = async (templateName, targetSelector) => {
     try {
       // Get the current page's location
       const currentPath = window.location.pathname;
+      const currentLang = getCurrentLanguage();
       
       // Determine if we're in a subdirectory (blog/, etc.)
       const pathSegments = currentPath.split('/').filter(segment => segment);
       const isInSubdir = pathSegments.length > 1 || (pathSegments.length === 1 && pathSegments[0].includes('.html'));
       const isInBlogDir = currentPath.includes('/blog/');
+      const isInEsDir = currentPath.startsWith('/es/');
+      const isInPtDir = currentPath.startsWith('/pt/');
+      const isInHiDir = currentPath.startsWith('/hi/');
+      const isInUrDir = currentPath.startsWith('/ur/');
+      const isInDeDir = currentPath.startsWith('/de/');
       
       // Try multiple paths in order of likelihood
       const pathsToTry = [];
       
       if (isInBlogDir) {
         // For blog subdirectory pages
+        if (currentLang === 'es') {
+          pathsToTry.push(`../templates/es/${templateName}.html`);
+        } else if (currentLang === 'pt') {
+          pathsToTry.push(`../templates/pt/${templateName}.html`);
+        } else if (currentLang === 'hi') {
+          pathsToTry.push(`../templates/hi/${templateName}.html`);
+        } else if (currentLang === 'ur') {
+          pathsToTry.push(`../templates/ur/${templateName}.html`);
+        } else if (currentLang === 'de') {
+          pathsToTry.push(`../templates/de/${templateName}.html`);
+        }
         pathsToTry.push(`../templates/${templateName}.html`);
         pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInEsDir) {
+        // For Spanish pages in /es/ directory
+        pathsToTry.push(`/templates/es/${templateName}.html`);
+        pathsToTry.push(`../templates/es/${templateName}.html`);
+        pathsToTry.push(`./templates/es/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInPtDir) {
+        // For Portuguese pages in /pt/ directory
+        pathsToTry.push(`/templates/pt/${templateName}.html`);
+        pathsToTry.push(`../templates/pt/${templateName}.html`);
+        pathsToTry.push(`./templates/pt/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInHiDir) {
+        // For Hindi pages in /hi/ directory
+        pathsToTry.push(`/templates/hi/${templateName}.html`);
+        pathsToTry.push(`../templates/hi/${templateName}.html`);
+        pathsToTry.push(`./templates/hi/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInUrDir) {
+        // For Urdu pages in /ur/ directory
+        pathsToTry.push(`/templates/ur/${templateName}.html`);
+        pathsToTry.push(`../templates/ur/${templateName}.html`);
+        pathsToTry.push(`./templates/ur/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInDeDir) {
+        // For German pages in /de/ directory
+        pathsToTry.push(`/templates/de/${templateName}.html`);
+        pathsToTry.push(`../templates/de/${templateName}.html`);
+        pathsToTry.push(`./templates/de/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
       } else {
-        // For root level pages
+        // For root level pages (English)
         pathsToTry.push(`/templates/${templateName}.html`);
         pathsToTry.push(`./templates/${templateName}.html`);
         pathsToTry.push(`templates/${templateName}.html`);
@@ -97,6 +170,9 @@ const Templates = (() => {
       }
 
       isLoaded = true;
+      
+      // Dispatch custom event to notify other scripts that templates are loaded
+      window.dispatchEvent(new Event('templatesLoaded'));
     } catch (error) {
       console.error('Error loading templates:', error);
     } finally {

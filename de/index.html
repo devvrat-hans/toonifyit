@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kostenloser JSON zu TOON Konverter - Konvertieren Sie JSON sofort in das TOON-Format und reduzieren Sie den LLM-Token-Verbrauch um 30-60%. Schnelles, sicheres und datenschutzorientiertes TOON-Serialisierungsformat-Tool.">
+  <meta name="keywords" content="JSON zu TOON, JSON zu TOON Konverter, JSON in TOON umwandeln, TOON JSON, JSON TOON, TOON Format, TOON Syntax, TOON Serialisierung, JSON vs TOON, LLM Optimierung, Token Effizienz">
+  
+  <meta property="og:title" content="JSON zu TOON Konverter - Kostenloses TOON Format Tool | Toonifyit">
+  <meta property="og:description" content="Konvertieren Sie JSON sofort in das TOON-Format mit unserem kostenlosen Konverter. TOON reduziert den LLM-Token-Verbrauch um 30-60% bei gleichzeitiger Lesbarkeit.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toonifyit.com/de/">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JSON zu TOON Konverter - Kostenloses TOON Format Tool | Toonifyit">
+  <meta name="twitter:description" content="Konvertieren Sie JSON sofort in das TOON-Format. Sparen Sie 30-60% bei LLM-Token mit dem TOON-Serialisierungsformat.">
+  
+  <link rel="canonical" href="https://toonifyit.com/de/">
+  
+  <!-- Hreflang tags -->
+  <link rel="alternate" hreflang="en" href="https://toonifyit.com/">
+  <link rel="alternate" hreflang="es" href="https://toonifyit.com/es/">
+  <link rel="alternate" hreflang="pt" href="https://toonifyit.com/pt/">
+  <link rel="alternate" hreflang="hi" href="https://toonifyit.com/hi/">
+  <link rel="alternate" hreflang="ur" href="https://toonifyit.com/ur/">
+  <link rel="alternate" hreflang="de" href="https://toonifyit.com/de/">
+  <link rel="alternate" hreflang="x-default" href="https://toonifyit.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/faq.css">
+  <link rel="stylesheet" href="/css/cta.css">
+
+  <title>JSON zu TOON Konverter - LLM Token Einsparung | Toonifyit</title>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Toonifyit JSON zu TOON Konverter",
+    "description": "Konvertieren Sie JSON in das TOON-Format - Reduzieren Sie den Token-Verbrauch um 30-60% für LLM-Prompts.",
+    "url": "https://toonifyit.com/de/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "inLanguage": "de",
+    "author": {
+      "@type": "Organization",
+      "name": "Toonifyit"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">JSON zu TOON Konverter</h1>
+      <p class="hero-subtitle">
+        Konvertieren Sie JSON in das TOON-Format - Reduzieren Sie den Token-Verbrauch um 30-60% für LLM-Prompts
+      </p>
+      <div class="hero-features">
+        <span class="hero-feature">⚡ Sofortige Konvertierung</span>
+        <span class="hero-feature">🔒 Vollständiger Datenschutz</span>
+        <span class="hero-feature">💯 Kostenlose Nutzung</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Converter Section -->
+  <section class="converter-section">
+    <div class="container">
+      <div class="converter-container">
+        <!-- Input Panel -->
+        <div class="converter-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="panel-icon">📥</span>
+              <h2>JSON Eingabe</h2>
+            </div>
+            <div class="panel-actions">
+              <button class="btn-icon" id="clear-input" title="Löschen">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 6h18"/>
+                  <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                  <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                </svg>
+              </button>
+              <button class="btn-icon" id="paste-input" title="Einfügen">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="panel-content">
+            <textarea id="json-input" class="code-input" placeholder='{"users": [{"id": 1, "name": "Max", "role": "admin"}]}' spellcheck="false"></textarea>
+            <div id="input-error" class="error-message"></div>
+          </div>
+        </div>
+
+        <!-- Convert Button -->
+        <div class="converter-divider">
+          <button class="btn-convert" id="convert-btn">
+            <span class="convert-icon">⚡</span>
+            <span>Konvertieren</span>
+          </button>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="converter-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="panel-icon">📤</span>
+              <h2>TOON Ausgabe</h2>
+            </div>
+            <div class="panel-actions">
+              <button class="btn-icon" id="copy-output" title="Kopieren">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                </svg>
+              </button>
+              <button class="btn-icon" id="download-output" title="Herunterladen">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" x2="12" y1="15" y2="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="panel-content">
+            <pre id="toon-output" class="code-output"></pre>
+            <div id="output-stats" class="output-stats"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Converter Options -->
+      <div class="converter-options">
+        <div class="option-group">
+          <label for="delimiter-select">Trennzeichen:</label>
+          <select id="delimiter-select" class="select-input">
+            <option value=",">Komma (,)</option>
+            <option value="\t">Tab (\t)</option>
+            <option value="|">Pipe (|)</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <label for="indent-select">Einrückung:</label>
+          <select id="indent-select" class="select-input">
+            <option value="2">2 Leerzeichen</option>
+            <option value="4">4 Leerzeichen</option>
+            <option value="\t">Tab</option>
+          </select>
+        </div>
+        <div class="option-group checkbox-group">
+          <label>
+            <input type="checkbox" id="length-marker">
+            <span>Längenmarkierung verwenden (#)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">Warum TOON verwenden?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3 class="feature-title">Token-Einsparung</h3>
+          <p class="feature-description">
+            Verwenden Sie 30-60% weniger Token als JSON, was die LLM-API-Kosten erheblich reduziert
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title">Ideal für Tabellendaten</h3>
+          <p class="feature-description">
+            Konvertiert einheitlich strukturierte Daten in CSV-ähnliches Format - Schlüssel einmal, mehrere Zeilen
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👁️</div>
+          <h3 class="feature-title">Für Menschen lesbar</h3>
+          <p class="feature-description">
+            Sauberes, eingerücktes Format, das leichter zu lesen ist als JSON, während Token-Einsparungen erhalten bleiben
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Sofortige Konvertierung</h3>
+          <p class="feature-description">
+            Sofortige Verarbeitung im Browser - keine Server-Uploads, keine Verzögerungen, keine Datenschutzbedenken
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3 class="feature-title">Konfigurierbar</h3>
+          <p class="feature-description">
+            Benutzerdefinierte Trennzeichen, Einrückung und Formatierungsoptionen für Ihren Anwendungsfall
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3 class="feature-title">Bidirektional</h3>
+          <p class="feature-description">
+            Einfache Konvertierung von JSON zu TOON und TOON zu JSON
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Häufig gestellte Fragen</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Was ist TOON?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              TOON (Token-Oriented Object Notation) ist ein Datenserialisierungsformat, das speziell für
+              LLM-Prompts entwickelt wurde. Es verwendet 30-60% weniger Token als JSON bei gleichzeitiger
+              Lesbarkeit, was es ideal für die Verwendung mit GPT, Claude und anderen LLMs macht.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Wie unterscheidet sich TOON von JSON?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              TOON komprimiert einheitlich strukturierte Daten in ein tabellarisches Format - Schlüssel werden
+              einmal im Header deklariert, dann enthält jede Zeile nur Werte. Dies eliminiert die sich wiederholende
+              "key": "value"-Struktur von JSON, was zu erheblichen Token-Einsparungen führt.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Ist TOON kostenlos zu verwenden?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Ja! Toonifyit ist ein völlig kostenloses, Open-Source-Tool. Die gesamte Verarbeitung erfolgt in
+              Ihrem Browser, daher keine Serverkosten, keine Limits und keine Registrierung erforderlich.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Sind meine Daten sicher?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Absolut! Ihre Daten werden niemals an einen Server gesendet - die gesamte Konvertierung erfolgt
+              lokal in Ihrem Browser. Ihre JSON-Daten bleiben auf Ihrem Gerät und wir sehen sie niemals oder
+              speichern sie.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Wann sollte ich TOON vs. JSON verwenden?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Verwenden Sie TOON für tabellarische Daten (Arrays von Objekten, bei denen jedes die gleichen
+              Schlüssel hat) in LLM-Prompts. Verwenden Sie JSON für herkömmliche Web-APIs, Konfigurations-
+              dateien oder tief verschachtelte uneinheitliche Strukturen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <div id="cta-placeholder"></div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Scripts -->
+  <script src="/js/templates.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/faq.js"></script>
+</body>
+</html>

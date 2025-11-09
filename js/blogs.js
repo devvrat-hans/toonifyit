@@ -1,6 +1,30 @@
 // Blog Posts Data
 const blogPosts = [
   {
+    id: 'convert-json-to-toon',
+    title: 'How to Convert JSON to TOON: Complete Guide',
+    description: 'Learn how to convert JSON to TOON format with our comprehensive step-by-step guide. Save 30-60% on LLM tokens using our JSON to TOON converter. Includes examples and best practices.',
+    excerpt: 'Master JSON to TOON conversion with this comprehensive tutorial. Learn methods, tools, and best practices to reduce LLM token usage by 30-60%. Real-world examples show $77,760 annual savings.',
+    date: '2025-01-17',
+    readTime: '18 min read',
+    slug: 'convert-json-to-toon',
+    url: '/blog/convert-json-to-toon.html',
+    keywords: ['how to convert json to toon', 'json to toon converter', 'convert json to toon', 'json to toon', 'toon converter', 'json toon'],
+    featured: true
+  },
+  {
+    id: 'toon-vs-json',
+    title: 'TOON vs JSON: A Comparative Analysis for LLM Token Efficiency',
+    description: 'Comprehensive comparison of TOON format vs JSON for LLM applications. See how converting JSON to TOON reduces token usage by 30-60% with real-world benchmarks.',
+    excerpt: 'Compare TOON vs JSON for Large Language Model applications. Discover why TOON format beats JSON with 30-60% token reduction, improved accuracy, and real-world cost savings. Complete analysis with benchmarks and practical examples.',
+    date: '2025-01-16',
+    readTime: '15 min read',
+    slug: 'toon-vs-json',
+    url: '/blog/toon-vs-json.html',
+    keywords: ['toon vs json', 'json vs toon', 'json to toon', 'toon format', 'llm optimization', 'token efficiency'],
+    featured: true
+  },
+  {
     id: 'what-is-toon',
     title: 'What is TOON Format? Complete JSON to TOON Conversion Guide',
     description: 'Learn how TOON format reduces LLM token usage by 30-60% compared to JSON. Complete guide with conversion examples, syntax, and best practices.',

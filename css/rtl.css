@@ -1,0 +1,121 @@
+/* RTL Specific Overrides for Urdu Language */
+
+/* RTL Direction Adjustments */
+[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Navigation Fixes for RTL */
+[dir="rtl"] .nav {
+  direction: ltr; /* Keep nav items in LTR */
+}
+
+[dir="rtl"] .nav__links {
+  flex-direction: row;
+}
+
+[dir="rtl"] .logo {
+  flex-direction: row-reverse;
+}
+
+/* Converter Grid RTL Adjustments */
+[dir="rtl"] .converter__grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .converter__header {
+  direction: rtl;
+}
+
+[dir="rtl"] .converter__actions {
+  direction: ltr;
+}
+
+/* Steps Section RTL */
+[dir="rtl"] .step {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .step__content {
+  text-align: right;
+}
+
+/* Features Grid RTL */
+[dir="rtl"] .feature {
+  text-align: right;
+}
+
+/* FAQ RTL */
+[dir="rtl"] .faq__question {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .faq__icon {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+[dir="rtl"] .faq__answer-content {
+  text-align: right;
+}
+
+/* Stats RTL */
+[dir="rtl"] .stats {
+  direction: rtl;
+}
+
+[dir="rtl"] .stats__item {
+  text-align: right;
+}
+
+/* Options RTL */
+[dir="rtl"] .converter__options-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .option {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .option__label {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* Language Switcher RTL */
+[dir="rtl"] .nav__language-switcher {
+  direction: ltr;
+}
+
+[dir="rtl"] .nav__lang-option {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Footer RTL */
+[dir="rtl"] .footer__content {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer__section {
+  text-align: right;
+}
+
+[dir="rtl"] .footer__links {
+  align-items: flex-end;
+}
+
+/* Buttons RTL */
+[dir="rtl"] .btn {
+  direction: rtl;
+}
+
+/* Textareas RTL */
+[dir="rtl"] .textarea {
+  direction: rtl;
+  text-align: right;
+}
