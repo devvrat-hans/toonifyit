@@ -188,7 +188,8 @@ function clearSearch() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   // Only run if we're on the blog page
-  if (document.getElementById('blog-posts-container')) {
+  const container = document.getElementById('blog-posts-container');
+  if (container) {
     renderBlogPosts();
     setupSearch();
   }
