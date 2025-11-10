@@ -219,10 +219,21 @@ function initBlogPage() {
   }
 }
 
+// Wait for templates to load first, then initialize
+function init() {
+  // Check if templates are loaded
+  if (typeof Templates !== 'undefined' && Templates.isLoaded) {
+    initBlogPage();
+  } else {
+    // Wait for templatesLoaded event
+    window.addEventListener('templatesLoaded', initBlogPage);
+  }
+}
+
 // Initialize with multiple triggers to ensure it runs
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initBlogPage);
+  document.addEventListener('DOMContentLoaded', init);
 } else {
   // DOM is already loaded
-  initBlogPage();
+  init();
 }

@@ -189,7 +189,7 @@ const Templates = (() => {
     }
   };
 
-  return { loadAll };
+  return { loadAll, get isLoaded() { return isLoaded; } };
 })();
 
 // Auto-initialize templates with multiple triggers to ensure it runs
