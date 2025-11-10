@@ -126,7 +126,16 @@ const Templates = (() => {
       if (target) {
         target.innerHTML = html;
       } else {
-        console.warn(`Target selector ${targetSelector} not found for ${templateName}`);
+        // Only warn if it's an ID selector and there's no data-template alternative
+        if (targetSelector.startsWith('#')) {
+          const templateName = targetSelector.replace('#', '').replace('-placeholder', '');
+          const dataTemplateExists = document.querySelector(`[data-template="${templateName}"]`);
+          if (!dataTemplateExists) {
+            console.warn(`Target selector ${targetSelector} not found for ${templateName}`);
+          }
+        } else {
+          console.warn(`Target selector ${targetSelector} not found for ${templateName}`);
+        }
       }
     } catch (error) {
       console.error(`Template loading error for ${templateName}:`, error);
