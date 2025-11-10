@@ -170,7 +170,7 @@ a:hover {
 
 .nav__lang-dropdown {
   position: absolute !important;
-  top: calc(100% + 0.5rem);
+  top: 100%;
   right: 0;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -178,14 +178,17 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translateY(0);
   transition: all 0.3s ease;
   min-width: 180px;
   z-index: 100;
   display: block !important;
+  padding-top: 0.5rem;
+  margin-top: -0.5rem;
 }
 
-.nav__language-switcher:hover .nav__lang-dropdown {
+.nav__language-switcher:hover .nav__lang-dropdown,
+.nav__lang-dropdown:hover {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -202,8 +205,15 @@ a:hover {
   border-bottom: 1px solid var(--border);
 }
 
+.nav__lang-option:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
 .nav__lang-option:last-child {
   border-bottom: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .nav__lang-option:hover {
