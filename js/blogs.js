@@ -5,7 +5,7 @@ const blogPosts = [
     title: 'How to Convert JSON to TOON: Complete Guide',
     description: 'Learn how to convert JSON to TOON format with our comprehensive step-by-step guide. Save 30-60% on LLM tokens using our JSON to TOON converter. Includes examples and best practices.',
     excerpt: 'Master JSON to TOON conversion with this comprehensive tutorial. Learn methods, tools, and best practices to reduce LLM token usage by 30-60%. Real-world examples show $77,760 annual savings.',
-    date: '2025-01-17',
+    date: '2025-10-17',
     readTime: '18 min read',
     slug: 'convert-json-to-toon',
     url: '/blog/convert-json-to-toon.html',
@@ -17,7 +17,7 @@ const blogPosts = [
     title: 'TOON vs JSON: A Comparative Analysis for LLM Token Efficiency',
     description: 'Comprehensive comparison of TOON format vs JSON for LLM applications. See how converting JSON to TOON reduces token usage by 30-60% with real-world benchmarks.',
     excerpt: 'Compare TOON vs JSON for Large Language Model applications. Discover why TOON format beats JSON with 30-60% token reduction, improved accuracy, and real-world cost savings. Complete analysis with benchmarks and practical examples.',
-    date: '2025-01-16',
+    date: '2025-10-25',
     readTime: '15 min read',
     slug: 'toon-vs-json',
     url: '/blog/toon-vs-json.html',
@@ -29,7 +29,7 @@ const blogPosts = [
     title: 'What is TOON Format? Complete JSON to TOON Conversion Guide',
     description: 'Learn how TOON format reduces LLM token usage by 30-60% compared to JSON. Complete guide with conversion examples, syntax, and best practices.',
     excerpt: 'Discover TOON (Token-Oriented Object Notation) - a revolutionary data format designed specifically for Large Language Models. Learn how converting JSON to TOON can reduce your token costs by up to 60% while maintaining perfect readability.',
-    date: '2025-01-15',
+    date: '2025-10-30',
     readTime: '12 min read',
     slug: 'what-is-toon',
     url: '/blog/what-is-toon.html',
@@ -40,7 +40,7 @@ const blogPosts = [
 ];
 
 // Function to render blog posts
-function renderBlogPosts() {
+function renderBlogPosts(postsToRender = null) {
   const container = document.getElementById('blog-posts-container');
   
   if (!container) {
@@ -51,7 +51,10 @@ function renderBlogPosts() {
   // Clear container first
   container.innerHTML = '';
 
-  if (blogPosts.length === 0) {
+  // Use provided posts or default to all blog posts
+  const posts = postsToRender || blogPosts;
+
+  if (posts.length === 0) {
     container.innerHTML = `
       <div class="blog__empty">
         <h2 class="blog__empty-title">No blog posts yet</h2>
@@ -61,8 +64,11 @@ function renderBlogPosts() {
     return;
   }
 
+  console.log(`Rendering ${posts.length} blog posts`);
+
   // Render each blog post
-  blogPosts.forEach(post => {
+  posts.forEach((post, index) => {
+    console.log(`Rendering post ${index + 1}:`, post.title);
     const card = document.createElement('article');
     card.className = 'blog__card';
     card.innerHTML = `
@@ -85,6 +91,8 @@ function renderBlogPosts() {
     
     container.appendChild(card);
   });
+
+  console.log(`Total cards appended to container: ${container.children.length}`);
 }
 
 // Function to format date
@@ -134,42 +142,12 @@ function setupSearch() {
 
     const filtered = filterBlogPosts(searchTerm);
     
-    // Clear container
-    container.innerHTML = '';
+    // Use the render function with filtered posts
+    renderBlogPosts(filtered);
 
     if (filtered.length === 0) {
-      container.innerHTML = `
-        <div class="blog__empty">
-          <h2 class="blog__empty-title">No results found</h2>
-          <p class="blog__empty-text">Try different keywords or <button class="blog__empty-clear" onclick="clearSearch()">clear search</button></p>
-        </div>
-      `;
       if (resultsInfo) resultsInfo.textContent = `No results found for "${searchTerm}"`;
     } else {
-      // Render filtered posts
-      filtered.forEach(post => {
-        const card = document.createElement('article');
-        card.className = 'blog__card';
-        card.innerHTML = `
-          <div class="blog__card-content">
-            <div class="blog__card-meta">
-              <span class="blog__card-date">${formatDate(post.date)}</span>
-              <span class="blog__card-divider">•</span>
-              <span class="blog__card-read-time">${post.readTime}</span>
-            </div>
-            <h2 class="blog__card-title"><a href="${post.url}">${post.title}</a></h2>
-            <p class="blog__card-excerpt">${post.excerpt}</p>
-            <a href="${post.url}" class="blog__card-link">
-              Read More
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-      
       if (resultsInfo) {
         resultsInfo.textContent = `Found ${filtered.length} result${filtered.length !== 1 ? 's' : ''} for "${searchTerm}"`;
       }
