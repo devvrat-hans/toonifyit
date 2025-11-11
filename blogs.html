@@ -69,7 +69,73 @@
 </head>
 <body>
   <!-- Navigation -->
-  <div id="navbar-placeholder"></div>
+  <style>
+/* Critical CSS for Language Switcher - ensures proper display even if external CSS is delayed */
+.nav__language-switcher { position: relative !important; margin-left: 0.5rem; display: inline-block !important; }
+.nav__lang-btn { display: flex !important; align-items: center !important; gap: 0.4rem; padding: 0.5rem 0.8rem; background: transparent; border: 1px solid #404040; border-radius: 6px; color: #e8e8e8; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.nav__lang-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.nav__lang-code { font-size: 0.85rem; letter-spacing: 0.5px; display: inline-block; }
+.nav__lang-dropdown { position: absolute !important; top: 100%; right: 0; background: #2d2d2d; border: 1px solid #404040; border-radius: 8px; opacity: 0; visibility: hidden; min-width: 180px; z-index: 100; display: block !important; padding-top: 0.5rem; margin-top: -0.5rem; }
+.nav__language-switcher:hover .nav__lang-dropdown, .nav__lang-dropdown:hover { opacity: 1; visibility: visible; }
+.nav__lang-option { display: flex !important; align-items: center !important; gap: 0.8rem; padding: 0.8rem 1rem; color: #e8e8e8; text-decoration: none; border-bottom: 1px solid #404040; }
+.nav__lang-option:hover { background: #404040; }
+.nav__lang-flag { font-size: 1.2rem; flex-shrink: 0; }
+.nav__lang-name { font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
+</style>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32" class="logo__icon" role="img" aria-label="Toonifyit JSON to TOON Converter Logo">
+            <title>Toonifyit - JSON to TOON Converter</title>
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0056b3;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="48" fill="url(#logo-grad)"/>
+            <text x="50" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="60" font-weight="800" fill="white" text-anchor="middle">T</text>
+          </svg>
+          <span class="logo__text">Toonifyit</span>
+        </a>
+        <div class="nav__links">
+          <a href="/" class="nav__link">Converter</a>
+          <a href="/blogs.html" class="nav__link">Blog</a>
+          <a href="/docs.html" class="nav__link">Docs</a>
+          <a href="/contact.html" class="nav__link">Contact</a>
+          <div class="nav__language-switcher">
+            <button class="nav__lang-btn" aria-label="Switch language" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <span class="nav__lang-code" id="current-lang">EN</span>
+            </button>
+            <div class="nav__lang-dropdown">
+              <a href="/" class="nav__lang-option" hreflang="en" data-lang="en">
+                <span class="nav__lang-flag">🇺🇸</span>
+                <span class="nav__lang-name">English</span>
+              </a>
+              <a href="/es/" class="nav__lang-option" hreflang="es" data-lang="es">
+                <span class="nav__lang-flag">🇪🇸</span>
+                <span class="nav__lang-name">Español</span>
+              </a>
+              <a href="/pt/" class="nav__lang-option" hreflang="pt" data-lang="pt">
+                <span class="nav__lang-flag">🇵🇹</span>
+                <span class="nav__lang-name">Português</span>
+              </a>
+              <a href="/hi/" class="nav__lang-option" hreflang="hi" data-lang="hi">
+                <span class="nav__lang-flag">🇮🇳</span>
+                <span class="nav__lang-name">हिन्दी</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
 
   <!-- Main Content -->
   <main class="blog-page">
@@ -79,32 +145,6 @@
         <h1 class="blog-page__title">Blog</h1>
         <p class="blog-page__subtitle">Expert guides on JSON to TOON conversion, LLM optimization, and token reduction</p>
       </header>
-
-      <!-- Search Section -->
-      <section class="blog__search-section">
-        <div class="blog__search-container">
-          <div class="blog__search-wrapper">
-            <svg class="blog__search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <input 
-              type="search" 
-              id="blog-search" 
-              class="blog__search-input" 
-              placeholder="Search articles about TOON, JSON conversion, LLM optimization..."
-              aria-label="Search blog posts"
-            >
-            <button id="blog-clear-search" class="blog__clear-search" style="display: none;" aria-label="Clear search">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-          <button id="blog-search-btn" class="blog__search-btn">Search</button>
-        </div>
-        <p id="search-results-info" class="blog__search-results"></p>
-      </section>
 
       <!-- Blog Posts Grid -->
       <section class="blog__posts">
@@ -116,36 +156,40 @@
   </main>
 
   <!-- CTA Section -->
-  <div id="cta-placeholder"></div>
+  <section class="cta">
+    <div class="container">
+      <h2 class="cta__title">Ready to Try TOON?</h2>
+      <p class="cta__text">Convert your JSON to TOON format instantly and save up to 60% on tokens</p>
+      <div class="cta__buttons">
+        <a href="/" class="btn btn--primary btn--large">Try Converter</a>
+        <a href="/blogs.html" class="btn btn--secondary btn--large">Explore Blog</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <div id="footer-placeholder"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__text">&copy; 2025 Toonifyit</p>
+        <div class="footer__links">
+          <a href="/" class="footer__link">Converter</a>
+          <a href="/blogs.html" class="footer__link">Blog</a>
+          <a href="/about.html" class="footer__link">About</a>
+          <a href="/docs.html" class="footer__link">Docs</a>
+          <a href="/contact.html" class="footer__link">Contact</a>
+          <a href="/privacy.html" class="footer__link">Privacy</a>
+          <a href="/cookie-policy.html" class="footer__link">Cookies</a>
+          <a href="/terms.html" class="footer__link">Terms</a>
+          <a href="/disclaimer.html" class="footer__link">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  <!-- Scripts - Load templates first, then page-specific scripts -->
+  <!-- Scripts -->
   <script src="/js/common.js"></script>
-  <script src="/js/templates.js"></script>
   <script src="/js/language.js"></script>
   <script src="/js/blogs.js"></script>
-  
-  <!-- Initialize templates explicitly -->
-  <script>
-    // Ensure templates are loaded before initializing blog page
-    (function() {
-      if (typeof Templates !== 'undefined') {
-        // Templates.js is loaded, ensure loadAll is called
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', function() {
-            if (!Templates.isLoaded) {
-              Templates.loadAll();
-            }
-          });
-        } else {
-          if (!Templates.isLoaded) {
-            Templates.loadAll();
-          }
-        }
-      }
-    })();
-  </script>
 </body>
 </html>
