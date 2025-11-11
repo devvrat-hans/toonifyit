@@ -106,6 +106,102 @@
           "@type": "Answer",
           "text": "TOON vs JSON: TOON uses a more compact syntax designed for token efficiency. The TOON format represents arrays as tables with headers, uses minimal punctuation, and eliminates redundant characters. JSON is more verbose with brackets, quotes, and commas. For LLM prompts, TOON's efficiency significantly reduces costs when you convert JSON to TOON."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert JSON to TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Converting JSON to TOON is simple: 1) Paste your JSON data into our converter, 2) Click 'Convert to TOON', 3) Copy the TOON output. For programmatic conversion, use our JavaScript or Python libraries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert TOON back to JSON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! TOON is fully reversible. Our bidirectional converter supports both JSON to TOON and TOON to JSON conversion without any data loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of data work best with TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON works best with uniform tabular data like database query results, API responses with lists of objects, analytics data, CSV-style datasets, and e-commerce product catalogs. Data with repeated fields sees the highest token savings (40-60%)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does TOON support nested objects and arrays?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, TOON supports nested objects and arrays. Nested objects use indentation-based structure while nested arrays maintain their structure. TOON's token efficiency is highest with flat, uniform data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is TOON free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, both the TOON converter tool and the TOON format are completely free to use. There are no limits, file size restrictions, or premium features. The TOON format specification is open for anyone to implement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which LLM providers support TOON format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON works with all major LLM providers including OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Google (Gemini), Meta (LLaMA), and others. Since TOON is text-based, any LLM can understand it with proper prompting instructions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does TOON reduce tokens?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON reduces tokens through three optimizations: 1) Declaring field names once in array headers instead of repeating them, 2) Using minimal punctuation, 3) Employing indentation-based structure. These combine to achieve 30-60% token reduction compared to JSON."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use TOON with ChatGPT API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! TOON works perfectly with ChatGPT API (GPT-4, GPT-3.5-turbo). Convert your JSON to TOON before including it in prompts. This can significantly reduce API costs for data-heavy requests."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What file extensions does TOON use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON files typically use the .toon extension (e.g., data.toon). Since TOON is a text format, you can also save it as .txt files. Our converter defaults to .toon extension."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I integrate TOON into my application?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Integration is simple: 1) Install the TOON library (npm install @toon-format/toon for JavaScript, pip install toon-format for Python), 2) Import encode/decode functions, 3) Convert your data before sending to LLM. Check our documentation for code examples."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does TOON work with streaming responses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, TOON works with streaming LLM responses. Use TOON for input data in prompts to reduce input tokens. The LLM's response can be in any format. If you need TOON output, include format instructions in your prompt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the maximum file size for conversion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our online converter handles files up to 10MB. For larger datasets, use the command-line tool or integrate the TOON library directly. The library has no file size limits."
+        }
       }
     ]
   }
@@ -590,6 +686,174 @@
               </div>
             </div>
           </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              How do I convert JSON to TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Converting JSON to TOON is simple: 1) Paste your JSON data into our converter above, 2) Click "Convert to TOON", 3) Copy the TOON output. For programmatic conversion, you can use our JavaScript or Python libraries. <a href="/blog/convert-json-to-toon.html">See our complete JSON to TOON conversion guide</a> with examples and code snippets.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Can I convert TOON back to JSON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Yes! TOON is fully reversible - you can convert TOON back to JSON without any data loss. Our bidirectional converter supports both JSON to TOON and TOON to JSON conversion. Simply paste your TOON data and select "Convert to JSON" to get your original JSON structure back.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              What types of data work best with TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON works best with uniform tabular data like database query results, API responses with lists of objects, analytics data, CSV-style datasets, and e-commerce product catalogs. Data with repeated fields across multiple objects sees the highest token savings (40-60%). Small datasets or deeply nested structures may see smaller improvements.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Does TOON support nested objects and arrays?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Yes, TOON supports nested objects and arrays. Nested objects use indentation-based structure (like YAML), while nested arrays maintain their structure. However, TOON's token efficiency is highest with flat, uniform data. Complex nested structures still work but may not see as dramatic token reduction.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Is TOON free to use?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Yes, both the TOON converter tool and the TOON format itself are completely free to use. There are no limits on conversions, file size restrictions, or premium features. The TOON format specification is open and available for anyone to implement in their applications.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Which LLM providers support TOON format?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON works with all major LLM providers including OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Google (Gemini), Meta (LLaMA), and others. Since TOON is a text-based format, any LLM that can process text can understand TOON with proper prompting instructions explaining the format structure.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              How does TOON reduce tokens?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON reduces tokens through three key optimizations: 1) Declaring field names once in array headers instead of repeating them for every object, 2) Using minimal punctuation and eliminating unnecessary brackets/braces, 3) Employing indentation-based structure instead of explicit delimiters. These combine to achieve 30-60% token reduction compared to JSON.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Can I use TOON with ChatGPT API?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Absolutely! TOON works perfectly with ChatGPT API (GPT-4, GPT-3.5-turbo). Simply convert your JSON data to TOON before including it in your prompt. Add a brief explanation of the TOON format in your system message, and the model will understand and process the data. This can significantly reduce your API costs for data-heavy prompts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              What file extensions does TOON use?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON files typically use the .toon extension (e.g., data.toon). However, since TOON is a text format, you can also save it as .txt files. When downloading from our converter, the default extension is .toon to clearly identify the format type.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              How do I integrate TOON into my application?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Integration is simple: 1) Install the TOON library for your language (npm install @toon-format/toon for JavaScript, pip install toon-format for Python), 2) Import the encode/decode functions, 3) Convert your data to TOON before sending to LLM, 4) Optionally convert responses back to JSON. Check our <a href="/docs.html">documentation</a> for code examples and API reference.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Does TOON work with streaming responses?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Yes, TOON works with streaming LLM responses. You use TOON for input data in your prompts to reduce input tokens. The LLM's response (whether streaming or not) can be in any format - TOON is primarily designed to optimize your input tokens. If you need the LLM to output TOON, include format instructions in your prompt.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              What's the maximum file size for conversion?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Our online converter can handle files up to 10MB, which is suitable for most use cases. For larger datasets, we recommend using the command-line tool or integrating the TOON library directly into your application. The library itself has no file size limits and can process very large datasets efficiently.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -602,27 +866,27 @@
         </p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
           <a href="/blog/what-is-toon.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">📘 What is TOON?</h3>
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">What is TOON?</h3>
             <p style="color: var(--text-secondary);">Learn the fundamentals of TOON format, syntax, and key features.</p>
           </a>
           <a href="/blog/toon-vs-json.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">⚖️ TOON vs JSON</h3>
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">TOON vs JSON</h3>
             <p style="color: var(--text-secondary);">See detailed benchmarks and comparison between formats.</p>
           </a>
           <a href="/blog/convert-json-to-toon.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">🔄 Conversion Guide</h3>
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Conversion Guide</h3>
             <p style="color: var(--text-secondary);">Step-by-step tutorial on converting JSON to TOON format.</p>
           </a>
           <a href="/docs.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">📖 Documentation</h3>
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Documentation</h3>
             <p style="color: var(--text-secondary);">Complete syntax reference, examples, and best practices.</p>
           </a>
           <a href="/blogs.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">📚 All Articles</h3>
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">All Articles</h3>
             <p style="color: var(--text-secondary);">Browse all TOON tutorials, tips, and use cases.</p>
           </a>
           <a href="/contact.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">💬 Get Help</h3>
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Get Help</h3>
             <p style="color: var(--text-secondary);">Questions? Contact us for support and assistance.</p>
           </a>
         </div>

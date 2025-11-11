@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete guide to LLM token optimization. Learn proven strategies to reduce AI costs by 30-90% including prompt engineering, model tiering, caching, batch processing, and JSON to TOON conversion.">
+  <meta name="keywords" content="llm token optimization, reduce llm costs, ai token reduction, prompt engineering, json to toon, toon format, llm cost optimization, token efficiency, gpt-4 optimization, claude optimization">
+  <meta name="author" content="Toonifyit">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://toonifyit.com/blog/llm-token-optimization.html">
+  <meta property="og:title" content="LLM Token Optimization: Complete Guide to Reducing AI Costs by 30-90%">
+  <meta property="og:description" content="Master LLM token optimization with proven strategies: prompt engineering, model tiering, caching, batch processing, and JSON to TOON conversion. Save thousands on AI costs.">
+  <meta property="og:site_name" content="Toonifyit">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toonifyit.com/blog/llm-token-optimization.html">
+  <meta name="twitter:title" content="LLM Token Optimization: Complete Guide to Reducing AI Costs">
+  <meta property="twitter:description" content="Comprehensive LLM token optimization guide. Reduce AI costs by 30-90% with proven techniques.">
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "LLM Token Optimization: The Complete Guide to Reducing Costs and Improving Performance",
+    "description": "Comprehensive guide to LLM token optimization covering prompt engineering, model tiering, caching strategies, batch processing, RAG optimization, and JSON to TOON conversion for 30-90% cost reduction.",
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-01-15",
+    "author": {
+      "@type": "Person",
+      "name": "Toonifyit Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Toonifyit"
+    },
+    "keywords": "llm token optimization, reduce llm costs, prompt engineering, json to toon, toon format, token efficiency"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://toonifyit.com/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://toonifyit.com/blogs.html"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "LLM Token Optimization",
+      "item": "https://toonifyit.com/blog/llm-token-optimization.html"
+    }]
+  }
+  </script>
+  
+  <title>LLM Token Optimization: Reduce AI Costs by 30-90% | Toonifyit</title>
+  <link rel="canonical" href="https://toonifyit.com/blog/llm-token-optimization.html">
+  <link rel="icon" href="../img/favicon.png">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/docs.css">
+  <link rel="stylesheet" href="../css/blogposts.css">
+  <link rel="stylesheet" href="../css/cta.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main class="main">
+    <article class="policy">
+      <div class="container">
+        <h1 class="policy__title">LLM Token Optimization</h1>
+        <p class="policy__subtitle">The Complete Guide to Reducing Costs by 30-90% and Improving Performance</p>
+        
+        <div class="policy__layout">
+          <div class="policy__content">
+            
+            <!-- Introduction -->
+            <section id="introduction" class="policy__section">
+              <p>As Large Language Model usage scales from prototype to production, a harsh reality emerges: <strong>token costs can quickly spiral from a minor expense into a major budget drain</strong>. For organizations making thousands of LLM API calls daily, tokens represent not just computational cost, but also latency, throughput, and quality bottlenecks.</p>
+              
+              <p>This comprehensive guide explores proven strategies for optimizing LLM token usage—techniques that organizations worldwide are using to achieve <strong>30-90% cost reductions</strong> while simultaneously improving model accuracy and response latency. One of the most effective techniques is <a href="/">converting JSON to TOON</a>, which can reduce token usage by 30-60% for structured data.</p>
+
+              <p>Whether you're building chatbots, document analysis systems, or AI agents, understanding token optimization transforms LLMs from expensive experiments into economically viable, production-grade infrastructure.</p>
+            </section>
+
+            <!-- Understanding Tokens -->
+            <section id="understanding-tokens" class="policy__section">
+              <h2>Understanding LLM Tokens: The Foundation</h2>
+              
+              <h3>What Are Tokens?</h3>
+              <p>Tokens are the fundamental units that Large Language Models process—they're not words, but rather the smallest semantic chunks a model understands. A single token represents approximately 4 characters of English text, though this varies significantly by language, content type, and the specific tokenizer used.</p>
+
+              <div class="docs__note docs__note--info">
+                <div class="docs__note-title">📊 Token Examples</div>
+                <div class="docs__note-content">
+                  <ul style="margin: 0;">
+                    <li>"hello" = 1 token</li>
+                    <li>"world" = 1 token</li>
+                    <li>"!" = 1 token</li>
+                    <li>"tokenization" = 1 token</li>
+                    <li>"LLM" = 1 token</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3>Why Tokens Matter</h3>
+              <p><strong>Direct Cost Impact:</strong> Every API call charges based on token consumption. OpenAI charges approximately $0.50 per million input tokens (GPT-4), meaning every 1,000 tokens costs $0.0005. A 10,000-token request costs $0.05.</p>
+
+              <p><strong>Performance Impact:</strong> More tokens mean more computation, directly affecting latency. Output tokens are typically 2-3x more expensive than input tokens, incentivizing concise responses.</p>
+
+              <p><strong>Context Window Pressure:</strong> LLMs have finite context windows (2K, 4K, 8K, 128K tokens depending on model). Optimizing token usage frees space for more relevant context or longer conversations.</p>
+
+              <div class="policy__table-container">
+                <table class="policy__table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Vocabulary Size</th>
+                      <th>Tokens/1000 chars</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>GPT-4</td>
+                      <td>~100K tokens</td>
+                      <td>350-400 tokens</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-3.5</td>
+                      <td>~50K tokens</td>
+                      <td>350-400 tokens</td>
+                    </tr>
+                    <tr>
+                      <td>Claude 3.5 Sonnet</td>
+                      <td>~100K tokens</td>
+                      <td>350-400 tokens</td>
+                    </tr>
+                    <tr>
+                      <td>LLaMA 2</td>
+                      <td>~128K tokens</td>
+                      <td>400-450 tokens</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Strategy 1: Prompt Engineering -->
+            <section id="prompt-engineering" class="policy__section">
+              <h2>Strategy 1: Prompt Engineering and Concise Language</h2>
+              <p>Prompt engineering is the single most impactful optimization technique, offering <strong>15-30% token reduction</strong> without sacrificing output quality.</p>
+
+              <h3>Eliminate Unnecessary Words</h3>
+              <p>Verbose prompts waste tokens with redundant phrasing.</p>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <p style="margin: 0 0 1rem 0;"><strong>❌ Before (35 tokens):</strong></p>
+                <pre style="margin: 0;"><code>"Could you possibly provide me with a detailed explanation of how someone could improve their writing skills in a comprehensive manner?"</code></pre>
+
+                <p style="margin: 1.5rem 0 1rem 0;"><strong>✅ After (8 tokens):</strong></p>
+                <pre style="margin: 0;"><code>"Explain how to improve writing skills."</code></pre>
+
+                <p style="margin: 1.5rem 0 0 0; color: var(--accent);"><strong>Tokens Saved: 27 tokens (77% reduction)</strong></p>
+              </div>
+
+              <h3>Use Specific Instructions</h3>
+              <p>Ambiguous prompts force models to generate more exploratory text. Add constraints to focus generation.</p>
+
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Optimization Tip</div>
+                <div class="docs__note-content">Adding specific constraints like "in 3 sentences" or "as bullet points" reduces generation length by 40-50% while maintaining quality.</div>
+              </div>
+
+              <h3>Practical Prompt Optimization Checklist</h3>
+              <ul>
+                <li>Remove filler words ("very," "quite," "actually," "basically")</li>
+                <li>Replace long phrases with short equivalents ("in order to" → "to")</li>
+                <li>Use acronyms consistently (introduce once, reuse throughout)</li>
+                <li>Remove redundant context you've already provided</li>
+                <li>Use numbered instructions instead of prose descriptions</li>
+                <li>Specify output format explicitly (JSON, markdown, bullet points)</li>
+              </ul>
+
+              <div class="docs__note docs__note--success">
+                <div class="docs__note-title">✅ Real-World Impact</div>
+                <div class="docs__note-content">Optimizing prompts achieves 3-10% token reductions without compromising output quality or accuracy.</div>
+              </div>
+            </section>
+
+            <!-- Strategy 2: Data Format Optimization -->
+            <section id="data-format" class="policy__section">
+              <h2>Strategy 2: Data Format Optimization with TOON</h2>
+              <p>When passing structured data to LLMs, the format you choose dramatically impacts token consumption. <strong>TOON (Token-Oriented Object Notation)</strong> reduces tokens by 30-60% compared to JSON for tabular data.</p>
+
+              <h3>The JSON Problem</h3>
+              <p>Standard JSON is verbose and token-expensive for structured data:</p>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <p style="margin: 0 0 1rem 0;"><strong>JSON Format (~125 tokens):</strong></p>
+                <pre style="margin: 0;"><code>{
+  "users": [
+    { "id": 1, "name": "Alice", "role": "admin" },
+    { "id": 2, "name": "Bob", "role": "user" },
+    { "id": 3, "name": "Charlie", "role": "user" }
+  ]
+}</code></pre>
+
+                <p style="margin: 1.5rem 0 1rem 0;"><strong>TOON Format (~54 tokens):</strong></p>
+                <pre style="margin: 0;"><code>users[3]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user
+  3,Charlie,user</code></pre>
+
+                <p style="margin: 1.5rem 0 0 0; color: var(--accent);"><strong>Savings: 57% fewer tokens!</strong></p>
+              </div>
+
+              <h3>How TOON Reduces Tokens</h3>
+              <p>TOON achieves efficiency through three key optimizations:</p>
+              <ul>
+                <li><strong>Tabular Arrays:</strong> Declares field names once in headers instead of repeating for every row</li>
+                <li><strong>Minimal Syntax:</strong> Eliminates unnecessary brackets, quotes, and punctuation</li>
+                <li><strong>Indentation-Based Structure:</strong> Uses indentation instead of braces for nested objects</li>
+              </ul>
+
+              <div class="blogpost__cta" style="margin: 2rem 0;">
+                <h3>Start Using TOON for LLM Optimization</h3>
+                <p>Convert your JSON data to TOON format and see immediate token savings:</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                  <a href="/" class="btn btn--primary btn--large">Try JSON to TOON Converter</a>
+                  <a href="/blog/what-is-toon.html" class="btn btn--secondary btn--large">Learn About TOON Format</a>
+                </div>
+              </div>
+
+              <h3>TOON vs JSON Benchmarks</h3>
+              <div class="policy__table-container">
+                <table class="policy__table">
+                  <thead>
+                    <tr>
+                      <th>Dataset</th>
+                      <th>JSON Tokens</th>
+                      <th>TOON Tokens</th>
+                      <th>Savings</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>GitHub Repos (100)</td>
+                      <td>15,145</td>
+                      <td>8,745</td>
+                      <td>42.3%</td>
+                    </tr>
+                    <tr>
+                      <td>Daily Analytics (365 days)</td>
+                      <td>10,977</td>
+                      <td>4,507</td>
+                      <td>58.9%</td>
+                    </tr>
+                    <tr>
+                      <td>User Data (1000 users)</td>
+                      <td>45,230</td>
+                      <td>22,115</td>
+                      <td>51.1%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="docs__note docs__note--warning">
+                <div class="docs__note-title">⚠️ Best Use Cases for TOON</div>
+                <div class="docs__note-content">
+                  TOON works best with uniform tabular data (database results, API responses, analytics data). Deeply nested or non-uniform structures may see smaller benefits.
+                </div>
+              </div>
+            </section>
+
+            <!-- Strategy 3: Model Selection -->
+            <section id="model-selection" class="policy__section">
+              <h2>Strategy 3: Model Selection and Tiering</h2>
+              <p>Choosing the right model for the right task prevents overpaying for unnecessary capability. Using expensive models for simple tasks wastes budget.</p>
+
+              <h3>The Model Tiering Strategy</h3>
+              <p>Different tasks require different model capabilities:</p>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <p style="margin: 0 0 1rem 0;"><strong>Before Optimization:</strong></p>
+                <ul style="margin: 0 0 1rem 0;">
+                  <li>Use GPT-4 for all tasks: $60 per 1M tokens</li>
+                  <li>Monthly requests: 100,000</li>
+                  <li><strong>Monthly cost: $12,000</strong></li>
+                </ul>
+
+                <p style="margin: 1.5rem 0 1rem 0;"><strong>After Tiering Optimization:</strong></p>
+                <ul style="margin: 0 0 1rem 0;">
+                  <li>Simple tasks (60%): GPT-3.5 Turbo - $0.50/1M tokens</li>
+                  <li>Moderate tasks (30%): GPT-4 Turbo - $3/1M tokens</li>
+                  <li>Complex tasks (10%): GPT-4 - $60/1M tokens</li>
+                  <li><strong>Monthly cost: $240</strong></li>
+                </ul>
+
+                <p style="margin: 1.5rem 0 0 0; color: var(--accent);"><strong>Total Savings: 98% reduction ($11,760/month)</strong></p>
+              </div>
+
+              <h3>Task-Specific Model Recommendations</h3>
+              <div class="policy__table-container">
+                <table class="policy__table">
+                  <thead>
+                    <tr>
+                      <th>Task</th>
+                      <th>Recommended Model</th>
+                      <th>Token Efficiency</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Text classification</td>
+                      <td>GPT-3.5, Claude Haiku</td>
+                      <td>High (2-3% overhead)</td>
+                    </tr>
+                    <tr>
+                      <td>Summarization</td>
+                      <td>Claude, Mixtral</td>
+                      <td>High (5-8% overhead)</td>
+                    </tr>
+                    <tr>
+                      <td>Code generation</td>
+                      <td>GPT-4, Codex</td>
+                      <td>Moderate (15-20% overhead)</td>
+                    </tr>
+                    <tr>
+                      <td>Complex reasoning</td>
+                      <td>GPT-4, Claude 3.5</td>
+                      <td>Lower (30-40% overhead)</td>
+                    </tr>
+                    <tr>
+                      <td>Document Q&A (RAG)</td>
+                      <td>Moderate models</td>
+                      <td>High (RAG optimized)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Decision Framework</div>
+                <div class="docs__note-content">Choose the smallest model that achieves acceptable accuracy for your task. Test with progressively larger models to find the break-even point.</div>
+              </div>
+            </section>
+
+            <!-- Strategy 4: Caching -->
+            <section id="caching" class="policy__section">
+              <h2>Strategy 4: Prompt Caching and Semantic Caching</h2>
+              <p>Caching offers <strong>60-90% cost savings</strong> for prompts with repeated static sections or semantically similar queries.</p>
+
+              <h3>Prompt Caching (Prefix Caching)</h3>
+              <p>Prompt caching reuses the Key-Value cache of static prompt sections, paying only ~10% of base input token cost for cached portions.</p>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <p style="margin: 0 0 1rem 0;"><strong>Without Caching (Every Request):</strong></p>
+                <ul style="margin: 0 0 1rem 0;">
+                  <li>System prompt: 200 tokens ($0.001)</li>
+                  <li>Tool definitions: 500 tokens ($0.0025)</li>
+                  <li>Context: 4,000 tokens ($0.02)</li>
+                  <li>User query: 100 tokens ($0.0005)</li>
+                  <li><strong>Total: $0.0245 per request</strong></li>
+                </ul>
+
+                <p style="margin: 1.5rem 0 1rem 0;"><strong>With Prompt Caching (Subsequent Requests):</strong></p>
+                <ul style="margin: 0 0 1rem 0;">
+                  <li>Cached prefix: 700 tokens at 0.1× = $0.00035</li>
+                  <li>New context: 2,000 tokens ($0.01)</li>
+                  <li>New query: 100 tokens ($0.0005)</li>
+                  <li><strong>Total: $0.01085 per request</strong></li>
+                </ul>
+
+                <p style="margin: 1.5rem 0 0 0; color: var(--accent);"><strong>Savings: 56% reduction per request</strong></p>
+              </div>
+
+              <h3>Semantic Caching</h3>
+              <p>Semantic caching recognizes when different query phrasings ask the same question, serving cached responses for similar queries (typical 20-40% cache hit rate).</p>
+
+              <div class="docs__note docs__note--success">
+                <div class="docs__note-title">✅ Example Savings</div>
+                <div class="docs__note-content">
+                  <p style="margin: 0 0 0.5rem 0;">With 1,000 daily queries and 25% semantic similarity:</p>
+                  <ul style="margin: 0;">
+                    <li>Without caching: 1,000 API calls × $0.05 = $50/day</li>
+                    <li>With semantic caching: 750 API calls + 250 cached = $37.50/day</li>
+                    <li><strong>Monthly savings: $375 (25% reduction)</strong></li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3>Use Cases for Caching</h3>
+              <p><strong>Ideal Scenarios (40%+ savings):</strong></p>
+              <ul>
+                <li>Document Q&A with consistent instructions</li>
+                <li>Chatbots with system prompts + tool libraries</li>
+                <li>RAG systems with unchanging retrieval instructions</li>
+                <li>Code analysis with fixed code review rules</li>
+              </ul>
+
+              <p><strong>Not Ideal:</strong></p>
+              <ul>
+                <li>Short prompts (below minimum cache threshold)</li>
+                <li>Constantly changing context</li>
+                <li>One-off requests with no repetition</li>
+              </ul>
+            </section>
+
+            <!-- Strategy 5: Batch Processing -->
+            <section id="batch-processing" class="policy__section">
+              <h2>Strategy 5: Batch Processing</h2>
+              <p>Batch processing reduces costs by <strong>40-50%</strong> compared to real-time API calls by grouping multiple requests into a single batch.</p>
+
+              <h3>How Batch Processing Works</h3>
+              <p>Instead of sending 1,000 requests individually at $0.12 each ($120 total), batch them together for 50% discount:</p>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <p style="margin: 0 0 1rem 0;"><strong>Individual Requests:</strong></p>
+                <p style="margin: 0 0 1rem 0;">1,000 requests × $0.12 = <strong>$120</strong></p>
+
+                <p style="margin: 1.5rem 0 1rem 0;"><strong>Batch Processing:</strong></p>
+                <p style="margin: 0 0 1rem 0;">1,000 requests in batch = <strong>$60</strong></p>
+
+                <p style="margin: 1.5rem 0 0 0; color: var(--accent);"><strong>Savings: 50% reduction</strong></p>
+              </div>
+
+              <h3>Why Batch Processing Costs Less</h3>
+              <ul>
+                <li><strong>Reduced Overhead:</strong> Amortizes API call overhead across multiple requests</li>
+                <li><strong>Better GPU Utilization:</strong> Batches optimize GPU memory and compute usage</li>
+                <li><strong>Provider Incentives:</strong> OpenAI and Anthropic Batch APIs offer 50% discount</li>
+                <li><strong>Queue Efficiency:</strong> Separate rate limits prevent blocking</li>
+              </ul>
+
+              <h3>Batch Processing Trade-offs</h3>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                  <h4 style="color: var(--accent); margin-bottom: 0.5rem;">✅ Pros</h4>
+                  <ul style="margin: 0;">
+                    <li>50% cost savings</li>
+                    <li>Predictable pricing</li>
+                    <li>No rate limit concerns</li>
+                    <li>Ideal for non-urgent workloads</li>
+                  </ul>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                  <h4 style="color: var(--error); margin-bottom: 0.5rem;">❌ Cons</h4>
+                  <ul style="margin: 0;">
+                    <li>Slower completion (hours vs seconds)</li>
+                    <li>Can't use for real-time applications</li>
+                    <li>Minimum batch size requirements</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3>Optimal Scenarios for Batch Processing</h3>
+              <ul>
+                <li><strong>Periodic Data Processing:</strong> Daily/weekly data analysis</li>
+                <li><strong>Content Generation:</strong> Bulk generating descriptions or summaries</li>
+                <li><strong>Ticket Classification:</strong> Categorizing support tickets</li>
+                <li><strong>Document Analysis:</strong> Processing large document queues</li>
+                <li><strong>Analytics Pipelines:</strong> Extracting insights from accumulated data</li>
+              </ul>
+
+              <div class="docs__note docs__note--success">
+                <div class="docs__note-title">💰 Cost Example</div>
+                <div class="docs__note-content">
+                  <p style="margin: 0 0 0.5rem 0;">Processing 10 million tokens monthly:</p>
+                  <ul style="margin: 0;">
+                    <li>Regular API: 10M tokens × $0.50/1M = $5,000/month</li>
+                    <li>Batch Processing: 10M tokens × $0.25/1M = $2,500/month</li>
+                    <li><strong>Annual savings: $30,000</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- Strategy 6: RAG Optimization -->
+            <section id="rag-optimization" class="policy__section">
+              <h2>Strategy 6: RAG (Retrieval-Augmented Generation) Optimization</h2>
+              <p>RAG reduces token consumption by <strong>25-60%</strong> by offloading context to external databases rather than including all data in prompts.</p>
+
+              <h3>RAG Token Savings Mechanism</h3>
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <p style="margin: 0 0 1rem 0;"><strong>Without RAG (Include all context):</strong></p>
+                <ul style="margin: 0 0 1rem 0;">
+                  <li>System prompt: 50 tokens</li>
+                  <li>Company Knowledge Base (full): 8,000 tokens</li>
+                  <li>User Question: 100 tokens</li>
+                  <li><strong>Total: 8,150 tokens ($0.041)</strong></li>
+                </ul>
+
+                <p style="margin: 1.5rem 0 1rem 0;"><strong>With RAG (Retrieve relevant only):</strong></p>
+                <ul style="margin: 0 0 1rem 0;">
+                  <li>System prompt: 50 tokens</li>
+                  <li>Retrieved relevant docs (3-5 most relevant): 800 tokens</li>
+                  <li>User Question: 100 tokens</li>
+                  <li><strong>Total: 950 tokens ($0.0048)</strong></li>
+                </ul>
+
+                <p style="margin: 1.5rem 0 0 0; color: var(--accent);"><strong>Tokens Saved: 7,200 tokens (88% reduction)</strong></p>
+              </div>
+
+              <h3>RAG Optimization Techniques</h3>
+              <ul>
+                <li><strong>Precision-Focused Retrieval:</strong> Return top 3 most relevant passages instead of top 10 (cuts tokens from 1,500-2,000 to 400-600)</li>
+                <li><strong>Relevance Ranking:</strong> Place most relevant information at beginning to mitigate "Lost in the Middle" effect</li>
+                <li><strong>Token-Level Harmonization:</strong> Select only tokens that provide net positive value</li>
+              </ul>
+
+              <div class="docs__note docs__note--success">
+                <div class="docs__note-title">✅ Real-World Impact</div>
+                <div class="docs__note-content">Companies implementing RAG saw 25% reduction in token usage, enabling larger datasets while maintaining lower costs.</div>
+              </div>
+            </section>
+
+            <!-- Strategy 7: Output Control -->
+            <section id="output-control" class="policy__section">
+              <h2>Strategy 7: Output Length Control</h2>
+              <p>Since output tokens typically cost 2-3x more than input tokens, controlling generation length provides immediate benefits.</p>
+
+              <h3>Output Optimization Techniques</h3>
+              
+              <h4>Explicit Max Tokens Parameter</h4>
+              <pre><code>response = client.chat.completions.create(
+  model="gpt-4",
+  messages=[{"role": "user", "content": "Write a product description"}],
+  max_tokens=150  # Prevent runaway generation
+)</code></pre>
+
+              <h4>Task-Specific Constraints</h4>
+              <div class="policy__table-container">
+                <table class="policy__table">
+                  <thead>
+                    <tr>
+                      <th>Task</th>
+                      <th>Recommended max_tokens</th>
+                      <th>Typical Output</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Classification</td>
+                      <td>50-100</td>
+                      <td>Yes/No/Label</td>
+                    </tr>
+                    <tr>
+                      <td>Summarization</td>
+                      <td>300-500</td>
+                      <td>70-80% of original</td>
+                    </tr>
+                    <tr>
+                      <td>Q&A</td>
+                      <td>200-400</td>
+                      <td>Specific answer</td>
+                    </tr>
+                    <tr>
+                      <td>Code generation</td>
+                      <td>500-1000</td>
+                      <td>Complete functions</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>Temperature Optimization</h4>
+              <ul>
+                <li><strong>Lower temperature (0.3-0.5):</strong> More focused, deterministic responses requiring fewer tokens</li>
+                <li><strong>Higher temperature (0.7-1.0):</strong> More creative but verbose</li>
+              </ul>
+
+              <p>For deterministic tasks (classification, extraction), lower temperature reduces output tokens by 15-25%.</p>
+            </section>
+
+            <!-- Real-World Case Study -->
+            <section id="case-study" class="policy__section">
+              <h2>Real-World Cost Reduction: Case Study</h2>
+              <p><strong>Scenario:</strong> Content generation service processing 10,000 requests/day</p>
+
+              <h3>Before Optimization</h3>
+              <ul>
+                <li>Model: GPT-4 for all tasks</li>
+                <li>Average tokens/request: 2,000</li>
+                <li>Cost per token: $0.50/1M input</li>
+                <li>Daily cost: $10/day</li>
+                <li><strong>Annual cost: $3,600</strong></li>
+              </ul>
+
+              <h3>Optimization Implementation</h3>
+              <ul>
+                <li><strong>Prompt Engineering (15% reduction):</strong> 2,000 → 1,700 tokens</li>
+                <li><strong>Model Tiering (60% tasks → GPT-3.5):</strong> Average 1,200 tokens per request</li>
+                <li><strong>Batch Processing (50% discount):</strong> Available for 7,000 requests/day</li>
+                <li><strong>JSON to TOON Conversion:</strong> Additional 40% savings for structured data</li>
+                <li><strong>Output Control (20% reduction):</strong> Generation capped at 300 tokens</li>
+              </ul>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <h4 style="margin-top: 0;">After Optimization</h4>
+                
+                <p><strong>Real-time requests (3,000/day, can't batch):</strong></p>
+                <p>Cost: 3,000 × 1,200 ÷ 1M × $0.50 = $1.80</p>
+
+                <p><strong>Batch-able requests (7,000/day):</strong></p>
+                <p>Cost: 7,000 × 1,200 ÷ 1M × $0.25 = $2.10</p>
+
+                <p><strong>Daily cost:</strong> $3.90</p>
+                <p><strong>Monthly cost:</strong> $117</p>
+                <p><strong>Annual cost:</strong> $1,404</p>
+
+                <p style="margin: 1.5rem 0 0 0; color: var(--accent); font-size: 1.25rem;"><strong>Total annual savings: $2,196 (61% reduction)</strong></p>
+              </div>
+            </section>
+
+            <!-- Implementation Roadmap -->
+            <section id="implementation" class="policy__section">
+              <h2>Implementation Roadmap</h2>
+
+              <h3>Quick Wins (1-2 weeks, 15-30% savings)</h3>
+              <ul>
+                <li><strong>Prompt Engineering:</strong> Review existing prompts, remove unnecessary words</li>
+                <li><strong>Model Selection:</strong> Identify tasks that can use cheaper models</li>
+                <li><strong>Token Counting:</strong> Set up basic monitoring to establish baseline</li>
+                <li><strong>Output Control:</strong> Add max_tokens parameters</li>
+                <li><strong>JSON to TOON Conversion:</strong> <a href="/">Convert structured data to TOON format</a></li>
+              </ul>
+
+              <h3>Medium-Term (1-2 months, additional 20-40% savings)</h3>
+              <ul>
+                <li><strong>Semantic Caching:</strong> Implement for high-traffic endpoints</li>
+                <li><strong>Batch Processing:</strong> Set up for non-real-time workloads</li>
+                <li><strong>Structured Output:</strong> Switch to JSON or TOON where appropriate</li>
+                <li><strong>RAG Optimization:</strong> Improve retrieval precision</li>
+              </ul>
+
+              <h3>Long-Term (2-3 months, additional 15-25% savings)</h3>
+              <ul>
+                <li><strong>Prompt Caching:</strong> Implement for stable system prompts</li>
+                <li><strong>Fine-Tuning:</strong> Evaluate for domain-specific use cases</li>
+                <li><strong>KV Cache Optimization:</strong> Implement advanced caching strategies</li>
+              </ul>
+            </section>
+
+            <!-- Key Metrics -->
+            <section id="metrics" class="policy__section">
+              <h2>Measuring Success: Key Metrics</h2>
+              <p>Track these KPIs to validate optimization efforts:</p>
+
+              <div class="policy__table-container">
+                <table class="policy__table">
+                  <thead>
+                    <tr>
+                      <th>Metric</th>
+                      <th>Target</th>
+                      <th>Measurement Method</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Average tokens/request</td>
+                      <td>-30% from baseline</td>
+                      <td>Automated monitoring</td>
+                    </tr>
+                    <tr>
+                      <td>Cost per task</td>
+                      <td>-40% from baseline</td>
+                      <td>API usage reports</td>
+                    </tr>
+                    <tr>
+                      <td>Output quality</td>
+                      <td>≥95% vs baseline</td>
+                      <td>Quality testing</td>
+                    </tr>
+                    <tr>
+                      <td>Latency</td>
+                      <td>±10% vs baseline</td>
+                      <td>Response time logging</td>
+                    </tr>
+                    <tr>
+                      <td>Cache hit rate</td>
+                      <td>≥20%</td>
+                      <td>Cache analytics</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section id="conclusion" class="policy__section">
+              <h2>Conclusion</h2>
+              <p>LLM token optimization is not a single solution but a <strong>multi-faceted strategy</strong> combining prompt engineering, data format optimization, model selection, caching, batch processing, and architectural improvements.</p>
+
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li><strong>Prompt engineering is the highest-leverage quick win:</strong> 15-30% savings with minimal effort</li>
+                <li><strong>JSON to TOON conversion offers 30-60% savings:</strong> Ideal for structured data passed to LLMs</li>
+                <li><strong>Model tiering prevents waste:</strong> Choose appropriate models for each task complexity level</li>
+                <li><strong>Caching strategies offer 40-90% savings:</strong> Prompt caching, semantic caching compound significant savings</li>
+                <li><strong>Batch processing is ideal for non-real-time work:</strong> 50% discount for deferrable tasks</li>
+                <li><strong>Measurement drives optimization:</strong> Implement token counting and monitoring</li>
+              </ul>
+
+              <div class="docs__note docs__note--success">
+                <div class="docs__note-title">💰 Bottom Line</div>
+                <div class="docs__note-content">
+                  Organizations implementing a comprehensive token optimization strategy achieve <strong>30-90% cost reductions</strong> while often improving output quality and latency. A 50% cost reduction on 10 million monthly tokens saves <strong>$250,000 annually</strong>.
+                </div>
+              </div>
+
+              <h3>Next Steps</h3>
+              <p>Ready to optimize your LLM token usage? Here are helpful resources:</p>
+              <ul>
+                <li><a href="/">Try our free JSON to TOON converter</a> - Reduce tokens by 30-60% for structured data</li>
+                <li><a href="/blog/what-is-toon.html">Learn about TOON format</a> - Understand how TOON works</li>
+                <li><a href="/blog/toon-vs-json.html">TOON vs JSON Comparison</a> - See detailed benchmarks</li>
+                <li><a href="/blog/convert-json-to-toon.html">How to Convert JSON to TOON</a> - Step-by-step guide</li>
+                <li><a href="/docs.html">TOON Documentation</a> - Complete syntax reference</li>
+              </ul>
+
+              <p>Start with prompt engineering and JSON to TOON conversion for immediate gains, then layer in caching and batch processing for sustained, long-term efficiency. Your budget—and your users—will thank you.</p>
+            </section>
+
+          </div>
+
+          <!-- Sidebar TOC -->
+          <aside class="policy__toc">
+            <div class="policy__toc-sticky">
+              <h3 class="policy__toc-title">On This Page</h3>
+              <nav>
+                <a href="#introduction">Introduction</a>
+                <a href="#understanding-tokens">Understanding Tokens</a>
+                <a href="#prompt-engineering">Prompt Engineering</a>
+                <a href="#data-format">Data Format (TOON)</a>
+                <a href="#model-selection">Model Selection</a>
+                <a href="#caching">Caching Strategies</a>
+                <a href="#batch-processing">Batch Processing</a>
+                <a href="#rag-optimization">RAG Optimization</a>
+                <a href="#output-control">Output Control</a>
+                <a href="#case-study">Case Study</a>
+                <a href="#implementation">Implementation</a>
+                <a href="#metrics">Key Metrics</a>
+                <a href="#conclusion">Conclusion</a>
+              </nav>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div id="cta-placeholder"></div>
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/templates.js"></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/blogposts.js" defer></script>
+</body>
+</html>

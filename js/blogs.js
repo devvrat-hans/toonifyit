@@ -5,6 +5,30 @@
 // Blog Posts Data
 const blogPosts = [
   {
+    id: 'llm-token-optimization',
+    title: 'LLM Token Optimization: Reduce AI Costs by 30-90%',
+    description: 'Complete guide to LLM token optimization. Learn proven strategies including prompt engineering, model tiering, caching, batch processing, and JSON to TOON conversion to reduce AI costs by 30-90%.',
+    excerpt: 'Master LLM token optimization with proven strategies that organizations use to achieve 30-90% cost reductions. Learn prompt engineering, model tiering, caching, batch processing, RAG optimization, and how converting JSON to TOON saves 30-60% tokens.',
+    date: '2025-11-11',
+    readTime: '22 min read',
+    slug: 'llm-token-optimization',
+    url: '/blog/llm-token-optimization.html',
+    keywords: ['llm token optimization', 'reduce llm costs', 'prompt engineering', 'json to toon', 'toon format', 'ai cost optimization', 'token efficiency'],
+    featured: true
+  },
+  // {
+  //   id: 'prompt-engineering-for-llms',
+  //   title: 'Prompt Engineering for LLMs: Complete 2025 Masterclass',
+  //   description: 'Master prompt engineering for LLMs with proven techniques: few-shot prompting, chain-of-thought, role assignment, ReAct, and structured prompting. Achieve 3-5x better AI performance with this complete guide.',
+  //   excerpt: 'Complete masterclass on prompt engineering for Large Language Models. Learn foundational principles, advanced techniques (few-shot, chain-of-thought, ReAct, structured prompting), common mistakes, and real-world examples. Achieve 3-5x better performance.',
+  //   date: '2025-11-10',
+  //   readTime: '22 min read',
+  //   slug: 'prompt-engineering-for-llms',
+  //   url: '/blog/prompt-engineering-for-llms.html',
+  //   keywords: ['prompt engineering', 'llm prompting', 'few-shot prompting', 'chain of thought', 'json to toon', 'toon format', 'ai optimization', 'llm optimization'],
+  //   featured: true
+  // },
+  {
     id: 'what-is-toon',
     title: 'What is TOON Format? Complete JSON to TOON Conversion Guide',
     description: 'Learn how TOON format reduces LLM token usage by 30-60% compared to JSON. Complete guide with conversion examples, syntax, and best practices.',
