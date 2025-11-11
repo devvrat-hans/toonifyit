@@ -324,6 +324,9 @@
     initLanguage();
   }
 
-  // Re-run when templates load
+  // Re-run when templates load (if templates.js is used)
   window.addEventListener('templatesLoaded', initLanguage);
+  
+  // Also run after a short delay to ensure navbar is rendered
+  setTimeout(initLanguage, 100);
 })();

@@ -69,73 +69,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <style>
-/* Critical CSS for Language Switcher - ensures proper display even if external CSS is delayed */
-.nav__language-switcher { position: relative !important; margin-left: 0.5rem; display: inline-block !important; }
-.nav__lang-btn { display: flex !important; align-items: center !important; gap: 0.4rem; padding: 0.5rem 0.8rem; background: transparent; border: 1px solid #404040; border-radius: 6px; color: #e8e8e8; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
-.nav__lang-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-.nav__lang-code { font-size: 0.85rem; letter-spacing: 0.5px; display: inline-block; }
-.nav__lang-dropdown { position: absolute !important; top: 100%; right: 0; background: #2d2d2d; border: 1px solid #404040; border-radius: 8px; opacity: 0; visibility: hidden; min-width: 180px; z-index: 100; display: block !important; padding-top: 0.5rem; margin-top: -0.5rem; }
-.nav__language-switcher:hover .nav__lang-dropdown, .nav__lang-dropdown:hover { opacity: 1; visibility: visible; }
-.nav__lang-option { display: flex !important; align-items: center !important; gap: 0.8rem; padding: 0.8rem 1rem; color: #e8e8e8; text-decoration: none; border-bottom: 1px solid #404040; }
-.nav__lang-option:hover { background: #404040; }
-.nav__lang-flag { font-size: 1.2rem; flex-shrink: 0; }
-.nav__lang-name { font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
-</style>
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="/" class="logo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32" class="logo__icon" role="img" aria-label="Toonifyit JSON to TOON Converter Logo">
-            <title>Toonifyit - JSON to TOON Converter</title>
-            <defs>
-              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#0056b3;stop-opacity:1" />
-              </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="48" fill="url(#logo-grad)"/>
-            <text x="50" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="60" font-weight="800" fill="white" text-anchor="middle">T</text>
-          </svg>
-          <span class="logo__text">Toonifyit</span>
-        </a>
-        <div class="nav__links">
-          <a href="/" class="nav__link">Converter</a>
-          <a href="/blogs.html" class="nav__link">Blog</a>
-          <a href="/docs.html" class="nav__link">Docs</a>
-          <a href="/contact.html" class="nav__link">Contact</a>
-          <div class="nav__language-switcher">
-            <button class="nav__lang-btn" aria-label="Switch language" aria-expanded="false">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
-              <span class="nav__lang-code" id="current-lang">EN</span>
-            </button>
-            <div class="nav__lang-dropdown">
-              <a href="/" class="nav__lang-option" hreflang="en" data-lang="en">
-                <span class="nav__lang-flag">🇺🇸</span>
-                <span class="nav__lang-name">English</span>
-              </a>
-              <a href="/es/" class="nav__lang-option" hreflang="es" data-lang="es">
-                <span class="nav__lang-flag">🇪🇸</span>
-                <span class="nav__lang-name">Español</span>
-              </a>
-              <a href="/pt/" class="nav__lang-option" hreflang="pt" data-lang="pt">
-                <span class="nav__lang-flag">🇵🇹</span>
-                <span class="nav__lang-name">Português</span>
-              </a>
-              <a href="/hi/" class="nav__lang-option" hreflang="hi" data-lang="hi">
-                <span class="nav__lang-flag">🇮🇳</span>
-                <span class="nav__lang-name">हिन्दी</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <div id="navbar-placeholder"></div>
 
   <!-- Main Content -->
   <main class="blog-page">
@@ -148,48 +82,104 @@
 
       <!-- Blog Posts Grid -->
       <section class="blog__posts">
-        <div id="blog-posts-container" class="blog__grid">
-          <!-- Blog posts will be dynamically rendered here -->
+        <div class="blog__grid">
+          <!-- Blog Post 1 -->
+          <article class="blog__card">
+            <div class="blog__card-content">
+              <div class="blog__card-meta">
+                <span class="blog__card-date">November 11, 2025</span>
+                <span class="blog__card-divider">•</span>
+                <span class="blog__card-read-time">22 min read</span>
+              </div>
+              <h2 class="blog__card-title">
+                <a href="/blog/llm-token-optimization.html">LLM Token Optimization: Reduce AI Costs by 30-90%</a>
+              </h2>
+              <p class="blog__card-excerpt">Master LLM token optimization with proven strategies that organizations use to achieve 30-90% cost reductions. Learn prompt engineering, model tiering, caching, batch processing, RAG optimization, and how converting JSON to TOON saves 30-60% tokens.</p>
+              <a href="/blog/llm-token-optimization.html" class="blog__card-link">
+                Read More
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Post 2 -->
+          <article class="blog__card">
+            <div class="blog__card-content">
+              <div class="blog__card-meta">
+                <span class="blog__card-date">October 30, 2025</span>
+                <span class="blog__card-divider">•</span>
+                <span class="blog__card-read-time">12 min read</span>
+              </div>
+              <h2 class="blog__card-title">
+                <a href="/blog/what-is-toon.html">What is TOON Format? Complete JSON to TOON Conversion Guide</a>
+              </h2>
+              <p class="blog__card-excerpt">Discover TOON (Token-Oriented Object Notation) - a revolutionary data format designed specifically for Large Language Models. Learn how converting JSON to TOON can reduce your token costs by up to 60% while maintaining perfect readability.</p>
+              <a href="/blog/what-is-toon.html" class="blog__card-link">
+                Read More
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Post 3 -->
+          <article class="blog__card">
+            <div class="blog__card-content">
+              <div class="blog__card-meta">
+                <span class="blog__card-date">October 25, 2025</span>
+                <span class="blog__card-divider">•</span>
+                <span class="blog__card-read-time">15 min read</span>
+              </div>
+              <h2 class="blog__card-title">
+                <a href="/blog/toon-vs-json.html">TOON vs JSON: A Comparative Analysis for LLM Token Efficiency</a>
+              </h2>
+              <p class="blog__card-excerpt">Compare TOON vs JSON for Large Language Model applications. Discover why TOON format beats JSON with 30-60% token reduction, improved accuracy, and real-world cost savings. Complete analysis with benchmarks and practical examples.</p>
+              <a href="/blog/toon-vs-json.html" class="blog__card-link">
+                Read More
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Post 4 -->
+          <article class="blog__card">
+            <div class="blog__card-content">
+              <div class="blog__card-meta">
+                <span class="blog__card-date">October 17, 2025</span>
+                <span class="blog__card-divider">•</span>
+                <span class="blog__card-read-time">18 min read</span>
+              </div>
+              <h2 class="blog__card-title">
+                <a href="/blog/convert-json-to-toon.html">How to Convert JSON to TOON: Complete Guide</a>
+              </h2>
+              <p class="blog__card-excerpt">Master JSON to TOON conversion with this comprehensive tutorial. Learn methods, tools, and best practices to reduce LLM token usage by 30-60%. Real-world examples show $77,760 annual savings.</p>
+              <a href="/blog/convert-json-to-toon.html" class="blog__card-link">
+                Read More
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
         </div>
       </section>
     </div>
   </main>
 
   <!-- CTA Section -->
-  <section class="cta">
-    <div class="container">
-      <h2 class="cta__title">Ready to Try TOON?</h2>
-      <p class="cta__text">Convert your JSON to TOON format instantly and save up to 60% on tokens</p>
-      <div class="cta__buttons">
-        <a href="/" class="btn btn--primary btn--large">Try Converter</a>
-        <a href="/blogs.html" class="btn btn--secondary btn--large">Explore Blog</a>
-      </div>
-    </div>
-  </section>
+  <div id="cta-placeholder"></div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__content">
-        <p class="footer__text">&copy; 2025 Toonifyit</p>
-        <div class="footer__links">
-          <a href="/" class="footer__link">Converter</a>
-          <a href="/blogs.html" class="footer__link">Blog</a>
-          <a href="/about.html" class="footer__link">About</a>
-          <a href="/docs.html" class="footer__link">Docs</a>
-          <a href="/contact.html" class="footer__link">Contact</a>
-          <a href="/privacy.html" class="footer__link">Privacy</a>
-          <a href="/cookie-policy.html" class="footer__link">Cookies</a>
-          <a href="/terms.html" class="footer__link">Terms</a>
-          <a href="/disclaimer.html" class="footer__link">Disclaimer</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
   <script src="/js/common.js"></script>
+  <script src="/js/templates.js"></script>
   <script src="/js/language.js"></script>
-  <script src="/js/blogs.js"></script>
 </body>
 </html>
