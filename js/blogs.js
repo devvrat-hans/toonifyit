@@ -235,34 +235,19 @@ function initBlogPage() {
   setupSearch();
 }
 
-// Wait for both DOM and templates to be ready
-function init() {
-  // Check if DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAfterTemplates);
-  } else {
-    initAfterTemplates();
-  }
+// Wait for DOM to be ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initBlogPage);
+} else {
+  // DOM is already ready, initialize immediately
+  initBlogPage();
 }
 
-function initAfterTemplates() {
-  // Check if templates are loaded
-  if (typeof Templates !== 'undefined' && Templates.isLoaded) {
-    // Templates are already loaded
+// Also listen for templatesLoaded event in case templates load after blog init
+window.addEventListener('templatesLoaded', () => {
+  const container = document.getElementById('blog-posts-container');
+  // Only re-initialize if container is empty
+  if (container && container.children.length === 0) {
     initBlogPage();
-  } else {
-    // Wait for templates to load
-    window.addEventListener('templatesLoaded', initBlogPage);
-    
-    // Also add a timeout fallback to ensure blog posts render even if template event doesn't fire
-    setTimeout(() => {
-      const container = document.getElementById('blog-posts-container');
-      if (container && container.children.length === 0) {
-        initBlogPage();
-      }
-    }, 1000);
   }
-}
-
-// Start initialization
-init();
+});
