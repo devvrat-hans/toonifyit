@@ -68,7 +68,6 @@
   <link rel="stylesheet" href="/css/cta.css">
 </head>
 <body>
-<body>
   <!-- Navigation -->
   <div id="navbar-placeholder"></div>
 
@@ -127,5 +126,26 @@
   <script src="/js/templates.js"></script>
   <script src="/js/language.js"></script>
   <script src="/js/blogs.js"></script>
+  
+  <!-- Initialize templates explicitly -->
+  <script>
+    // Ensure templates are loaded before initializing blog page
+    (function() {
+      if (typeof Templates !== 'undefined') {
+        // Templates.js is loaded, ensure loadAll is called
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function() {
+            if (!Templates.isLoaded) {
+              Templates.loadAll();
+            }
+          });
+        } else {
+          if (!Templates.isLoaded) {
+            Templates.loadAll();
+          }
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
