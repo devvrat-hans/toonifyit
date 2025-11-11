@@ -62,67 +62,12 @@
   
   <title>Toonifyit Blog - JSON to TOON Conversion & LLM Optimization Guides</title>
   
-  <!-- Stylesheets -->
+  <!-- Stylesheets - Load in correct order -->
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/blogs.css">
   <link rel="stylesheet" href="/css/cta.css">
-  
-  <!-- Critical CSS for blog cards -->
-  <style>
-    .blog__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-    
-    .blog__card {
-      background: var(--bg-secondary, #2d2d2d);
-      border: 1px solid var(--border, #404040);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .blog__card-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    
-    .blog__card-title {
-      font-size: 1.375rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--text-primary, #e8e8e8);
-      line-height: 1.3;
-    }
-    
-    .blog__card-title a {
-      color: var(--text-primary, #e8e8e8);
-      text-decoration: none;
-    }
-    
-    .blog__card-excerpt {
-      font-size: 0.95rem;
-      color: var(--text-secondary, #b0b0b0);
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
-      flex: 1;
-    }
-    
-    .blog__card-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      font-size: 0.875rem;
-      color: var(--text-secondary, #b0b0b0);
-    }
-  </style>
 </head>
+<body>
 <body>
   <!-- Navigation -->
   <div id="navbar-placeholder"></div>
@@ -165,7 +110,7 @@
       <!-- Blog Posts Grid -->
       <section class="blog__posts">
         <div id="blog-posts-container" class="blog__grid">
-          <!-- Blog posts will be dynamically rendered here by blog.js -->
+          <!-- Blog posts will be dynamically rendered here -->
         </div>
       </section>
     </div>
@@ -177,10 +122,10 @@
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Scripts -->
-  <script src="/js/templates.js" defer></script>
-  <script src="/js/language.js" defer></script>
-  <script src="/js/common.js" defer></script>
-  <script src="/js/blogs.js" defer></script>
+  <!-- Scripts - Load templates first, then page-specific scripts -->
+  <script src="/js/common.js"></script>
+  <script src="/js/templates.js"></script>
+  <script src="/js/language.js"></script>
+  <script src="/js/blogs.js"></script>
 </body>
 </html>

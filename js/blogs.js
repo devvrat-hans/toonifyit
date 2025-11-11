@@ -1,15 +1,19 @@
+// ============================================
+// Blog Posts Data and Functionality
+// ============================================
+
 // Blog Posts Data
 const blogPosts = [
   {
-    id: 'convert-json-to-toon',
-    title: 'How to Convert JSON to TOON: Complete Guide',
-    description: 'Learn how to convert JSON to TOON format with our comprehensive step-by-step guide. Save 30-60% on LLM tokens using our JSON to TOON converter. Includes examples and best practices.',
-    excerpt: 'Master JSON to TOON conversion with this comprehensive tutorial. Learn methods, tools, and best practices to reduce LLM token usage by 30-60%. Real-world examples show $77,760 annual savings.',
-    date: '2025-10-17',
-    readTime: '18 min read',
-    slug: 'convert-json-to-toon',
-    url: '/blog/convert-json-to-toon.html',
-    keywords: ['how to convert json to toon', 'json to toon converter', 'convert json to toon', 'json to toon', 'toon converter', 'json toon'],
+    id: 'what-is-toon',
+    title: 'What is TOON Format? Complete JSON to TOON Conversion Guide',
+    description: 'Learn how TOON format reduces LLM token usage by 30-60% compared to JSON. Complete guide with conversion examples, syntax, and best practices.',
+    excerpt: 'Discover TOON (Token-Oriented Object Notation) - a revolutionary data format designed specifically for Large Language Models. Learn how converting JSON to TOON can reduce your token costs by up to 60% while maintaining perfect readability.',
+    date: '2025-10-30',
+    readTime: '12 min read',
+    slug: 'what-is-toon',
+    url: '/blog/what-is-toon.html',
+    keywords: ['json to toon', 'toon format', 'llm optimization', 'token reduction'],
     featured: true
   },
   {
@@ -25,21 +29,23 @@ const blogPosts = [
     featured: true
   },
   {
-    id: 'what-is-toon',
-    title: 'What is TOON Format? Complete JSON to TOON Conversion Guide',
-    description: 'Learn how TOON format reduces LLM token usage by 30-60% compared to JSON. Complete guide with conversion examples, syntax, and best practices.',
-    excerpt: 'Discover TOON (Token-Oriented Object Notation) - a revolutionary data format designed specifically for Large Language Models. Learn how converting JSON to TOON can reduce your token costs by up to 60% while maintaining perfect readability.',
-    date: '2025-10-30',
-    readTime: '12 min read',
-    slug: 'what-is-toon',
-    url: '/blog/what-is-toon.html',
-    keywords: ['json to toon', 'toon format', 'llm optimization', 'token reduction'],
+    id: 'convert-json-to-toon',
+    title: 'How to Convert JSON to TOON: Complete Guide',
+    description: 'Learn how to convert JSON to TOON format with our comprehensive step-by-step guide. Save 30-60% on LLM tokens using our JSON to TOON converter. Includes examples and best practices.',
+    excerpt: 'Master JSON to TOON conversion with this comprehensive tutorial. Learn methods, tools, and best practices to reduce LLM token usage by 30-60%. Real-world examples show $77,760 annual savings.',
+    date: '2025-10-17',
+    readTime: '18 min read',
+    slug: 'convert-json-to-toon',
+    url: '/blog/convert-json-to-toon.html',
+    keywords: ['how to convert json to toon', 'json to toon converter', 'convert json to toon', 'json to toon', 'toon converter', 'json toon'],
     featured: true
   }
-  // Add more blog posts here as they are created
 ];
 
-// Function to render blog posts
+// ============================================
+// Render Functions
+// ============================================
+
 function renderBlogPosts(postsToRender = null) {
   const container = document.getElementById('blog-posts-container');
   
@@ -57,18 +63,14 @@ function renderBlogPosts(postsToRender = null) {
   if (posts.length === 0) {
     container.innerHTML = `
       <div class="blog__empty">
-        <h2 class="blog__empty-title">No blog posts yet</h2>
-        <p class="blog__empty-text">Check back soon for insightful articles about TOON format, LLM optimization, and more!</p>
+        <p class="blog__empty-text">No blog posts found matching your search.</p>
       </div>
     `;
     return;
   }
 
-  console.log(`Rendering ${posts.length} blog posts`);
-
   // Render each blog post
-  posts.forEach((post, index) => {
-    console.log(`Rendering post ${index + 1}:`, post.title);
+  posts.forEach((post) => {
     const card = document.createElement('article');
     card.className = 'blog__card';
     card.innerHTML = `
@@ -78,7 +80,9 @@ function renderBlogPosts(postsToRender = null) {
           <span class="blog__card-divider">•</span>
           <span class="blog__card-read-time">${post.readTime}</span>
         </div>
-        <h2 class="blog__card-title"><a href="${post.url}">${post.title}</a></h2>
+        <h2 class="blog__card-title">
+          <a href="${post.url}">${post.title}</a>
+        </h2>
         <p class="blog__card-excerpt">${post.excerpt}</p>
         <a href="${post.url}" class="blog__card-link">
           Read More
@@ -91,18 +95,18 @@ function renderBlogPosts(postsToRender = null) {
     
     container.appendChild(card);
   });
-
-  console.log(`Total cards appended to container: ${container.children.length}`);
 }
 
-// Function to format date
+// ============================================
+// Utility Functions
+// ============================================
+
 function formatDate(dateString) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', options);
 }
 
-// Function to filter blog posts based on search
 function filterBlogPosts(searchTerm) {
   const filtered = blogPosts.filter(post => {
     const searchLower = searchTerm.toLowerCase();
@@ -117,15 +121,17 @@ function filterBlogPosts(searchTerm) {
   return filtered;
 }
 
-// Search functionality
+// ============================================
+// Search Functionality
+// ============================================
+
 function setupSearch() {
   const searchInput = document.getElementById('blog-search');
   const searchButton = document.getElementById('blog-search-btn');
   const clearButton = document.getElementById('blog-clear-search');
-  const container = document.getElementById('blog-posts-container');
   const resultsInfo = document.getElementById('search-results-info');
 
-  if (!searchInput || !container) {
+  if (!searchInput) {
     return;
   }
 
@@ -141,8 +147,6 @@ function setupSearch() {
     }
 
     const filtered = filterBlogPosts(searchTerm);
-    
-    // Use the render function with filtered posts
     renderBlogPosts(filtered);
 
     if (filtered.length === 0) {
@@ -156,6 +160,14 @@ function setupSearch() {
     if (clearButton) clearButton.style.display = 'inline-block';
   };
 
+  // Clear search function
+  const clearSearch = () => {
+    if (searchInput) searchInput.value = '';
+    if (resultsInfo) resultsInfo.textContent = '';
+    if (clearButton) clearButton.style.display = 'none';
+    renderBlogPosts();
+  };
+
   // Event listeners
   if (searchButton) {
     searchButton.addEventListener('click', performSearch);
@@ -167,6 +179,13 @@ function setupSearch() {
         performSearch();
       }
     });
+
+    // Show/hide clear button based on input
+    searchInput.addEventListener('input', () => {
+      if (clearButton) {
+        clearButton.style.display = searchInput.value.trim() ? 'inline-block' : 'none';
+      }
+    });
   }
 
   if (clearButton) {
@@ -174,44 +193,52 @@ function setupSearch() {
   }
 }
 
-// Clear search function
-function clearSearch() {
-  const searchInput = document.getElementById('blog-search');
-  const resultsInfo = document.getElementById('search-results-info');
-  const clearButton = document.getElementById('blog-clear-search');
-  
-  if (searchInput) searchInput.value = '';
-  if (resultsInfo) resultsInfo.textContent = '';
-  if (clearButton) clearButton.style.display = 'none';
-  
-  renderBlogPosts();
-}
+// ============================================
+// Initialization
+// ============================================
 
-// Initialize on page load
 function initBlogPage() {
   // Only run if we're on the blog page
   const container = document.getElementById('blog-posts-container');
-  if (container) {
-    renderBlogPosts();
-    setupSearch();
+  if (!container) {
+    return;
+  }
+
+  // Render blog posts
+  renderBlogPosts();
+  
+  // Setup search functionality
+  setupSearch();
+}
+
+// Wait for both DOM and templates to be ready
+function init() {
+  // Check if DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAfterTemplates);
+  } else {
+    initAfterTemplates();
   }
 }
 
-// Wait for templates to load first, then initialize
-function init() {
+function initAfterTemplates() {
   // Check if templates are loaded
   if (typeof Templates !== 'undefined' && Templates.isLoaded) {
+    // Templates are already loaded
     initBlogPage();
   } else {
-    // Wait for templatesLoaded event
+    // Wait for templates to load
     window.addEventListener('templatesLoaded', initBlogPage);
+    
+    // Also add a timeout fallback to ensure blog posts render even if template event doesn't fire
+    setTimeout(() => {
+      const container = document.getElementById('blog-posts-container');
+      if (container && container.children.length === 0) {
+        initBlogPage();
+      }
+    }, 1000);
   }
 }
 
-// Initialize with multiple triggers to ensure it runs
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
-} else {
-  // DOM is already loaded
-  init();
-}
+// Start initialization
+init();
