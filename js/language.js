@@ -44,6 +44,9 @@
     if (path.startsWith('/ar/') || path.startsWith('/ar')) {
       return 'ar';
     }
+    if (path.startsWith('/he/') || path.startsWith('/he')) {
+      return 'he';
+    }
     if (path.startsWith('/it/') || path.startsWith('/it')) {
       return 'it';
     }
@@ -108,6 +111,8 @@
       pagePath = currentPath.replace('/sv/', '/').replace('/sv', '/');
     } else if (currentLang === 'ar') {
       pagePath = currentPath.replace('/ar/', '/').replace('/ar', '/');
+    } else if (currentLang === 'he') {
+      pagePath = currentPath.replace('/he/', '/').replace('/he', '/');
     } else if (currentLang === 'it') {
       pagePath = currentPath.replace('/it/', '/').replace('/it', '/');
     } else if (currentLang === 'pl') {
@@ -185,6 +190,14 @@
     const arPath = pagePath === '/' ? '/ar/' : `/ar${pagePath}`;
     arLink.href = `https://toonifyit.com${arPath}`;
     head.appendChild(arLink);
+
+    // Hebrew version
+    const heLink = document.createElement('link');
+    heLink.rel = 'alternate';
+    heLink.hreflang = 'he';
+    const hePath = pagePath === '/' ? '/he/' : `/he${pagePath}`;
+    heLink.href = `https://toonifyit.com${hePath}`;
+    head.appendChild(heLink);
 
     // Italian version
     const itLink = document.createElement('link');
