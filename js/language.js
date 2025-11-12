@@ -519,28 +519,18 @@
     const langDropdown = document.querySelector('.nav__lang-dropdown');
 
     if (langBtn && langDropdown) {
-      langBtn.addEventListener('click', () => {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const isExpanded = langBtn.getAttribute('aria-expanded') === 'true';
         langBtn.setAttribute('aria-expanded', !isExpanded);
-        
-        if (!isExpanded) {
-          langDropdown.style.opacity = '1';
-          langDropdown.style.visibility = 'visible';
-          langDropdown.style.transform = 'translateY(0)';
-        } else {
-          langDropdown.style.opacity = '0';
-          langDropdown.style.visibility = 'hidden';
-          langDropdown.style.transform = 'translateY(-10px)';
-        }
+        langDropdown.classList.toggle('active');
       });
 
       // Close dropdown when clicking outside
       document.addEventListener('click', (e) => {
         if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
           langBtn.setAttribute('aria-expanded', 'false');
-          langDropdown.style.opacity = '0';
-          langDropdown.style.visibility = 'hidden';
-          langDropdown.style.transform = 'translateY(-10px)';
+          langDropdown.classList.remove('active');
         }
       });
     }

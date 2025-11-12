@@ -5,6 +5,12 @@
   background: var(--bg-primary);
 }
 
+@media (max-width: 768px) {
+  .policy {
+    padding: 32px 0 60px;
+  }
+}
+
 .policy__layout {
   display: grid;
   grid-template-columns: 280px 1fr;

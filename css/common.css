@@ -64,7 +64,7 @@ a:hover {
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1100;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -75,6 +75,8 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 0;
+  gap: 1rem;
+  position: relative;
 }
 
 .logo {
@@ -87,6 +89,7 @@ a:hover {
   text-decoration: none;
   letter-spacing: -0.5px;
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .logo__icon {
@@ -108,6 +111,9 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex: 1;
+  justify-content: flex-end;
+  max-width: calc(100% - 200px);
 }
 
 .nav__link {
@@ -126,6 +132,55 @@ a:hover {
   background-color: var(--bg-tertiary);
   transform: translateY(-1px);
   text-decoration: none !important;
+}
+
+/* Mobile Menu Toggle */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  position: relative;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  transition: background 0.2s ease;
+}
+
+.nav__toggle:hover {
+  background: var(--bg-secondary);
+}
+
+.nav__toggle:active {
+  transform: scale(0.95);
+}
+
+.nav__toggle-bar {
+  width: 26px;
+  height: 3px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.nav__toggle.active .nav__toggle-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav__toggle.active .nav__toggle-bar:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.nav__toggle.active .nav__toggle-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Language Switcher */
@@ -188,7 +243,8 @@ a:hover {
 }
 
 .nav__language-switcher:hover .nav__lang-dropdown,
-.nav__lang-dropdown:hover {
+.nav__lang-dropdown:hover,
+.nav__lang-dropdown.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -390,105 +446,387 @@ a:hover {
 
 /* Responsive Design - Mobile */
 @media (max-width: 768px) {
+  body {
+    padding-top: 76px;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .nav {
+    padding: 1rem 0;
+    position: relative;
+    background: var(--bg-secondary);
+  }
+  
+  .header {
+    height: 76px;
+    background: var(--bg-secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  /* Show hamburger menu button */
+  .nav__toggle {
+    display: flex !important;
+    position: relative;
+    margin-left: auto;
+    z-index: 1050;
+  }
+  
+  /* Hide nav links by default on mobile */
   .nav__links {
-    gap: 0.5rem;
-    flex-wrap: nowrap;
+    position: fixed;
+    top: 130px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 130px);
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 1rem 1rem 1.5rem 1rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    z-index: 500;
+  }
+  
+  .nav__links.active {
+    transform: translateX(0);
   }
   
   .nav__link {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.6rem;
+    font-size: 1.05rem;
+    padding: 0.875rem 0.75rem;
+    width: 100%;
+    border-bottom: none;
+    text-align: left;
+    display: block;
+  }
+  
+  .nav__link:first-child {
+    border-top: none;
+  }
+  
+  .nav__link:hover, .nav__link:active {
+    background: var(--bg-secondary);
+    transition: background 0.2s ease;
   }
   
   .logo {
     font-size: 1.4rem;
   }
   
-  .logo__text {
-    display: none;
+  .logo__icon {
+    width: 28px;
+    height: 28px;
   }
   
   /* Language Switcher Mobile Styles */
   .nav__language-switcher {
-    margin-left: 0.25rem;
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+    border-top: none;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
   }
   
   .nav__lang-btn {
-    padding: 0.4rem 0.6rem;
-    gap: 0.3rem;
-    font-size: 0.8rem;
+    padding: 1rem 1.5rem;
+    width: auto;
+    min-width: 150px;
+    justify-content: center;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--bg-secondary);
+    position: relative;
   }
   
   .nav__lang-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
   
   .nav__lang-code {
-    font-size: 0.8rem;
-  }
-  
-  .nav__lang-dropdown {
-    right: -10px;
-    min-width: 160px;
-  }
-  
-  .nav__lang-option {
-    padding: 0.7rem 0.8rem;
-    gap: 0.6rem;
-  }
-  
-  .nav__lang-flag {
     font-size: 1rem;
   }
   
+  .nav__lang-dropdown {
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--bg-secondary);
+    padding: 0;
+    margin-top: 0.5rem;
+    width: 150px !important;
+    max-width: 150px !important;
+    min-width: 150px !important;
+    display: none;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1001;
+    
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .nav__lang-dropdown::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  
+  .nav__lang-dropdown.active {
+    display: block;
+  }
+  
+  .nav__lang-option {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .nav__lang-option:last-child {
+    border-bottom: none;
+  }
+  
+  .nav__lang-option:hover, .nav__lang-option:active {
+    background: var(--bg-primary);
+  }
+  
+  .nav__lang-flag {
+    font-size: 1.15rem;
+  }
+  
   .nav__lang-name {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+  }
+  
+  .nav__lang-name {
+    font-size: 1rem;
+  }
+  
+  /* Footer Mobile Styles */
+  .footer {
+    padding: 1.5rem 0;
   }
   
   .footer__content {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .footer__text {
+    font-size: 0.875rem;
+    order: 2;
+  }
+  
+  .footer__links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1rem;
+    order: 1;
+    max-width: 100%;
+  }
+  
+  .footer__link {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+  }
+  
+  .footer__credit {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  
+  /* Button Mobile Adjustments */
+  .btn {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn--large {
+    padding: 0.85rem 2rem;
+    font-size: 1.05rem;
+  }
+  
+  /* Toast Mobile Styles */
+  .toast {
+    top: 5rem;
+    right: 1rem;
+    left: 1rem;
+    min-width: auto;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    transform: translateX(0) translateY(-100px);
+  }
+  
+  .toast.show {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Footer adjustments for medium-small screens */
+  .footer__links {
+    gap: 0.6rem 0.85rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 400px;
+  }
+  
+  .footer__link {
+    font-size: 0.8125rem;
+    padding: 0.35rem 0.4rem;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .nav {
+    padding: 0.75rem 0;
+  }
+  
   .nav__links {
-    gap: 0.3rem;
+    top: 60px;
+    height: calc(100vh - 60px);
+    padding: 0.875rem;
   }
   
   .nav__link {
-    padding: 0.4rem 0.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    padding: 0.875rem 0;
   }
   
-  /* Language Switcher Extra Small Mobile */
-  .nav__language-switcher {
-    margin-left: 0.2rem;
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .logo__icon {
+    width: 24px;
+    height: 24px;
   }
   
   .nav__lang-btn {
-    padding: 0.35rem 0.5rem;
-    gap: 0.25rem;
+    padding: 0.875rem;
+    font-size: 1rem;
   }
   
-  .nav__lang-code {
-    display: block;
-    font-size: 0.75rem;
+  .nav__lang-option {
+    padding: 0.875rem;
+    font-size: 0.9375rem;
   }
   
-  .nav__lang-dropdown {
-    right: -20px;
-    min-width: 150px;
+  /* Footer Extra Small Mobile */
+  .footer {
+    padding: 1.25rem 0;
   }
   
+  .footer__content {
+    gap: 1rem;
+  }
+  
+  .footer__text {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    order: 2;
+  }
+  
+  .footer__links {
+    gap: 0.5rem 0.75rem;
+    order: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .footer__link {
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.3rem;
+    text-align: center;
+  }
+  
+  .footer__credit {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+  
+  /* Button Extra Small Mobile */
   .btn {
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
   }
   
+  .btn--small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
   .btn--large {
     padding: 0.8rem 1.8rem;
     font-size: 1rem;
+  }
+  
+  /* Toast Extra Small Mobile */
+  .toast {
+    top: 4.5rem;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Footer for extra small screens (iPhone SE, small Android) */
+  .footer__links {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 280px;
+    gap: 0.4rem 0.6rem;
+  }
+  
+  .footer__link {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.25rem;
+  }
+  
+  .footer__text {
+    font-size: 0.75rem;
+  }
+  
+  .footer__credit {
+    font-size: 0.75rem;
   }
 }

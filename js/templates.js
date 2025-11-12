@@ -248,6 +248,11 @@ const Templates = (() => {
       
       // Dispatch custom event to notify other scripts that templates are loaded
       window.dispatchEvent(new Event('templatesLoaded'));
+      
+      // Initialize hamburger menu after templates load with a small delay
+      setTimeout(() => {
+        initHamburgerMenu();
+      }, 100);
     } catch (error) {
       console.error('Error loading templates:', error);
     } finally {
@@ -257,6 +262,60 @@ const Templates = (() => {
 
   return { loadAll, get isLoaded() { return isLoaded; } };
 })();
+
+// Hamburger Menu Toggle
+function initHamburgerMenu() {
+  const navToggle = document.querySelector('.nav__toggle');
+  const navLinks = document.querySelector('.nav__links');
+  
+  if (!navToggle || !navLinks) {
+    console.warn('Hamburger menu elements not found, retrying...');
+    // Retry after a short delay
+    setTimeout(initHamburgerMenu, 200);
+    return;
+  }
+  
+  console.log('Hamburger menu initialized');
+  
+  // Toggle menu on button click
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isActive = navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', isActive);
+    console.log('Menu toggled:', isActive);
+  });
+  
+  // Close menu when clicking a nav link
+  const links = navLinks.querySelectorAll('a:not(.nav__language-current)');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navToggle.classList.contains('active') && 
+        !navLinks.contains(e.target) && 
+        !navToggle.contains(e.target)) {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navToggle.classList.contains('active')) {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
 
 // Auto-initialize templates with multiple triggers to ensure it runs
 (function initTemplates() {

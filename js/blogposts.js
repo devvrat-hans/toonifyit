@@ -26,31 +26,6 @@
     });
   }
 
-  // Reading progress bar
-  function initReadingProgress() {
-    const progressBar = document.createElement('div');
-    progressBar.className = 'reading-progress';
-    progressBar.style.cssText = `
-      position: fixed;
-      top: 76px;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background: var(--accent);
-      z-index: 999;
-      transition: width 0.1s ease;
-    `;
-    document.body.appendChild(progressBar);
-
-    window.addEventListener('scroll', () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight - windowHeight;
-      const scrolled = window.scrollY;
-      const progress = (scrolled / documentHeight) * 100;
-      progressBar.style.width = progress + '%';
-    });
-  }
-
   // Copy code blocks
   function initCodeCopy() {
     const codeBlocks = document.querySelectorAll('pre code');
@@ -172,7 +147,6 @@
   // Initialize all features when DOM is ready
   function init() {
     initSmoothScroll();
-    initReadingProgress();
     initCodeCopy();
     initTocHighlight();
     initReadingTime();
