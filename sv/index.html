@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gratis JSON till TOON-konverterare - Konvertera JSON till TOON-format omedelbar och minska LLM-tokenanvändning med 30-60%. Snabb, säker och sekretessfokuserad TOON-serialiseringsformatverktyg.">
+  <meta name="keywords" content="json till toon, json till toon-konverterare, konvertera json till toon, toon json, json toon, toon-format, toon-syntax, toon-serialiseringsformat, json vs toon, toon som json, LLM-optimering, tokeneffektivitet">
+  
+  <meta property="og:title" content="JSON till TOON-konverterare - Gratis TOON-formatverktyg | Toonifyit">
+  <meta property="og:description" content="Konvertera JSON till TOON-format omedelbar med vår gratis konverterare. TOON minskar LLM-tokenanvändning med 30-60% medan läsbarheten behålls.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toonifyit.com/sv/">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JSON till TOON-konverterare - Gratis TOON-formatverktyg | Toonifyit">
+  <meta name="twitter:description" content="Konvertera JSON till TOON-format omedelbar. Spara 30-60% på LLM-tokens med TOON-serialiseringsformat.">
+  
+  <link rel="canonical" href="https://toonifyit.com/sv/">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547680505322890" crossorigin="anonymous"></script>
+  
+  <!-- Hreflang tags -->
+  <link rel="alternate" hreflang="en" href="https://toonifyit.com/">
+  <link rel="alternate" hreflang="es" href="https://toonifyit.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://toonifyit.com/fr/">
+  <link rel="alternate" hreflang="nl" href="https://toonifyit.com/nl/">
+  <link rel="alternate" hreflang="zh" href="https://toonifyit.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://toonifyit.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://toonifyit.com/ko/">
+  <link rel="alternate" hreflang="vi" href="https://toonifyit.com/vi/">
+  <link rel="alternate" hreflang="id" href="https://toonifyit.com/id/">
+  <link rel="alternate" hreflang="pt" href="https://toonifyit.com/pt/">
+  <link rel="alternate" hreflang="hi" href="https://toonifyit.com/hi/">
+  <link rel="alternate" hreflang="ur" href="https://toonifyit.com/ur/">
+  <link rel="alternate" hreflang="de" href="https://toonifyit.com/de/">
+  <link rel="alternate" hreflang="sv" href="https://toonifyit.com/sv/">
+  <link rel="alternate" hreflang="ar" href="https://toonifyit.com/ar/">
+  <link rel="alternate" hreflang="it" href="https://toonifyit.com/it/">
+  <link rel="alternate" hreflang="pl" href="https://toonifyit.com/pl/">
+  <link rel="alternate" hreflang="ru" href="https://toonifyit.com/ru/">
+  <link rel="alternate" hreflang="tr" href="https://toonifyit.com/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://toonifyit.com/">  
+<link rel="icon" href="/favicon.png" type="image/png">
+
+  <title>JSON till TOON-konverterare - Gratis onlineverktyg | Konvertera JSON till TOON-format</title>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Toonifyit",
+    "alternateName": "JSON till TOON-konverterare",
+    "url": "https://toonifyit.com/sv/",
+    "description": "Gratis JSON till TOON-konverterare. Konvertera JSON till TOON-format och minska LLM-tokenanvändning med 30-60%.",
+    "inLanguage": "sv",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://toonifyit.com/sv/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Toonifyit JSON till TOON-konverterare",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "operatingSystem": "Webbläsare",
+    "description": "Gratis online JSON till TOON-konverterare. Konvertera JSON till TOON-format omedelbar och minska LLM-tokenanvändning med 30-60%.",
+    "inLanguage": "sv"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad är TOON-format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON (Token-Oriented Object Notation) är ett dataserialiseringsformat utformat specifikt för LLM-prompts. Det minskar tokenanvändningen med 30-60% jämfört med JSON medan läsbarheten och strukturen behålls. TOON använder ett tabellarformat för matriser och minimal TOON-syntax för objekt, vilket gör JSON till TOON-konvertering mycket effektiv."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur mycket kan jag spara med TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON sparar vanligtvis 30-60% på LLM-tokens jämfört med JSON. För stora datamängder eller API-svar kan detta översättas till betydande kostnadsbesparingar när du använder API:er som GPT-4 eller Claude. De exakta besparingarna beror på din datastruktur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Är TOON kompatibelt med alla LLM:er?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, TOON fungerar med alla större LLM:er inklusive GPT-4, Claude, Gemini och LLaMA. Eftersom TOON är ett textformat kan alla LLM läsa och förstå det. De flesta moderna LLM:er kan tolka TOON-format med enkla instruktioner i din prompt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Är mina data säkra när jag använder denna konverterare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolut. All konvertering sker lokalt i din webbläsare med JavaScript. Dina data lämnar aldrig din enhet eller skickas till någon server. Konverteraren fungerar helt offline när sidan har laddats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är skillnaden mellan TOON och JSON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON vs JSON: TOON använder en mer kompakt syntax utformad för tokeneffektivitet. TOON-serialiseringsformatet representerar matriser som tabeller med rubriker, använder minimal interpunktion och eliminerar redundanta tecken. JSON är mer verbose med hakparenteser, citattecken och kommatecken. För LLM-prompts minskar TOONs effektivitet kostnaderna avsevärt när du konverterar JSON till TOON."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur konverterar jag JSON till TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Att konvertera JSON till TOON är enkelt: 1) Klistra in dina JSON-data i vår konverterare ovan, 2) Klicka på \"Konvertera till TOON\", 3) Kopiera TOON-utmatningen. För programmatisk konvertering kan du använda våra JavaScript- eller Python-bibliotek."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan jag konvertera TOON tillbaka till JSON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja! TOON är helt reversibel - du kan konvertera TOON tillbaka till JSON utan någon dataförlust. Vår tvåvägskonverterare stöder både JSON till TOON och TOON till JSON-konvertering. Klistra helt enkelt in dina TOON-data och välj \"Konvertera till JSON\" för att få din ursprungliga JSON-struktur tillbaka."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vilka typer av data fungerar bäst med TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON fungerar bäst med enhetliga tabellariska data som databasfrågresultat, API-svar med listor med objekt, analysdata, CSV-stiliserade datamängder och e-handelsproduktkataloger. Data med upprepade fält över flera objekt ser de högsta tokenbesparingarna (40-60%)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Stöder TOON kapslade objekt och matriser?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, TOON stöder kapslade objekt och matriser. Kapslade objekt använder indenteringsbaserad struktur (som YAML), medan kapslade matriser behåller sin struktur. TOONs tokeneffektivitet är högst med platta, enhetliga data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Är TOON gratis att använda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, både TOON-konverteraren och TOON-formatet är helt gratis att använda. Det finns ingen gräns för konverteringar, filstorleksbegränsningar eller premiumfunktioner. TOON-formatspecifikationen är öppen för vem som helst att implementera."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vilka LLM-leverantörer stöder TOON-format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON fungerar med alla större LLM-leverantörer inklusive OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Google (Gemini), Meta (LLaMA) och andra. Eftersom TOON är ett textbaserat format kan all LLM förstå det med lämpliga instruktioner."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur minskar TOON tokens?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON minskar tokens genom tre nyckeloptimeringar: 1) Deklara fältnamn en gång i matrisbeteckningar istället för att upprepa dem för varje objekt, 2) Använd minimal interpunktion och eliminera onödiga parenteser/klamrar, 3) Använd indenteringsbaserad struktur istället för explicita avgränsare. Dessa kombineras för att uppnå 30-60% tokenminskning jämfört med JSON."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan jag använda TOON med ChatGPT API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolut! TOON fungerar perfekt med ChatGPT API (GPT-4, GPT-3.5-turbo). Konvertera helt enkelt dina JSON-data till TOON innan du inkluderar det i din prompt. Lägg till en kort förklaring av TOON-formatet i ditt systemmeddelande, och modellen kommer att förstå och bearbeta data. Detta kan avsevärt minska dina API-kostnader för dataintensiva prompts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vilka filtillägg använder TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON-filer använder vanligtvis .toon-tillägget (t.ex. data.toon). Eftersom TOON är ett textformat kan du också spara det som .txt-filer. Vid nedladdning från vår konverterare är standardtillägget .toon för att tydligt identifiera formattypen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur integrerar jag TOON i min applikation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Integrationen är enkel: 1) Installera TOON-biblioteket för ditt språk (npm install @toon-format/toon för JavaScript, pip install toon-format för Python), 2) Importera kodnings-/avkodningsfunktioner, 3) Konvertera dina data till TOON innan du skickar till LLM. Kontrollera vår dokumentation för kodexempel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Fungerar TOON med direktuppspelningsterminsvar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, TOON fungerar med direktuppspelning av LLM-svar. Du använder TOON för indatadata i dina prompts för att minska indatatoken. LLM:s svar (oavsett om direktuppspelning eller inte) kan vara i vilket format som helst. Om du behöver TOON-utmatning inkluder du formatinstruktioner i din prompt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är den maximala filstorleken för konvertering?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vår onlinekonverterare kan hantera filer upp till 10 MB. För större datamängder rekommenderar vi att använda kommandoradsverktyget eller integrera TOON-biblioteket direkt. Biblioteket själv har ingen filstorleksgräns och kan bearbeta mycket stora datamängder effektivt."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Hur man konverterar JSON till TOON",
+    "description": "Steg-för-steg-guide för att konvertera JSON-data till TOON-format för LLM-optimering och tokenminskning",
+    "image": "https://toonifyit.com/img/favicon.png",
+    "totalTime": "PT2M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Toonifyit JSON till TOON-konverterare"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Förbered dina JSON-data",
+        "text": "Börja med giltig, väl formaterad JSON-data från API-svar, databaskexporter, konfigurationsfiler eller någon annan JSON-källa. Se till att din JSON är korrekt formaterad.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Kopiera dina JSON-data eller ha den redo att klistra in"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Kom åt konverteraren",
+        "text": "Öppna Toonifyit JSON till TOON-konverteraren på denna sida. Konverteraren är gratis, webbläsarbaserad och fungerar helt offline.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Bläddra ner till konverteringsverktyget på denna sida"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Mata in din JSON",
+        "text": "Klistra in dina JSON-data i den vänstra indatapanelen märkt 'JSON-inmatning'. Du kan också klicka på 'Ladda exempel' för att se en demodkonvertering.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Klistra in JSON i inmatningens textarea"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Eller klicka på 'Ladda exempel' för att se en demo"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Konvertera till TOON",
+        "text": "Konverteringen sker automatiskt i realtid. Se hur din JSON omvandlas till TOON-format i den högra utmatningspanelen.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Se TOON-utmatningen i den högra panelen"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Se tokenreduktionsstatistik under utmatningen"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Kopiera eller ladda ner TOON-utmatning",
+        "text": "När den är konverterad klickar du på 'Kopiera utmatning' för att kopiera TOON-data till urklipp, eller använd knappen 'Ladda ner' för att spara den som en .toon-fil.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Klicka på 'Kopiera utmatning' för att kopiera till urklipp"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Eller klicka på 'Ladda ner' för att spara som fil"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Använd TOON i dina LLM-applikationer",
+        "text": "Använd den konverterade TOON-datan i dina LLM-prompts med GPT-4, Claude, Gemini eller någon annan Large Language Model för att minska tokenanvändningen med 30-60%.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Inkludera TOON-data i dina LLM-prompts"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Njut av 30-60% tokenminskning och kostnadsbesparingar"
+        }]
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Toonifyit",
+    "url": "https://toonifyit.com",
+    "logo": "https://toonifyit.com/img/favicon.png",
+    "description": "Gratis JSON till TOON-konverterare för LLM-optimering och tokenminskning",
+    "foundingDate": "2025",
+    "sameAs": [
+      "https://github.com/toonifyit"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Kundsupport",
+      "url": "https://toonifyit.com/contact.html"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hem",
+      "item": "https://toonifyit.com/"
+    }]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "JSON till TOON-konverterare - Gratis onlineverktyg",
+    "description": "Konvertera JSON till TOON-format omedelbar och minska LLM-tokenanvändning med 30-60%. Snabb, gratis och sekretessfokuserad.",
+    "url": "https://toonifyit.com/sv/",
+    "mainEntity": {
+      "@type": "SoftwareApplication",
+      "name": "Toonifyit JSON till TOON-konverterare",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Webbläsare",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Hem",
+        "item": "https://toonifyit.com/sv/"
+      }]
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero__title", ".hero__subtitle", ".hero__description"]
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "TOON-formatets fördelar",
+    "description": "Nyckelfördelar med att använda TOON-format istället för JSON för LLM-applikationer",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Tokeneffektivitet",
+        "description": "30-60% minskning av tokenanvändningen jämfört med JSON"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kostnadsbesparingar",
+        "description": "Betydande minskning av LLM API-kostnader"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Bättre läsbarhet",
+        "description": "Renare format som är lättare för LLM:er att tolka"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Universell kompatibilitet",
+        "description": "Fungerar med alla större LLM:er: GPT-4, Claude, Gemini, LLaMA"
+      }
+    ]
+  }
+  </script>
+  
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/faq.css">
+  <link rel="stylesheet" href="/css/cta.css">
+  <script src="/js/templates.js"></script>
+  <script src="/js/language.js"></script>
+</head>
+<body>
+  <div data-template="navbar"></div>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title">JSON till TOON-konverterare - Konvertera JSON till TOON-format</h1>
+        <p class="hero__subtitle">Gratis JSON till TOON-konverterare som minskar LLM-tokenanvändning med 30-60% med TOON-format</p>
+        <p class="hero__description">Snabb, gratis och sekretessfokuserad JSON till TOON-konvertering. All konvertering sker i din webbläsare.</p>
+      </div>
+    </section>
+
+    <section class="converter">
+      <div class="container">
+        <div class="converter__controls">
+          <button class="btn btn--secondary" data-action="load-example">Ladda exempel</button>
+          <button class="btn btn--secondary" data-action="clear">Rensa allt</button>
+        </div>
+
+        <div class="converter__grid">
+          <div class="converter__panel">
+            <div class="converter__header">
+              <label for="input-json" class="converter__label">JSON-inmatning</label>
+            </div>
+            <textarea 
+              id="input-json" 
+              class="textarea" 
+              placeholder='Klistra in din JSON här...'
+              spellcheck="false"
+              data-input="main"
+            ></textarea>
+            <div class="converter__error" data-error="input"></div>
+          </div>
+
+          <div class="converter__panel">
+            <div class="converter__header">
+              <label for="output-toon" class="converter__label">TOON-utmatning</label>
+              <div class="converter__actions">
+                <button class="btn btn--small" data-action="copy">Kopiera</button>
+                <button class="btn btn--small" data-action="download">Ladda ner</button>
+              </div>
+            </div>
+            <textarea 
+              id="output-toon" 
+              class="textarea" 
+              placeholder='Konverterad utmatning kommer att visas här...'
+              readonly
+              spellcheck="false"
+              data-output="main"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="converter__options">
+          <h3 class="converter__options-title">Alternativ</h3>
+          <div class="converter__options-grid">
+            <label class="option">
+              <span class="option__label">Avgränsare</span>
+              <select class="select" data-option="delimiter">
+                <option value=",">Komma (,)</option>
+                <option value="\t">Tabb</option>
+                <option value="|">Pipe (|)</option>
+              </select>
+            </label>
+            <label class="option">
+              <span class="option__label">Indrag</span>
+              <select class="select" data-option="indent">
+                <option value="2">2 mellanslag</option>
+                <option value="4">4 mellanslag</option>
+              </select>
+            </label>
+            <label class="option">
+              <input type="checkbox" class="checkbox" data-option="length-marker" checked>
+              <span class="option__label">Visa längdmarköringar (#)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stats__item">
+            <span class="stats__label">JSON-tokens:</span>
+            <span class="stats__value" data-stat="json-tokens">0</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__label">TOON-tokens:</span>
+            <span class="stats__value" data-stat="toon-tokens">0</span>
+          </div>
+          <div class="stats__item stats__item--highlight">
+            <span class="stats__label">Sparat:</span>
+            <span class="stats__value" data-stat="saved">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-to-use">
+      <div class="container">
+        <h2 class="section__title">Hur du använder JSON till TOON-konverteraren</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h3 class="step__title">Klistra in dina JSON-data</h3>
+              <p class="step__text">Kopiera dina JSON-data och klistra in dem i inmatningsområdet. Vår JSON till TOON-konverterare stöder alla giltiga JSON-format. Du kan också klicka på "Ladda exempel" för att se en JSON till TOON-konvertering av exempel.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h3 class="step__title">Anpassa TOON-formatoption</h3>
+              <p class="step__text">Välj din önskade avgränsare (komma, tabb eller pipe), indragsstorlek och växla längdmarköringar för att anpassa TOON-syntaxutmatningen efter dina behov.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h3 class="step__title">Få TOON-formatutmatning</h3>
+              <p class="step__text">Se hur din JSON omvandlas omedelbar till TOON-format. TOON-utmatningen visas i realtid när du skriver och visar det effektiva TOON-serialiseringsformatet.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h3 class="step__title">Kopiera eller ladda ner TOON-data</h3>
+              <p class="step__text">Använd knappen "Kopiera" för att kopiera TOON-utmatningen till urklipp, eller klicka på "Ladda ner" för att spara dina konverterade JSON till TOON-data som en fil.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section__title">Varför konvertera JSON till TOON?</h2>
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature__title">Tokeneffektivt TOON-format</h3>
+            <p class="feature__text">Spara 30-60% på LLM-tokens med TOON-format jämfört med JSON med bibehållen läsbarhet. Perfekt för JSON till TOON-konvertering.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="feature__title">Sekretessfokuserad konverterare</h3>
+            <p class="feature__text">All JSON till TOON-konvertering sker lokalt i din webbläsare. Dina data lämnar aldrig din enhet med vår säkra JSON TOON-konverterare.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature__title">Blixtrande snabb TOON-konvertering</h3>
+            <p class="feature__text">Omedelbar JSON till TOON-konvertering med TOON-formatutmatning i realtid när du skriver. Inga serverförseningar med vår snabba konverterare.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="feature__title">Strukturerad TOON-data</h3>
+            <p class="feature__text">Perfekt TOON-serialiseringsformat för tabellariska data, API-svar och stora datamängder i LLM-prompts. TOON JSON-integration gjord enkelt.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature__title">Lätt att läsa TOON-syntax</h3>
+            <p class="feature__text">Människoläsbart TOON-format som är intuitivt för både utvecklare och LLM:er. TOON som JSON men mer effektivt för konvertering.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature__title">Kostnadseffektiv JSON till TOON</h3>
+            <p class="feature__text">Minska API-kostnader med upp till 60% med mer effektiv tokenanvändning när du konverterar JSON till TOON för dina LLM-applikationer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2 class="section__title">Vanliga frågor</h2>
+        <div class="faq__list">
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Vad är TOON-format?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON (Token-Oriented Object Notation) är ett dataserialiseringsformat utformat specifikt för LLM-prompts. Det minskar tokenanvändningen med 30-60% jämfört med JSON medan läsbarheten och strukturen behålls. TOON-formatet använder ett tabellarformat för matriser och minimal TOON-syntax för objekt, vilket gör JSON till TOON-konvertering mycket effektiv.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Hur mycket kan jag spara med TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON sparar vanligtvis 30-60% på LLM-tokens jämfört med JSON. För stora datamängder eller API-svar kan detta översättas till betydande kostnadsbesparingar när du använder API:er som GPT-4 eller Claude. De exakta besparingarna beror på din datastruktur.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Är TOON kompatibelt med alla LLM:er?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Ja, TOON fungerar med alla större LLM:er inklusive GPT-4, Claude, Gemini och LLaMA. Eftersom TOON är ett textformat kan alla LLM läsa och förstå det. De flesta moderna LLM:er kan tolka TOON-format med enkla instruktioner i din prompt.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Är mina data säkra när jag använder denna konverterare?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Absolut. All konvertering sker lokalt i din webbläsare med JavaScript. Dina data lämnar aldrig din enhet eller skickas till någon server. Konverteraren fungerar helt offline när sidan har laddats.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Vad är skillnaden mellan TOON och JSON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">JSON vs TOON: TOON använder en mer kompakt TOON-syntax utformad för tokeneffektivitet. TOON-serialiseringsformatet representerar matriser som tabeller med rubriker, använder minimal interpunktion och eliminerar redundanta tecken. JSON är mer verbose med hakparenteser, citattecken och kommatecken. När du konverterar JSON till TOON för LLM-prompts minskar TOONs effektivitet kostnaderna avsevärt. <a href="/blog/toon-vs-json.html">Läs vår detaljerade TOON vs JSON-jämförelse</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Hur konverterar jag JSON till TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Att konvertera JSON till TOON är enkelt: 1) Klistra in dina JSON-data i vår konverterare ovan, 2) Klicka på "Konvertera till TOON", 3) Kopiera TOON-utmatningen. För programmatisk konvertering kan du använda våra JavaScript- eller Python-bibliotek. <a href="/blog/convert-json-to-toon.html">Se vår komplett JSON till TOON-konverteringsguide</a> med exempel och kodavsnitt.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Kan jag konvertera TOON tillbaka till JSON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Ja! TOON är helt reversibel - du kan konvertera TOON tillbaka till JSON utan någon dataförlust. Vår tvåvägskonverterare stöder både JSON till TOON och TOON till JSON-konvertering. Klistra helt enkelt in dina TOON-data och välj "Konvertera till JSON" för att få din ursprungliga JSON-struktur tillbaka.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Vilka typer av data fungerar bäst med TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON fungerar bäst med enhetliga tabellariska data som databasfrågresultat, API-svar med listor med objekt, analysdata, CSV-stiliserade datamängder och e-handelsproduktkataloger. Data med upprepade fält över flera objekt ser de högsta tokenbesparingarna (40-60%). Små datamängder eller djupt kapslade strukturer kan se mindre förbättringar.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Stöder TOON kapslade objekt och matriser?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Ja, TOON stöder kapslade objekt och matriser. Kapslade objekt använder indenteringsbaserad struktur (som YAML), medan kapslade matriser behåller sin struktur. TOONs tokeneffektivitet är högst med platta, enhetliga data. Komplexa kapslade strukturer fungerar fortfarande men kan inte se lika dramatisk tokenminskning.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Är TOON gratis att använda?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Ja, både TOON-konverteraren och TOON-formatet är helt gratis att använda. Det finns ingen gräns för konverteringar, filstorleksbegränsningar eller premiumfunktioner. TOON-formatspecifikationen är öppen och tillgänglig för vem som helst att implementera i sina applikationer.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Vilka LLM-leverantörer stöder TOON-format?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON fungerar med alla större LLM-leverantörer inklusive OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Google (Gemini), Meta (LLaMA) och andra. Eftersom TOON är ett textbaserat format kan alla LLM som kan bearbeta text förstå TOON med lämpliga instruktioner som förklarar formatstrukturen.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Hur minskar TOON tokens?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON minskar tokens genom tre nyckeloptimieringar: 1) Deklarera fältnamn en gång i matrisbeteckningar istället för att upprepa dem för varje objekt, 2) Använd minimal interpunktion och eliminera onödiga parenteser/klamrar, 3) Använd indenteringsbaserad struktur istället för explicita avgränsare. Dessa kombineras för att uppnå 30-60% tokenminskning jämfört med JSON.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Kan jag använda TOON med ChatGPT API?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Absolut! TOON fungerar perfekt med ChatGPT API (GPT-4, GPT-3.5-turbo). Konvertera helt enkelt dina JSON-data till TOON innan du inkluderar det i din prompt. Lägg till en kort förklaring av TOON-formatet i ditt systemmeddelande, och modellen kommer att förstå och bearbeta data. Detta kan avsevärt minska dina API-kostnader för dataintensiva prompts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Vilka filtillägg använder TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON-filer använder vanligtvis .toon-tillägget (t.ex. data.toon). Eftersom TOON är ett textformat kan du också spara det som .txt-filer. Vid nedladdning från vår konverterare är standardtillägget .toon för att tydligt identifiera formattypen.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Hur integrerar jag TOON i min applikation?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Integrationen är enkel: 1) Installera TOON-biblioteket för ditt språk (npm install @toon-format/toon för JavaScript, pip install toon-format för Python), 2) Importera kodnings-/avkodningsfunktioner, 3) Konvertera dina data till TOON innan du skickar till LLM, 4) Konvertera eventuellt svar tillbaka till JSON. Kontrollera vår <a href="/docs.html">dokumentation</a> för kodexempel och API-referens.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Fungerar TOON med direktuppspelningsterminsvar?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Ja, TOON fungerar med direktuppspelning av LLM-svar. Du använder TOON för indatadata i dina prompts för att minska indatatoken. LLM:s svar (oavsett om direktuppspelning eller inte) kan vara i vilket format som helst. Om du behöver TOON-utmatning inkluder du formatinstruktioner i din prompt.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Vad är den maximala filstorleken för konvertering?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Vår onlinekonverterare kan hantera filer upp till 10 MB, vilket är lämpligt för de flesta användarfall. För större datamängder rekommenderar vi att använda kommandoradsverktyget eller integrera TOON-biblioteket direkt i din applikation. Biblioteket självt har ingen filstorleksgräns och kan bearbeta mycket stora datamängder effektivt.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" style="background: var(--bg-secondary); padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section__title">Läs mer om TOON-format</h2>
+        <p style="text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+          Utforska våra omfattande resurser för att bemästra TOON-format och optimera dina LLM-applikationer:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <a href="/blog/what-is-toon.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Vad är TOON?</h3>
+            <p style="color: var(--text-secondary);">Lär dig grunderna för TOON-format, syntax och nyckelfunktioner.</p>
+          </a>
+          <a href="/blog/toon-vs-json.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">TOON vs JSON</h3>
+            <p style="color: var(--text-secondary);">Se detaljerade benchmarks och jämförelse mellan format.</p>
+          </a>
+          <a href="/blog/convert-json-to-toon.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Konverteringsguide</h3>
+            <p style="color: var(--text-secondary);">Steg-för-steg-handledning om konvertering av JSON till TOON-format.</p>
+          </a>
+          <a href="/docs.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Dokumentation</h3>
+            <p style="color: var(--text-secondary);">Fullständig syntaxreferens, exempel och bästa praxis.</p>
+          </a>
+          <a href="/blogs.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Alla artiklar</h3>
+            <p style="color: var(--text-secondary);">Bläddra bland alla TOON-handledningar, tips och användningsfall.</p>
+          </a>
+          <a href="/contact.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Få hjälp</h3>
+            <p style="color: var(--text-secondary);">Frågor? Kontakta oss för support och assistans.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div data-template="cta"></div>
+  </main>
+
+  <div data-template="footer"></div>
+
+  <div class="toast" data-toast></div>
+
+  <script src="/js/index.js"></script>
+  <script src="/js/faq.js"></script>
+</body>
+</html>

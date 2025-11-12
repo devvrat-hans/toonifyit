@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bộ chuyển đổi JSON sang TOON miễn phí - Chuyển đổi JSON sang định dạng TOON tức thời và giảm sử dụng token LLM 30-60%. Công cụ định dạng tuần tự TOON nhanh, an toàn và tập trung vào quyền riêng tư.">
+  <meta name="keywords" content="json to toon, json to toon converter, convert json to toon, toon json, json toon, toon format, toon syntax, toon serialization format, json vs toon, toon like json, LLM optimization, token efficiency">
+  
+  <meta property="og:title" content="Bộ Chuyển Đổi JSON sang TOON - Công Cụ Định Dạng TOON Miễn Phí | Toonifyit">
+  <meta property="og:description" content="Chuyển đổi JSON sang định dạng TOON tức thời với bộ chuyển đổi miễn phí của chúng tôi. TOON giảm sử dụng token LLM 30-60% trong khi duy trì khả năng đọc.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toonifyit.com/">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bộ Chuyển Đổi JSON sang TOON - Công Cụ Định Dạng TOON Miễn Phí | Toonifyit">
+  <meta name="twitter:description" content="Chuyển đổi JSON sang định dạng TOON tức thời. Tiết kiệm 30-60% token LLM với định dạng tuần tự TOON.">
+  
+  <link rel="canonical" href="https://toonifyit.com/">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547680505322890" crossorigin="anonymous"></script>
+  
+  <!-- Hreflang tags -->
+  <link rel="alternate" hreflang="en" href="https://toonifyit.com/">
+  <link rel="alternate" hreflang="es" href="https://toonifyit.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://toonifyit.com/fr/">
+  <link rel="alternate" hreflang="nl" href="https://toonifyit.com/nl/">
+  <link rel="alternate" hreflang="zh" href="https://toonifyit.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://toonifyit.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://toonifyit.com/ko/">
+  <link rel="alternate" hreflang="vi" href="https://toonifyit.com/vi/">
+  <link rel="alternate" hreflang="id" href="https://toonifyit.com/id/">
+  <link rel="alternate" hreflang="pt" href="https://toonifyit.com/pt/">
+  <link rel="alternate" hreflang="hi" href="https://toonifyit.com/hi/">
+  <link rel="alternate" hreflang="ur" href="https://toonifyit.com/ur/">
+  <link rel="alternate" hreflang="de" href="https://toonifyit.com/de/">
+  <link rel="alternate" hreflang="sv" href="https://toonifyit.com/sv/">
+  <link rel="alternate" hreflang="ar" href="https://toonifyit.com/ar/">
+  <link rel="alternate" hreflang="it" href="https://toonifyit.com/it/">
+  <link rel="alternate" hreflang="pl" href="https://toonifyit.com/pl/">
+  <link rel="alternate" hreflang="ru" href="https://toonifyit.com/ru/">
+  <link rel="alternate" hreflang="tr" href="https://toonifyit.com/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://toonifyit.com/">
+  
+<link rel="icon" href="/favicon.png" type="image/png">
+  <title>Bộ Chuyển Đổi JSON sang TOON - Công Cụ Trực Tuyến Miễn Phí | Chuyển Đổi JSON sang Định Dạng TOON</title>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Toonifyit",
+    "alternateName": "Bộ Chuyển Đổi JSON sang TOON",
+    "url": "https://toonifyit.com/",
+    "description": "Công cụ chuyển đổi JSON sang TOON miễn phí. Chuyển đổi JSON sang định dạng TOON và giảm sử dụng token LLM 30-60%.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://toonifyit.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bộ Chuyển Đổi Toonifyit JSON sang TOON",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "operatingSystem": "Web Browser",
+    "description": "Bộ chuyển đổi JSON sang TOON trực tuyến miễn phí. Chuyển đổi JSON sang định dạng TOON tức thời và giảm sử dụng token LLM 30-60%."
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Định dạng TOON là gì?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON (Token-Oriented Object Notation) là một định dạng tuần tự dữ liệu được thiết kế đặc biệt cho các prompt LLM. Nó giảm sử dụng token 30-60% so với JSON trong khi duy trì khả năng đọc và cấu trúc. TOON sử dụng định dạng bảng cho mảng và cú pháp tối thiểu cho các đối tượng, làm cho việc chuyển đổi JSON sang TOON rất hiệu quả."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tôi có thể tiết kiệm bao nhiêu với TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON thường tiết kiệm 30-60% token LLM so với JSON. Đối với các bộ dữ liệu lớn hoặc phản hồi API, điều này có thể dịch thành tiết kiệm chi phí đáng kể khi sử dụng các API như GPT-4 hoặc Claude. Tiết kiệm chính xác phụ thuộc vào cấu trúc dữ liệu của bạn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON có tương thích với tất cả LLM không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, TOON hoạt động với tất cả các LLM chính bao gồm GPT-4, Claude, Gemini và LLaMA. Vì TOON là định dạng văn bản, bất kỳ LLM nào cũng có thể đọc và hiểu nó. Hầu hết các LLM hiện đại có thể phân tích định dạng TOON với các hướng dẫn đơn giản trong prompt của bạn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dữ liệu của tôi có an toàn khi sử dụng bộ chuyển đổi này không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tuyệt đối. Tất cả các chuyển đổi diễn ra cục bộ trong trình duyệt của bạn bằng cách sử dụng JavaScript. Dữ liệu của bạn không bao giờ rời khỏi thiết bị của bạn hoặc được gửi đến bất kỳ máy chủ nào. Bộ chuyển đổi hoạt động hoàn toàn ngoại tuyến sau khi trang được tải."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sự khác biệt giữa TOON và JSON là gì?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON so với JSON: TOON sử dụng cú pháp TOON nhỏ gọn hơn được thiết kế cho hiệu quả token. Định dạng tuần tự TOON biểu diễn mảng dưới dạng bảng có tiêu đề, sử dụng dấu phân cách tối thiểu và loại bỏ các ký tự dư thừa. JSON chi tiết hơn với dấu ngoặc, dấu ngoặc kép và dấu phẩy. Khi bạn chuyển đổi JSON sang TOON cho các prompt LLM, hiệu quả của TOON làm giảm chi phí đáng kể."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Làm cách nào để chuyển đổi JSON sang TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chuyển đổi JSON sang TOON rất đơn giản: 1) Dán dữ liệu JSON của bạn vào bộ chuyển đổi, 2) Nhấp vào 'Chuyển đổi sang TOON', 3) Sao chép đầu ra TOON. Để chuyển đổi theo chương trình, bạn có thể sử dụng các thư viện JavaScript hoặc Python của chúng tôi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tôi có thể chuyển đổi TOON trở lại JSON không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có! TOON hoàn toàn có thể đảo ngược. Bộ chuyển đổi hai chiều của chúng tôi hỗ trợ cả chuyển đổi JSON sang TOON và TOON sang JSON mà không mất dữ liệu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Loại dữ liệu nào hoạt động tốt nhất với TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON hoạt động tốt nhất với dữ liệu bảng đồng nhất như kết quả truy vấn cơ sở dữ liệu, phản hồi API có danh sách các đối tượng, dữ liệu phân tích, bộ dữ liệu kiểu CSV và danh mục sản phẩm thương mại điện tử. Dữ liệu có các trường lặp lại sẽ thấy tiết kiệm token cao nhất (40-60%)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON có hỗ trợ các đối tượng và mảng lồng nhau không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, TOON hỗ trợ các đối tượng và mảng lồng nhau. Các đối tượng lồng nhau sử dụng cấu trúc dựa trên thụt lề trong khi các mảng lồng nhau duy trì cấu trúc của chúng. Hiệu quả token của TOON là cao nhất với dữ liệu phẳng, đồng nhất."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON có miễn phí để sử dụng không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, cả công cụ chuyển đổi TOON và định dạng TOON đều hoàn toàn miễn phí sử dụng. Không có giới hạn, hạn chế kích thước tệp hoặc tính năng cao cấp. Đặc tả định dạng TOON là mở cho bất kỳ ai để thực hiện."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Nhà cung cấp LLM nào hỗ trợ định dạng TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON hoạt động với tất cả các nhà cung cấp LLM chính bao gồm OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Google (Gemini), Meta (LLaMA) và những nhà cung cấp khác. Vì TOON là định dạng dựa trên văn bản, bất kỳ LLM nào cũng có thể hiểu nó với các hướng dẫn prompt thích hợp."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON làm giảm token như thế nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON giảm token thông qua ba tối ưu hóa: 1) Khai báo tên trường một lần trong tiêu đề mảng thay vì lặp lại chúng, 2) Sử dụng dấu phân cách tối thiểu, 3) Sử dụng cấu trúc dựa trên thụt lề. Những điều này kết hợp để đạt được giảm 30-60% token so với JSON."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tôi có thể sử dụng TOON với API ChatGPT không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tuyệt đối! TOON hoạt động hoàn hảo với API ChatGPT (GPT-4, GPT-3.5-turbo). Chuyển đổi dữ liệu JSON của bạn sang TOON trước khi đưa nó vào prompt. Điều này có thể giảm đáng kể chi phí API cho các yêu cầu nặng dữ liệu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON sử dụng phần mở rộng tệp nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tệp TOON thường sử dụng phần mở rộng .toon (ví dụ: data.toon). Vì TOON là định dạng văn bản, bạn cũng có thể lưu nó dưới dạng tệp .txt. Bộ chuyển đổi của chúng tôi mặc định có phần mở rộng .toon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Làm cách nào để tích hợp TOON vào ứng dụng của tôi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tích hợp rất đơn giản: 1) Cài đặt thư viện TOON (npm install @toon-format/toon cho JavaScript, pip install toon-format cho Python), 2) Nhập các hàm mã hóa/giải mã, 3) Chuyển đổi dữ liệu của bạn trước khi gửi đến LLM. Kiểm tra tài liệu của chúng tôi để biết các ví dụ về mã."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON có hoạt động với phản hồi truyền phát không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có, TOON hoạt động với các phản hồi LLM truyền phát. Bạn sử dụng TOON cho dữ liệu đầu vào trong các prompt để giảm token đầu vào. Phản hồi của LLM (cho dù truyền phát hay không) có thể ở bất kỳ định dạng nào. Nếu bạn cần đầu ra TOON, hãy đưa vào hướng dẫn định dạng trong prompt của bạn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kích thước tệp tối đa để chuyển đổi là bao nhiêu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bộ chuyển đổi trực tuyến của chúng tôi có thể xử lý các tệp lên tới 10MB. Đối với bộ dữ liệu lớn hơn, chúng tôi khuyên bạn nên sử dụng công cụ dòng lệnh hoặc tích hợp thư viện TOON trực tiếp. Thư viện không có giới hạn kích thước tệp."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cách Chuyển Đổi JSON sang TOON",
+    "description": "Hướng dẫn từng bước chuyển đổi dữ liệu JSON sang định dạng TOON để tối ưu hóa LLM và giảm token",
+    "image": "https://toonifyit.com/img/favicon.png",
+    "totalTime": "PT2M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Bộ Chuyển Đổi Toonifyit JSON sang TOON"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Chuẩn Bị Dữ Liệu JSON Của Bạn",
+        "text": "Bắt đầu với dữ liệu JSON hợp lệ, được định dạng tốt từ phản hồi API, xuất khẩu cơ sở dữ liệu, tệp cấu hình hoặc bất kỳ nguồn JSON nào khác. Đảm bảo JSON của bạn được định dạng đúng.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Sao chép dữ liệu JSON của bạn hoặc sẵn sàng dán"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Truy Cập Bộ Chuyển Đổi",
+        "text": "Mở bộ chuyển đổi JSON sang TOON của Toonifyit trên trang này. Bộ chuyển đổi miễn phí, dựa trên trình duyệt và hoạt động hoàn toàn ngoại tuyến.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Cuộn xuống công cụ chuyển đổi trên trang này"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Nhập JSON Của Bạn",
+        "text": "Dán dữ liệu JSON của bạn vào bảng đầu vào bên trái có nhãn 'Đầu Vào JSON'. Bạn cũng có thể nhấp vào 'Tải Ví Dụ' để xem chuyển đổi demo.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Dán JSON vào textarea đầu vào"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Hoặc nhấp vào 'Tải Ví Dụ' để xem demo"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Chuyển Đổi sang TOON",
+        "text": "Chuyển đổi diễn ra tự động theo thời gian thực. Xem dữ liệu JSON của bạn biến thành định dạng TOON trong bảng đầu ra bên phải.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Xem đầu ra TOON trong bảng bên phải"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Xem thống kê giảm token dưới đầu ra"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Sao Chép hoặc Tải Xuống Đầu Ra TOON",
+        "text": "Sau khi chuyển đổi, nhấp vào 'Sao Chép Đầu Ra' để sao chép dữ liệu TOON vào bộ nhớ tạm của bạn, hoặc sử dụng nút 'Tải Xuống' để lưu nó dưới dạng tệp .toon.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Nhấp vào 'Sao Chép Đầu Ra' để sao chép vào bộ nhớ tạm"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Hoặc nhấp vào 'Tải Xuống' để lưu dưới dạng tệp"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Sử Dụng TOON trong Các Ứng Dụng LLM Của Bạn",
+        "text": "Sử dụng dữ liệu TOON được chuyển đổi trong các prompt LLM của bạn với GPT-4, Claude, Gemini hoặc bất kỳ Mô Hình Ngôn Ngữ Lớn nào khác để giảm sử dụng token 30-60%.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Đưa vào dữ liệu TOON trong các prompt LLM của bạn"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Tận hưởng giảm 30-60% token và tiết kiệm chi phí"
+        }]
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Toonifyit",
+    "url": "https://toonifyit.com",
+    "logo": "https://toonifyit.com/img/favicon.png",
+    "description": "Công cụ chuyển đổi JSON sang TOON miễn phí để tối ưu hóa LLM và giảm token",
+    "foundingDate": "2025",
+    "sameAs": [
+      "https://github.com/toonifyit"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "url": "https://toonifyit.com/contact.html"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang Chủ",
+      "item": "https://toonifyit.com/"
+    }]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Bộ Chuyển Đổi JSON sang TOON - Công Cụ Trực Tuyến Miễn Phí",
+    "description": "Chuyển đổi JSON sang định dạng TOON tức thời và giảm sử dụng token LLM 30-60%. Nhanh, miễn phí và tập trung vào quyền riêng tư.",
+    "url": "https://toonifyit.com/",
+    "mainEntity": {
+      "@type": "SoftwareApplication",
+      "name": "Bộ Chuyển Đổi Toonifyit JSON sang TOON",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Trang Chủ",
+        "item": "https://toonifyit.com/"
+      }]
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero__title", ".hero__subtitle", ".hero__description"]
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Lợi Ích Của Định Dạng TOON",
+    "description": "Những lợi thế chính của việc sử dụng định dạng TOON so với JSON cho các ứng dụng LLM",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Hiệu Quả Token",
+        "description": "Giảm 30-60% sử dụng token so với JSON"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tiết Kiệm Chi Phí",
+        "description": "Giảm đáng kể chi phí API LLM"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Khả Năng Đọc Tốt Hơn",
+        "description": "Định dạng sạch hơn dễ dàng hơn để LLM phân tích"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Tương Thích Phổ Quát",
+        "description": "Hoạt động với tất cả các LLM chính: GPT-4, Claude, Gemini, LLaMA"
+      }
+    ]
+  }
+  </script>
+  
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/faq.css">
+  <link rel="stylesheet" href="/css/cta.css">
+  <script src="/js/templates.js"></script>
+  <script src="/js/language.js"></script>
+</head>
+<body>
+  <div data-template="navbar"></div>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title">Bộ Chuyển Đổi JSON sang TOON - Chuyển Đổi JSON sang Định Dạng TOON</h1>
+        <p class="hero__subtitle">Bộ chuyển đổi JSON sang TOON miễn phí giảm sử dụng token LLM 30-60% với định dạng TOON</p>
+        <p class="hero__description">Chuyển đổi JSON sang TOON nhanh, miễn phí và tập trung vào quyền riêng tư. Tất cả các chuyển đổi diễn ra trong trình duyệt của bạn.</p>
+      </div>
+    </section>
+
+    <section class="converter">
+      <div class="container">
+        <div class="converter__controls">
+          <button class="btn btn--secondary" data-action="load-example">Tải Ví Dụ</button>
+          <button class="btn btn--secondary" data-action="clear">Xóa Tất Cả</button>
+        </div>
+
+        <div class="converter__grid">
+          <div class="converter__panel">
+            <div class="converter__header">
+              <label for="input-json" class="converter__label">Đầu Vào JSON</label>
+            </div>
+            <textarea 
+              id="input-json" 
+              class="textarea" 
+              placeholder='Dán JSON của bạn ở đây...'
+              spellcheck="false"
+              data-input="main"
+            ></textarea>
+            <div class="converter__error" data-error="input"></div>
+          </div>
+
+          <div class="converter__panel">
+            <div class="converter__header">
+              <label for="output-toon" class="converter__label">Đầu Ra TOON</label>
+              <div class="converter__actions">
+                <button class="btn btn--small" data-action="copy">Sao Chép</button>
+                <button class="btn btn--small" data-action="download">Tải Xuống</button>
+              </div>
+            </div>
+            <textarea 
+              id="output-toon" 
+              class="textarea" 
+              placeholder='Đầu ra được chuyển đổi sẽ xuất hiện ở đây...'
+              readonly
+              spellcheck="false"
+              data-output="main"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="converter__options">
+          <h3 class="converter__options-title">Tùy Chọn</h3>
+          <div class="converter__options-grid">
+            <label class="option">
+              <span class="option__label">Dấu Phân Cách</span>
+              <select class="select" data-option="delimiter">
+                <option value=",">Dấu Phẩy (,)</option>
+                <option value="\t">Thẻ</option>
+                <option value="|">Ống (|)</option>
+              </select>
+            </label>
+            <label class="option">
+              <span class="option__label">Thụt Lề</span>
+              <select class="select" data-option="indent">
+                <option value="2">2 dấu cách</option>
+                <option value="4">4 dấu cách</option>
+              </select>
+            </label>
+            <label class="option">
+              <input type="checkbox" class="checkbox" data-option="length-marker" checked>
+              <span class="option__label">Hiển Thị Các Dấu Chỉ Độ Dài (#)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stats__item">
+            <span class="stats__label">Token JSON:</span>
+            <span class="stats__value" data-stat="json-tokens">0</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__label">Token TOON:</span>
+            <span class="stats__value" data-stat="toon-tokens">0</span>
+          </div>
+          <div class="stats__item stats__item--highlight">
+            <span class="stats__label">Tiết Kiệm:</span>
+            <span class="stats__value" data-stat="saved">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-to-use">
+      <div class="container">
+        <h2 class="section__title">Cách Sử Dụng Bộ Chuyển Đổi JSON sang TOON</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h3 class="step__title">Dán Dữ Liệu JSON Của Bạn</h3>
+              <p class="step__text">Sao chép dữ liệu JSON của bạn và dán nó vào khu vực đầu vào. Bộ chuyển đổi JSON sang TOON của chúng tôi hỗ trợ tất cả các định dạng JSON hợp lệ. Bạn cũng có thể nhấp vào "Tải Ví Dụ" để xem mẫu chuyển đổi JSON sang TOON.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h3 class="step__title">Tùy Chỉnh Tùy Chọn Định Dạng TOON</h3>
+              <p class="step__text">Chọn dấu phân cách ưa thích của bạn (dấu phẩy, tab hoặc ống), kích thước thụt lề và chuyển đổi các dấu chỉ độ dài để tùy chỉnh đầu ra cú pháp TOON phù hợp với nhu cầu của bạn.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h3 class="step__title">Nhận Đầu Ra Định Dạng TOON</h3>
+              <p class="step__text">Xem dữ liệu JSON của bạn chuyển đổi tức thời sang định dạng TOON. Đầu ra TOON xuất hiện theo thời gian thực khi bạn gõ, hiển thị định dạng tuần tự TOON hiệu quả.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h3 class="step__title">Sao Chép hoặc Tải Xuống Dữ Liệu TOON</h3>
+              <p class="step__text">Sử dụng nút "Sao Chép" để sao chép đầu ra TOON vào bộ nhớ tạm của bạn, hoặc nhấp vào "Tải Xuống" để lưu dữ liệu JSON được chuyển đổi sang TOON dưới dạng tệp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section__title">Tại Sao Chuyển Đổi JSON sang TOON?</h2>
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature__title">Định Dạng TOON Hiệu Quả Token</h3>
+            <p class="feature__text">Tiết kiệm 30-60% token LLM với định dạng TOON so với JSON trong khi duy trì khả năng đọc. Hoàn hảo cho chuyển đổi JSON sang TOON.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="feature__title">Bộ Chuyển Đổi Quyền Riêng Tư Trước Tiên</h3>
+            <p class="feature__text">Tất cả các chuyển đổi JSON sang TOON diễn ra cục bộ trong trình duyệt của bạn. Dữ liệu của bạn không bao giờ rời khỏi thiết bị với bộ chuyển đổi JSON TOON an toàn của chúng tôi.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature__title">Chuyển Đổi TOON Cực Nhanh</h3>
+            <p class="feature__text">Chuyển đổi JSON sang TOON tức thời với đầu ra định dạng TOON theo thời gian thực khi bạn gõ. Không có độ trễ máy chủ với bộ chuyển đổi nhanh của chúng tôi.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="feature__title">Dữ Liệu TOON Có Cấu Trúc</h3>
+            <p class="feature__text">Định dạng tuần tự TOON hoàn hảo cho dữ liệu bảng, phản hồi API và bộ dữ liệu lớn trong các prompt LLM. Tích hợp JSON TOON dễ dàng.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature__title">Cú Pháp TOON Dễ Đọc</h3>
+            <p class="feature__text">Định dạng TOON dễ đọc trực quan cho cả nhà phát triển và LLM. TOON như JSON nhưng hiệu quả hơn cho chuyển đổi.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature__title">JSON sang TOON Tiết Kiệm Chi Phí</h3>
+            <p class="feature__text">Giảm chi phí API tới 60% với sử dụng token hiệu quả hơn khi bạn chuyển đổi JSON sang TOON cho các ứng dụng LLM của mình.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2 class="section__title">Các Câu Hỏi Thường Gặp</h2>
+        <div class="faq__list">
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Định dạng TOON là gì?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON (Token-Oriented Object Notation) là một định dạng tuần tự dữ liệu được thiết kế đặc biệt cho các prompt LLM. Nó giảm sử dụng token 30-60% so với JSON trong khi duy trì khả năng đọc và cấu trúc. Định dạng TOON sử dụng định dạng bảng cho mảng và cú pháp TOON tối thiểu cho các đối tượng, làm cho chuyển đổi JSON sang TOON cực kỳ hiệu quả.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Tôi có thể tiết kiệm bao nhiêu với TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON thường tiết kiệm 30-60% token LLM so với JSON. Đối với các bộ dữ liệu lớn hoặc phản hồi API, điều này có thể dịch thành tiết kiệm chi phí đáng kể khi sử dụng các API như GPT-4 hoặc Claude. Tiết kiệm chính xác phụ thuộc vào cấu trúc dữ liệu của bạn.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON có tương thích với tất cả LLM không?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Có, TOON hoạt động với tất cả các LLM chính bao gồm GPT-4, Claude, Gemini và LLaMA. Vì TOON là định dạng văn bản, bất kỳ LLM nào cũng có thể đọc và hiểu nó. Hầu hết các LLM hiện đại có thể phân tích định dạng TOON với các hướng dẫn đơn giản trong prompt của bạn.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Dữ liệu của tôi có an toàn khi sử dụng bộ chuyển đổi này không?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Tuyệt đối. Tất cả các chuyển đổi diễn ra cục bộ trong trình duyệt của bạn bằng cách sử dụng JavaScript. Dữ liệu của bạn không bao giờ rời khỏi thiết bị của bạn hoặc được gửi đến bất kỳ máy chủ nào. Bộ chuyển đổi hoạt động hoàn toàn ngoại tuyến sau khi trang được tải.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Sự khác biệt giữa TOON và JSON là gì?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">JSON so với TOON: TOON sử dụng cú pháp TOON nhỏ gọn hơn được thiết kế cho hiệu quả token. Định dạng tuần tự TOON biểu diễn mảng dưới dạng bảng có tiêu đề, sử dụng dấu phân cách tối thiểu và loại bỏ các ký tự dư thừa. JSON chi tiết hơn với dấu ngoặc, dấu ngoặc kép và dấu phẩy. Khi bạn chuyển đổi JSON sang TOON cho các prompt LLM, hiệu quả của TOON làm giảm chi phí đáng kể. <a href="/blog/toon-vs-json.html">Đọc so sánh chi tiết TOON so với JSON của chúng tôi</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Làm cách nào để chuyển đổi JSON sang TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Chuyển đổi JSON sang TOON rất đơn giản: 1) Dán dữ liệu JSON của bạn vào bộ chuyển đổi ở trên, 2) Nhấp vào "Chuyển đổi sang TOON", 3) Sao chép đầu ra TOON. Để chuyển đổi theo chương trình, bạn có thể sử dụng các thư viện JavaScript hoặc Python của chúng tôi. <a href="/blog/convert-json-to-toon.html">Xem hướng dẫn chuyển đổi JSON sang TOON đầy đủ của chúng tôi</a> với các ví dụ và đoạn mã.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Tôi có thể chuyển đổi TOON trở lại JSON không?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Có! TOON hoàn toàn có thể đảo ngược - bạn có thể chuyển đổi TOON trở lại JSON mà không mất dữ liệu. Bộ chuyển đổi hai chiều của chúng tôi hỗ trợ cả chuyển đổi JSON sang TOON và TOON sang JSON. Chỉ cần dán dữ liệu TOON của bạn và chọn "Chuyển đổi sang JSON" để lấy lại cấu trúc JSON ban đầu của bạn.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Loại dữ liệu nào hoạt động tốt nhất với TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON hoạt động tốt nhất với dữ liệu bảng đồng nhất như kết quả truy vấn cơ sở dữ liệu, phản hồi API có danh sách các đối tượng, dữ liệu phân tích, bộ dữ liệu kiểu CSV và danh mục sản phẩm thương mại điện tử. Dữ liệu có các trường lặp lại trên nhiều đối tượng sẽ thấy tiết kiệm token cao nhất (40-60%). Bộ dữ liệu nhỏ hoặc các cấu trúc lồng nhau sâu có thể thấy những cải thiện nhỏ hơn.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON có hỗ trợ các đối tượng và mảng lồng nhau không?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Có, TOON hỗ trợ các đối tượng và mảng lồng nhau. Các đối tượng lồng nhau sử dụng cấu trúc dựa trên thụt lề (như YAML), trong khi các mảng lồng nhau duy trì cấu trúc của chúng. Tuy nhiên, hiệu quả token của TOON là cao nhất với dữ liệu phẳng, đồng nhất. Các cấu trúc lồng nhau phức tạp vẫn hoạt động nhưng có thể không thấy giảm token đáng kể.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON có miễn phí để sử dụng không?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Có, cả công cụ chuyển đổi TOON và định dạng TOON đều hoàn toàn miễn phí sử dụng. Không có giới hạn về các chuyển đổi, hạn chế kích thước tệp hoặc tính năng cao cấp. Đặc tả định dạng TOON là mở và có sẵn cho bất kỳ ai để thực hiện trong các ứng dụng của họ.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Nhà cung cấp LLM nào hỗ trợ định dạng TOON?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON hoạt động với tất cả các nhà cung cấp LLM chính bao gồm OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Google (Gemini), Meta (LLaMA) và những nhà cung cấp khác. Vì TOON là định dạng dựa trên văn bản, bất kỳ LLM nào cũng có thể hiểu nó với các hướng dẫn prompt thích hợp giải thích cấu trúc định dạng.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON làm giảm token như thế nào?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON giảm token thông qua ba tối ưu hóa chính: 1) Khai báo tên trường một lần trong tiêu đề mảng thay vì lặp lại chúng cho mỗi đối tượng, 2) Sử dụng dấu phân cách tối thiểu và loại bỏ dấu ngoặc/dấu ngoặc kép không cần thiết, 3) Sử dụng cấu trúc dựa trên thụt lề thay vì các dấu phân cách rõ ràng. Những điều này kết hợp để đạt được giảm 30-60% token so với JSON.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Tôi có thể sử dụng TOON với API ChatGPT không?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Tuyệt đối! TOON hoạt động hoàn hảo với API ChatGPT (GPT-4, GPT-3.5-turbo). Chỉ cần chuyển đổi dữ liệu JSON của bạn sang TOON trước khi đưa nó vào prompt. Thêm giải thích ngắn về định dạng TOON trong thông điệp hệ thống của bạn, và mô hình sẽ hiểu và xử lý dữ liệu. Điều này có thể giảm đáng kể chi phí API của bạn cho các prompt nặng dữ liệu.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON sử dụng phần mở rộng tệp nào?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Tệp TOON thường sử dụng phần mở rộng .toon (ví dụ: data.toon). Tuy nhiên, vì TOON là định dạng văn bản, bạn cũng có thể lưu nó dưới dạng tệp .txt. Khi tải xuống từ bộ chuyển đổi của chúng tôi, phần mở rộng mặc định là .toon để xác định rõ ràng loại định dạng.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Làm cách nào để tích hợp TOON vào ứng dụng của tôi?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Tích hợp rất đơn giản: 1) Cài đặt thư viện TOON cho ngôn ngữ của bạn (npm install @toon-format/toon cho JavaScript, pip install toon-format cho Python), 2) Nhập các hàm mã hóa/giải mã, 3) Chuyển đổi dữ liệu của bạn sang TOON trước khi gửi đến LLM, 4) Tùy chọn chuyển đổi phản hồi trở lại JSON. Kiểm tra <a href="/docs.html">tài liệu</a> của chúng tôi để biết các ví dụ về mã và tài liệu tham khảo API.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON có hoạt động với phản hồi truyền phát không?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Có, TOON hoạt động với các phản hồi LLM truyền phát. Bạn sử dụng TOON cho dữ liệu đầu vào trong các prompt của bạn để giảm token đầu vào. Phản hồi của LLM (cho dù truyền phát hay không) có thể ở bất kỳ định dạng nào - TOON chủ yếu được thiết kế để tối ưu hóa token đầu vào của bạn. Nếu bạn cần đầu ra TOON, hãy đưa vào hướng dẫn định dạng trong prompt của bạn.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Kích thước tệp tối đa để chuyển đổi là bao nhiêu?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Bộ chuyển đổi trực tuyến của chúng tôi có thể xử lý các tệp lên tới 10MB, phù hợp cho hầu hết các trường hợp sử dụng. Đối với bộ dữ liệu lớn hơn, chúng tôi khuyên bạn nên sử dụng công cụ dòng lệnh hoặc tích hợp thư viện TOON trực tiếp vào ứng dụng của bạn. Thư viện chính nó không có giới hạn kích thước tệp và có thể xử lý các bộ dữ liệu rất lớn một cách hiệu quả.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" style="background: var(--bg-secondary); padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section__title">Tìm Hiểu Thêm Về Định Dạng TOON</h2>
+        <p style="text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+          Khám phá các tài nguyên toàn diện của chúng tôi để nắm vững định dạng TOON và tối ưu hóa các ứng dụng LLM của bạn:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <a href="/blog/what-is-toon.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">TOON Là Gì?</h3>
+            <p style="color: var(--text-secondary);">Tìm hiểu các kiến thức cơ bản về định dạng TOON, cú pháp và các tính năng chính.</p>
+          </a>
+          <a href="/blog/toon-vs-json.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">TOON so với JSON</h3>
+            <p style="color: var(--text-secondary);">Xem so sánh chi tiết và điểm chuẩn giữa các định dạng.</p>
+          </a>
+          <a href="/blog/convert-json-to-toon.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Hướng Dẫn Chuyển Đổi</h3>
+            <p style="color: var(--text-secondary);">Hướng dẫn từng bước chuyển đổi JSON sang định dạng TOON.</p>
+          </a>
+          <a href="/docs.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Tài Liệu</h3>
+            <p style="color: var(--text-secondary);">Tài liệu tham khảo cú pháp hoàn chỉnh, ví dụ và thực tiễn tốt nhất.</p>
+          </a>
+          <a href="/blogs.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Tất Cả Bài Viết</h3>
+            <p style="color: var(--text-secondary);">Duyệt tất cả các hướng dẫn, mẹo và trường hợp sử dụng TOON.</p>
+          </a>
+          <a href="/contact.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Nhận Trợ Giúp</h3>
+            <p style="color: var(--text-secondary);">Có câu hỏi? Liên hệ với chúng tôi để được hỗ trợ và trợ giúp.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div data-template="cta"></div>
+  </main>
+
+  <div data-template="footer"></div>
+
+  <div class="toast" data-toast></div>
+
+  <script src="/js/index.js"></script>
+  <script src="/js/faq.js"></script>
+</body>
+</html>

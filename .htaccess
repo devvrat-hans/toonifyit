@@ -1,10 +1,22 @@
 # Enable mod_rewrite
 RewriteEngine On
 
+# Remove index.html from URLs (for SEO - canonical URLs)
+# Redirect /index.html to /
+RewriteCond %{THE_REQUEST} ^GET\ /index\.html
+RewriteRule ^index\.html$ / [R=301,L,NE]
+
+# Redirect /folder/index.html to /folder/
+RewriteCond %{THE_REQUEST} ^GET\ /([^?\s]+)/index\.html
+RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L,NE]
+
 # Remove .html extension from URLs
 # Redirect URLs with .html to extensionless versions
 RewriteCond %{THE_REQUEST} ^GET\ /[^?\s]+\.html
 RewriteRule ^(.*)\.html$ /$1 [R=301,L,NE]
+
+# Serve index.html for directory requests
+DirectoryIndex index.html
 
 # Serve .html file when extensionless URL is requested
 RewriteCond %{REQUEST_FILENAME} !-f

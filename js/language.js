@@ -8,17 +8,56 @@
     if (path.startsWith('/es/') || path.startsWith('/es')) {
       return 'es';
     }
+    if (path.startsWith('/fr/') || path.startsWith('/fr')) {
+      return 'fr';
+    }
     if (path.startsWith('/pt/') || path.startsWith('/pt')) {
       return 'pt';
     }
     if (path.startsWith('/hi/') || path.startsWith('/hi')) {
       return 'hi';
     }
+    if (path.startsWith('/id/') || path.startsWith('/id')) {
+      return 'id';
+    }
+    if (path.startsWith('/ja/') || path.startsWith('/ja')) {
+      return 'ja';
+    }
+    if (path.startsWith('/nl/') || path.startsWith('/nl')) {
+      return 'nl';
+    }
+    if (path.startsWith('/zh/') || path.startsWith('/zh')) {
+      return 'zh';
+    }
     if (path.startsWith('/ur/') || path.startsWith('/ur')) {
       return 'ur';
     }
     if (path.startsWith('/de/') || path.startsWith('/de')) {
       return 'de';
+    }
+    if (path.startsWith('/ko/') || path.startsWith('/ko')) {
+      return 'ko';
+    }
+    if (path.startsWith('/sv/') || path.startsWith('/sv')) {
+      return 'sv';
+    }
+    if (path.startsWith('/ar/') || path.startsWith('/ar')) {
+      return 'ar';
+    }
+    if (path.startsWith('/it/') || path.startsWith('/it')) {
+      return 'it';
+    }
+    if (path.startsWith('/pl/') || path.startsWith('/pl')) {
+      return 'pl';
+    }
+    if (path.startsWith('/ru/') || path.startsWith('/ru')) {
+      return 'ru';
+    }
+    if (path.startsWith('/tr/') || path.startsWith('/tr')) {
+      return 'tr';
+    }
+    if (path.startsWith('/vi/') || path.startsWith('/vi')) {
+      return 'vi';
     }
     return 'en';
   }
@@ -65,6 +104,20 @@
       pagePath = currentPath.replace('/ur/', '/').replace('/ur', '/');
     } else if (currentLang === 'de') {
       pagePath = currentPath.replace('/de/', '/').replace('/de', '/');
+    } else if (currentLang === 'sv') {
+      pagePath = currentPath.replace('/sv/', '/').replace('/sv', '/');
+    } else if (currentLang === 'ar') {
+      pagePath = currentPath.replace('/ar/', '/').replace('/ar', '/');
+    } else if (currentLang === 'it') {
+      pagePath = currentPath.replace('/it/', '/').replace('/it', '/');
+    } else if (currentLang === 'pl') {
+      pagePath = currentPath.replace('/pl/', '/').replace('/pl', '/');
+    } else if (currentLang === 'ru') {
+      pagePath = currentPath.replace('/ru/', '/').replace('/ru', '/');
+    } else if (currentLang === 'tr') {
+      pagePath = currentPath.replace('/tr/', '/').replace('/tr', '/');
+    } else if (currentLang === 'vi') {
+      pagePath = currentPath.replace('/vi/', '/').replace('/vi', '/');
     }
 
     // Add hreflang tags
@@ -117,6 +170,62 @@
     deLink.href = `https://toonifyit.com${dePath}`;
     head.appendChild(deLink);
 
+    // Swedish version
+    const svLink = document.createElement('link');
+    svLink.rel = 'alternate';
+    svLink.hreflang = 'sv';
+    const svPath = pagePath === '/' ? '/sv/' : `/sv${pagePath}`;
+    svLink.href = `https://toonifyit.com${svPath}`;
+    head.appendChild(svLink);
+
+    // Arabic version
+    const arLink = document.createElement('link');
+    arLink.rel = 'alternate';
+    arLink.hreflang = 'ar';
+    const arPath = pagePath === '/' ? '/ar/' : `/ar${pagePath}`;
+    arLink.href = `https://toonifyit.com${arPath}`;
+    head.appendChild(arLink);
+
+    // Italian version
+    const itLink = document.createElement('link');
+    itLink.rel = 'alternate';
+    itLink.hreflang = 'it';
+    const itPath = pagePath === '/' ? '/it/' : `/it${pagePath}`;
+    itLink.href = `https://toonifyit.com${itPath}`;
+    head.appendChild(itLink);
+
+    // Polish version
+    const plLink = document.createElement('link');
+    plLink.rel = 'alternate';
+    plLink.hreflang = 'pl';
+    const plPath = pagePath === '/' ? '/pl/' : `/pl${pagePath}`;
+    plLink.href = `https://toonifyit.com${plPath}`;
+    head.appendChild(plLink);
+
+    // Russian version
+    const ruLink = document.createElement('link');
+    ruLink.rel = 'alternate';
+    ruLink.hreflang = 'ru';
+    const ruPath = pagePath === '/' ? '/ru/' : `/ru${pagePath}`;
+    ruLink.href = `https://toonifyit.com${ruPath}`;
+    head.appendChild(ruLink);
+
+    // Turkish version
+    const trLink = document.createElement('link');
+    trLink.rel = 'alternate';
+    trLink.hreflang = 'tr';
+    const trPath = pagePath === '/' ? '/tr/' : `/tr${pagePath}`;
+    trLink.href = `https://toonifyit.com${trPath}`;
+    head.appendChild(trLink);
+
+    // Vietnamese version
+    const viLink = document.createElement('link');
+    viLink.rel = 'alternate';
+    viLink.hreflang = 'vi';
+    const viPath = pagePath === '/' ? '/vi/' : `/vi${pagePath}`;
+    viLink.href = `https://toonifyit.com${viPath}`;
+    head.appendChild(viLink);
+
     // Default version (x-default)
     const defaultLink = document.createElement('link');
     defaultLink.rel = 'alternate';
@@ -152,6 +261,12 @@
         } else if (currentLang === 'de') {
           const enPath = currentPath.replace('/de/', '/').replace('/de', '/');
           option.href = enPath || '/';
+        } else if (currentLang === 'sv') {
+          const enPath = currentPath.replace('/sv/', '/').replace('/sv', '/');
+          option.href = enPath || '/';
+        } else if (currentLang === 'ar') {
+          const enPath = currentPath.replace('/ar/', '/').replace('/ar', '/');
+          option.href = enPath || '/';
         } else {
           option.href = currentPath || '/';
         }
@@ -174,6 +289,14 @@
           option.href = esPath;
         } else if (currentLang === 'de') {
           const basePath = currentPath.replace('/de/', '/').replace('/de', '/');
+          const esPath = basePath === '/' ? '/es/' : `/es${basePath}`;
+          option.href = esPath;
+        } else if (currentLang === 'sv') {
+          const basePath = currentPath.replace('/sv/', '/').replace('/sv', '/');
+          const esPath = basePath === '/' ? '/es/' : `/es${basePath}`;
+          option.href = esPath;
+        } else if (currentLang === 'ar') {
+          const basePath = currentPath.replace('/ar/', '/').replace('/ar', '/');
           const esPath = basePath === '/' ? '/es/' : `/es${basePath}`;
           option.href = esPath;
         } else {
@@ -200,6 +323,14 @@
           const basePath = currentPath.replace('/de/', '/').replace('/de', '/');
           const ptPath = basePath === '/' ? '/pt/' : `/pt${basePath}`;
           option.href = ptPath;
+        } else if (currentLang === 'sv') {
+          const basePath = currentPath.replace('/sv/', '/').replace('/sv', '/');
+          const ptPath = basePath === '/' ? '/pt/' : `/pt${basePath}`;
+          option.href = ptPath;
+        } else if (currentLang === 'ar') {
+          const basePath = currentPath.replace('/ar/', '/').replace('/ar', '/');
+          const ptPath = basePath === '/' ? '/pt/' : `/pt${basePath}`;
+          option.href = ptPath;
         } else {
           option.href = currentPath || '/pt/';
         }
@@ -222,6 +353,14 @@
           option.href = hiPath;
         } else if (currentLang === 'de') {
           const basePath = currentPath.replace('/de/', '/').replace('/de', '/');
+          const hiPath = basePath === '/' ? '/hi/' : `/hi${basePath}`;
+          option.href = hiPath;
+        } else if (currentLang === 'sv') {
+          const basePath = currentPath.replace('/sv/', '/').replace('/sv', '/');
+          const hiPath = basePath === '/' ? '/hi/' : `/hi${basePath}`;
+          option.href = hiPath;
+        } else if (currentLang === 'ar') {
+          const basePath = currentPath.replace('/ar/', '/').replace('/ar', '/');
           const hiPath = basePath === '/' ? '/hi/' : `/hi${basePath}`;
           option.href = hiPath;
         } else {
@@ -248,6 +387,14 @@
           const basePath = currentPath.replace('/de/', '/').replace('/de', '/');
           const urPath = basePath === '/' ? '/ur/' : `/ur${basePath}`;
           option.href = urPath;
+        } else if (currentLang === 'sv') {
+          const basePath = currentPath.replace('/sv/', '/').replace('/sv', '/');
+          const urPath = basePath === '/' ? '/ur/' : `/ur${basePath}`;
+          option.href = urPath;
+        } else if (currentLang === 'ar') {
+          const basePath = currentPath.replace('/ar/', '/').replace('/ar', '/');
+          const urPath = basePath === '/' ? '/ur/' : `/ur${basePath}`;
+          option.href = urPath;
         } else {
           option.href = currentPath || '/ur/';
         }
@@ -272,8 +419,76 @@
           const basePath = currentPath.replace('/ur/', '/').replace('/ur', '/');
           const dePath = basePath === '/' ? '/de/' : `/de${basePath}`;
           option.href = dePath;
+        } else if (currentLang === 'sv') {
+          const basePath = currentPath.replace('/sv/', '/').replace('/sv', '/');
+          const dePath = basePath === '/' ? '/de/' : `/de${basePath}`;
+          option.href = dePath;
+        } else if (currentLang === 'ar') {
+          const basePath = currentPath.replace('/ar/', '/').replace('/ar', '/');
+          const dePath = basePath === '/' ? '/de/' : `/de${basePath}`;
+          option.href = dePath;
         } else {
           option.href = currentPath || '/de/';
+        }
+      } else if (targetLang === 'sv') {
+        // For Swedish, add /sv/ prefix if not present
+        if (currentLang === 'en') {
+          const svPath = currentPath === '/' ? '/sv/' : `/sv${currentPath}`;
+          option.href = svPath;
+        } else if (currentLang === 'es') {
+          const basePath = currentPath.replace('/es/', '/').replace('/es', '/');
+          const svPath = basePath === '/' ? '/sv/' : `/sv${basePath}`;
+          option.href = svPath;
+        } else if (currentLang === 'pt') {
+          const basePath = currentPath.replace('/pt/', '/').replace('/pt', '/');
+          const svPath = basePath === '/' ? '/sv/' : `/sv${basePath}`;
+          option.href = svPath;
+        } else if (currentLang === 'hi') {
+          const basePath = currentPath.replace('/hi/', '/').replace('/hi', '/');
+          const svPath = basePath === '/' ? '/sv/' : `/sv${basePath}`;
+          option.href = svPath;
+        } else if (currentLang === 'ur') {
+          const basePath = currentPath.replace('/ur/', '/').replace('/ur', '/');
+          const svPath = basePath === '/' ? '/sv/' : `/sv${basePath}`;
+          option.href = svPath;
+        } else if (currentLang === 'de') {
+          const basePath = currentPath.replace('/de/', '/').replace('/de', '/');
+          const svPath = basePath === '/' ? '/sv/' : `/sv${basePath}`;
+          option.href = svPath;
+        } else {
+          option.href = currentPath || '/sv/';
+        }
+      } else if (targetLang === 'ar') {
+        // For Arabic, add /ar/ prefix if not present
+        if (currentLang === 'en') {
+          const arPath = currentPath === '/' ? '/ar/' : `/ar${currentPath}`;
+          option.href = arPath;
+        } else if (currentLang === 'es') {
+          const basePath = currentPath.replace('/es/', '/').replace('/es', '/');
+          const arPath = basePath === '/' ? '/ar/' : `/ar${basePath}`;
+          option.href = arPath;
+        } else if (currentLang === 'pt') {
+          const basePath = currentPath.replace('/pt/', '/').replace('/pt', '/');
+          const arPath = basePath === '/' ? '/ar/' : `/ar${basePath}`;
+          option.href = arPath;
+        } else if (currentLang === 'hi') {
+          const basePath = currentPath.replace('/hi/', '/').replace('/hi', '/');
+          const arPath = basePath === '/' ? '/ar/' : `/ar${basePath}`;
+          option.href = arPath;
+        } else if (currentLang === 'ur') {
+          const basePath = currentPath.replace('/ur/', '/').replace('/ur', '/');
+          const arPath = basePath === '/' ? '/ar/' : `/ar${basePath}`;
+          option.href = arPath;
+        } else if (currentLang === 'de') {
+          const basePath = currentPath.replace('/de/', '/').replace('/de', '/');
+          const arPath = basePath === '/' ? '/ar/' : `/ar${basePath}`;
+          option.href = arPath;
+        } else if (currentLang === 'sv') {
+          const basePath = currentPath.replace('/sv/', '/').replace('/sv', '/');
+          const arPath = basePath === '/' ? '/ar/' : `/ar${basePath}`;
+          option.href = arPath;
+        } else {
+          option.href = currentPath || '/ar/';
         }
       }
     });
@@ -283,7 +498,8 @@
   function initLanguage() {
     updateLanguageButton();
     updateHreflangLinks();
-    updateLanguageSwitcherLinks();
+    // DISABLED: updateLanguageSwitcherLinks() - navbar templates already have correct absolute path hrefs
+    // updateLanguageSwitcherLinks();
 
     // Add keyboard navigation for language switcher
     const langBtn = document.querySelector('.nav__lang-btn');

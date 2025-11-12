@@ -1,0 +1,132 @@
+<style>
+/* Critical CSS for Language Switcher - ensures proper display even if external CSS is delayed */
+.nav__language-switcher { position: relative !important; margin-left: 0.5rem; display: inline-block !important; }
+.nav__lang-btn { display: flex !important; align-items: center !important; gap: 0.4rem; padding: 0.5rem 0.8rem; background: transparent; border: 1px solid #404040; border-radius: 6px; color: #e8e8e8; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.nav__lang-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.nav__lang-code { font-size: 0.85rem; letter-spacing: 0.5px; display: inline-block; }
+.nav__lang-dropdown { position: absolute !important; top: calc(100% + 4px); right: 0; background: #2d2d2d; border: 1px solid #404040; border-radius: 8px; opacity: 0; visibility: hidden; min-width: 180px; z-index: 100; display: block !important; margin-top: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+.nav__language-switcher:hover .nav__lang-dropdown, .nav__lang-dropdown:hover { opacity: 1; visibility: visible; }
+.nav__lang-option { display: flex !important; align-items: center !important; gap: 0.5rem; padding: 0.35rem 0.7rem; color: #e8e8e8; text-decoration: none; border-bottom: 1px solid #404040; }
+.nav__lang-option:hover { background: #404040; }
+.nav__lang-option:last-child { border-bottom: none; }
+.nav__lang-flag { font-size: 1rem; flex-shrink: 0; }
+.nav__lang-name { font-size: 0.8rem; font-weight: 500; white-space: nowrap; }
+@media (max-height: 700px) {
+  .nav__lang-dropdown { max-height: 400px; overflow-y: auto; }
+}
+</style>
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/ko/" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32" class="logo__icon" role="img" aria-label="Toonifyit JSON to TOON 변환기 로고">
+          <title>Toonifyit - JSON to TOON 변환기</title>
+          <defs>
+            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0056b3;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="48" fill="url(#logo-grad)"/>
+          <text x="50" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="60" font-weight="800" fill="white" text-anchor="middle">T</text>
+        </svg>
+        <span class="logo__text">Toonifyit</span>
+      </a>
+      <div class="nav__links">
+        <a href="/ko/" class="nav__link">변환기</a>
+        <a href="/blogs.html" class="nav__link">블로그</a>
+        <a href="/docs.html" class="nav__link">문서</a>
+        <a href="/contact.html" class="nav__link">연락처</a>
+        <div class="nav__language-switcher">
+          <button class="nav__lang-btn" aria-label="언어 전환" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="nav__lang-code" id="current-lang">KO</span>
+          </button>
+          <div class="nav__lang-dropdown">
+            <a href="/" class="nav__lang-option" hreflang="en" data-lang="en">
+              <span class="nav__lang-flag">🇺🇸</span>
+              <span class="nav__lang-name">English</span>
+            </a>
+            <a href="/es/" class="nav__lang-option" hreflang="es" data-lang="es">
+              <span class="nav__lang-flag">🇪🇸</span>
+              <span class="nav__lang-name">Español</span>
+            </a>
+            <a href="/fr/" class="nav__lang-option" hreflang="fr" data-lang="fr">
+              <span class="nav__lang-flag">🇫🇷</span>
+              <span class="nav__lang-name">Français</span>
+            </a>
+            <a href="/nl/" class="nav__lang-option" hreflang="nl" data-lang="nl">
+              <span class="nav__lang-flag">🇳🇱</span>
+              <span class="nav__lang-name">Nederlands</span>
+            </a>
+            <a href="/zh/" class="nav__lang-option" hreflang="zh" data-lang="zh">
+              <span class="nav__lang-flag">🇨🇳</span>
+              <span class="nav__lang-name">中文</span>
+            </a>
+            <a href="/ja/" class="nav__lang-option" hreflang="ja" data-lang="ja">
+              <span class="nav__lang-flag">🇯🇵</span>
+              <span class="nav__lang-name">日本語</span>
+            </a>
+            <a href="/ko/" class="nav__lang-option" hreflang="ko" data-lang="ko">
+              <span class="nav__lang-flag">🇰🇷</span>
+              <span class="nav__lang-name">한국어</span>
+            </a>
+            <a href="/vi/" class="nav__lang-option" hreflang="vi" data-lang="vi">
+              <span class="nav__lang-flag">🇻🇳</span>
+              <span class="nav__lang-name">Tiếng Việt</span>
+            </a>
+            <a href="/id/" class="nav__lang-option" hreflang="id" data-lang="id">
+              <span class="nav__lang-flag">🇮🇩</span>
+              <span class="nav__lang-name">Bahasa Indonesia
+</span>
+            </a>
+            <a href="/pt/" class="nav__lang-option" hreflang="pt" data-lang="pt">
+              <span class="nav__lang-flag">🇵🇹</span>
+              <span class="nav__lang-name">Português</span>
+            </a>
+            <a href="/hi/" class="nav__lang-option" hreflang="hi" data-lang="hi">
+              <span class="nav__lang-flag">🇮🇳</span>
+              <span class="nav__lang-name">हिन्दी</span>
+            </a>
+            <a href="/ur/" class="nav__lang-option" hreflang="ur" data-lang="ur">
+              <span class="nav__lang-flag">🇵🇰</span>
+              <span class="nav__lang-name">اردو</span>
+            </a>
+            <a href="/de/" class="nav__lang-option" hreflang="de" data-lang="de">
+              <span class="nav__lang-flag">🇩🇪</span>
+              <span class="nav__lang-name">Deutsch</span>
+            </a>
+            <a href="/sv/" class="nav__lang-option" hreflang="sv" data-lang="sv">
+              <span class="nav__lang-flag">🇸🇪</span>
+              <span class="nav__lang-name">Svenska</span>
+            </a>
+            <a href="/ar/" class="nav__lang-option" hreflang="ar" data-lang="ar">
+              <span class="nav__lang-flag">🇸🇦</span>
+              <span class="nav__lang-name">العربية</span>
+            </a>
+            <a href="/it/" class="nav__lang-option" hreflang="it" data-lang="it">
+              <span class="nav__lang-flag">🇮🇹</span>
+              <span class="nav__lang-name">Italiano</span>
+            </a>
+            <a href="/pl/" class="nav__lang-option" hreflang="pl" data-lang="pl">
+              <span class="nav__lang-flag">🇵🇱</span>
+              <span class="nav__lang-name">Polski</span>
+            </a>
+            <a href="/ru/" class="nav__lang-option" hreflang="ru" data-lang="ru">
+              <span class="nav__lang-flag">🇷🇺</span>
+              <span class="nav__lang-name">Русский</span>
+            </a>
+            <a href="/tr/" class="nav__lang-option" hreflang="tr" data-lang="tr">
+              <span class="nav__lang-flag">🇹🇷</span>
+              <span class="nav__lang-name">Türkçe</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

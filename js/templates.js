@@ -8,17 +8,35 @@ const Templates = (() => {
     if (path.startsWith('/es/') || path.startsWith('/es')) {
       return 'es';
     }
+    if (path.startsWith('/fr/') || path.startsWith('/fr')) {
+      return 'fr';
+    }
     if (path.startsWith('/pt/') || path.startsWith('/pt')) {
       return 'pt';
     }
     if (path.startsWith('/hi/') || path.startsWith('/hi')) {
       return 'hi';
     }
+    if (path.startsWith('/id/') || path.startsWith('/id')) {
+      return 'id';
+    }
+    if (path.startsWith('/ja/') || path.startsWith('/ja')) {
+      return 'ja';
+    }
+    if (path.startsWith('/nl/') || path.startsWith('/nl')) {
+      return 'nl';
+    }
+    if (path.startsWith('/zh/') || path.startsWith('/zh')) {
+      return 'zh';
+    }
     if (path.startsWith('/ur/') || path.startsWith('/ur')) {
       return 'ur';
     }
     if (path.startsWith('/de/') || path.startsWith('/de')) {
       return 'de';
+    }
+    if (path.startsWith('/ko/') || path.startsWith('/ko')) {
+      return 'ko';
     }
     return 'en';
   };
@@ -34,10 +52,16 @@ const Templates = (() => {
       const isInSubdir = pathSegments.length > 1 || (pathSegments.length === 1 && pathSegments[0].includes('.html'));
       const isInBlogDir = currentPath.includes('/blog/');
       const isInEsDir = currentPath.startsWith('/es/');
+      const isInFrDir = currentPath.startsWith('/fr/');
       const isInPtDir = currentPath.startsWith('/pt/');
       const isInHiDir = currentPath.startsWith('/hi/');
+      const isInIdDir = currentPath.startsWith('/id/');
+      const isInJaDir = currentPath.startsWith('/ja/');
+      const isInNlDir = currentPath.startsWith('/nl/');
+      const isInZhDir = currentPath.startsWith('/zh/');
       const isInUrDir = currentPath.startsWith('/ur/');
       const isInDeDir = currentPath.startsWith('/de/');
+      const isInKoDir = currentPath.startsWith('/ko/');
       
       // Try multiple paths in order of likelihood
       const pathsToTry = [];
@@ -90,6 +114,48 @@ const Templates = (() => {
         pathsToTry.push(`/templates/de/${templateName}.html`);
         pathsToTry.push(`../templates/de/${templateName}.html`);
         pathsToTry.push(`./templates/de/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInFrDir) {
+        // For French pages in /fr/ directory
+        pathsToTry.push(`/templates/fr/${templateName}.html`);
+        pathsToTry.push(`../templates/fr/${templateName}.html`);
+        pathsToTry.push(`./templates/fr/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInIdDir) {
+        // For Indonesian pages in /id/ directory
+        pathsToTry.push(`/templates/id/${templateName}.html`);
+        pathsToTry.push(`../templates/id/${templateName}.html`);
+        pathsToTry.push(`./templates/id/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInJaDir) {
+        // For Japanese pages in /ja/ directory
+        pathsToTry.push(`/templates/ja/${templateName}.html`);
+        pathsToTry.push(`../templates/ja/${templateName}.html`);
+        pathsToTry.push(`./templates/ja/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInNlDir) {
+        // For Dutch pages in /nl/ directory
+        pathsToTry.push(`/templates/nl/${templateName}.html`);
+        pathsToTry.push(`../templates/nl/${templateName}.html`);
+        pathsToTry.push(`./templates/nl/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInZhDir) {
+        // For Chinese pages in /zh/ directory
+        pathsToTry.push(`/templates/zh/${templateName}.html`);
+        pathsToTry.push(`../templates/zh/${templateName}.html`);
+        pathsToTry.push(`./templates/zh/${templateName}.html`);
+        // Fallback to English templates
+        pathsToTry.push(`/templates/${templateName}.html`);
+      } else if (isInKoDir) {
+        // For Korean pages in /ko/ directory
+        pathsToTry.push(`/templates/ko/${templateName}.html`);
+        pathsToTry.push(`../templates/ko/${templateName}.html`);
+        pathsToTry.push(`./templates/ko/${templateName}.html`);
         // Fallback to English templates
         pathsToTry.push(`/templates/${templateName}.html`);
       } else {

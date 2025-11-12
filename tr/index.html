@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ücretsiz JSON to TOON dönüştürücü - JSON'u TOON formatına anında dönüştürün ve LLM token kullanımını %30-60 azaltın. Hızlı, güvenli ve gizlilik odaklı TOON serileştirme formatı aracı.">
+  <meta name="keywords" content="json to toon, json to toon converter, convert json to toon, toon json, json toon, toon format, toon syntax, toon serialization format, json vs toon, toon like json, LLM optimization, token efficiency">
+  
+  <meta property="og:title" content="JSON to TOON Dönüştürücü - Ücretsiz TOON Format Aracı | Toonifyit">
+  <meta property="og:description" content="JSON'u TOON formatına anında dönüştürün. TOON, LLM token kullanımını %30-60 azaltırken okunabilirliği korur.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toonifyit.com/">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JSON to TOON Dönüştürücü - Ücretsiz TOON Format Aracı | Toonifyit">
+  <meta name="twitter:description" content="JSON'u TOON formatına anında dönüştürün. TOON serileştirme formatı ile LLM tokenlerinde %30-60 tasarruf edin.">
+  
+  <link rel="canonical" href="https://toonifyit.com/">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547680505322890" crossorigin="anonymous"></script>
+  
+  <!-- Hreflang tags -->
+  <link rel="alternate" hreflang="en" href="https://toonifyit.com/">
+  <link rel="alternate" hreflang="es" href="https://toonifyit.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://toonifyit.com/fr/">
+  <link rel="alternate" hreflang="nl" href="https://toonifyit.com/nl/">
+  <link rel="alternate" hreflang="zh" href="https://toonifyit.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://toonifyit.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://toonifyit.com/ko/">
+  <link rel="alternate" hreflang="vi" href="https://toonifyit.com/vi/">
+  <link rel="alternate" hreflang="id" href="https://toonifyit.com/id/">
+  <link rel="alternate" hreflang="pt" href="https://toonifyit.com/pt/">
+  <link rel="alternate" hreflang="hi" href="https://toonifyit.com/hi/">
+  <link rel="alternate" hreflang="ur" href="https://toonifyit.com/ur/">
+  <link rel="alternate" hreflang="de" href="https://toonifyit.com/de/">
+  <link rel="alternate" hreflang="sv" href="https://toonifyit.com/sv/">
+  <link rel="alternate" hreflang="ar" href="https://toonifyit.com/ar/">
+  <link rel="alternate" hreflang="it" href="https://toonifyit.com/it/">
+  <link rel="alternate" hreflang="pl" href="https://toonifyit.com/pl/">
+  <link rel="alternate" hreflang="ru" href="https://toonifyit.com/ru/">
+  <link rel="alternate" hreflang="tr" href="https://toonifyit.com/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://toonifyit.com/">  
+<link rel="icon" href="/favicon.png" type="image/png">
+  <title>JSON to TOON Dönüştürücü - Ücretsiz Çevrimiçi Araç | JSON'u TOON Formatına Dönüştürün</title>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Toonifyit",
+    "alternateName": "JSON to TOON Dönüştürücü",
+    "url": "https://toonifyit.com/",
+    "description": "Ücretsiz JSON to TOON dönüştürücü aracı. JSON'u TOON formatına dönüştürün ve LLM token kullanımını %30-60 azaltın.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://toonifyit.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Toonifyit JSON to TOON Dönüştürücü",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "operatingSystem": "Web Browser",
+    "description": "Ücretsiz çevrimiçi JSON to TOON dönüştürücü. JSON'u TOON formatına anında dönüştürün ve LLM token kullanımını %30-60 azaltın."
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "TOON formatı nedir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON (Token-Oriented Object Notation), özellikle LLM istemleri için tasarlanmış bir veri serileştirme formatıdır. JSON ile karşılaştırıldığında token kullanımını %30-60 oranında azaltırken okunabilirlik ve yapıyı korur. TOON formatı, diziler için tablo biçimi ve nesneler için minimal TOON sözdizimi kullanır, bu da JSON to TOON dönüştürmesini yüksek oranda verimli hale getirir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON ile ne kadar tasarruf edebilirim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON, JSON ile karşılaştırıldığında tipik olarak LLM tokenlerinde %30-60 tasarruf sağlar. Büyük veri kümeleri veya API yanıtları için, bu GPT-4 veya Claude gibi API'ler kullanırken önemli maliyet tasarrufu anlamına gelebilir. Kesin tasarruf miktarı veri yapınıza bağlıdır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON tüm LLM'lerle uyumlu mudur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet, TOON GPT-4, Claude, Gemini ve LLaMA dahil olmak üzere tüm büyük LLM'lerle çalışır. TOON bir metin formatı olduğundan, herhangi bir LLM bunu okuyabilir ve anlayabilir. Çoğu modern LLM, isteminizde basit talimatlarla TOON formatını ayrıştırabiliyor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Verilerim bu dönüştürücü kullanılırken güvenli midir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kesinlikle. Tüm dönüştürmeler JavaScript kullanılarak tarayıcınızda yerel olarak gerçekleşir. Verileriniz hiçbir zaman cihazınızı terk etmez veya herhangi bir sunucuya gönderilmez. Dönüştürücü sayfa yüklendikten sonra tamamen çevrimdışı olarak çalışır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON ile JSON arasındaki fark nedir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON ile JSON: TOON, token verimliliği için tasarlanmış daha kompakt bir sözdizimi kullanır. TOON serileştirme formatı, dizileri başlıklı tablolar olarak temsil eder, minimal noktalama kullanır ve gereksiz karakterleri ortadan kaldırır. JSON, parantez, tırnak ve virgüllerle daha ayrıntılıdır. JSON'u TOON'a dönüştürdüğünüzde LLM istekleri için, TOON'un verimliliği maliyetleri önemli ölçüde azaltır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "JSON'u TOON'a nasıl dönüştürürüm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "JSON'u TOON'a dönüştürmek kolaydır: 1) JSON verilerinizi dönüştürücümüze yapıştırın, 2) 'TOON'a Dönüştür' butonuna tıklayın, 3) TOON çıktısını kopyalayın. Programlı dönüştürme için JavaScript veya Python kitaplıklarımızı kullanabilirsiniz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON'u JSON'a geri dönüştürebilir miyim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet! TOON tamamen tersine çevrilebilir. Çift yönlü dönüştürücümüz hem JSON to TOON hem de TOON to JSON dönüştürmesini veri kaybı olmaksızın destekler."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hangi veri türleri TOON ile en iyi şekilde çalışır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON, veritabanı sorgu sonuçları, nesne listesi içeren API yanıtları, analitik verileri, CSV tarzı veri kümeleri ve e-ticaret ürün katalogları gibi düzenli tablo biçimindeki verilerle en iyi şekilde çalışır. Birden fazla nesne genelinde tekrarlanan alanlar içeren veriler en yüksek token tasarrufu (%40-60) sağlar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON iç içe nesneleri ve dizileri destekliyor mu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet, TOON iç içe nesneleri ve dizileri destekler. İç içe nesneler girinti tabanlı yapıyı (YAML gibi) kullanırken, iç içe diziler yapılarını korur. TOON'un token verimliliği, düz, düzenli verilerle en yüksektir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON kullanımı ücretsiz midir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet, hem TOON dönüştürücü aracı hem de TOON formatının kendisi tamamen ücretsiz olarak kullanılabilir. Dönüştürme sayısında, dosya boyutu kısıtlaması veya premium özelliklerde hiçbir limit yoktur. TOON formatı spesifikasyonu, bunu uygulamak isteyen herkes için açıktır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hangi LLM sağlayıcıları TOON formatını destekler?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON, OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Google (Gemini), Meta (LLaMA) ve diğerleri dahil olmak üzere tüm büyük LLM sağlayıcılarıyla çalışır. TOON metin tabanlı bir format olduğundan, uygun istem talimatlarıyla herhangi bir LLM bunu anlayabilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON tokenları nasıl azaltır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON, üç anahtar optimizasyon aracılığıyla tokenları azaltır: 1) Alan adlarını dizi başlıklarında bir kez bildirerek bunları her nesne için tekrarlamak yerine, 2) Minimal noktalama kullanarak ve gereksiz parantez/süslü parantezleri ortadan kaldırarak, 3) Açık sınırlayıcılar yerine girinti tabanlı yapı kullanarak. Bunlar birleşerek JSON ile karşılaştırıldığında %30-60 token azalması sağlar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON'u ChatGPT API ile kullanabilir miyim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kesinlikle! TOON, ChatGPT API (GPT-4, GPT-3.5-turbo) ile mükemmel şekilde çalışır. JSON verilerinizi istemine dahil etmeden önce TOON'a dönüştürün. Veri açısından yoğun istekler için API maliyetlerinizi önemli ölçüde azaltabilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON hangi dosya uzantılarını kullanır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON dosyaları tipik olarak .toon uzantısını kullanır (ör. data.toon). TOON bir metin formatı olduğundan, bunu .txt dosyaları olarak da kaydedebilirsiniz. Dönüştürücümüzden indirilirken varsayılan uzantı .toon'dur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON'u uygulamama nasıl entegre ederim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Entegrasyon kolaydır: 1) TOON kütüphanesini diliniz için kurun (JavaScript için npm install @toon-format/toon, Python için pip install toon-format), 2) Kodla/kodunu çöz işlevlerini içeri aktarın, 3) LLM'ye göndermeden önce verilerinizi dönüştürün. Kod örnekleri için belgelerimizi kontrol edin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "TOON akışlı yanıtlarla çalışır mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet, TOON LLM akışlı yanıtlarıyla çalışır. İsteklerinizde giriş tokenlarını azaltmak için isteminizde giriş verisi için TOON kullanırsınız. LLM'nin yanıtı (akışlı olsun veya olmasın) herhangi bir formatta olabilir. TOON çıktısına ihtiyacınız varsa, isteminize format talimatlarını ekleyin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dönüştürme için maksimum dosya boyutu nedir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Çevrimiçi dönüştürücümüz 10MB'a kadar dosyaları işleyebilir, bu da çoğu kullanım durumu için uygundur. Daha büyük veri kümeleri için, komut satırı aracını kullanmanız veya TOON kitaplığını doğrudan uygulamanıza entegre etmenizi öneriyoruz. Kütüphane hiçbir dosya boyutu sınırına sahip değildir ve çok büyük veri kümelerini verimli bir şekilde işleyebilir."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "JSON'u TOON'a Nasıl Dönüştürülür",
+    "description": "JSON verilerini TOON formatına dönüştürmek için adım adım rehber LLM optimizasyonu ve token azaltma",
+    "image": "https://toonifyit.com/img/favicon.png",
+    "totalTime": "PT2M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Toonifyit JSON to TOON Dönüştürücü"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "JSON Verilerinizi Hazırlayın",
+        "text": "API yanıtları, veritabanı ihracatları, yapılandırma dosyaları veya başka herhangi bir JSON kaynağından geçerli, iyi biçimlendirilmiş JSON verileriyle başlayın. JSON'unuzun düzgün biçimlendirildiğinden emin olun.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "JSON verilerinizi kopyalayın veya yapıştırmaya hazır tutun"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Dönüştürücüye Erişin",
+        "text": "Bu sayfada Toonifyit JSON to TOON dönüştürücüsünü açın. Dönüştürücü ücretsiz, tarayıcı tabanlı ve tamamen çevrimdışı olarak çalışır.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Bu sayfadaki dönüştürücü aracına gidin"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "JSON Verilerinizi Girin",
+        "text": "'JSON Girişi' etiketli sol giriş paneline JSON verilerinizi yapıştırın. Bir demo dönüştürmeyi görmek için 'Örnek Yükle' düğmesine de tıklayabilirsiniz.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "JSON'u giriş metin alanına yapıştırın"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Veya bir demo görmek için 'Örnek Yükle' butonuna tıklayın"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "TOON'a Dönüştürün",
+        "text": "Dönüştürme gerçek zamanlı olarak otomatik olarak gerçekleşir. JSON'unuzun sağ çıktı panelinde TOON formatına dönüştürüldüğünü izleyin.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Sağ panelde TOON çıktısını görüntüleyin"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Çıktının altında token azalması istatistiklerini görüntüleyin"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "TOON Çıktısını Kopyalayın veya İndirin",
+        "text": "Dönüştürmeden sonra, TOON verilerini panonuza kopyalamak için 'Çıktıyı Kopyala'ya veya .toon dosyası olarak kaydetmek için 'İndir' düğmesine tıklayın.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "Panoya kopyalamak için 'Çıktıyı Kopyala'ya tıklayın"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "Veya dosya olarak kaydetmek için 'İndir'e tıklayın"
+        }]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "TOON'u LLM Uygulamalarınızda Kullanın",
+        "text": "Dönüştürülen TOON verilerini, LLM token kullanımını %30-60 oranında azaltmak için GPT-4, Claude, Gemini veya diğer Büyük Dil Modeli ile birlikte isteklerinizde kullanın.",
+        "itemListElement": [{
+          "@type": "HowToDirection",
+          "text": "TOON verilerini LLM isteklerinize ekleyin"
+        },
+        {
+          "@type": "HowToDirection",
+          "text": "%30-60 token azalması ve maliyet tasarrufu yaşayın"
+        }]
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Toonifyit",
+    "url": "https://toonifyit.com",
+    "logo": "https://toonifyit.com/img/favicon.png",
+    "description": "LLM optimizasyonu ve token azaltma için ücretsiz JSON to TOON dönüştürücü aracı",
+    "foundingDate": "2025",
+    "sameAs": [
+      "https://github.com/toonifyit"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "url": "https://toonifyit.com/contact.html"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Anasayfa",
+      "item": "https://toonifyit.com/"
+    }]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "JSON to TOON Dönüştürücü - Ücretsiz Çevrimiçi Araç",
+    "description": "JSON'u TOON formatına anında dönüştürün ve LLM token kullanımını %30-60 azaltın. Hızlı, ücretsiz ve gizlilik odaklı.",
+    "url": "https://toonifyit.com/",
+    "mainEntity": {
+      "@type": "SoftwareApplication",
+      "name": "Toonifyit JSON to TOON Dönüştürücü",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Anasayfa",
+        "item": "https://toonifyit.com/"
+      }]
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero__title", ".hero__subtitle", ".hero__description"]
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "TOON Formatının Avantajları",
+    "description": "LLM uygulamaları için TOON formatı kullanmanın temel avantajları",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Token Verimliliği",
+        "description": "JSON ile karşılaştırıldığında token kullanımında %30-60 azalma"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Maliyet Tasarrufu",
+        "description": "LLM API maliyetlerinde önemli azalma"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Daha İyi Okunabilirlik",
+        "description": "LLM'lerin ayrıştırması daha kolay, temiz format"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Evrensel Uyumluluk",
+        "description": "Tüm büyük LLM'lerle çalışır: GPT-4, Claude, Gemini, LLaMA"
+      }
+    ]
+  }
+  </script>
+  
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/faq.css">
+  <link rel="stylesheet" href="/css/cta.css">
+  <script src="/js/templates.js"></script>
+  <script src="/js/language.js"></script>
+</head>
+<body>
+  <div data-template="navbar"></div>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title">JSON to TOON Dönüştürücü - JSON'u TOON Formatına Dönüştürün</h1>
+        <p class="hero__subtitle">LLM token kullanımını %30-60 azaltan TOON formatı ile ücretsiz JSON to TOON dönüştürücü</p>
+        <p class="hero__description">Hızlı, ücretsiz ve gizlilik odaklı JSON to TOON dönüştürmesi. Tüm dönüştürmeler tarayıcınızda gerçekleşir.</p>
+      </div>
+    </section>
+
+    <section class="converter">
+      <div class="container">
+        <div class="converter__controls">
+          <button class="btn btn--secondary" data-action="load-example">Örnek Yükle</button>
+          <button class="btn btn--secondary" data-action="clear">Tümünü Temizle</button>
+        </div>
+
+        <div class="converter__grid">
+          <div class="converter__panel">
+            <div class="converter__header">
+              <label for="input-json" class="converter__label">JSON Girişi</label>
+            </div>
+            <textarea 
+              id="input-json" 
+              class="textarea" 
+              placeholder='JSON'unuzu buraya yapıştırın...'
+              spellcheck="false"
+              data-input="main"
+            ></textarea>
+            <div class="converter__error" data-error="input"></div>
+          </div>
+
+          <div class="converter__panel">
+            <div class="converter__header">
+              <label for="output-toon" class="converter__label">TOON Çıktısı</label>
+              <div class="converter__actions">
+                <button class="btn btn--small" data-action="copy">Kopyala</button>
+                <button class="btn btn--small" data-action="download">İndir</button>
+              </div>
+            </div>
+            <textarea 
+              id="output-toon" 
+              class="textarea" 
+              placeholder='Dönüştürülen çıktı burada görüntülenecek...'
+              readonly
+              spellcheck="false"
+              data-output="main"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="converter__options">
+          <h3 class="converter__options-title">Seçenekler</h3>
+          <div class="converter__options-grid">
+            <label class="option">
+              <span class="option__label">Ayırıcı</span>
+              <select class="select" data-option="delimiter">
+                <option value=",">Virgül (,)</option>
+                <option value="\t">Sekme</option>
+                <option value="|">Dikey Çizgi (|)</option>
+              </select>
+            </label>
+            <label class="option">
+              <span class="option__label">Girinti</span>
+              <select class="select" data-option="indent">
+                <option value="2">2 boşluk</option>
+                <option value="4">4 boşluk</option>
+              </select>
+            </label>
+            <label class="option">
+              <input type="checkbox" class="checkbox" data-option="length-marker" checked>
+              <span class="option__label">Uzunluk göstergelerini göster (#)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stats__item">
+            <span class="stats__label">JSON Tokenları:</span>
+            <span class="stats__value" data-stat="json-tokens">0</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__label">TOON Tokenları:</span>
+            <span class="stats__value" data-stat="toon-tokens">0</span>
+          </div>
+          <div class="stats__item stats__item--highlight">
+            <span class="stats__label">Tasarruf:</span>
+            <span class="stats__value" data-stat="saved">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-to-use">
+      <div class="container">
+        <h2 class="section__title">JSON to TOON Dönüştürücüsü Nasıl Kullanılır</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h3 class="step__title">JSON Verilerinizi Yapıştırın</h3>
+              <p class="step__text">JSON verilerinizi kopyalayıp giriş alanına yapıştırın. JSON to TOON dönüştürücümüz tüm geçerli JSON formatlarını destekler. Örnek bir JSON to TOON dönüştürmesini görmek için "Örnek Yükle"ye tıklayabilirsiniz.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h3 class="step__title">TOON Format Seçeneklerini Özelleştirin</h3>
+              <p class="step__text">Tercih ettiğiniz ayırıcıyı (virgül, sekme veya dikey çizgi), girinti boyutunu seçin ve TOON sözdizimi çıktısını gereksinimlerinize göre özelleştirmek için uzunluk göstergelerini açıp kapatın.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h3 class="step__title">TOON Format Çıktısı Alın</h3>
+              <p class="step__text">JSON'unuzun anında TOON formatına dönüştürüldüğünü izleyin. TOON çıktısı yazarken gerçek zamanlı olarak görüntülenip, verimli TOON serileştirme formatını gösterir.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h3 class="step__title">TOON Verilerini Kopyalayın veya İndirin</h3>
+              <p class="step__text">TOON çıktısını panonuza kopyalamak için "Kopyala" düğmesini kullanın veya dönüştürülen JSON to TOON verilerinizi dosya olarak kaydetmek için "İndir" butonuna tıklayın.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section__title">Neden JSON'u TOON'a Dönüştürmelisiniz?</h2>
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature__title">Token Verimli TOON Formatı</h3>
+            <p class="feature__text">JSON ile karşılaştırıldığında okunabilirliği koruyarak LLM tokenlerinde %30-60 tasarruf edin. JSON to TOON dönüştürmesi için mükemmel.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="feature__title">Gizlilik Odaklı Dönüştürücü</h3>
+            <p class="feature__text">Tüm JSON to TOON dönüştürmeleri tarayıcınızda yerel olarak gerçekleşir. Verileriniz hiçbir zaman cihazınızı terk etmez güvenli JSON TOON dönüştürücümüz.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature__title">Yıldırım Hızında TOON Dönüştürmesi</h3>
+            <p class="feature__text">Yazarken gerçek zamanlı TOON format çıktısı ile anında JSON to TOON dönüştürmesi. Hızlı dönüştürücümüz sayesinde sunucu gecikmesi yok.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="feature__title">Yapılandırılmış TOON Verileri</h3>
+            <p class="feature__text">Tablo biçimli veriler, API yanıtları ve büyük veri kümeleri için LLM isteklerinde mükemmel TOON serileştirme formatı. TOON JSON entegrasyonu kolay.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature__title">Kolay Okunabilir TOON Sözdizimi</h3>
+            <p class="feature__text">Hem geliştirici hem de LLM'ler için sezgisel olan, insan tarafından okunabilir TOON formatı. TOON, JSON'a benzer ancak dönüştürme için daha verimli.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature__title">Uygun Maliyetli JSON to TOON</h3>
+            <p class="feature__text">LLM uygulamalarınız için JSON'u TOON'a dönüştürerek API maliyetlerini %60'a kadar azaltın ve daha verimli token kullanımı sağlayın.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2 class="section__title">Sık Sorulan Sorular</h2>
+        <div class="faq__list">
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON formatı nedir?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON (Token-Oriented Object Notation), özellikle LLM istekleri için tasarlanmış bir veri serileştirme formatıdır. JSON ile karşılaştırıldığında token kullanımını %30-60 oranında azaltırken okunabilirlik ve yapıyı korur. TOON formatı, diziler için tablo biçimi ve nesneler için minimal TOON sözdizimi kullanır, bu da JSON to TOON dönüştürmesini yüksek oranda verimli hale getirir.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON ile ne kadar tasarruf edebilirim?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON, JSON ile karşılaştırıldığında tipik olarak LLM tokenlerinde %30-60 tasarruf sağlar. Büyük veri kümeleri veya API yanıtları için, bu GPT-4 veya Claude gibi API'ler kullanırken önemli maliyet tasarrufu anlamına gelebilir. Kesin tasarruf miktarı veri yapınıza bağlıdır.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON tüm LLM'lerle uyumlu mudur?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Evet, TOON GPT-4, Claude, Gemini ve LLaMA dahil olmak üzere tüm büyük LLM'lerle çalışır. TOON bir metin formatı olduğundan, herhangi bir LLM bunu okuyabilir ve anlayabilir. Çoğu modern LLM, isteminizde basit talimatlarla TOON formatını ayrıştırabiliyor.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Verilerim bu dönüştürücü kullanılırken güvenli midir?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Kesinlikle. Tüm dönüştürmeler JavaScript kullanılarak tarayıcınızda yerel olarak gerçekleşir. Verileriniz hiçbir zaman cihazınızı terk etmez veya herhangi bir sunucuya gönderilmez. Dönüştürücü sayfa yüklendikten sonra tamamen çevrimdışı olarak çalışır.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON ile JSON arasındaki fark nedir?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON ile JSON: TOON, token verimliliği için tasarlanmış daha kompakt bir sözdizimi kullanır. TOON serileştirme formatı, dizileri başlıklı tablolar olarak temsil eder, minimal noktalama kullanır ve gereksiz karakterleri ortadan kaldırır. JSON, parantez, tırnak ve virgüllerle daha ayrıntılıdır. JSON'u TOON'a dönüştürdüğünüzde LLM istekleri için, TOON'un verimliliği maliyetleri önemli ölçüde azaltır. <a href="/blog/toon-vs-json.html">Ayrıntılı TOON ile JSON karşılaştırmasını okuyun</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              JSON'u TOON'a nasıl dönüştürürüm?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">JSON'u TOON'a dönüştürmek kolaydır: 1) JSON verilerinizi yukarıdaki dönüştürücümüze yapıştırın, 2) "TOON'a Dönüştür"e tıklayın, 3) TOON çıktısını kopyalayın. Programlı dönüştürme için JavaScript veya Python kitaplıklarımızı kullanabilirsiniz. <a href="/blog/convert-json-to-toon.html">Örnekler ve kod parçacıkları içeren tam JSON to TOON dönüştürme kılavuzumuzu görmek</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON'u JSON'a geri dönüştürebilir miyim?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Evet! TOON tamamen tersine çevrilebilir - TOON'u JSON'a veri kaybı olmaksızın dönüştürebilirsiniz. Çift yönlü dönüştürücümüz hem JSON to TOON hem de TOON to JSON dönüştürmesini destekler. TOON verilerinizi yapıştırıp orijinal JSON yapınızı geri almak için "JSON'a Dönüştür" seçeneğini seçin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Hangi veri türleri TOON ile en iyi şekilde çalışır?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON, veritabanı sorgu sonuçları, nesne listesi içeren API yanıtları, analitik verileri, CSV tarzı veri kümeleri ve e-ticaret ürün katalogları gibi düzenli tablo biçimindeki verilerle en iyi şekilde çalışır. Birden fazla nesne genelinde tekrarlanan alanlar içeren veriler en yüksek token tasarrufu (%40-60) sağlar. Küçük veri kümeleri veya derin iç içe yapılar daha küçük iyileştirmeler görebilir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON iç içe nesneleri ve dizileri destekliyor mu?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Evet, TOON iç içe nesneleri ve dizileri destekler. İç içe nesneler girinti tabanlı yapıyı (YAML gibi) kullanırken, iç içe diziler yapılarını korur. Ancak TOON'un token verimliliği, düz, düzenli verilerle en yüksektir. Karmaşık iç içe yapılar yine de çalışır ancak dramatik bir token azalması görmeyebilir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON kullanımı ücretsiz midir?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Evet, hem TOON dönüştürücü aracı hem de TOON formatının kendisi tamamen ücretsiz olarak kullanılabilir. Dönüştürme sayısında, dosya boyutu kısıtlaması veya premium özelliklerde hiçbir limit yoktur. TOON formatı spesifikasyonu, bunu uygulamak isteyen herkes için açıktır.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Hangi LLM sağlayıcıları TOON formatını destekler?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON, OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Google (Gemini), Meta (LLaMA) ve diğerleri dahil olmak üzere tüm büyük LLM sağlayıcılarıyla çalışır. TOON metin tabanlı bir format olduğundan, uygun istemi talimatlarıyla herhangi bir LLM bunu anlayabilir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON tokenları nasıl azaltır?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON, üç anahtar optimizasyon aracılığıyla tokenları azaltır: 1) Alan adlarını dizi başlıklarında bir kez bildirerek bunları her nesne için tekrarlamak yerine, 2) Minimal noktalama kullanarak ve gereksiz parantez/süslü parantezleri ortadan kaldırarak, 3) Açık sınırlayıcılar yerine girinti tabanlı yapı kullanarak. Bunlar birleşerek JSON ile karşılaştırıldığında %30-60 token azalması sağlar.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON'u ChatGPT API ile kullanabilir miyim?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Kesinlikle! TOON, ChatGPT API (GPT-4, GPT-3.5-turbo) ile mükemmel şekilde çalışır. JSON verilerinizi isteninize dahil etmeden önce TOON'a dönüştürün. Sistem mesajınıza TOON formatının kısa bir açıklaması ekleyin ve model bunu anlayacak ve işleyecektir. Veri açısından yoğun istekler için API maliyetlerinizi önemli ölçüde azaltabilir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON hangi dosya uzantılarını kullanır?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">TOON dosyaları tipik olarak .toon uzantısını kullanır (ör. data.toon). TOON bir metin formatı olduğundan, bunu .txt dosyaları olarak da kaydedebilirsiniz. Dönüştürücümüzden indirilirken varsayılan uzantı .toon'dur ve format türünü açıkça belirtir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON'u uygulamama nasıl entegre ederim?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Entegrasyon kolaydır: 1) TOON kütüphanesini diliniz için kurun (JavaScript için npm install @toon-format/toon, Python için pip install toon-format), 2) Kodla/kodunu çöz işlevlerini içeri aktarın, 3) LLM'ye göndermeden önce verilerinizi TOON'a dönüştürün, 4) İsteğe bağlı olarak yanıtları JSON'a geri dönüştürün. Kod örnekleri ve API referansı için <a href="/docs.html">belgelerimizi</a> kontrol edin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              TOON akışlı yanıtlarla çalışır mı?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Evet, TOON LLM akışlı yanıtlarıyla çalışır. İsteklerinizde giriş tokenlarını azaltmak için isteminizde giriş verisi için TOON kullanırsınız. LLM'nin yanıtı (akışlı olsun veya olmasın) herhangi bir formatta olabilir. TOON çıktısına ihtiyacınız varsa, isteminize format talimatlarını ekleyin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq__question" itemprop="name" aria-expanded="false">
+              Dönüştürme için maksimum dosya boyutu nedir?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq__answer-content">
+                <p itemprop="text">Çevrimiçi dönüştürücümüz 10MB'a kadar dosyaları işleyebilir, bu da çoğu kullanım durumu için uygundur. Daha büyük veri kümeleri için, komut satırı aracını kullanmanız veya TOON kitaplığını doğrudan uygulamanıza entegre etmenizi öneriyoruz. Kütüphane hiçbir dosya boyutu sınırına sahip değildir ve çok büyük veri kümelerini verimli bir şekilde işleyebilir.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" style="background: var(--bg-secondary); padding: 4rem 0;">
+      <div class="container">
+        <h2 class="section__title">TOON Formatı Hakkında Daha Fazla Öğrenin</h2>
+        <p style="text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+          TOON formatında ustalaşmak ve LLM uygulamalarınızı optimize etmek için kapsamlı kaynaklarımızı keşfedin:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <a href="/blog/what-is-toon.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">TOON Nedir?</h3>
+            <p style="color: var(--text-secondary);">TOON formatının temellerini, sözdizimini ve temel özelliklerini öğrenin.</p>
+          </a>
+          <a href="/blog/toon-vs-json.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">TOON ile JSON</h3>
+            <p style="color: var(--text-secondary);">Formatlar arasında ayrıntılı karşılaştırma ve kıyaslamaları görün.</p>
+          </a>
+          <a href="/blog/convert-json-to-toon.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Dönüştürme Rehberi</h3>
+            <p style="color: var(--text-secondary);">JSON'u TOON formatına dönüştürme konusunda adım adım öğretici.</p>
+          </a>
+          <a href="/docs.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Belgeler</h3>
+            <p style="color: var(--text-secondary);">Tam sözdizimi referansı, örnekler ve en iyi uygulamalar.</p>
+          </a>
+          <a href="/blogs.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Tüm Makaleler</h3>
+            <p style="color: var(--text-secondary);">Tüm TOON öğretici, ipuçları ve kullanım örneklerine göz atın.</p>
+          </a>
+          <a href="/contact.html" style="text-decoration: none; color: inherit; display: block; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;">
+            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Yardım Alın</h3>
+            <p style="color: var(--text-secondary);">Sorularınız mı var? Destek ve yardım için bize ulaşın.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div data-template="cta"></div>
+  </main>
+
+  <div data-template="footer"></div>
+
+  <div class="toast" data-toast></div>
+
+  <script src="/js/index.js"></script>
+  <script src="/js/faq.js"></script>
+</body>
+</html>
