@@ -1,0 +1,14 @@
+Create a consent message for your sites
+Collect consent from users in the European Economy Area (EEA), the UK, and Switzerland to avoid potential ad revenue loss by adopting a Google certified consent management platform (CMP)
+
+
+
+Use Google's CMP to create a message with 2 choices (Consent and Manage options) for my site and future sites
+
+
+Use Google's CMP to create a message with 3 choices (Consent, Do not consent, and Manage options) for my site and future sites
+
+
+Certified CMP
+Adopt an alternative CMP certified by Google
+ 
