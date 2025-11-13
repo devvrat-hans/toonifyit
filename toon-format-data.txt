@@ -1,0 +1,194 @@
+# TOON Format: The Complete Guide to Token-Oriented Object Notation
+
+**Introduction**
+
+The **TOON format** (Token-Oriented Object Notation) is a groundbreaking data serialization standard that drastically reduces the number of tokens required for data transmission—especially when interacting with Large Language Models (LLMs). Designed in response to the limitations of traditional formats like JSON, TOON brings both human-readability and machine efficiency, often cutting token usage by 30-60%. This definitive guide explores TOON’s syntax, benefits, core use cases, and technical implementation.
+
+***
+
+## What is TOON Format?
+
+The TOON format efficiently encodes structured data, blending the conciseness of CSV with the readability of YAML, and is optimized to be economical for LLM parsing and processing. Its principal innovation is detecting and compactly expressing "tabular" data—arrays of uniform objects—without repetitive syntax overhead.
+
+***
+
+## Why was TOON Created?
+
+Traditional formats like JSON are verbose for large, uniform datasets. LLMs typically charge by token, so reducing redundancy translates to lower costs and faster processing. TOON was conceived to address this, targeting:
+
+- **Bulk tabular data (e.g., user lists, analytics)**
+- **Uniform object arrays** frequently used in AI and data science
+- **LLM prompt engineering, where every token saved reduces expenses**
+
+***
+
+## Key Features and Benefits
+
+- **Token Efficiency**: Reduces token count by 30-60% compared to JSON, especially on large uniform arrays.
+- **Readability**: Maintains a clear structure that’s easy for developers to read and edit.
+- **Minimal Syntax**: Declares object keys once for entire data blocks, similar to a CSV header.
+- **Custom Delimiters**: Supports various delimiters for even greater efficiency.
+- **Flexible Encoding**: Handles objects, arrays, primitives, and mixed/nested data.
+
+***
+
+## TOON Syntax Breakdown (With Examples)
+
+### Example: Encoding Users Array
+
+**TOON Format:**
+```
+users[3]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user
+  3,Charlie,user
+```
+
+**Equivalent JSON:**
+```json
+{
+  "users": [
+    { "id": 1, "name": "Alice", "role": "admin" },
+    { "id": 2, "name": "Bob", "role": "user" },
+    { "id": 3, "name": "Charlie", "role": "user" }
+  ]
+}
+```
+
+**How it works:**
+- The object fields (`id,name,role`) are specified once.
+- Each subsequent line is a comma-separated row of data.
+- The `[3]` indicates the number of array elements.
+
+***
+
+## The Core Optimization: Tabular Array Detection
+
+The greatest savings come from detecting arrays of objects that meet these criteria:
+
+- Every array element is an object (no primitives).
+- All objects have **identical keys in the same order**.
+- All values are primitives (not nested).
+
+If these hold, TOON outputs a tabular block; otherwise, it falls back to a more verbose but still efficient structure.
+
+***
+
+## Token Savings Benchmarks
+
+| Scenario                        | Typical Token Reduction |
+|----------------------------------|------------------------|
+| Uniform tabular data (100+ rows) | 50-60%                 |
+| Deeply nested objects            | 10-20%                 |
+| Mixed/non-uniform arrays         | 0-10%                  |
+| Small datasets                   | 20-30%                 |
+| Analytics time-series            | 35-60%                 |
+| GitHub repositories (metadata)   | 40-50%                 |
+
+***
+
+## Conversion Logic: JSON/YAML/CSV to TOON
+
+TOON encoders traverse input data, checking data type and uniformity at each step:
+
+- If a primitive array: emit inline format (`tags[3]: a,b,c`).
+- If a uniform array of objects: emit as a table (`objects[5]{field1,field2}: ...`).
+- If mixed or nested: fall back to nested indentation (YAML-like).
+- Quoting is applied only as needed to avoid ambiguity; most values remain unquoted.
+
+***
+
+## Quoting and Escape Rules
+
+Strings are quoted only if:
+- They’re empty, have spaces, or contain delimiter/colon
+- They resemble booleans, numbers, structural syntax
+- They require escaping (quotes, backslashes, newlines, tabs)
+
+Sample rule (for a value with a comma):
+```
+name: "Smith, John"
+```
+
+***
+
+## Flexible Delimiters and Options
+
+TOON supports custom delimiters (comma, tab, pipe) and options for array length markers:
+```
+encode(data, { delimiter: '\t' })  // Tab-delimited
+encode(data, { lengthMarker: '#' }) // Explicit array count
+```
+
+***
+
+## Implementation Example: JavaScript
+
+```javascript
+function encode(value, options = {}) {
+  const encoder = new ToonEncoder({
+    indent: options.indent ?? 2,
+    delimiter: options.delimiter ?? ',',
+    lengthMarker: options.lengthMarker ?? false,
+  });
+  return encoder.encode(value);
+}
+```
+
+**Key Detection Logic:**
+```javascript
+_isTabularArray(arr) {
+  if (!Array.isArray(arr) || arr.length === 0) return false;
+  const firstKeys = Object.keys(arr[0]).sort();
+  for (const element of arr) {
+    if (Object.keys(element).sort().join() !== firstKeys.join()) return false;
+    if (Object.values(element).some(v => typeof v === 'object' && v !== null)) return false;
+  }
+  return true;
+}
+```
+
+***
+
+## When Should You Use TOON?
+
+**Use TOON when:**
+- Working with uniform tabular data (e.g., user lists, event logs)
+- Reducing LLM token usage is a priority (API cost savings)
+- You maintain or transmit 10+ objects in an array, especially for AI ingestion
+
+**Use traditional JSON when:**
+- Datasets are deeply nested
+- Fields vary between objects
+- Compatibility is critical or your dataset is very small
+
+***
+
+## Use Cases
+
+- **LLM Prompt Engineering**: Send more data for less cost by minimizing token usage.
+- **APIs for Data Analytics**: Reduce bandwidth and parsing overhead.
+- **Embeddings & Feature Stores**: Efficiently serialize high-dimensional, uniform arrays.
+- **Open Data Portals**: Present big tabular datasets with less syntax.
+
+***
+
+## Frequently Asked Questions
+
+**Q: How does TOON differ from JSON?**  
+A: TOON removes repetition and minimizes syntax, particularly for large, uniform arrays, making it dramatically more token-efficient.
+
+**Q: Is TOON format human-readable?**  
+A: Yes—TOON is designed to be as readable as YAML, with compact tabular notation for arrays.
+
+**Q: Can I convert JSON to TOON automatically?**  
+A: Yes. Open-source libraries and web tools like ToonifyIt provide conversion utilities.
+
+***
+
+## Conclusion
+
+The **TOON format** is fast emerging as a preferred data serialization solution where token efficiency, machine readability, and scalability are of paramount importance. Leveraging TOON can significantly lower LLM interaction costs and reduce bandwidth for AI-powered workflows. To experiment, try the ToonifyIt converter and consult the interactive documentation for more advanced use cases.
+
+***
+**Use the TOON format to make every token count!**[1]

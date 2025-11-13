@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete TOON format guide. Learn TOON syntax, tabular arrays, delimiters, quoting rules, and how TOON format reduces LLM token usage by 30-60%. Convert JSON to TOON efficiently.">
+  <meta name="keywords" content="toon format, toon syntax, toon data format, toon serialization format, toon file format, json to toon, convert json to toon, toon format python, toon format json, toon format llm, toon object notation, toon encoder, toon data structure">
+  <meta name="author" content="Toonifyit">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://toonifyit.com/blog/toon-format.html">
+  <meta property="og:title" content="TOON Format: Complete Guide to Token-Oriented Object Notation">
+  <meta property="og:description" content="Master TOON format syntax, tabular arrays, delimiters, and encoding rules. Reduce LLM token usage by 30-60% with this comprehensive TOON serialization guide.">
+  <meta property="og:site_name" content="Toonifyit">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toonifyit.com/blog/toon-format.html">
+  <meta name="twitter:title" content="TOON Format: Complete Guide to Token-Oriented Object Notation">
+  <meta name="twitter:description" content="Complete TOON format guide. Learn syntax, tabular arrays, and reduce LLM costs by 30-60%.">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547680505322890" crossorigin="anonymous"></script>
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "TOON Format: Complete Guide to Token-Oriented Object Notation",
+    "description": "Comprehensive guide to TOON format syntax, tabular array detection, custom delimiters, quoting rules, and implementation. Learn how TOON reduces LLM token usage by 30-60% compared to JSON.",
+    "datePublished": "2025-01-20",
+    "dateModified": "2025-01-20",
+    "author": {
+      "@type": "Person",
+      "name": "Toonifyit Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Toonifyit"
+    },
+    "keywords": "toon format, toon syntax, toon serialization format, toon data format, toon encoder, json to toon"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://toonifyit.com/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://toonifyit.com/blogs.html"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "TOON Format Guide",
+      "item": "https://toonifyit.com/blog/toon-format.html"
+    }]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Toonifyit",
+    "url": "https://toonifyit.com",
+    "logo": "https://toonifyit.com/img/favicon.png",
+    "description": "Free JSON to TOON converter tool for LLM optimization and token reduction",
+    "sameAs": [
+      "https://github.com/toonifyit"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "url": "https://toonifyit.com/contact.html"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "TOON Format: Complete Guide",
+    "description": "Master TOON format syntax, tabular arrays, delimiters, and encoding rules for efficient LLM data serialization.",
+    "url": "https://toonifyit.com/blog/toon-format.html",
+    "mainEntity": {
+      "@type": "Article",
+      "headline": "TOON Format Guide",
+      "articleBody": "Complete technical guide to TOON (Token-Oriented Object Notation) format for LLM optimization"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://toonifyit.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://toonifyit.com/blogs.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "TOON Format Guide",
+        "item": "https://toonifyit.com/blog/toon-format.html"
+      }]
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "TOON Format Key Components",
+    "description": "Core elements of TOON format specification",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Tabular Array Format",
+        "description": "Efficient representation of uniform object arrays"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Custom Delimiters",
+        "description": "Flexible comma, tab, or pipe-separated values"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Minimal Quoting Rules",
+        "description": "Smart string quoting only when necessary"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Indentation-Based Structure",
+        "description": "YAML-like nesting without braces"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Type Normalization",
+        "description": "Consistent handling of dates, numbers, and special values"
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does TOON format differ from CSV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON combines CSV's tabular efficiency with support for nested objects, mixed data types, and hierarchical structure. CSV can only represent flat tables."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is TOON format standardized?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON is an open specification with reference implementations in JavaScript, Python, and other languages. The format is actively developed and community-driven."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use TOON with any LLM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! TOON works with GPT, Claude, Llama, and all other LLMs. The format is tokenizer-agnostic, though specific savings vary by model."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert existing JSON to TOON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the free JSON to TOON converter tool at toonifyit.com or install the TOON library for your language (npm: @toon-format/toon, pip: toon-format)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does TOON support comments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Currently, TOON does not support inline comments. This keeps the format minimal and parser implementation simple."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about TOON file extensions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TOON files typically use the .toon extension, though .txt works too. MIME type is text/x-toon (unofficial)."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <title>TOON Format Guide: Syntax, Arrays & Encoding | Toonifyit</title>
+  <link rel="canonical" href="https://toonifyit.com/blog/toon-format.html">
+  <link rel="icon" href="../img/favicon.png">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/docs.css">
+  <link rel="stylesheet" href="../css/blogposts.css">
+  <link rel="stylesheet" href="../css/cta.css">
+</head>
+<body>
+  <div data-template="navbar"></div>
+
+  <main class="main">
+    <article class="policy">
+      <div class="container">
+        <h1 class="policy__title">TOON Format: The Complete Technical Guide</h1>
+        <p class="policy__subtitle">Master Token-Oriented Object Notation Syntax, Tabular Arrays, and Encoding Rules</p>
+        
+        <div class="policy__layout">
+          <div class="policy__content">
+            
+            <!-- Introduction -->
+            <section id="introduction" class="policy__section">
+              <p>The <strong>TOON format</strong> (Token-Oriented Object Notation) is an innovative data serialization standard designed to drastically reduce token usage when working with Large Language Models (LLMs). By optimizing how structured data is represented, TOON format achieves 30-60% token reduction compared to JSON, translating to significant cost savings and improved performance for AI applications.</p>
+              
+              <p>This comprehensive technical guide explores TOON format syntax, tabular array detection, custom delimiters, quoting rules, and implementation patterns. Whether you're a developer optimizing LLM costs or a data engineer handling large datasets, this guide will help you master the TOON serialization format.</p>
+
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Quick Start</div>
+                <div class="docs__note-content">New to TOON? Try our free <a href="/">JSON to TOON converter</a> to see instant token savings on your data. You can also read our <a href="/blog/what-is-toon.html">What is TOON Format</a> article for a beginner-friendly introduction.</div>
+              </div>
+            </section>
+
+            <!-- TOON Format Definition -->
+            <section id="definition" class="policy__section">
+              <h2>What is TOON Format?</h2>
+              <p>TOON format is a human-readable data serialization format that combines the conciseness of CSV with the readability of YAML, specifically optimized for LLM token efficiency. The format's principal innovation is detecting and compactly expressing "tabular" data—arrays of uniform objects—without repetitive syntax overhead.</p>
+
+              <h3>Core Design Principles</h3>
+              <ul>
+                <li><strong>Token-First Optimization:</strong> Every design decision prioritizes reducing token count</li>
+                <li><strong>Lossless Conversion:</strong> Perfect bidirectional conversion with JSON</li>
+                <li><strong>Human Readability:</strong> Clean, scannable structure for developers</li>
+                <li><strong>Machine Efficiency:</strong> Easy for LLMs to parse and understand</li>
+                <li><strong>Minimal Syntax:</strong> Only essential punctuation and formatting</li>
+              </ul>
+
+              <p>TOON format serves as a translation layer: use JSON in your application logic, then <a href="/">convert JSON to TOON</a> when passing data to LLMs. This approach keeps your codebase maintainable while optimizing where it matters most—at the LLM API boundary.</p>
+            </section>
+
+            <!-- TOON Syntax Breakdown -->
+            <section id="syntax" class="policy__section">
+              <h2>TOON Format Syntax Breakdown</h2>
+              <p>Understanding TOON syntax is key to leveraging its power. The format uses different encoding strategies based on data structure.</p>
+
+              <h3>1. Tabular Arrays (Core Optimization)</h3>
+              <p>The heart of TOON's efficiency is its tabular array format. When TOON detects an array of uniform objects, it converts them into a table-like structure:</p>
+
+              <pre><code>users[3]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user
+  3,Charlie,user</code></pre>
+
+              <p><strong>Syntax Components:</strong></p>
+              <ul>
+                <li><code>users</code> - Property name</li>
+                <li><code>[3]</code> - Array length (number of items)</li>
+                <li><code>{id,name,role}</code> - Field header (declared once)</li>
+                <li><code>:</code> - Header terminator</li>
+                <li>Subsequent lines - Delimiter-separated values (one row per object)</li>
+              </ul>
+
+              <div class="docs__note docs__note--warning">
+                <div class="docs__note-title">⚠️ Tabular Array Requirements</div>
+                <div class="docs__note-content">
+                  For TOON to use tabular format, all array objects must have:<br>
+                  • <strong>Identical keys</strong> in the same order<br>
+                  • <strong>Primitive values only</strong> (no nested objects/arrays)<br>
+                  If these conditions aren't met, TOON falls back to list format.
+                </div>
+              </div>
+
+              <h3>2. List Arrays (Non-Uniform Data)</h3>
+              <p>When array elements aren't uniform, TOON uses list format with the <code>-</code> prefix:</p>
+
+              <pre><code>items[3]:
+  - type: book
+    title: 1984
+  - type: movie
+    title: Inception
+  - type: game
+    title: Chess</code></pre>
+
+              <h3>3. Primitive Arrays (Inline Format)</h3>
+              <p>Arrays of primitives (strings, numbers, booleans) are encoded inline:</p>
+
+              <pre><code>tags[4]: javascript,python,react,node</code></pre>
+
+              <h3>4. Nested Objects (Indentation-Based)</h3>
+              <p>TOON uses indentation for nested objects, eliminating braces:</p>
+
+              <pre><code>user:
+  name: Alice
+  profile:
+    age: 30
+    city: New York
+    preferences:
+      theme: dark
+      notifications: true</code></pre>
+
+              <h3>5. Simple Key-Value Pairs</h3>
+              <p>Basic properties use colon separation:</p>
+
+              <pre><code>name: Alice
+age: 30
+active: true
+score: 98.5</code></pre>
+            </section>
+
+            <!-- Tabular Array Detection -->
+            <section id="tabular-detection" class="policy__section">
+              <h2>Tabular Array Detection: The Core Algorithm</h2>
+              <p>The tabular array detection algorithm is where TOON achieves its massive token savings. This is the most important optimization in the entire TOON format specification.</p>
+
+              <h3>Detection Logic</h3>
+              <p>For an array to qualify as tabular, the TOON encoder performs these checks:</p>
+
+              <ol>
+                <li><strong>Type Check:</strong> Verify all elements are objects (not primitives, arrays, or null)</li>
+                <li><strong>Key Uniformity:</strong> Extract keys from first object, then verify every other object has identical keys in the same order</li>
+                <li><strong>Value Type Check:</strong> Confirm all values are primitives (strings, numbers, booleans, null)</li>
+              </ol>
+
+              <h3>JavaScript Implementation Example</h3>
+              <pre><code>_isTabularArray(arr) {
+  if (!Array.isArray(arr) || arr.length === 0) return false;
+
+  const firstElement = arr[0];
+  if (typeof firstElement !== 'object' || Array.isArray(firstElement)) {
+    return false;
+  }
+
+  const firstKeys = Object.keys(firstElement).sort();
+
+  for (const element of arr) {
+    // Check all objects have identical keys
+    const elementKeys = Object.keys(element).sort();
+    if (!this._keysEqual(firstKeys, elementKeys)) return false;
+
+    // Check all values are primitives
+    for (const value of Object.values(element)) {
+      if (typeof value === 'object' && value !== null) return false;
+    }
+  }
+
+  return true;
+}</code></pre>
+
+              <h3>Token Savings Explained</h3>
+              <p>Consider a dataset with 100 user objects, each having 5 fields. In JSON:</p>
+              <ul>
+                <li>Keys repeat 100 times: <code>"id"</code>, <code>"name"</code>, <code>"email"</code>, <code>"role"</code>, <code>"active"</code></li>
+                <li>Curly braces: 200 characters (opening and closing for each object)</li>
+                <li>Commas and quotes: hundreds of additional characters</li>
+              </ul>
+
+              <p>In TOON format:</p>
+              <ul>
+                <li>Keys declared once: <code>{id,name,email,role,active}</code></li>
+                <li>No braces for objects</li>
+                <li>Minimal quotes (only when necessary)</li>
+                <li>Result: 50-60% token reduction</li>
+              </ul>
+            </section>
+
+            <!-- Custom Delimiters -->
+            <section id="delimiters" class="policy__section">
+              <h2>Custom Delimiters in TOON Format</h2>
+              <p>TOON format supports flexible delimiters to optimize for different data types and tokenizer behaviors.</p>
+
+              <h3>Supported Delimiters</h3>
+              
+              <div class="features__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border);">
+                  <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Comma (Default)</h4>
+                  <pre style="margin: 0.5rem 0;"><code>items[2]{id,name}:
+  1,Alice
+  2,Bob</code></pre>
+                  <p style="font-size: 0.9rem; color: var(--text-secondary);">Best for: Most general use cases</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border);">
+                  <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Tab Delimiter</h4>
+                  <pre style="margin: 0.5rem 0;"><code>items[2	]{id	name}:
+  1	Alice
+  2	Bob</code></pre>
+                  <p style="font-size: 0.9rem; color: var(--text-secondary);">Best for: Single-token efficiency with some tokenizers</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border);">
+                  <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Pipe Delimiter</h4>
+                  <pre style="margin: 0.5rem 0;"><code>items[2|]{id|name}:
+  1|Alice
+  2|Bob</code></pre>
+                  <p style="font-size: 0.9rem; color: var(--text-secondary);">Best for: Data containing many commas</p>
+                </div>
+              </div>
+
+              <h3>Delimiter Configuration</h3>
+              <p>Set delimiter when encoding:</p>
+
+              <pre><code>// JavaScript
+encode(data, { delimiter: '\t' })
+
+# Python
+encode(data, delimiter='\t')</code></pre>
+
+              <h3>Choosing the Right Delimiter</h3>
+              <ul>
+                <li><strong>Use comma:</strong> Default choice, widely understood</li>
+                <li><strong>Use tab:</strong> When you've tested that tabs tokenize more efficiently with your specific LLM</li>
+                <li><strong>Use pipe:</strong> When your data contains many commas (addresses, descriptions, etc.)</li>
+              </ul>
+
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Tokenizer Testing</div>
+                <div class="docs__note-content">Different LLM tokenizers handle delimiters differently. Test with your specific model's tokenizer to find optimal delimiter. GPT models often treat tabs as single tokens.</div>
+              </div>
+            </section>
+
+            <!-- Quoting Rules -->
+            <section id="quoting" class="policy__section">
+              <h2>TOON Format Quoting and Escape Rules</h2>
+              <p>One of TOON's key optimizations is minimal quoting. Strings are only quoted when necessary to avoid ambiguity.</p>
+
+              <h3>When TOON Adds Quotes</h3>
+              <p>TOON quotes a string value if it:</p>
+              <ul>
+                <li>Is empty: <code>""</code></li>
+                <li>Has leading or trailing whitespace: <code>" text "</code></li>
+                <li>Contains the active delimiter: <code>"Smith, John"</code> (with comma delimiter)</li>
+                <li>Contains a colon: <code>"key: value"</code></li>
+                <li>Contains quotes or backslashes: <code>"He said \"hello\""</code></li>
+                <li>Looks like a boolean: <code>"true"</code>, <code>"false"</code></li>
+                <li>Looks like a number: <code>"42"</code>, <code>"3.14"</code></li>
+                <li>Looks like null: <code>"null"</code></li>
+                <li>Starts with list syntax: <code>"- item"</code></li>
+                <li>Looks like structural syntax: <code>"[5]"</code>, <code>"{key}"</code></li>
+              </ul>
+
+              <h3>Examples</h3>
+              <pre><code>// No quotes needed
+name: Alice
+city: NewYork
+status: active
+
+// Quotes required
+name: "Smith, John"        // Contains comma
+description: "Hello: World" // Contains colon
+value: "123"               // Looks like number
+flag: "true"               // Looks like boolean
+empty: ""                  // Empty string
+spaced: " text "           // Leading/trailing space</code></pre>
+
+              <h3>Escape Sequences</h3>
+              <p>Within quoted strings, TOON uses standard escape sequences:</p>
+              <ul>
+                <li><code>\\</code> - Backslash</li>
+                <li><code>\"</code> - Double quote</li>
+                <li><code>\n</code> - Newline</li>
+                <li><code>\r</code> - Carriage return</li>
+                <li><code>\t</code> - Tab</li>
+              </ul>
+
+              <pre><code>message: "Line 1\nLine 2"
+quote: "She said \"hello\""
+path: "C:\\Users\\Documents"</code></pre>
+            </section>
+
+            <!-- Encoding Options -->
+            <section id="encoding-options" class="policy__section">
+              <h2>TOON Format Encoding Options</h2>
+              <p>TOON encoders support various options to customize output format.</p>
+
+              <h3>Available Options</h3>
+              
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h4 style="margin-top: 0;">Indentation (Default: 2 spaces)</h4>
+                <pre><code>// JavaScript
+encode(data, { indent: 4 })
+
+# Python
+encode(data, indent=4)</code></pre>
+                <p>Controls nesting indentation. Use 2 or 4 spaces for readability.</p>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h4 style="margin-top: 0;">Delimiter (Default: comma)</h4>
+                <pre><code>encode(data, { delimiter: '\t' })  // Tab
+encode(data, { delimiter: '|' })   // Pipe</code></pre>
+                <p>Sets the delimiter for tabular arrays.</p>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h4 style="margin-top: 0;">Length Marker (Default: false)</h4>
+                <pre><code>encode(data, { lengthMarker: '#' })</code></pre>
+                <p>Output: <code>items[#3]{id,name}:</code></p>
+                <p>Adds explicit marker before array count for emphasis.</p>
+              </div>
+
+              <h3>Combined Options Example</h3>
+              <pre><code>const toon = encode(data, {
+  indent: 2,
+  delimiter: '\t',
+  lengthMarker: '#'
+});
+
+// Output:
+// users[#100	]{id	name	role}:
+//   1	Alice	admin
+//   2	Bob	user
+//   ...</code></pre>
+            </section>
+
+            <!-- Token Savings -->
+            <section id="benchmarks" class="policy__section">
+              <h2>TOON Format Token Savings by Data Type</h2>
+              <p>Token reduction varies significantly based on data structure. Here's what to expect:</p>
+
+              <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                  <thead>
+                    <tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--border);">
+                      <th style="padding: 1rem; text-align: left;">Scenario</th>
+                      <th style="padding: 1rem; text-align: left;">Token Reduction</th>
+                      <th style="padding: 1rem; text-align: left;">Reason</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                      <td style="padding: 1rem;">Uniform tabular (100+ rows)</td>
+                      <td style="padding: 1rem; color: var(--accent); font-weight: bold;">50-60%</td>
+                      <td style="padding: 1rem;">Keys declared once, CSV-like rows</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                      <td style="padding: 1rem;">Analytics time-series</td>
+                      <td style="padding: 1rem; color: var(--accent); font-weight: bold;">35-60%</td>
+                      <td style="padding: 1rem;">Highly uniform structure</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                      <td style="padding: 1rem;">GitHub repositories</td>
+                      <td style="padding: 1rem; color: var(--accent); font-weight: bold;">40-50%</td>
+                      <td style="padding: 1rem;">Moderate uniformity</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                      <td style="padding: 1rem;">Small datasets (<10 items)</td>
+                      <td style="padding: 1rem; color: var(--accent); font-weight: bold;">20-30%</td>
+                      <td style="padding: 1rem;">Overhead from minimal syntax</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                      <td style="padding: 1rem;">Deeply nested objects</td>
+                      <td style="padding: 1rem; color: var(--accent); font-weight: bold;">10-20%</td>
+                      <td style="padding: 1rem;">Indentation replaces braces</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                      <td style="padding: 1rem;">Mixed/non-uniform arrays</td>
+                      <td style="padding: 1rem; color: var(--accent); font-weight: bold;">0-10%</td>
+                      <td style="padding: 1rem;">Falls back to list format</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="docs__note docs__note--warning">
+                <div class="docs__note-title">📊 Benchmark Methodology</div>
+                <div class="docs__note-content">Token counts measured using GPT-5 o200k_base tokenizer. Actual savings depend on your specific data structure and target LLM. Test with your real data using our <a href="/">converter tool</a>.</div>
+              </div>
+            </section>
+
+            <!-- Implementation Guide -->
+            <section id="implementation" class="policy__section">
+              <h2>TOON Format Implementation Guide</h2>
+              <p>Implementing TOON encoding follows a systematic decision tree based on data type.</p>
+
+              <h3>Encoder Architecture</h3>
+              <pre><code>function encode(value, options = {}) {
+  const encoder = new ToonEncoder({
+    indent: options.indent ?? 2,
+    delimiter: options.delimiter ?? ',',
+    lengthMarker: options.lengthMarker ?? false,
+  });
+  return encoder.encode(value);
+}
+
+class ToonEncoder {
+  encode(value) {
+    // 1. Type dispatch
+    if (value === null) return 'null';
+    if (typeof value !== 'object') return this._encodePrimitive(value);
+    if (Array.isArray(value)) return this._encodeArray(value);
+    return this._encodeObject(value);
+  }
+
+  _encodeArray(arr) {
+    // 2. Check if tabular
+    if (this._isTabularArray(arr)) {
+      return this._encodeTabularArray(arr);
+    }
+    
+    // 3. Check if all primitives
+    if (arr.every(item => typeof item !== 'object')) {
+      return this._encodePrimitiveArray(arr);
+    }
+    
+    // 4. Fall back to list format
+    return this._encodeListArray(arr);
+  }
+}</code></pre>
+
+              <h3>Type Normalization</h3>
+              <p>TOON handles non-JSON types consistently:</p>
+              <ul>
+                <li><code>Date</code> objects → ISO string in quotes</li>
+                <li><code>BigInt</code> → Decimal string (quoted if > safe integer)</li>
+                <li><code>NaN</code>, <code>Infinity</code> → <code>null</code></li>
+                <li><code>undefined</code> → <code>null</code></li>
+                <li>Functions, symbols → <code>null</code></li>
+              </ul>
+
+              <h3>JavaScript Example</h3>
+              <p>For a complete JavaScript implementation guide with Node.js and Express.js integration, see our <a href="/blog/toon-format-javascript.html">TOON Format JavaScript Implementation Guide</a>.</p>
+              <pre><code>import { encode } from '@toon-format/toon';
+
+const data = {
+  users: [
+    { id: 1, name: 'Alice', role: 'admin', active: true },
+    { id: 2, name: 'Bob', role: 'user', active: false }
+  ],
+  metadata: {
+    version: 1,
+    created: '2025-01-01'
+  }
+};
+
+const toon = encode(data);
+console.log(toon);
+
+// Output:
+// users[2]{id,name,role,active}:
+//   1,Alice,admin,true
+//   2,Bob,user,false
+// metadata:
+//   version: 1
+//   created: 2025-01-01</code></pre>
+
+              <h3>Python Example</h3>
+              <pre><code>from toon_format import encode
+
+data = {
+    'users': [
+        {'id': 1, 'name': 'Alice', 'role': 'admin'},
+        {'id': 2, 'name': 'Bob', 'role': 'user'}
+    ],
+    'count': 2
+}
+
+toon = encode(data)
+print(toon)</code></pre>
+            </section>
+
+            <!-- Use Cases -->
+            <section id="use-cases" class="policy__section">
+              <h2>TOON Format Use Cases</h2>
+              <p>TOON format excels in specific scenarios where token efficiency matters most.</p>
+
+              <h3>✅ Optimal Use Cases</h3>
+              
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h4 style="margin-top: 0; color: var(--accent);">LLM Prompt Engineering</h4>
+                <p>Passing data context to LLMs while minimizing token costs. Perfect for:</p>
+                <ul>
+                  <li>User lists for analysis</li>
+                  <li>Product catalogs for recommendations</li>
+                  <li>Historical data for trend analysis</li>
+                  <li>Configuration data for AI agents</li>
+                </ul>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h4 style="margin-top: 0; color: var(--accent);">API Response Optimization</h4>
+                <p>Reducing bandwidth for data analytics APIs:</p>
+                <ul>
+                  <li>Time-series analytics (daily/hourly metrics)</li>
+                  <li>Database query results</li>
+                  <li>E-commerce order history</li>
+                  <li>IoT sensor data streams</li>
+                </ul>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h4 style="margin-top: 0; color: var(--accent);">Embeddings & Feature Stores</h4>
+                <p>Efficient serialization of high-dimensional arrays:</p>
+                <ul>
+                  <li>Feature vectors for ML models</li>
+                  <li>Embedding databases</li>
+                  <li>Vector similarity search results</li>
+                </ul>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h4 style="margin-top: 0; color: var(--accent);">Open Data Portals</h4>
+                <p>Publishing large tabular datasets:</p>
+                <ul>
+                  <li>Government data releases</li>
+                  <li>Research datasets</li>
+                  <li>Public API documentation</li>
+                </ul>
+              </div>
+
+              <h3>❌ When Not to Use TOON</h3>
+              <ul>
+                <li><strong>Deeply nested objects:</strong> 3+ levels of nesting (minimal benefit)</li>
+                <li><strong>Non-uniform data:</strong> Objects with varying fields</li>
+                <li><strong>Very small datasets:</strong> Less than 10 items (overhead not worth it)</li>
+                <li><strong>Native tool integration:</strong> When tools require JSON specifically</li>
+                <li><strong>Programmatic parsing:</strong> Use JSON for application logic</li>
+              </ul>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="policy__section">
+              <h2>Frequently Asked Questions</h2>
+              
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h3 style="margin-top: 0;">How does TOON format differ from CSV?</h3>
+                <p>TOON combines CSV's tabular efficiency with support for nested objects, mixed data types, and hierarchical structure. CSV can only represent flat tables.</p>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h3 style="margin-top: 0;">Is TOON format standardized?</h3>
+                <p>TOON is an open specification with reference implementations in JavaScript, Python, and other languages. The format is actively developed and community-driven.</p>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h3 style="margin-top: 0;">Can I use TOON with any LLM?</h3>
+                <p>Yes! TOON works with GPT, Claude, Llama, and all other LLMs. The format is tokenizer-agnostic, though specific savings vary by model.</p>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h3 style="margin-top: 0;">How do I convert existing JSON to TOON?</h3>
+                <p>Use our free <a href="/">JSON to TOON converter tool</a> or install the TOON library for your language (npm: <code>@toon-format/toon</code>, pip: <code>toon-format</code>).</p>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h3 style="margin-top: 0;">Does TOON support comments?</h3>
+                <p>Currently, TOON does not support inline comments. This keeps the format minimal and parser implementation simple.</p>
+              </div>
+
+              <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <h3 style="margin-top: 0;">What about TOON file extensions?</h3>
+                <p>TOON files typically use the <code>.toon</code> extension, though <code>.txt</code> works too. MIME type is <code>text/x-toon</code> (unofficial).</p>
+              </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section id="conclusion" class="policy__section">
+              <h2>Conclusion: Mastering TOON Format</h2>
+              <p>The TOON format represents a significant advancement in data serialization for the LLM era. By understanding tabular array detection, custom delimiters, quoting rules, and encoding options, you can leverage TOON to achieve 30-60% token reduction compared to JSON.</p>
+
+              <p>Key takeaways:</p>
+              <ul>
+                <li><strong>Tabular arrays</strong> are TOON's superpower—uniform data sees the biggest savings</li>
+                <li><strong>Custom delimiters</strong> let you optimize for your specific tokenizer</li>
+                <li><strong>Minimal quoting</strong> eliminates unnecessary characters</li>
+                <li><strong>Type-based encoding</strong> ensures efficient representation of all data structures</li>
+                <li><strong>Use as a translation layer</strong>—JSON in your app, TOON at the LLM boundary</li>
+              </ul>
+
+              <h3>Next Steps</h3>
+              <p>Ready to start using TOON format? Here are your next steps:</p>
+              <ul>
+                <li><a href="/">Try our free JSON to TOON converter</a> - Test with your real data</li>
+                <li><a href="/blog/convert-json-to-toon.html">How to Convert JSON to TOON</a> - Step-by-step tutorial</li>
+                <li><a href="/blog/toon-vs-json.html">TOON vs JSON Comparison</a> - Detailed format analysis</li>
+                <li><a href="/blog/llm-token-optimization.html">LLM Token Optimization Guide</a> - Reduce AI costs</li>
+                <li><a href="/docs.html">TOON Documentation</a> - Complete syntax reference</li>
+                <li><a href="/blogs.html">More TOON Articles</a> - Tutorials and best practices</li>
+              </ul>
+
+              <div class="blogpost__cta">
+                <h3>Start Converting JSON to TOON</h3>
+                <p>See instant token savings with our free online converter tool.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                  <a href="/" class="btn btn--primary btn--large">Try Converter Now</a>
+                  <a href="/docs.html" class="btn btn--secondary btn--large">Read Documentation</a>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- Sidebar TOC -->
+          <aside class="policy__toc">
+            <div class="policy__toc-sticky">
+              <h3 class="policy__toc-title">On This Page</h3>
+              <nav>
+                <a href="#introduction">Introduction</a>
+                <a href="#definition">What is TOON Format?</a>
+                <a href="#syntax">TOON Syntax</a>
+                <a href="#tabular-detection">Tabular Arrays</a>
+                <a href="#delimiters">Custom Delimiters</a>
+                <a href="#quoting">Quoting Rules</a>
+                <a href="#encoding-options">Encoding Options</a>
+                <a href="#benchmarks">Token Savings</a>
+                <a href="#implementation">Implementation</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="#faq">FAQ</a>
+                <a href="#conclusion">Conclusion</a>
+              </nav>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div data-template="cta"></div>
+  <div data-template="footer"></div>
+
+  <script src="../js/templates.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/blogposts.js" defer></script>
+</body>
+</html>
