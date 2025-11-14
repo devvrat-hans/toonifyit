@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Response to Arnaud Berger - TOON Format Accuracy Question</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    <!-- Header -->
+    <div style="background: #007bff; color: white; padding: 20px; text-align: center;">
+      <h1 style="margin: 0;">Re: TOON Format Accuracy & Open Source Contribution</h1>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="padding: 30px; background: #f5f5f5;">
+      <!-- Greeting -->
+      <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <p style="font-size: 16px; color: #333; line-height: 1.6; margin-top: 0;">
+          Hi Arnaud,
+        </p>
+        
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          Thank you for your excellent questions about TOON's accuracy benchmarks! It's indeed surprising at first that TOON outperforms JSON on LLM benchmarks, given JSON's dominance in training data.
+        </p>
+      </div>
+      
+      <!-- Explanation Section -->
+      <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h2 style="color: #333; margin-top: 0; font-size: 20px;">Why TOON Achieves Better Accuracy</h2>
+        
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          The key is TOON's design, which reduces the token count by <strong>30-60%</strong>, allowing models to focus on meaningful data rather than repetitive syntax.
+        </p>
+        
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          Official benchmarks across models like <strong>GPT-5 Nano</strong> and <strong>Claude Haiku</strong> show TOON achieving an accuracy of around <strong>68.7-73.9%</strong>, compared to JSON's <strong>65.4-69.7%</strong>, all while using significantly fewer tokens.
+        </p>
+        
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          A detailed study tested <strong>201 real-world questions</strong> and found that TOON used <strong>39.5% fewer tokens</strong>, consistently achieving better accuracy.
+        </p>
+      </div>
+      
+      <!-- Benchmark Table -->
+      <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h2 style="color: #333; margin-top: 0; font-size: 20px;">Quick Stat Comparison</h2>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+          <thead>
+            <tr style="background: #f8f9fa;">
+              <th style="padding: 12px; border: 1px solid #ddd; text-align: left; font-weight: bold; color: #333;">Format</th>
+              <th style="padding: 12px; border: 1px solid #ddd; text-align: left; font-weight: bold; color: #333;">Accuracy</th>
+              <th style="padding: 12px; border: 1px solid #ddd; text-align: left; font-weight: bold; color: #333;">Token Reduction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 12px; border: 1px solid #ddd; color: #333;"><strong>TOON</strong></td>
+              <td style="padding: 12px; border: 1px solid #ddd; color: #28a745; font-weight: bold;">Up to 73.9%</td>
+              <td style="padding: 12px; border: 1px solid #ddd; color: #28a745; font-weight: bold;">30-60% less than JSON</td>
+            </tr>
+            <tr style="background: #f8f9fa;">
+              <td style="padding: 12px; border: 1px solid #ddd; color: #333;"><strong>JSON</strong></td>
+              <td style="padding: 12px; border: 1px solid #ddd; color: #333;">Up to 69.7%</td>
+              <td style="padding: 12px; border: 1px solid #ddd; color: #666;">Baseline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- How It Works -->
+      <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h2 style="color: #333; margin-top: 0; font-size: 20px;">How TOON Works</h2>
+        
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          TOON works best with <strong>uniform, tabular data</strong> by declaring the schema once and listing data compactly, unlike JSON that repeats key names over and over. This clarity helps LLMs parse faster and more accurately.
+        </p>
+        
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #007bff; margin-top: 15px;">
+          <p style="margin: 0; font-size: 14px; color: #666; line-height: 1.6;">
+            <strong>Example:</strong> For tabular data with 100 rows, JSON repeats field names 100 times, while TOON declares them once in the header. This structural efficiency leads to both <strong>fewer tokens</strong> and <strong>better comprehension</strong> by LLMs.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Open Source Contribution -->
+      <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h2 style="color: #333; margin-top: 0; font-size: 20px;">Open Source Contribution</h2>
+        
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          The TOON project is actively maintained and welcomes contributions! You can get involved in several ways:
+        </p>
+        
+        <ul style="font-size: 16px; color: #333; line-height: 1.8; padding-left: 20px;">
+          <li><strong>Language Bindings:</strong> Help implement TOON parsers in additional languages</li>
+          <li><strong>Benchmarks:</strong> Test TOON on various models and datasets</li>
+          <li><strong>Documentation:</strong> Improve guides and examples</li>
+          <li><strong>Testing:</strong> Create test cases for edge scenarios</li>
+        </ul>
+        
+        <div style="background: #007bff; color: white; padding: 15px; border-radius: 6px; text-align: center; margin-top: 20px;">
+          <p style="margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">TOON GitHub Repository</p>
+          <a href="https://github.com/toon-format/toon" style="color: white; font-size: 16px; text-decoration: underline;">
+            https://github.com/toon-format/toon
+          </a>
+        </div>
+      </div>
+      
+      <!-- Additional Resources -->
+      <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h2 style="color: #333; margin-top: 0; font-size: 20px;">Additional Resources</h2>
+        
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          For more detailed information, I recommend checking out:
+        </p>
+        
+        <ul style="font-size: 16px; color: #333; line-height: 1.8; padding-left: 20px;">
+          <li><a href="https://toonifyit.com/blog/what-is-toon.html" style="color: #007bff; text-decoration: none;">What is TOON Format? Complete Guide</a></li>
+          <li><a href="https://toonifyit.com/blog/toon-vs-json.html" style="color: #007bff; text-decoration: none;">TOON vs JSON: Comparative Analysis</a></li>
+          <li><a href="https://toonifyit.com/blog/toon-format-javascript.html" style="color: #007bff; text-decoration: none;">TOON Implementation Guide for JavaScript</a></li>
+          <li><a href="https://toonifyit.com/" style="color: #007bff; text-decoration: none;">Try our free JSON to TOON converter</a></li>
+        </ul>
+      </div>
+      
+      <!-- Closing -->
+      <div style="background: white; padding: 20px; border-radius: 8px;">
+        <p style="font-size: 16px; color: #333; line-height: 1.6;">
+          I hope these references help answer your questions! Feel free to reach out if you want to discuss more or get involved with the project. We'd love to have your contributions.
+        </p>
+        
+        <p style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 0;">
+          Best regards,<br>
+          <strong>The Toonifyit Team</strong>
+        </p>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div style="background: #333; color: white; padding: 20px; text-align: center;">
+      <p style="margin: 0; font-size: 12px;">
+        This email is in response to your inquiry about TOON format accuracy.
+      </p>
+      <p style="margin: 10px 0 0 0; font-size: 12px;">
+        Visit us at <a href="https://toonifyit.com" style="color: #007bff; text-decoration: none;">toonifyit.com</a>
+        <br>
+        © 2025 Toonifyit. All rights reserved.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

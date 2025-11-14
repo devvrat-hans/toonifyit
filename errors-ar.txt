@@ -1,0 +1,25 @@
+ 
+Errors in both the instances: 
+"Parsing error: Missing ',' or '}'"
+
+
+instance 01
+ 
+line 137:
+
+          "text": "نعم! TOON قابلة للعكس بالكامل - يمكنك تحويل TOON مرة أخرى إلى JSON دون فقدان أي بيانات. يدعم محولنا ثنائي الاتجاه تحويل JSON إلى TOON و TOON إلى JSON. ما عليك سوى لصق بيانات TOON الخاصة بك واختيار "تحويل إلى JSON" للحصول على هيكل JSON الأصلي."
+        }
+      },
+
+
+
+instance 02
+
+line 275
+
+          {
+            "@type": "HowToDirection",
+            "text": "أو انقر فوق "تحميل مثال" لرؤية عرض توضيحي"
+          }
+        ]
+      },
