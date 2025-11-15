@@ -19,6 +19,23 @@
   box-sizing: border-box;
 }
 
+/* Remove any default list styling */
+ul, ol, li {
+  list-style: none;
+  list-style-type: none;
+}
+
+/* Remove pseudo-elements that might appear as dots */
+.nav::before,
+.nav::after,
+.nav__links::before,
+.nav__links::after,
+.header::before,
+.header::after {
+  content: none !important;
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -70,6 +87,12 @@ a:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.header::before,
+.header::after {
+  content: none !important;
+  display: none !important;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -77,6 +100,13 @@ a:hover {
   padding: 1.2rem 0;
   gap: 1rem;
   position: relative;
+  list-style: none !important;
+}
+
+.nav::before,
+.nav::after {
+  content: none !important;
+  display: none !important;
 }
 
 .logo {
@@ -114,6 +144,13 @@ a:hover {
   flex: 1;
   justify-content: flex-end;
   max-width: calc(100% - 200px);
+  list-style: none !important;
+}
+
+.nav__links::before,
+.nav__links::after {
+  content: none !important;
+  display: none !important;
 }
 
 .nav__link {
