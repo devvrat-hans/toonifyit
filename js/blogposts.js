@@ -35,47 +35,28 @@
       const button = document.createElement('button');
       button.className = 'code-copy-btn';
       button.textContent = 'Copy';
-      button.style.cssText = `
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        padding: 0.5rem 1rem;
-        background: var(--bg-secondary);
-        color: var(--text-primary);
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 0.85rem;
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      `;
+      button.setAttribute('aria-label', 'Copy code to clipboard');
       
       pre.style.position = 'relative';
       pre.appendChild(button);
-      
-      pre.addEventListener('mouseenter', () => {
-        button.style.opacity = '1';
-      });
-      
-      pre.addEventListener('mouseleave', () => {
-        button.style.opacity = '0';
-      });
       
       button.addEventListener('click', async () => {
         const code = codeBlock.textContent;
         try {
           await navigator.clipboard.writeText(code);
+          button.classList.add('copied');
           button.textContent = 'Copied!';
-          button.style.background = 'var(--success)';
-          button.style.color = 'white';
           
           setTimeout(() => {
+            button.classList.remove('copied');
             button.textContent = 'Copy';
-            button.style.background = 'var(--bg-secondary)';
-            button.style.color = 'var(--text-primary)';
           }, 2000);
         } catch (err) {
-          // Copy failed - fail silently
+          // Copy failed - show error briefly
+          button.textContent = 'Failed';
+          setTimeout(() => {
+            button.textContent = 'Copy';
+          }, 1500);
         }
       });
     });

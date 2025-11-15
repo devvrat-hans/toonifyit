@@ -3,382 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Complete TOON format implementation guide for JavaScript developers. Learn to use @toon-format/toon in Node.js and Express.js. Reduce LLM token costs by 30-60% with working code examples and real-world benchmarks.">
-  <meta name="keywords" content="TOON format JavaScript implementation, json to toon converter, @toon-format/toon, Node.js TOON format, Express.js TOON integration, json to toon, toon format, convert json to toon, toon encoder, toon npm, LLM token optimization JavaScript">
+  <meta name="description" content="Complete TOON format JavaScript implementation guide. Learn @toon-format/toon with Node.js, Express.js integration, real-world examples. Reduce LLM token costs 30-60% with JSON to TOON conversion in JavaScript.">
+  <meta name="keywords" content="toon format javascript, json to toon javascript, @toon-format/toon, toon npm, toon format node.js, toon javascript library, convert json to toon, toon encoder, json to toon converter, toon llm format, toon vs json">
   <meta name="author" content="Toonifyit">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="TOON Format Implementation Guide for JavaScript Developers">
-  <meta property="og:description" content="Complete guide to implementing TOON format in JavaScript. Learn Node.js integration, Express.js APIs, and achieve 30-60% LLM token cost reduction.">
+  
+  <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://toonifyit.com/blog/toon-format-javascript.html">
-  <meta property="og:image" content="https://toonifyit.com/img/toon-javascript-guide.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TOON Format Implementation Guide for JavaScript Developers">
-  <meta name="twitter:description" content="Complete guide to implementing TOON format in JavaScript. Learn Node.js integration, Express.js APIs, and achieve 30-60% LLM token cost reduction.">
-  <meta name="twitter:image" content="https://toonifyit.com/img/toon-javascript-guide.png">
-  <link rel="canonical" href="https://toonifyit.com/blog/toon-format-javascript.html">
-  <title>TOON Format Implementation Guide for JavaScript Developers | Complete Tutorial</title>
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/blogposts.css">
-  <link rel="stylesheet" href="/css/docs.css">
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/cta.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8976391546084453" crossorigin="anonymous"></script>
+  <meta property="og:title" content="TOON Format JavaScript Implementation Guide: Node.js & Express Tutorial">
+  <meta property="og:description" content="Complete TOON format JavaScript guide. Implement @toon-format/toon in Node.js and Express.js. Reduce LLM API costs 30-60% with real code examples.">
+  <meta property="og:site_name" content="Toonifyit">
   
-  <!-- Schema.org BlogPosting Markup -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://toonifyit.com/blog/toon-format-javascript.html">
+  <meta name="twitter:title" content="TOON Format JavaScript Implementation Guide">
+  <meta name="twitter:description" content="Learn TOON format for JavaScript with complete Node.js and Express.js examples. Save 30-60% on LLM token costs.">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547680505322890" crossorigin="anonymous"></script>
+  
+  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "TOON Format Implementation Guide for JavaScript Developers: Complete Tutorial with Node.js & Express",
-    "description": "Complete TOON format implementation guide for JavaScript developers. Learn to use @toon-format/toon in Node.js and Express.js to reduce LLM token costs by 30-60%.",
-    "image": "https://toonifyit.com/img/toon-javascript-guide.png",
+    "headline": "TOON Format Implementation Guide for JavaScript Developers",
+    "description": "Complete guide to implementing TOON format in JavaScript applications using @toon-format/toon library. Includes Node.js integration, Express.js APIs, real-world examples, and performance optimization tips for reducing LLM token costs by 30-60%.",
+    "datePublished": "2025-11-12",
+    "dateModified": "2025-11-12",
     "author": {
-      "@type": "Organization",
-      "name": "Toonifyit"
+      "@type": "Person",
+      "name": "Toonifyit Team"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Toonifyit",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://toonifyit.com/img/favicon.svg"
-      }
+      "name": "Toonifyit"
     },
-    "datePublished": "2025-01-22",
-    "dateModified": "2025-01-22",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://toonifyit.com/blog/toon-format-javascript.html"
-    },
-    "keywords": ["TOON format", "JavaScript", "Node.js", "Express.js", "json to toon", "toon encoder", "@toon-format/toon", "LLM optimization", "token reduction"],
-    "articleSection": "Programming",
-    "wordCount": 3500,
-    "inLanguage": "en-US"
+    "keywords": "toon format javascript, json to toon javascript, @toon-format/toon, node.js toon, express toon, toon npm package"
   }
   </script>
-
-  <!-- Schema.org BreadcrumbList Markup -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://toonifyit.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": "https://toonifyit.com/blogs.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "TOON Format JavaScript Implementation",
-        "item": "https://toonifyit.com/blog/toon-format-javascript.html"
-      }
-    ]
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://toonifyit.com/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://toonifyit.com/blogs.html"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "TOON Format JavaScript Guide",
+      "item": "https://toonifyit.com/blog/toon-format-javascript.html"
+    }]
   }
   </script>
-
-  <!-- Schema.org Organization Markup -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Toonifyit",
-    "url": "https://toonifyit.com",
-    "logo": "https://toonifyit.com/img/favicon.svg",
-    "sameAs": [
-      "https://github.com/toon-format"
-    ],
-    "description": "Free online JSON to TOON converter tool. Optimize LLM token usage by 30-60% with TOON format."
+    "@type": "TechArticle",
+    "headline": "TOON Format Implementation Guide for JavaScript Developers",
+    "abstract": "Comprehensive technical guide for implementing TOON format in JavaScript and Node.js applications",
+    "proficiencyLevel": "Intermediate",
+    "dependencies": "@toon-format/toon npm package",
+    "codeSampleType": "code snippet"
   }
   </script>
-
-  <!-- Schema.org WebPage Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "TOON Format Implementation Guide for JavaScript Developers",
-    "description": "Complete guide to implementing TOON format in JavaScript applications using @toon-format/toon library.",
-    "url": "https://toonifyit.com/blog/toon-format-javascript.html",
-    "inLanguage": "en-US",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Toonifyit",
-      "url": "https://toonifyit.com"
-    }
-  }
-  </script>
-
-  <!-- Schema.org HowTo Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Implement TOON Format in JavaScript",
-    "description": "Step-by-step guide to implementing TOON format in JavaScript applications using Node.js and Express.js",
-    "totalTime": "PT10M",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Install TOON Package",
-        "text": "Install @toon-format/toon using npm, yarn, or pnpm",
-        "itemListElement": [{
-          "@type": "HowToDirection",
-          "text": "Run: npm install @toon-format/toon"
-        }]
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Import TOON Functions",
-        "text": "Import encode and decode functions from the TOON library",
-        "itemListElement": [{
-          "@type": "HowToDirection",
-          "text": "Use: import { encode, decode } from '@toon-format/toon';"
-        }]
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Convert JSON to TOON",
-        "text": "Use the encode function to convert JavaScript objects to TOON format",
-        "itemListElement": [{
-          "@type": "HowToDirection",
-          "text": "const toon = encode(data, { indent: 1, delimiter: '\\t' });"
-        }]
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Integrate with Express.js",
-        "text": "Add TOON middleware to Express.js API endpoints",
-        "itemListElement": [{
-          "@type": "HowToDirection",
-          "text": "Create middleware to detect TOON format requests and return TOON-encoded responses"
-        }]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Schema.org FAQPage Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Should I always use TOON instead of JSON in JavaScript?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Use TOON when sending data to LLMs, working with uniform arrays of 100+ similar objects, or when token efficiency is critical. Use JSON for REST APIs with client compatibility needs, deeply nested data, or objects with varying fields."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does TOON support all JavaScript data types?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "TOON supports primitives (strings, numbers, booleans, null) and structures (objects, arrays). Special types are handled as follows: Date is converted to ISO string, BigInt to decimal string, undefined/NaN/Infinity to null, and Functions/Symbols to null."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use TOON with TypeScript?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! The @toon-format/toon package includes TypeScript definitions. You can use typed interfaces with TOON encoding and decoding functions for type-safe implementations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the performance impact of using TOON in Node.js?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Minimal. Encoding takes ~120µs and decoding ~150µs, which is negligible. The 30-60% token savings vastly outweigh the parsing overhead, especially for LLM API calls."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I handle TOON errors in production JavaScript applications?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use try-catch blocks with fallback to JSON. Wrap encode/decode calls in error handlers that return JSON format if TOON conversion fails, ensuring your application continues working even if TOON processing encounters errors."
-        }
-      }
-    ]
-  }
-  </script>
+  
+  <title>TOON Format JavaScript: Complete Node.js Implementation Guide | Toonifyit</title>
+  <link rel="canonical" href="https://toonifyit.com/blog/toon-format-javascript.html">
+  <link rel="icon" href="../img/favicon.png">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/docs.css">
+  <link rel="stylesheet" href="../css/blogposts.css">
+  <link rel="stylesheet" href="../css/cta.css">
 </head>
 <body>
-  <!-- Navbar Placeholder -->
-  <div id="navbar-placeholder"></div>
+  <div data-template="navbar"></div>
 
-  <main class="blogpost">
-    <div class="blogpost__container">
-      <!-- Sidebar Navigation -->
-      <aside class="blogpost__sidebar">
-        <div class="blogpost__sidebar-sticky">
-          <h3>Table of Contents</h3>
-          <ul class="blogpost__toc">
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#what-is-toon">What is TOON Format</a></li>
-            <li><a href="#installation">Installation & Setup</a></li>
-            <li><a href="#core-patterns">Core Implementation Patterns</a></li>
-            <li><a href="#advanced-config">Advanced Configuration</a></li>
-            <li><a href="#nodejs-integration">Node.js Integration</a></li>
-            <li><a href="#express-integration">Express.js Integration</a></li>
-            <li><a href="#performance">Performance Benchmarks</a></li>
-            <li><a href="#error-handling">Error Handling</a></li>
-            <li><a href="#debugging">Debugging & Monitoring</a></li>
-            <li><a href="#use-cases">Common Use Cases</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-          </ul>
-        </div>
-      </aside>
+  <main class="main">
+    <article class="policy">
+      <div class="container">
+        <h1 class="policy__title">TOON Format Implementation Guide for JavaScript Developers</h1>
+        <p class="policy__subtitle">Complete Tutorial: Reduce LLM Token Costs 30-60% with Node.js & Express.js</p>
+        
+        <div class="policy__layout">
+          <div class="policy__content">
+            
+            <!-- Introduction -->
+            <section id="introduction" class="policy__section">
+              <p>Building modern JavaScript applications means constantly dealing with data serialization. Whether you're <strong>converting JSON to TOON</strong>, optimizing LLM API calls, or reducing token costs on ChatGPT/Claude integrations, JavaScript developers need practical, production-ready implementation guides.</p>
+              
+              <p>This comprehensive guide walks you through implementing the <strong>TOON format</strong> (Token-Oriented Object Notation) in your JavaScript applications. You'll learn how to integrate the <strong>@toon-format/toon</strong> library, work with Node.js, build Express.js APIs optimized for LLMs, and achieve <strong>30-60% token reduction</strong> compared to traditional JSON encoding.</p>
 
-      <!-- Main Content -->
-      <article class="blogpost__content">
-        <header class="blogpost__header">
-          <h1>TOON Format Implementation Guide for JavaScript Developers</h1>
-          <p class="blogpost__meta">
-            <span class="blogpost__date">Published: January 22, 2025</span>
-            <span class="blogpost__read-time">• 25 min read</span>
-          </p>
-        </header>
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">⚡ Key Benchmarks</div>
+                <div class="docs__note-content">
+                  <ul style="margin: 0; padding-left: 1.5rem;">
+                    <li><strong>Token savings:</strong> 50-60% on uniform tabular data</li>
+                    <li><strong>LLM accuracy:</strong> 73.9% with TOON vs 69.7% with JSON</li>
+                    <li><strong>Implementation time:</strong> <10 minutes to integrate</li>
+                    <li><strong>Production-ready:</strong> Used by teams scaling LLM applications</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
 
-        <section id="introduction" class="blogpost__section">
-          <h2>Introduction</h2>
-          <p>Building modern JavaScript applications means constantly dealing with data serialization. Whether you're <strong>converting JSON to TOON</strong>, optimizing LLM API calls, or reducing token costs on ChatGPT/Claude integrations, JavaScript developers need practical, production-ready implementation guides.</p>
-          
-          <p>This comprehensive guide walks you through implementing the <strong>TOON format</strong> (Token-Oriented Object Notation) in your JavaScript applications. You'll learn how to integrate the <strong>@toon-format/toon library</strong>, work with Node.js, build Express.js APIs optimized for LLMs, and achieve <strong>30-60% token reduction</strong> compared to traditional JSON encoding.</p>
-
-          <div class="blogpost__highlight">
-            <h3>Key Benchmarks</h3>
-            <ul>
-              <li><strong>Token savings:</strong> 50-60% on uniform tabular data</li>
-              <li><strong>LLM accuracy:</strong> 73.9% with TOON vs 69.7% with JSON</li>
-              <li><strong>Implementation time:</strong> Less than 10 minutes to integrate</li>
-              <li><strong>Production-ready:</strong> Used by teams scaling LLM applications</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="what-is-toon" class="blogpost__section">
-          <h2>What is TOON Format and Why JavaScript Developers Should Care</h2>
-          
-          <h3>The Problem: JSON's Token Inefficiency</h3>
-          <p>When sending data to Large Language Model APIs (OpenAI, Anthropic, Google), every token costs money. Consider this customer dataset in JSON:</p>
-
-          <div class="blogpost__code">
-            <pre><code>{
+            <!-- What is TOON -->
+            <section id="what-is-toon" class="policy__section">
+              <h2>What is TOON Format and Why JavaScript Developers Should Care</h2>
+              
+              <h3>The Problem: JSON's Token Inefficiency</h3>
+              <p>When sending data to Large Language Model APIs (OpenAI, Anthropic, Google), every token costs money. Consider this customer dataset in JSON:</p>
+              
+              <pre><code>{
   "customers": [
     { "id": 1, "name": "Alice Smith", "email": "alice@example.com", "status": "active", "plan": "premium" },
     { "id": 2, "name": "Bob Johnson", "email": "bob@example.com", "status": "active", "plan": "basic" },
     { "id": 3, "name": "Charlie Brown", "email": "charlie@example.com", "status": "inactive", "plan": "free" }
   ]
 }</code></pre>
-          </div>
 
-          <p><strong>This JSON uses 187 tokens</strong> to represent just 3 customer records.</p>
+              <p><strong>This JSON uses 187 tokens</strong> to represent just 3 customer records.</p>
 
-          <h3>The Solution: TOON Format</h3>
-          <p>The <strong>exact same data in TOON format:</strong></p>
-
-          <div class="blogpost__code">
-            <pre><code>customers[3]{id,name,email,status,plan}:
+              <h3>The Solution: TOON Format</h3>
+              <p>The <strong>exact same data in TOON format:</strong></p>
+              
+              <pre><code>customers[3]{id,name,email,status,plan}:
   1,Alice Smith,alice@example.com,active,premium
   2,Bob Johnson,bob@example.com,active,basic
   3,Charlie Brown,charlie@example.com,inactive,free</code></pre>
-          </div>
 
-          <p><strong>This TOON uses only 72 tokens</strong> — a <strong>61.5% reduction</strong>.</p>
+              <p><strong>This TOON uses only 72 tokens</strong> — a <strong>61.5% reduction</strong>.</p>
 
-          <div class="blogpost__callout">
-            <h4>Real Cost Impact</h4>
-            <p>At scale with 1,000 API calls sending 100 customer records each:</p>
-            <ul>
-              <li><strong>JSON cost:</strong> $48.50/month (at GPT-4 pricing)</li>
-              <li><strong>TOON cost:</strong> $18.75/month</li>
-              <li><strong>Savings:</strong> $29.75/month or <strong>$357/year</strong></li>
-            </ul>
-          </div>
+              <div class="docs__note docs__note--warning">
+                <div class="docs__note-title">💰 Cost Savings at Scale</div>
+                <div class="docs__note-content">
+                  At scale with 1,000 API calls sending 100 customer records each:
+                  <ul style="margin: 0.5rem 0 0 1.5rem;">
+                    <li><strong>JSON cost:</strong> $48.50/month (at GPT-4 pricing)</li>
+                    <li><strong>TOON cost:</strong> $18.75/month</li>
+                    <li><strong>Savings:</strong> $29.75/month or <strong>$357/year</strong></li>
+                  </ul>
+                </div>
+              </div>
 
-          <h3>Why Modern JavaScript Developers Need TOON</h3>
-          <ul class="blogpost__checklist">
-            <li>✅ <strong>LLM Cost Optimization</strong> - Direct impact on API bills</li>
-            <li>✅ <strong>Faster Inference</strong> - Fewer tokens = faster model response</li>
-            <li>✅ <strong>Better Accuracy</strong> - Explicit structure helps models parse data correctly</li>
-            <li>✅ <strong>Drop-in Replacement</strong> - Works seamlessly with existing JavaScript workflows</li>
-            <li>✅ <strong>Growing Ecosystem</strong> - Official Node.js library with full feature support</li>
-          </ul>
-        </section>
+              <h3>Why Modern JavaScript Developers Need TOON</h3>
+              <ul>
+                <li>✅ <strong>LLM Cost Optimization</strong> - Direct impact on API bills</li>
+                <li>✅ <strong>Faster Inference</strong> - Fewer tokens = faster model response</li>
+                <li>✅ <strong>Better Accuracy</strong> - Explicit structure helps models parse data correctly</li>
+                <li>✅ <strong>Drop-in Replacement</strong> - Works seamlessly with existing JavaScript workflows</li>
+                <li>✅ <strong>Growing Ecosystem</strong> - Official Node.js library with full feature support</li>
+              </ul>
+            </section>
 
-        <section id="installation" class="blogpost__section">
-          <h2>Installation & Setup: Getting TOON into Your Project</h2>
-          
-          <h3>Step 1: Install the TOON Package</h3>
-          <p>The official TOON JavaScript library is available on npm as <code>@toon-format/toon</code>.</p>
+            <!-- Installation -->
+            <section id="installation" class="policy__section">
+              <h2>Installation & Setup: Getting TOON into Your Project</h2>
+              
+              <h3>Step 1: Install the TOON Package</h3>
+              <p>The official <strong>TOON JavaScript library</strong> is available on npm as <code>@toon-format/toon</code>.</p>
 
-          <div class="blogpost__code">
-            <h4>Using npm:</h4>
-            <pre><code>npm install @toon-format/toon</code></pre>
-          </div>
+              <p><strong>Using npm:</strong></p>
+              <pre><code>npm install @toon-format/toon</code></pre>
 
-          <div class="blogpost__code">
-            <h4>Using yarn:</h4>
-            <pre><code>yarn add @toon-format/toon</code></pre>
-          </div>
+              <p><strong>Using yarn:</strong></p>
+              <pre><code>yarn add @toon-format/toon</code></pre>
 
-          <div class="blogpost__code">
-            <h4>Using pnpm:</h4>
-            <pre><code>pnpm add @toon-format/toon</code></pre>
-          </div>
+              <p><strong>Using pnpm:</strong></p>
+              <pre><code>pnpm add @toon-format/toon</code></pre>
 
-          <h3>Step 2: Import and Verify Installation</h3>
-          
-          <div class="blogpost__code">
-            <h4>CommonJS syntax:</h4>
-            <pre><code>const { encode, decode } = require('@toon-format/toon');
+              <h3>Step 2: Import and Verify Installation</h3>
+              <p><strong>CommonJS syntax:</strong></p>
+              <pre><code>const { encode, decode } = require('@toon-format/toon');
 
 const data = { users: [{ id: 1, name: 'Alice' }] };
 const toonString = encode(data);
 console.log(toonString);</code></pre>
-          </div>
 
-          <div class="blogpost__code">
-            <h4>ES6 module syntax (recommended):</h4>
-            <pre><code>import { encode, decode } from '@toon-format/toon';
+              <p><strong>ES6 module syntax (recommended):</strong></p>
+              <pre><code>import { encode, decode } from '@toon-format/toon';
 
 const data = { users: [{ id: 1, name: 'Alice' }] };
 const toonString = encode(data);
 console.log(toonString);</code></pre>
-          </div>
 
-          <div class="blogpost__tip">
-            <p><strong>Tip:</strong> For ES6 modules in Node.js, ensure your <code>package.json</code> includes:</p>
-            <pre><code>{
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">💡 Using ES6 Modules in Node.js</div>
+                <div class="docs__note-content">
+                  For ES6 modules in Node.js, ensure your <code>package.json</code> includes:
+                  <pre style="margin-top: 0.5rem;"><code>{
   "type": "module"
 }</code></pre>
-          </div>
+                </div>
+              </div>
 
-          <h3>Step 3: Test Your Installation</h3>
-          <p>Create a test file (<code>test-toon.js</code>):</p>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode, decode } from '@toon-format/toon';
+              <h3>Step 3: Test Your Installation</h3>
+              <p>Create a test file (<code>test-toon.js</code>):</p>
+              
+              <pre><code>import { encode, decode } from '@toon-format/toon';
 
 // Sample data
 const testData = {
@@ -400,16 +231,12 @@ console.log(encoded);
 console.log('\nDecoded back to JSON:');
 const decoded = decode(encoded);
 console.log(JSON.stringify(decoded, null, 2));</code></pre>
-          </div>
 
-          <div class="blogpost__code">
-            <h4>Run the test:</h4>
-            <pre><code>node test-toon.js</code></pre>
-          </div>
+              <p><strong>Run the test:</strong></p>
+              <pre><code>node test-toon.js</code></pre>
 
-          <div class="blogpost__code">
-            <h4>Expected output:</h4>
-            <pre><code>Original JSON:
+              <p><strong>Expected output:</strong></p>
+              <pre><code>Original JSON:
 {
   "users": [
     { "id": 1, "name": "Alice", "role": "admin" },
@@ -429,17 +256,16 @@ Decoded back to JSON:
     { "id": 2, "name": "Bob", "role": "user" }
   ]
 }</code></pre>
-          </div>
-        </section>
+            </section>
 
-        <section id="core-patterns" class="blogpost__section">
-          <h2>Core TOON Implementation Patterns</h2>
-          
-          <h3>Pattern 1: Basic JSON to TOON Conversion</h3>
-          <p>The simplest use case: converting a JSON object to TOON format.</p>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
+            <!-- Core Patterns -->
+            <section id="core-patterns" class="policy__section">
+              <h2>Core TOON Implementation Patterns</h2>
+              
+              <h3>Pattern 1: Basic JSON to TOON Conversion</h3>
+              <p>The simplest use case: converting a JSON object to TOON format.</p>
+              
+              <pre><code>import { encode } from '@toon-format/toon';
 
 // Example: E-commerce products
 const products = {
@@ -452,23 +278,19 @@ const products = {
 
 const toonOutput = encode(products);
 console.log(toonOutput);</code></pre>
-          </div>
 
-          <div class="blogpost__code">
-            <h4>Output:</h4>
-            <pre><code>items[3]{sku,name,price,stock}:
+              <p><strong>Output:</strong></p>
+              <pre><code>items[3]{sku,name,price,stock}:
   PROD001,Laptop,999,45
   PROD002,Mouse,29,150
   PROD003,Keyboard,79,87</code></pre>
-          </div>
 
-          <p><strong>Use case:</strong> Sending product catalogs to LLMs for recommendations, price comparisons, or inventory analysis.</p>
+              <p><strong>Use case:</strong> Sending product catalogs to LLMs for recommendations, price comparisons, or inventory analysis.</p>
 
-          <h3>Pattern 2: Complex Objects with Nested Data</h3>
-          <p>When you have nested objects or mixed data structures:</p>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
+              <h3>Pattern 2: Complex Objects with Nested Data</h3>
+              <p>When you have nested objects or mixed data structures:</p>
+              
+              <pre><code>import { encode } from '@toon-format/toon';
 
 const complexData = {
   store: {
@@ -484,111 +306,54 @@ const complexData = {
 
 const toon = encode(complexData);
 console.log(toon);</code></pre>
-          </div>
 
-          <div class="blogpost__code">
-            <h4>Output:</h4>
-            <pre><code>store:
+              <p><strong>Output:</strong></p>
+              <pre><code>store:
   name: TechMart
   location: Downtown
   sales[3]{date,revenue,units}:
     2025-01-01,2500,45
     2025-01-02,3100,52
     2025-01-03,2800,48</code></pre>
-          </div>
 
-          <p><strong>Key behavior:</strong> TOON automatically detects tabular arrays (uniform objects) and encodes them efficiently, while preserving nested structures.</p>
+              <p><strong>Key behavior:</strong> TOON automatically detects tabular arrays (uniform objects) and encodes them efficiently, while preserving nested structures.</p>
 
-          <h3>Pattern 3: Handling Non-Uniform Data</h3>
-          <p>When objects in an array have different fields, TOON switches to list format:</p>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
-
-// Mixed data with varying fields
-const mixedData = {
-  events: [
-    { id: 1, type: "login", timestamp: "2025-01-01T10:00:00" },
-    { id: 2, type: "purchase", amount: 99.99, timestamp: "2025-01-01T10:05:00" },
-    { id: 3, type: "logout", timestamp: "2025-01-01T10:10:00" }
-  ]
-};
-
-const toon = encode(mixedData);
-console.log(toon);</code></pre>
-          </div>
-
-          <div class="blogpost__code">
-            <h4>Output:</h4>
-            <pre><code>events[3]:
-  - id: 1, type: login, timestamp: 2025-01-01T10:00:00
-  - id: 2, type: purchase, amount: 99.99, timestamp: 2025-01-01T10:05:00
-  - id: 3, type: logout, timestamp: 2025-01-01T10:10:00</code></pre>
-          </div>
-
-          <p><strong>Performance note:</strong> Non-uniform arrays use list format (similar to JSON), achieving 10-20% token savings instead of the full 50-60%.</p>
-
-          <h3>Pattern 4: Round-Trip Conversion (JSON ↔ TOON)</h3>
-          <p>Encoding and decoding data while preserving structure:</p>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode, decode } from '@toon-format/toon';
+              <h3>Pattern 3: Round-Trip Conversion (JSON ↔ TOON)</h3>
+              <p>Encoding and decoding data while preserving structure:</p>
+              
+              <pre><code>import { encode, decode } from '@toon-format/toon';
 
 // Original JavaScript object
 const original = {
   users: [
     { id: 1, email: "alice@example.com", verified: true },
-    { id: 2, email: "bob@example.com", verified: false },
-    { id: 3, email: "charlie@example.com", verified: true }
+    { id: 2, email: "bob@example.com", verified: false }
   ]
 };
 
 // Encode to TOON
 const toonString = encode(original);
-console.log('TOON format:');
-console.log(toonString);
+console.log('TOON format:', toonString);
 
 // Decode back to JavaScript object
 const restored = decode(toonString);
-console.log('\nRestored JavaScript object:');
-console.log(JSON.stringify(restored, null, 2));
+console.log('Restored:', JSON.stringify(restored, null, 2));
 
 // Verify they're identical
-console.log('\nAre they identical?', JSON.stringify(original) === JSON.stringify(restored));</code></pre>
-          </div>
+console.log('Identical?', JSON.stringify(original) === JSON.stringify(restored));</code></pre>
 
-          <div class="blogpost__code">
-            <h4>Output:</h4>
-            <pre><code>TOON format:
-users[3]{id,email,verified}:
-  1,alice@example.com,true
-  2,bob@example.com,false
-  3,charlie@example.com,true
+              <p><strong>Use case:</strong> Store data in TOON format in databases, then convert back to JSON for client responses—reducing storage and transmission costs.</p>
+            </section>
 
-Restored JavaScript object:
-{
-  "users": [
-    { "id": 1, "email": "alice@example.com", "verified": true },
-    { "id": 2, "email": "bob@example.com", "verified": false },
-    { "id": 3, "email": "charlie@example.com", "verified": true }
-  ]
-}
+            <!-- Advanced Options -->
+            <section id="advanced-options" class="policy__section">
+              <h2>Advanced Configuration Options</h2>
+              
+              <h3>Option 1: Custom Delimiters</h3>
+              <p>By default, TOON uses commas. You can customize this for different use cases:</p>
 
-Are they identical? true</code></pre>
-          </div>
-
-          <p><strong>Use case:</strong> Store data in TOON format in databases, then convert back to JSON for client responses—reducing storage and transmission costs.</p>
-        </section>
-
-        <section id="advanced-config" class="blogpost__section">
-          <h2>Advanced Configuration Options</h2>
-          
-          <h3>Option 1: Custom Delimiters</h3>
-          <p>By default, TOON uses commas. You can customize this for different use cases:</p>
-
-          <div class="blogpost__code">
-            <h4>Tab-delimited (often more token-efficient):</h4>
-            <pre><code>import { encode } from '@toon-format/toon';
+              <p><strong>Tab-delimited (often more token-efficient):</strong></p>
+              <pre><code>import { encode } from '@toon-format/toon';
 
 const data = {
   metrics: [
@@ -599,42 +364,18 @@ const data = {
 
 const toonTab = encode(data, { delimiter: '\t' });
 console.log(toonTab);</code></pre>
-          </div>
 
-          <div class="blogpost__code">
-            <h4>Output:</h4>
-            <pre><code>metrics[2]{date	views	clicks	conversions}:
-  2025-01-01	1200	45	8
-  2025-01-02	1450	52	9</code></pre>
-          </div>
+              <p><strong>When to use each delimiter:</strong></p>
+              <ul>
+                <li><strong>Comma (`,`)</strong>: Default, most compatible</li>
+                <li><strong>Tab (`\t`)</strong>: Often saves 5-10% more tokens than commas</li>
+                <li><strong>Pipe (`|`)</strong>: When data contains commas naturally</li>
+              </ul>
 
-          <div class="blogpost__code">
-            <h4>Pipe-delimited (alternative):</h4>
-            <pre><code>const toonPipe = encode(data, { delimiter: '|' });
-console.log(toonPipe);</code></pre>
-          </div>
-
-          <div class="blogpost__code">
-            <h4>Output:</h4>
-            <pre><code>metrics[2]{date|views|clicks|conversions}:
-  2025-01-01|1200|45|8
-  2025-01-02|1450|52|9</code></pre>
-          </div>
-
-          <div class="blogpost__tip">
-            <h4>When to use each:</h4>
-            <ul>
-              <li><strong>Comma (`,`):</strong> Default, most compatible</li>
-              <li><strong>Tab (`\t`):</strong> Often saves 5-10% more tokens than commas</li>
-              <li><strong>Pipe (`|`):</strong> When data contains commas naturally</li>
-            </ul>
-          </div>
-
-          <h3>Option 2: Indentation Control</h3>
-          <p>Control spacing for readability vs. token efficiency:</p>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
+              <h3>Option 2: Indentation Control</h3>
+              <p>Control spacing for readability vs. token efficiency:</p>
+              
+              <pre><code>import { encode } from '@toon-format/toon';
 
 const data = {
   users: [
@@ -645,35 +386,22 @@ const data = {
 
 // 2-space indentation (default)
 const toon2 = encode(data, { indent: 2 });
-console.log('2-space indent:');
-console.log(toon2);
 
 // 1-space indentation (more compact)
 const toon1 = encode(data, { indent: 1 });
-console.log('\n1-space indent:');
-console.log(toon1);
 
 // 4-space indentation (more readable)
-const toon4 = encode(data, { indent: 4 });
-console.log('\n4-space indent:');
-console.log(toon4);</code></pre>
-          </div>
+const toon4 = encode(data, { indent: 4 });</code></pre>
 
-          <p><strong>Performance tip:</strong> Use <code>indent: 1</code> when sending to LLMs to minimize whitespace tokens.</p>
+              <div class="docs__note docs__note--tip">
+                <div class="docs__note-title">⚡ Performance Tip</div>
+                <div class="docs__note-content">
+                  Use <code>indent: 1</code> when sending to LLMs to minimize whitespace tokens.
+                </div>
+              </div>
 
-          <h3>Option 3: Combining Options</h3>
-          <p>Maximum token efficiency: tab delimiter with 1-space indent:</p>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
-
-const analyticsData = {
-  pageViews: [
-    { date: "2025-01-01", page: "/home", views: 5420 },
-    { date: "2025-01-01", page: "/about", views: 2103 },
-    { date: "2025-01-01", page: "/contact", views: 987 }
-  ]
-};
+              <h3>Option 3: Combining Options</h3>
+              <pre><code>import { encode } from '@toon-format/toon';
 
 // Maximum token efficiency: tab delimiter, 1-space indent
 const optimized = encode(analyticsData, { 
@@ -681,110 +409,15 @@ const optimized = encode(analyticsData, {
   indent: 1 
 });
 
-console.log('Optimized for LLM APIs:');
-console.log(optimized);
+console.log('Optimized for LLM APIs:', optimized);</code></pre>
+            </section>
 
-// Token counts
-console.log('\nToken comparison:');
-const jsonTokens = JSON.stringify(analyticsData).length / 4; // approximate
-const toonTokens = optimized.length / 4; // approximate
-console.log(`JSON tokens: ~${Math.ceil(jsonTokens)}`);
-console.log(`TOON tokens: ~${Math.ceil(toonTokens)}`);
-console.log(`Savings: ~${Math.round((1 - toonTokens / jsonTokens) * 100)}%`);</code></pre>
-          </div>
-        </section>
-
-        <section id="nodejs-integration" class="blogpost__section">
-          <h2>Integrating TOON with Node.js Applications</h2>
-          
-          <h3>Use Case 1: Command-Line Data Processing</h3>
-          <p>Convert JSON files to TOON format from the command line:</p>
-
-          <div class="blogpost__code">
-            <pre><code># Using npx (no installation needed)
-npx @toon-format/cli input.json -o output.toon
-
-# Show token savings
-npx @toon-format/cli data.json --stats -o output.toon
-
-# Decode TOON back to JSON
-npx @toon-format/cli data.toon -o output.json
-
-# Pipe from stdin
-cat customers.json | npx @toon-format/cli > customers.toon</code></pre>
-          </div>
-
-          <h3>Use Case 2: Data Processing Pipeline</h3>
-          <p>Reading JSON, converting to TOON, and writing output:</p>
-
-          <div class="blogpost__code">
-            <pre><code>import fs from 'fs';
-import { encode } from '@toon-format/toon';
-
-// Read JSON file
-const jsonData = JSON.parse(fs.readFileSync('customers.json', 'utf-8'));
-
-// Convert to TOON
-const toonData = encode(jsonData, { delimiter: '\t', indent: 1 });
-
-// Write to file
-fs.writeFileSync('customers.toon', toonData, 'utf-8');
-
-console.log('✓ Converted customers.json to customers.toon');
-console.log(`Original size: ${JSON.stringify(jsonData).length} bytes`);
-console.log(`Converted size: ${toonData.length} bytes`);
-console.log(`Savings: ${Math.round((1 - toonData.length / JSON.stringify(jsonData).length) * 100)}%`);</code></pre>
-          </div>
-
-          <h3>Use Case 3: Database Integration</h3>
-          <p>Convert data while inserting into databases:</p>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode, decode } from '@toon-format/toon';
-import mongoose from 'mongoose';
-
-// MongoDB schema
-const recordSchema = new mongoose.Schema({
-  originalJson: Object,
-  compressedToon: String,
-  savedSpace: Number
-});
-
-const Record = mongoose.model('Record', recordSchema);
-
-async function saveOptimized(jsonData) {
-  const toonData = encode(jsonData, { indent: 1 });
-  
-  const savings = ((1 - toonData.length / JSON.stringify(jsonData).length) * 100).toFixed(2);
-  
-  const record = new Record({
-    originalJson: jsonData,
-    compressedToon: toonData,
-    savedSpace: savings
-  });
-  
-  await record.save();
-  console.log(`Saved with ${savings}% space efficiency`);
-}
-
-// Usage
-saveOptimized({
-  orders: [
-    { orderId: 1001, customerId: 501, amount: 299.99, status: 'shipped' },
-    { orderId: 1002, customerId: 502, amount: 149.99, status: 'pending' },
-    // ... many more orders
-  ]
-});</code></pre>
-          </div>
-        </section>
-
-        <section id="express-integration" class="blogpost__section">
-          <h2>Express.js Integration: Building TOON-Optimized APIs</h2>
-          
-          <h3>Basic Setup: Express Server with TOON Endpoints</h3>
-
-          <div class="blogpost__code">
-            <pre><code>import express from 'express';
+            <!-- Express Integration -->
+            <section id="express-integration" class="policy__section">
+              <h2>Express.js Integration: Building TOON-Optimized APIs</h2>
+              
+              <h3>Basic Setup: Express Server with TOON Endpoints</h3>
+              <pre><code>import express from 'express';
 import { encode, decode } from '@toon-format/toon';
 
 const app = express();
@@ -792,18 +425,15 @@ app.use(express.json());
 
 // Middleware to add TOON response capability
 app.use((req, res, next) => {
-  // Store original json method
   const originalJson = res.json.bind(res);
   
-  // Override json to support TOON format
   res.json = function(data) {
-    // If client requests TOON format via header or query
+    // If client requests TOON format
     if (req.query.format === 'toon' || req.headers['accept-format'] === 'toon') {
       const toonData = encode(data, { indent: 1 });
       res.setHeader('Content-Type', 'text/plain; charset=utf-8');
       res.send(toonData);
     } else {
-      // Default JSON response
       originalJson(data);
     }
   };
@@ -815,20 +445,16 @@ app.use((req, res, next) => {
 app.get('/api/users', (req, res) => {
   const users = [
     { id: 1, name: 'Alice', email: 'alice@example.com', active: true },
-    { id: 2, name: 'Bob', email: 'bob@example.com', active: true },
-    { id: 3, name: 'Charlie', email: 'charlie@example.com', active: false }
+    { id: 2, name: 'Bob', email: 'bob@example.com', active: true }
   ];
   
   res.json({ users });
 });
 
-// Start server
 app.listen(3000, () => console.log('Server on port 3000'));</code></pre>
-          </div>
 
-          <div class="blogpost__code">
-            <h4>Usage:</h4>
-            <pre><code># Get response in JSON (default)
+              <p><strong>Usage:</strong></p>
+              <pre><code># Get response in JSON (default)
 curl http://localhost:3000/api/users
 
 # Get response in TOON format
@@ -836,145 +462,172 @@ curl "http://localhost:3000/api/users?format=toon"
 
 # Or using header
 curl -H "Accept-Format: toon" http://localhost:3000/api/users</code></pre>
-          </div>
 
-          <h3>Advanced: LLM-Optimized API Endpoint</h3>
-          <p>Create an endpoint specifically for LLM integration:</p>
-
-          <div class="blogpost__code">
-            <pre><code>import express from 'express';
+              <h3>Advanced: LLM-Optimized API Endpoint</h3>
+              <p>Create an endpoint specifically for LLM integration:</p>
+              
+              <pre><code>import express from 'express';
 import { encode } from '@toon-format/toon';
-import fetch from 'node-fetch';
 
 const app = express();
 app.use(express.json());
 
-// Send data directly to OpenAI with TOON format
-app.post('/api/llm/chat', async (req, res) => {
-  const { userMessage, dataContext } = req.body;
+// Endpoint to get data in TOON format for LLM APIs
+app.post('/api/llm/data', async (req, res) => {
+  const { query } = req.body;
   
-  // Encode context data to TOON
-  const toonContext = encode(dataContext, { indent: 1 });
-  
-  // Build prompt with TOON context
-  const systemPrompt = `You are an AI assistant analyzing structured data.
-  
-Context data (TOON format):
-${toonContext}
+  try {
+    // Fetch data from database/API
+    const data = await fetchDataFromSource(query);
+    
+    // Encode to TOON for maximum efficiency
+    const toonData = encode(data, { 
+      delimiter: '\t', 
+      indent: 1 
+    });
+    
+    // Return with metadata
+    res.json({
+      format: 'toon',
+      data: toonData,
+      originalTokens: Math.ceil(JSON.stringify(data).length / 4),
+      optimizedTokens: Math.ceil(toonData.length / 4),
+      savings: Math.round((1 - toonData.length / JSON.stringify(data).length) * 100)
+    });
+    
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});</code></pre>
+            </section>
 
-Analyze this data and respond to user queries accurately.`;
+            <!-- Real World Example -->
+            <section id="real-world-example" class="policy__section">
+              <h2>Real-World Implementation: Analytics Dashboard</h2>
+              <p>A complete example sending analytics data to Claude AI:</p>
+              
+              <pre><code>import { encode } from '@toon-format/toon';
+
+// 1. Fetch analytics data
+async function getAnalyticsData(dateRange) {
+  const analyticsData = {
+    period: dateRange,
+    dailyMetrics: [
+      { date: '2025-01-01', sessions: 2450, users: 1203, pageViews: 8921 },
+      { date: '2025-01-02', sessions: 2678, users: 1345, pageViews: 9801 },
+      { date: '2025-01-03', sessions: 2334, users: 1098, pageViews: 8234 }
+      // ... more days
+    ],
+    topPages: [
+      { path: '/home', views: 45231, avgTime: '2:34' },
+      { path: '/products', views: 38921, avgTime: '3:12' }
+    ]
+  };
   
-  // Call OpenAI API
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  return analyticsData;
+}
+
+// 2. Prepare TOON format
+async function prepareAnalyticsForLLM() {
+  const data = await getAnalyticsData('2025-01-01 to 2025-01-30');
+  
+  // Encode with maximum efficiency
+  const toonData = encode(data, { delimiter: '\t', indent: 1 });
+  
+  console.log('TOON-Formatted Analytics:', toonData);
+  return toonData;
+}
+
+// 3. Send to Claude for analysis
+async function analyzeWithClaude() {
+  const analyticsData = await prepareAnalyticsForLLM();
+  
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+      'x-api-key': process.env.CLAUDE_API_KEY,
+      'anthropic-version': '2023-06-01'
     },
     body: JSON.stringify({
-      model: 'gpt-4',
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userMessage }
-      ],
-      temperature: 0.7
+      model: 'claude-3-5-sonnet-20241022',
+      max_tokens: 1024,
+      system: `You are an expert data analyst. Analyze the provided analytics 
+data in TOON format and provide insights on trends and patterns.`,
+      messages: [{
+        role: 'user',
+        content: `Analyze this analytics data:\n\n${analyticsData}`
+      }]
     })
   });
   
   const result = await response.json();
-  res.json({
-    tokensUsed: result.usage.total_tokens,
-    estimatedCostSavings: (result.usage.total_tokens * 0.30 / 1000).toFixed(2),
-    response: result.choices[0].message.content
-  });
-});
+  console.log('Analysis Results:', result.content[0].text);
+}</code></pre>
+            </section>
 
-app.listen(3000, () => console.log('LLM-optimized API on port 3000'));</code></pre>
-          </div>
-        </section>
+            <!-- Performance Benchmarks -->
+            <section id="benchmarks" class="policy__section">
+              <h2>Performance Benchmarks & Optimization Tips</h2>
+              
+              <h3>Token Efficiency Benchmarks</h3>
+              <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <thead>
+                  <tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--border);">
+                    <th style="padding: 0.75rem; text-align: left;">Data Type</th>
+                    <th style="padding: 0.75rem; text-align: left;">Sample Size</th>
+                    <th style="padding: 0.75rem; text-align: right;">JSON Tokens</th>
+                    <th style="padding: 0.75rem; text-align: right;">TOON Tokens</th>
+                    <th style="padding: 0.75rem; text-align: right;">Savings</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem;">Customer list</td>
+                    <td style="padding: 0.75rem;">100 records</td>
+                    <td style="padding: 0.75rem; text-align: right;">4,890</td>
+                    <td style="padding: 0.75rem; text-align: right;">1,845</td>
+                    <td style="padding: 0.75rem; text-align: right;"><strong>62%</strong></td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem;">Analytics (30 days)</td>
+                    <td style="padding: 0.75rem;">30 records</td>
+                    <td style="padding: 0.75rem; text-align: right;">3,421</td>
+                    <td style="padding: 0.75rem; text-align: right;">1,204</td>
+                    <td style="padding: 0.75rem; text-align: right;"><strong>65%</strong></td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem;">GitHub repos</td>
+                    <td style="padding: 0.75rem;">500 repos</td>
+                    <td style="padding: 0.75rem; text-align: right;">89,234</td>
+                    <td style="padding: 0.75rem; text-align: right;">51,345</td>
+                    <td style="padding: 0.75rem; text-align: right;"><strong>42%</strong></td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem;">Order history</td>
+                    <td style="padding: 0.75rem;">250 orders</td>
+                    <td style="padding: 0.75rem; text-align: right;">12,450</td>
+                    <td style="padding: 0.75rem; text-align: right;">5,123</td>
+                    <td style="padding: 0.75rem; text-align: right;"><strong>59%</strong></td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0.75rem;">Time-series data</td>
+                    <td style="padding: 0.75rem;">365 days</td>
+                    <td style="padding: 0.75rem; text-align: right;">18,934</td>
+                    <td style="padding: 0.75rem; text-align: right;">7,812</td>
+                    <td style="padding: 0.75rem; text-align: right;"><strong>59%</strong></td>
+                  </tr>
+                </tbody>
+              </table>
 
-        <section id="performance" class="blogpost__section">
-          <h2>Performance Benchmarks & Optimization Tips</h2>
-          
-          <h3>Token Efficiency Benchmarks</h3>
-          
-          <div class="blogpost__table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Data Type</th>
-                  <th>Sample Size</th>
-                  <th>JSON Tokens</th>
-                  <th>TOON Tokens</th>
-                  <th>Savings</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Customer list</strong></td>
-                  <td>100 records</td>
-                  <td>4,890</td>
-                  <td>1,845</td>
-                  <td>62%</td>
-                </tr>
-                <tr>
-                  <td><strong>Analytics (30 days)</strong></td>
-                  <td>30 records</td>
-                  <td>3,421</td>
-                  <td>1,204</td>
-                  <td>65%</td>
-                </tr>
-                <tr>
-                  <td><strong>GitHub repos</strong></td>
-                  <td>500 repos</td>
-                  <td>89,234</td>
-                  <td>51,345</td>
-                  <td>42%</td>
-                </tr>
-                <tr>
-                  <td><strong>Order history</strong></td>
-                  <td>250 orders</td>
-                  <td>12,450</td>
-                  <td>5,123</td>
-                  <td>59%</td>
-                </tr>
-                <tr>
-                  <td><strong>Time-series data</strong></td>
-                  <td>365 days</td>
-                  <td>18,934</td>
-                  <td>7,812</td>
-                  <td>59%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h3>Optimization Techniques</h3>
-
-          <div class="blogpost__tip">
-            <h4>1. Use tab delimiter for maximum savings:</h4>
-            <pre><code>const optimized = encode(data, { delimiter: '\t' });
+              <h3>Optimization Techniques</h3>
+              
+              <p><strong>1. Use tab delimiter for maximum savings:</strong></p>
+              <pre><code>const optimized = encode(data, { delimiter: '\t' });
 // Typically saves additional 5-10% vs comma delimiter</code></pre>
-          </div>
 
-          <div class="blogpost__tip">
-            <h4>2. Flatten nested structures when possible:</h4>
-            <pre><code>// ❌ Less efficient (nested)
-const nested = {
-  user: { id: 1, profile: { name: 'Alice', email: 'alice@example.com' } }
-};
-
-// ✅ More efficient (flattened)
-const flattened = {
-  userId: 1,
-  userName: 'Alice',
-  userEmail: 'alice@example.com'
-};</code></pre>
-          </div>
-
-          <div class="blogpost__tip">
-            <h4>3. Ensure data uniformity for tabular format:</h4>
-            <pre><code>// ✅ Uniform (TOON tabular format - 50-60% savings)
+              <p><strong>2. Ensure data uniformity for tabular format:</strong></p>
+              <pre><code>// ✅ Uniform (TOON tabular format - 50-60% savings)
 const uniform = {
   items: [
     { id: 1, name: 'Item A', price: 29.99 },
@@ -991,22 +644,18 @@ const nonUniform = {
     { id: 3, name: 'Item C', price: 49.99, discount: '10%' } // extra field
   ]
 };</code></pre>
-          </div>
 
-          <div class="blogpost__tip">
-            <h4>4. Use 1-space indentation for LLM APIs:</h4>
-            <pre><code>const compact = encode(data, { indent: 1 });
+              <p><strong>3. Use 1-space indentation for LLM APIs:</strong></p>
+              <pre><code>const compact = encode(data, { indent: 1 });
 // Saves ~10% more tokens from whitespace</code></pre>
-          </div>
-        </section>
+            </section>
 
-        <section id="error-handling" class="blogpost__section">
-          <h2>Error Handling & Edge Cases</h2>
-          
-          <h3>Handling Encoding Errors</h3>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
+            <!-- Error Handling -->
+            <section id="error-handling" class="policy__section">
+              <h2>Error Handling & Edge Cases</h2>
+              
+              <h3>Handling Encoding Errors</h3>
+              <pre><code>import { encode } from '@toon-format/toon';
 
 function safeEncode(data, options = {}) {
   try {
@@ -1031,12 +680,9 @@ function safeEncode(data, options = {}) {
 
 // Usage
 const result = safeEncode({ users: [...] });</code></pre>
-          </div>
 
-          <h3>Handling Decoding Errors</h3>
-
-          <div class="blogpost__code">
-            <pre><code>import { decode } from '@toon-format/toon';
+              <h3>Handling Decoding Errors</h3>
+              <pre><code>import { decode } from '@toon-format/toon';
 
 function safeDecode(toonString) {
   try {
@@ -1057,193 +703,64 @@ function safeDecode(toonString) {
       return null;
     }
   }
-}
-
-// Usage
-const data = safeDecode(toonString);
-if (data) {
-  // Process data
 }</code></pre>
-          </div>
 
-          <h3>Special Characters and Escaping</h3>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
-
-const dataWithSpecialChars = {
-  messages: [
-    { id: 1, text: 'Hello, World!' }, // contains comma
-    { id: 2, text: 'Line1\nLine2' }, // contains newline
-    { id: 3, text: 'Quote: "Important"' } // contains quotes
-  ]
-};
-
-// TOON handles escaping automatically
-const toon = encode(dataWithSpecialChars);
-console.log(toon);
-// Output will properly escape special characters</code></pre>
-          </div>
-        </section>
-
-        <section id="debugging" class="blogpost__section">
-          <h2>Debugging & Monitoring TOON Usage</h2>
-          
-          <h3>Token Counting Utility</h3>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
-
-function compareFormats(data) {
-  const jsonString = JSON.stringify(data);
-  const toonString = encode(data, { indent: 1 });
-  
-  // Approximate token count (4 chars ≈ 1 token in GPT tokenizer)
-  const jsonTokens = Math.ceil(jsonString.length / 4);
-  const toonTokens = Math.ceil(toonString.length / 4);
-  
-  return {
-    json: {
-      bytes: jsonString.length,
-      tokens: jsonTokens,
-      cost: (jsonTokens * 0.03 / 1000).toFixed(4) // GPT-4 input pricing
-    },
-    toon: {
-      bytes: toonString.length,
-      tokens: toonTokens,
-      cost: (toonTokens * 0.03 / 1000).toFixed(4)
-    },
-    savings: {
-      bytes: Math.round((1 - toonString.length / jsonString.length) * 100) + '%',
-      tokens: Math.round((1 - toonTokens / jsonTokens) * 100) + '%',
-      cost: `$${(((jsonTokens - toonTokens) * 0.03 / 1000)).toFixed(4)}`
-    }
-  };
-}
-
-// Usage
-const data = { customers: [/*...*/] };
-const comparison = compareFormats(data);
-console.log(comparison);</code></pre>
-          </div>
-        </section>
-
-        <section id="use-cases" class="blogpost__section">
-          <h2>Common Use Cases: Practical Examples</h2>
-          
-          <h3>Use Case 1: Customer Relationship Management (CRM)</h3>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
-
-const crmData = {
-  customers: [
-    { customerId: 'C001', name: 'Alice Corp', industry: 'Tech', revenue: 2500000, employees: 150 },
-    { customerId: 'C002', name: 'Bob Services', industry: 'Finance', revenue: 5000000, employees: 300 },
-    { customerId: 'C003', name: 'Charlie Inc', industry: 'Retail', revenue: 1200000, employees: 75 }
-  ]
-};
-
-// Send to AI for market analysis
-const toonData = encode(crmData, { indent: 1 });
-// Use with Claude/GPT-4 for customer insights</code></pre>
-          </div>
-
-          <h3>Use Case 2: E-Commerce Product Feed</h3>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
-
-const productFeed = {
-  products: [
-    { sku: 'SKU001', name: 'Laptop Pro', category: 'Electronics', price: 1299.99, stock: 45, rating: 4.8 },
-    { sku: 'SKU002', name: 'USB-C Cable', category: 'Accessories', price: 12.99, stock: 500, rating: 4.5 },
-    { sku: 'SKU003', name: 'Monitor 27"', category: 'Electronics', price: 399.99, stock: 28, rating: 4.6 }
-  ]
-};
-
-const toon = encode(productFeed, { delimiter: '\t', indent: 1 });
-// Send to LLM for product recommendations, price optimization</code></pre>
-          </div>
-
-          <h3>Use Case 3: Application Logs for AI Analysis</h3>
-
-          <div class="blogpost__code">
-            <pre><code>import { encode } from '@toon-format/toon';
-
-const appLogs = {
-  events: [
-    { timestamp: '2025-01-01T10:00:00Z', level: 'INFO', service: 'auth', message: 'User login' },
-    { timestamp: '2025-01-01T10:01:00Z', level: 'ERROR', service: 'database', message: 'Connection timeout' },
-    { timestamp: '2025-01-01T10:02:00Z', level: 'WARNING', service: 'api', message: 'High response time' }
-  ]
-};
-
-const toon = encode(appLogs);
-// Send to Claude for anomaly detection and troubleshooting</code></pre>
-          </div>
-        </section>
-
-        <section id="faq" class="blogpost__section">
-          <h2>Frequently Asked Questions (FAQ)</h2>
-          
-          <div class="blogpost__faq">
-            <h3>Q1: Should I always use TOON instead of JSON?</h3>
-            <p><strong>A:</strong> No. Use TOON when:</p>
-            <ul>
-              <li>✅ Sending data to LLMs (token cost matters)</li>
-              <li>✅ Data is uniform arrays (100+ similar objects)</li>
-              <li>✅ You need token efficiency</li>
-            </ul>
-            <p>Use JSON when:</p>
-            <ul>
-              <li>✅ Building REST APIs (client compatibility)</li>
-              <li>✅ Data is deeply nested</li>
-              <li>✅ Objects have varying fields</li>
-            </ul>
-          </div>
-
-          <div class="blogpost__faq">
-            <h3>Q2: Does TOON support all JavaScript data types?</h3>
-            <p><strong>A:</strong> TOON supports primitives (strings, numbers, booleans, null) and structure (objects, arrays). Special handling:</p>
-            <div class="blogpost__table">
-              <table>
+              <h3>Data Type Support</h3>
+              <p>TOON supports primitives (strings, numbers, booleans, null) and structure (objects, arrays). Special handling:</p>
+              
+              <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
                 <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>Behavior</th>
+                  <tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--border);">
+                    <th style="padding: 0.75rem; text-align: left;">Type</th>
+                    <th style="padding: 0.75rem; text-align: left;">Behavior</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><strong>Date</strong></td>
-                    <td>Converted to ISO string</td>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem;"><code>Date</code></td>
+                    <td style="padding: 0.75rem;">Converted to ISO string</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem;"><code>BigInt</code></td>
+                    <td style="padding: 0.75rem;">Converted to decimal string</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem;"><code>undefined</code></td>
+                    <td style="padding: 0.75rem;">Encoded as null</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem;"><code>NaN</code>, <code>Infinity</code></td>
+                    <td style="padding: 0.75rem;">Encoded as null</td>
                   </tr>
                   <tr>
-                    <td><strong>BigInt</strong></td>
-                    <td>Converted to decimal string</td>
-                  </tr>
-                  <tr>
-                    <td><strong>undefined</strong></td>
-                    <td>Encoded as null</td>
-                  </tr>
-                  <tr>
-                    <td><strong>NaN, Infinity</strong></td>
-                    <td>Encoded as null</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Functions, Symbols</strong></td>
-                    <td>Encoded as null</td>
+                    <td style="padding: 0.75rem;"><code>Functions</code>, <code>Symbols</code></td>
+                    <td style="padding: 0.75rem;">Encoded as null</td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
+            </section>
 
-          <div class="blogpost__faq">
-            <h3>Q3: Can I use TOON with TypeScript?</h3>
-            <p><strong>A:</strong> Yes! The <code>@toon-format/toon</code> package includes TypeScript definitions:</p>
-            <div class="blogpost__code">
+            <!-- FAQ -->
+            <section id="faq" class="policy__section">
+              <h2>Frequently Asked Questions</h2>
+              
+              <h3>Q1: Should I always use TOON instead of JSON?</h3>
+              <p><strong>A:</strong> No. Use TOON when:</p>
+              <ul>
+                <li>✅ Sending data to LLMs (token cost matters)</li>
+                <li>✅ Data is uniform arrays (100+ similar objects)</li>
+                <li>✅ You need token efficiency</li>
+              </ul>
+              <p>Use JSON when:</p>
+              <ul>
+                <li>✅ Building REST APIs (client compatibility)</li>
+                <li>✅ Data is deeply nested</li>
+                <li>✅ Objects have varying fields</li>
+              </ul>
+
+              <h3>Q2: Can I use TOON with TypeScript?</h3>
+              <p><strong>A:</strong> Yes! The <code>@toon-format/toon</code> package includes TypeScript definitions:</p>
+              
               <pre><code>import { encode, decode } from '@toon-format/toon';
 
 interface User {
@@ -1258,24 +775,19 @@ const users: User[] = [
 
 const toon: string = encode({ users });
 const decoded: any = decode(toon);</code></pre>
-            </div>
-          </div>
 
-          <div class="blogpost__faq">
-            <h3>Q4: What's the performance impact of using TOON?</h3>
-            <p><strong>A:</strong> Minimal:</p>
-            <ul>
-              <li><strong>Encoding:</strong> ~120µs (negligible)</li>
-              <li><strong>Decoding:</strong> ~150µs (negligible)</li>
-              <li><strong>Token savings:</strong> 30-60% (major)</li>
-            </ul>
-            <p>The token cost savings vastly outweigh parsing overhead.</p>
-          </div>
+              <h3>Q3: What's the performance impact of using TOON?</h3>
+              <p><strong>A:</strong> Minimal:</p>
+              <ul>
+                <li><strong>Encoding:</strong> ~120µs (negligible)</li>
+                <li><strong>Decoding:</strong> ~150µs (negligible)</li>
+                <li><strong>Token savings:</strong> 30-60% (major)</li>
+              </ul>
+              <p>The token cost savings vastly outweigh parsing overhead.</p>
 
-          <div class="blogpost__faq">
-            <h3>Q5: How do I handle errors in production?</h3>
-            <p><strong>A:</strong> Use the error handling pattern with fallback to JSON:</p>
-            <div class="blogpost__code">
+              <h3>Q4: How do I handle errors in production?</h3>
+              <p><strong>A:</strong> Use the error handling pattern with fallback to JSON:</p>
+              
               <pre><code>function encodeWithFallback(data) {
   try {
     return { format: 'toon', data: encode(data) };
@@ -1284,78 +796,86 @@ const decoded: any = decode(toon);</code></pre>
     return { format: 'json', data: JSON.stringify(data) };
   }
 }</code></pre>
+            </section>
+
+            <!-- Conclusion -->
+            <section id="conclusion" class="policy__section">
+              <h2>Conclusion: Building TOON-Optimized JavaScript Applications</h2>
+              <p>By integrating TOON format into your JavaScript applications, you can:</p>
+              
+              <ul>
+                <li>✅ <strong>Reduce LLM API costs by 30-60%</strong> — Direct savings on your monthly bill</li>
+                <li>✅ <strong>Improve LLM accuracy by 4-7%</strong> — Better comprehension with explicit structure</li>
+                <li>✅ <strong>Speed up inference</strong> — Fewer tokens = faster responses</li>
+                <li>✅ <strong>Build scalable AI features</strong> — Cost-efficient integration with Claude, GPT-4, Gemini</li>
+                <li>✅ <strong>Maintain compatibility</strong> — Round-trip conversion between JSON and TOON</li>
+              </ul>
+
+              <h3>Next Steps</h3>
+              <ol>
+                <li><strong>Install the library:</strong> <code>npm install @toon-format/toon</code></li>
+                <li><strong>Try the basics:</strong> Run the test file from Step 3</li>
+                <li><strong>Integrate into Express:</strong> Add TOON endpoints to your API</li>
+                <li><strong>Measure impact:</strong> Compare JSON vs TOON token usage</li>
+                <li><strong>Scale gradually:</strong> Start with highest-volume LLM integrations</li>
+              </ol>
+
+              <div class="blogpost__cta">
+                <h3>Ready to Optimize Your LLM Costs?</h3>
+                <p>Try our free JSON to TOON converter and start saving 30-60% on tokens today:</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                  <a href="/" class="btn btn--primary btn--large">Try Online Converter</a>
+                  <a href="/docs.html" class="btn btn--secondary btn--large">View Documentation</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- Related Articles -->
+            <section id="related-articles" class="policy__section">
+              <h2>Related Articles</h2>
+              <ul>
+                <li><a href="/blog/what-is-toon.html">What is TOON Format?</a> - Complete introduction to TOON</li>
+                <li><a href="/blog/toon-vs-json.html">TOON vs JSON</a> - Detailed format comparison</li>
+                <li><a href="/blog/convert-json-to-toon.html">How to Convert JSON to TOON</a> - Step-by-step tutorial</li>
+                <li><a href="/blog/toon-format-python.html">TOON Format for Python</a> - Python implementation guide</li>
+                <li><a href="/blog/toon-format-chatgpt.html">TOON for ChatGPT</a> - Optimize ChatGPT API costs</li>
+                <li><a href="/blog/toon-format-claude.html">TOON for Claude API</a> - Anthropic LLM optimization</li>
+                <li><a href="/blog/llm-token-optimization.html">LLM Token Optimization</a> - Complete optimization guide</li>
+              </ul>
+            </section>
+
+          </div>
+
+          <!-- Sidebar TOC -->
+          <aside class="policy__toc">
+            <div class="policy__toc-sticky">
+              <h3 class="policy__toc-title">On This Page</h3>
+              <nav>
+                <a href="#introduction">Introduction</a>
+                <a href="#what-is-toon">What is TOON Format</a>
+                <a href="#installation">Installation & Setup</a>
+                <a href="#core-patterns">Core Implementation Patterns</a>
+                <a href="#advanced-options">Advanced Configuration</a>
+                <a href="#express-integration">Express.js Integration</a>
+                <a href="#real-world-example">Real-World Example</a>
+                <a href="#benchmarks">Performance Benchmarks</a>
+                <a href="#error-handling">Error Handling</a>
+                <a href="#faq">FAQ</a>
+                <a href="#conclusion">Conclusion</a>
+                <a href="#related-articles">Related Articles</a>
+              </nav>
             </div>
-          </div>
-        </section>
-
-        <section id="conclusion" class="blogpost__section">
-          <h2>Conclusion: Building TOON-Optimized JavaScript Applications</h2>
-          
-          <p>By integrating TOON format into your JavaScript applications, you can:</p>
-
-          <ul class="blogpost__checklist">
-            <li>✅ <strong>Reduce LLM API costs by 30-60%</strong> — Direct savings on your monthly bill</li>
-            <li>✅ <strong>Improve LLM accuracy by 4-7%</strong> — Better comprehension with explicit structure</li>
-            <li>✅ <strong>Speed up inference</strong> — Fewer tokens = faster responses</li>
-            <li>✅ <strong>Build scalable AI features</strong> — Cost-efficient integration with Claude, GPT-4, Gemini</li>
-            <li>✅ <strong>Maintain compatibility</strong> — Round-trip conversion between JSON and TOON</li>
-          </ul>
-
-          <h3>Next Steps</h3>
-          <ol>
-            <li><strong>Install the library:</strong> <code>npm install @toon-format/toon</code></li>
-            <li><strong>Try the basics:</strong> Run the test file from Step 3</li>
-            <li><strong>Integrate into Express:</strong> Add TOON endpoints to your API</li>
-            <li><strong>Measure impact:</strong> Compare JSON vs TOON token usage</li>
-            <li><strong>Scale gradually:</strong> Start with highest-volume LLM integrations</li>
-          </ol>
-
-          <h3>Resources</h3>
-          <ul>
-            <li><strong>Official GitHub:</strong> <a href="https://github.com/toon-format/toon" target="_blank">github.com/toon-format/toon</a></li>
-            <li><strong>NPM Package:</strong> <a href="https://www.npmjs.com/package/@toon-format/toon" target="_blank">npmjs.com/package/@toon-format/toon</a></li>
-            <li><strong>Interactive Converter:</strong> <a href="/">toonifyit.com/converter</a></li>
-            <li><strong>Full Specification:</strong> <a href="/docs.html">TOON format documentation</a></li>
-          </ul>
-        </section>
-
-        <!-- Related Articles -->
-        <section class="blogpost__related">
-          <h2>Related Articles</h2>
-          <div class="blogpost__related-grid">
-            <a href="/blog/what-is-toon.html" class="blogpost__related-card">
-              <h3>What is TOON Format?</h3>
-              <p>Complete guide to TOON notation and JSON to TOON conversion.</p>
-            </a>
-            <a href="/blog/toon-vs-json-vs-yaml.html" class="blogpost__related-card">
-              <h3>TOON vs JSON vs YAML</h3>
-              <p>Complete comparison guide for data serialization formats.</p>
-            </a>
-            <a href="/blog/toon-format.html" class="blogpost__related-card">
-              <h3>TOON Format Specification</h3>
-              <p>Deep dive into TOON syntax, delimiters, and encoding rules.</p>
-            </a>
-          </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="blogpost__cta">
-          <h2>Try TOON Format Now</h2>
-          <p>Convert your JSON to TOON format instantly and see the token savings for yourself.</p>
-          <a href="/" class="blogpost__cta-button">Open Converter Tool</a>
-        </section>
-      </article>
-    </div>
+          </aside>
+        </div>
+      </div>
+    </article>
   </main>
 
-  <!-- CTA Placeholder -->
-  <div id="cta-placeholder"></div>
+  <div data-template="cta"></div>
+  <div data-template="footer"></div>
 
-  <!-- Footer Placeholder -->
-  <div id="footer-placeholder"></div>
-
-  <script src="/js/blogposts.js"></script>
-  <script src="/js/templates.js"></script>
-  <script src="/js/language.js"></script>
+  <script src="../js/templates.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/blogposts.js" defer></script>
 </body>
 </html>

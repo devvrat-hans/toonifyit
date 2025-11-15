@@ -60,4 +60,43 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 100);
     }
   }
+
+  // Copy code blocks functionality
+  function initCodeCopy() {
+    const codeBlocks = document.querySelectorAll('pre code');
+    
+    codeBlocks.forEach((codeBlock) => {
+      const pre = codeBlock.parentElement;
+      const button = document.createElement('button');
+      button.className = 'code-copy-btn';
+      button.textContent = 'Copy';
+      button.setAttribute('aria-label', 'Copy code to clipboard');
+      
+      pre.style.position = 'relative';
+      pre.appendChild(button);
+      
+      button.addEventListener('click', async () => {
+        const code = codeBlock.textContent;
+        try {
+          await navigator.clipboard.writeText(code);
+          button.classList.add('copied');
+          button.textContent = 'Copied!';
+          
+          setTimeout(() => {
+            button.classList.remove('copied');
+            button.textContent = 'Copy';
+          }, 2000);
+        } catch (err) {
+          // Copy failed - show error briefly
+          button.textContent = 'Failed';
+          setTimeout(() => {
+            button.textContent = 'Copy';
+          }, 1500);
+        }
+      });
+    });
+  }
+
+  // Initialize code copy functionality
+  initCodeCopy();
 });

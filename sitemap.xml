@@ -218,15 +218,85 @@
   </url>
   
   <!-- Blog Posts -->
-  <url>
-    <loc>https://toonifyit.com/blog/what-is-toon</loc>
-    <lastmod>2025-11-12</lastmod>
+  <!-- <url>
+    <loc>https://toonifyit.com/blog/toon-speed-performance</loc>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://toonifyit.com/blog/toon-vs-json</loc>
+    <loc>https://toonifyit.com/blog/toon-token-cost-savings</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/tabular-array-toon</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/llm-understand-toon</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/when-not-to-use-toon</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/json-to-toon-converter-tools</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/toon-format-rag</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/toon-format-claude</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/toon-format-chatgpt</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/toon-format-python</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/toon-vs-json-vs-yaml</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url> -->
+  
+  <url>
+    <loc>https://toonifyit.com/blog/toon-format-javascript</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -234,44 +304,45 @@
   
   <url>
     <loc>https://toonifyit.com/blog/llm-token-optimization</loc>
-    <lastmod>2025-11-12</lastmod>
+    <lastmod>2025-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://toonifyit.com/blog/convert-json-to-toon</loc>
-    <lastmod>2025-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://toonifyit.com/blog/prompt-engineering-for-llms</loc>
-    <lastmod>2025-11-12</lastmod>
+    <loc>https://toonifyit.com/blog/what-is-toon</loc>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://toonifyit.com/blog/toon-format</loc>
-    <lastmod>2025-01-22</lastmod>
+    <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- <url>
-    <loc>https://toonifyit.com/blog/toon-vs-json-vs-yaml</loc>
-    <lastmod>2025-01-22</lastmod>
+  <url>
+    <loc>https://toonifyit.com/blog/toon-vs-json</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url> -->
+  </url>
   
-  <!-- <url>
-    <loc>https://toonifyit.com/blog/toon-format-javascript</loc>
-    <lastmod>2025-01-22</lastmod>
+  <url>
+    <loc>https://toonifyit.com/blog/prompt-engineering-for-llms</loc>
+    <lastmod>2025-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url> -->
+  </url>
+  
+  <url>
+    <loc>https://toonifyit.com/blog/convert-json-to-toon</loc>
+    <lastmod>2025-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   
 </urlset>
