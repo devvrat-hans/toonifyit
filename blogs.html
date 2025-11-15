@@ -72,7 +72,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <div id="navbar-placeholder"></div>
+  <div data-template="navbar"></div>
 
   <!-- Main Content -->
   <main class="blog-page">
@@ -495,10 +495,10 @@
   </main>
 
   <!-- CTA Section -->
-  <div id="cta-placeholder"></div>
+  <div data-template="cta"></div>
 
   <!-- Footer -->
-  <div id="footer-placeholder"></div>
+  <div data-template="footer"></div>
 
   <!-- Scripts - Load synchronously in specific order -->
   <script src="/js/templates.js"></script>
@@ -515,9 +515,9 @@
       
       // Check placeholders
       const placeholders = {
-        navbar: document.querySelector('#navbar-placeholder'),
-        cta: document.querySelector('#cta-placeholder'),
-        footer: document.querySelector('#footer-placeholder')
+        navbar: document.querySelector('[data-template="navbar"]'),
+        cta: document.querySelector('[data-template="cta"]'),
+        footer: document.querySelector('[data-template="footer"]')
       };
       
       console.log('[Blogs] Placeholders:', {
