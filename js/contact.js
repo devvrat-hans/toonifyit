@@ -119,7 +119,6 @@ function initContactForm() {
       clearAllErrors();
 
     } catch (error) {
-      console.error('Form submission error:', error);
       showFormResponse('Sorry, something went wrong. Please try again or email us directly at toonifyit.now@gmail.com', 'error');
     } finally {
       // Re-enable submit button

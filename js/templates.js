@@ -171,18 +171,14 @@ const Templates = (() => {
       // Try each path until one works
       for (const path of pathsToTry) {
         try {
-          console.log(`[Templates] Trying path for ${templateName}: ${path}`);
           const response = await fetch(path);
-          console.log(`[Templates] Response for ${path}: status=${response.status}, ok=${response.ok}`);
           if (response.ok) {
             html = await response.text();
             successPath = path;
-            console.log(`[Templates] SUCCESS! Loaded ${templateName} from: ${successPath}`);
             break;
           }
         } catch (err) {
           // Continue to next path
-          console.log(`[Templates] Failed to fetch ${path}:`, err.message);
           continue;
         }
       }
@@ -191,30 +187,16 @@ const Templates = (() => {
         throw new Error(`Could not load template ${templateName} from any path`);
       }
       
-      console.log(`[Templates] Successfully fetched ${templateName}, HTML length: ${html.length}`);
-      console.log(`[Templates] Template ${templateName} first 100 chars:`, html.substring(0, 100));
-      
       // Insert the template
       const target = document.querySelector(targetSelector);
-      console.log(`[Templates] Target for ${templateName} (${targetSelector}):`, target);
       
       if (target) {
         target.innerHTML = html;
-        console.log(`[Templates] Inserted ${templateName}, new innerHTML length: ${target.innerHTML.length}`);
       } else {
-        // Only warn if it's an ID selector and there's no data-template alternative
-        if (targetSelector.startsWith('#')) {
-          const templateName = targetSelector.replace('#', '').replace('-placeholder', '');
-          const dataTemplateExists = document.querySelector(`[data-template="${templateName}"]`);
-          if (!dataTemplateExists) {
-            console.warn(`Target selector ${targetSelector} not found for ${templateName}`);
-          }
-        } else {
-          console.warn(`Target selector ${targetSelector} not found for ${templateName}`);
-        }
+        // Target selector not found - silently skip
       }
     } catch (error) {
-      console.error(`Template loading error for ${templateName}:`, error);
+      // Template loading error - silently skip
     }
   };
 
@@ -264,7 +246,7 @@ const Templates = (() => {
         initHamburgerMenu();
       }, 100);
     } catch (error) {
-      console.error('Error loading templates:', error);
+      // Error loading templates - silently skip
     } finally {
       isLoading = false;
     }
@@ -279,13 +261,10 @@ function initHamburgerMenu() {
   const navLinks = document.querySelector('.nav__links');
   
   if (!navToggle || !navLinks) {
-    console.warn('Hamburger menu elements not found, retrying...');
     // Retry after a short delay
-    setTimeout(initHamburgerMenu, 200);
+    setTimeout(initializeHamburgerMenu, 100);
     return;
   }
-  
-  console.log('Hamburger menu initialized');
   
   // Toggle menu on button click
   navToggle.addEventListener('click', (e) => {
@@ -293,7 +272,6 @@ function initHamburgerMenu() {
     const isActive = navToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
     navToggle.setAttribute('aria-expanded', isActive);
-    console.log('Menu toggled:', isActive);
   });
   
   // Close menu when clicking a nav link
