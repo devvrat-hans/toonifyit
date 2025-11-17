@@ -145,10 +145,13 @@ a:hover {
   justify-content: flex-end;
   max-width: calc(100% - 200px);
   list-style: none !important;
+  list-style-type: none !important;
 }
 
 .nav__links::before,
-.nav__links::after {
+.nav__links::after,
+.nav__link::before,
+.nav__link::after {
   content: none !important;
   display: none !important;
 }
@@ -191,6 +194,12 @@ a:hover {
   transition: background 0.2s ease;
 }
 
+.nav__toggle::before,
+.nav__toggle::after {
+  content: none !important;
+  display: none !important;
+}
+
 .nav__toggle:hover {
   background: var(--bg-secondary);
 }
@@ -205,6 +214,12 @@ a:hover {
   background: var(--text-primary);
   transition: all 0.3s ease;
   border-radius: 0;
+}
+
+.nav__toggle-bar::before,
+.nav__toggle-bar::after {
+  content: none !important;
+  display: none !important;
 }
 
 .nav__toggle.active .nav__toggle-bar:nth-child(1) {
@@ -865,5 +880,48 @@ a:hover {
   
   .footer__credit {
     font-size: 0.75rem;
+  }
+}
+
+/* Ensure hamburger toggle doesn't appear on desktop and navbar stacks above mobile overlay */
+@media (min-width: 769px) {
+  .nav__toggle,
+  .nav__toggle::before,
+  .nav__toggle::after,
+  .nav__toggle-bar,
+  .nav__toggle-bar::before,
+  .nav__toggle-bar::after {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+  /* Keep header fixed and navbar positioned correctly */
+  .header {
+    position: fixed !important;
+    top: 0 !important;
+    z-index: 1200;
+    height: auto;
+  }
+  .nav {
+    position: relative;
+    z-index: 1200;
+    padding: 1.2rem 0;
+  }
+  body {
+    padding-top: 76px;
+  }
+  /* Desktop nav links should be visible and on top */
+  .nav__links {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 1190 !important;
   }
 }
