@@ -1,5 +1,7 @@
 
-First Contentful Paint
-1.8 s
-First Contentful Paint marks the time at which the first text or image is painted. Learn more about the First Contentful Paint metric.
-This is very very high
+Mitigate DOM-based XSS with Trusted Types
+The require-trusted-types-for directive in the Content-Security-Policy (CSP) header instructs user agents to control the data passed to DOM XSS sink functions. Learn more about mitigating DOM-based XSS with Trusted Types.Unscored
+Description
+Severity
+No `Content-Security-Policy` header with Trusted Types directive found
+High
