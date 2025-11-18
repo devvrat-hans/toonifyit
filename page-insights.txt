@@ -1,7 +1,8 @@
 
-Mitigate DOM-based XSS with Trusted Types
-The require-trusted-types-for directive in the Content-Security-Policy (CSP) header instructs user agents to control the data passed to DOM XSS sink functions. Learn more about mitigating DOM-based XSS with Trusted Types.Unscored
-Description
-Severity
-No `Content-Security-Policy` header with Trusted Types directive found
-High
+Background and foreground colors do not have a sufficient contrast ratio.
+Low-contrast text is difficult or impossible for many users to read. Learn how to provide sufficient color contrast.
+Failing Elements
+Copy
+<button class="btn btn--small" data-action="copy">
+Download
+<button class="btn btn--small" data-action="download">
