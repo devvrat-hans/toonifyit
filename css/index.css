@@ -1,36 +1,6 @@
-/* Homepage Specific Styles - toonifyit.com */
+/* Homepage Specific Styles - toonifyit.com (Non-critical CSS loaded async) */
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 4rem 0 3rem;
-  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-}
-
-.hero__title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  color: var(--text-primary);
-  letter-spacing: -1px;
-  line-height: 1.1;
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.hero__subtitle {
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.8rem;
-  font-weight: 500;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.hero__description {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  animation: fadeInUp 1s ease-out;
-}
-
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -40,12 +10,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Converter Section */
-.converter {
-  padding: 3rem 0 4rem;
-  background: var(--bg-primary);
 }
 
 .converter__controls {
@@ -86,11 +50,13 @@
   margin-bottom: 1rem;
 }
 
-.converter__label {
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--text-primary);
-  letter-spacing: -0.3px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .converter__actions {
@@ -117,34 +83,8 @@
   transform: translateY(0);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .textarea {
-  width: 100%;
-  min-height: 350px;
-  padding: 1.2rem;
-  font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  resize: vertical;
   transition: all 0.3s ease;
-}
-
-.textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
 .textarea::placeholder {

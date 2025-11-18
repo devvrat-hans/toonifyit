@@ -6,8 +6,8 @@
   --text-primary: #e8e8e8;
   --text-secondary: #b0b0b0;
   --border: #404040;
-  --accent: #007bff;
-  --accent-hover: #0056b3;
+  --accent: #0056b3;
+  --accent-hover: #004085;
   --error: #ff6b6b;
   --success: #51cf66;
 }
@@ -19,21 +19,14 @@
   box-sizing: border-box;
 }
 
-/* Remove any default list styling */
+/* Remove any default list styling and pseudo-elements */
 ul, ol, li {
   list-style: none;
-  list-style-type: none;
 }
 
-/* Remove pseudo-elements that might appear as dots */
-.nav::before,
-.nav::after,
-.nav__links::before,
-.nav__links::after,
-.header::before,
-.header::after {
-  content: none !important;
-  display: none !important;
+*::before,
+*::after {
+  list-style: none;
 }
 
 html {
@@ -87,12 +80,6 @@ a:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.header::before,
-.header::after {
-  content: none !important;
-  display: none !important;
-}
-
 .nav {
   display: flex;
   justify-content: space-between;
@@ -100,13 +87,7 @@ a:hover {
   padding: 1.2rem 0;
   gap: 1rem;
   position: relative;
-  list-style: none !important;
-}
-
-.nav::before,
-.nav::after {
-  content: none !important;
-  display: none !important;
+  list-style: none;
 }
 
 .logo {
@@ -144,21 +125,12 @@ a:hover {
   flex: 1;
   justify-content: flex-end;
   max-width: calc(100% - 200px);
-  list-style: none !important;
-  list-style-type: none !important;
-}
-
-.nav__links::before,
-.nav__links::after,
-.nav__link::before,
-.nav__link::after {
-  content: none !important;
-  display: none !important;
+  list-style: none;
 }
 
 .nav__link {
   color: var(--text-primary);
-  text-decoration: none !important;
+  text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -168,10 +140,10 @@ a:hover {
 }
 
 .nav__link:hover {
-  color: var(--text-primary) !important;
+  color: var(--text-primary);
   background-color: var(--bg-tertiary);
   transform: translateY(-1px);
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 /* Mobile Menu Toggle */
@@ -190,14 +162,7 @@ a:hover {
   align-items: center;
   width: 44px;
   height: 44px;
-  border-radius: 0;
   transition: background 0.2s ease;
-}
-
-.nav__toggle::before,
-.nav__toggle::after {
-  content: none !important;
-  display: none !important;
 }
 
 .nav__toggle:hover {
@@ -213,13 +178,6 @@ a:hover {
   height: 3px;
   background: var(--text-primary);
   transition: all 0.3s ease;
-  border-radius: 0;
-}
-
-.nav__toggle-bar::before,
-.nav__toggle-bar::after {
-  content: none !important;
-  display: none !important;
 }
 
 .nav__toggle.active .nav__toggle-bar:nth-child(1) {
@@ -237,14 +195,14 @@ a:hover {
 
 /* Language Switcher */
 .nav__language-switcher {
-  position: relative !important;
+  position: relative;
   margin-left: 0.5rem;
-  display: inline-block !important;
+  display: inline-block;
 }
 
 .nav__lang-btn {
-  display: flex !important;
-  align-items: center !important;
+  display: flex;
+  align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 0.8rem;
   background: transparent;
@@ -303,8 +261,8 @@ a:hover {
 }
 
 .nav__lang-option {
-  display: flex !important;
-  align-items: center !important;
+  display: flex;
+  align-items: center;
   gap: 0.8rem;
   padding: 0.8rem 1rem;
   color: var(--text-primary);
@@ -522,7 +480,7 @@ a:hover {
   
   /* Show hamburger menu button */
   .nav__toggle {
-    display: flex !important;
+    display: flex;
     position: relative;
     margin-left: auto;
     z-index: 1050;
@@ -613,7 +571,7 @@ a:hover {
   }
   
   .nav__lang-dropdown {
-    position: absolute !important;
+    position: absolute;
     top: 100%;
     left: 0;
     transform: none;
@@ -621,22 +579,17 @@ a:hover {
     visibility: visible;
     box-shadow: none;
     border: 1px solid var(--border);
-    border-radius: 0;
     background: var(--bg-secondary);
     padding: 0;
     margin-top: 0.5rem;
-    width: 150px !important;
-    max-width: 150px !important;
-    min-width: 150px !important;
+    width: 150px;
     display: none;
     max-height: 250px;
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 1001;
-    
-    /* Hide scrollbar */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   
   .nav__lang-dropdown::-webkit-scrollbar {
@@ -667,10 +620,6 @@ a:hover {
   
   .nav__lang-flag {
     font-size: 1.15rem;
-  }
-  
-  .nav__lang-name {
-    font-size: 0.95rem;
   }
   
   .nav__lang-name {
@@ -883,45 +832,35 @@ a:hover {
   }
 }
 
-/* Ensure hamburger toggle doesn't appear on desktop and navbar stacks above mobile overlay */
+/* Ensure hamburger toggle doesn't appear on desktop */
 @media (min-width: 769px) {
-  .nav__toggle,
-  .nav__toggle::before,
-  .nav__toggle::after,
-  .nav__toggle-bar,
-  .nav__toggle-bar::before,
-  .nav__toggle-bar::after {
-    display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    position: absolute !important;
-    left: -9999px !important;
+  .nav__toggle {
+    display: none;
   }
+  
   /* Keep header fixed and navbar positioned correctly */
   .header {
-    position: fixed !important;
-    top: 0 !important;
+    position: fixed;
+    top: 0;
     z-index: 1200;
     height: auto;
   }
+  
   .nav {
     position: relative;
     z-index: 1200;
     padding: 1.2rem 0;
   }
+  
   body {
     padding-top: 76px;
   }
+  
   /* Desktop nav links should be visible and on top */
   .nav__links {
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    z-index: 1190 !important;
+    position: static;
+    transform: none;
+    opacity: 1;
+    z-index: 1190;
   }
 }

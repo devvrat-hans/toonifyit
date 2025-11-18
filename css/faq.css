@@ -45,19 +45,10 @@
   align-items: center;
   transition: all 0.2s ease;
   font-family: inherit;
-  outline: none;
 }
 
 .faq__question:hover {
   background: var(--bg-tertiary);
-}
-
-.faq__question:focus {
-  outline: none;
-}
-
-.faq__question:focus-visible {
-  outline: none;
 }
 
 .faq__question[aria-expanded="true"] {
@@ -109,10 +100,6 @@
 @media (max-width: 768px) {
   .faq {
     padding: 3rem 0;
-  }
-  
-  .faq__item {
-    padding: 1.5rem;
   }
   
   .faq__question {
