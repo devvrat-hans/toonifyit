@@ -505,11 +505,8 @@
   <script>
     // Explicit initialization for blogs page with error handling
     (function initBlogsTemplates() {
-      console.log('[Blogs] Starting template initialization...');
-      
       // Check if Templates is available
       if (typeof Templates === 'undefined') {
-        console.error('[Blogs] Templates object not found!');
         return;
       }
       
@@ -520,32 +517,15 @@
         footer: document.querySelector('[data-template="footer"]')
       };
       
-      console.log('[Blogs] Placeholders:', {
-        navbar: placeholders.navbar !== null,
-        cta: placeholders.cta !== null,
-        footer: placeholders.footer !== null
-      });
-      
       // Force immediate load if not already loaded
       if (!Templates.isLoaded) {
-        console.log('[Blogs] Calling Templates.loadAll()...');
         Templates.loadAll()
           .then(() => {
-            console.log('[Blogs] Templates loaded successfully!');
-            // Verify templates were inserted
-            setTimeout(() => {
-              console.log('[Blogs] Verification - Navbar has content:', 
-                (placeholders.navbar && placeholders.navbar.innerHTML.length > 0));
-              console.log('[Blogs] Verification - Footer has content:', 
-                (placeholders.footer && placeholders.footer.innerHTML.length > 0));
-            }, 500);
+            // Templates loaded successfully
           })
           .catch(err => {
-            console.error('[Blogs] Template loading error:', err);
-            console.error('[Blogs] Error stack:', err.stack);
+            // Template loading error
           });
-      } else {
-        console.log('[Blogs] Templates already loaded');
       }
     })();
   </script>
