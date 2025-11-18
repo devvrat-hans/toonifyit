@@ -17,31 +17,12 @@
   
   <link rel="canonical" href="https://toonifyit.com/">
   
-  <!-- DNS Prefetch and Preconnect for external resources -->
-  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-  
-  <!-- Hreflang tags -->
+  <!-- Critical hreflang tags (top languages only) -->
   <link rel="alternate" hreflang="en" href="https://toonifyit.com/">
   <link rel="alternate" hreflang="es" href="https://toonifyit.com/es/">
   <link rel="alternate" hreflang="fr" href="https://toonifyit.com/fr/">
-  <link rel="alternate" hreflang="nl" href="https://toonifyit.com/nl/">
-  <link rel="alternate" hreflang="zh" href="https://toonifyit.com/zh/">
-  <link rel="alternate" hreflang="ja" href="https://toonifyit.com/ja/">
-  <link rel="alternate" hreflang="ko" href="https://toonifyit.com/ko/">
-  <link rel="alternate" hreflang="vi" href="https://toonifyit.com/vi/">
-  <link rel="alternate" hreflang="id" href="https://toonifyit.com/id/">
-  <link rel="alternate" hreflang="pt" href="https://toonifyit.com/pt/">
-  <link rel="alternate" hreflang="hi" href="https://toonifyit.com/hi/">
-  <link rel="alternate" hreflang="ur" href="https://toonifyit.com/ur/">
   <link rel="alternate" hreflang="de" href="https://toonifyit.com/de/">
-  <link rel="alternate" hreflang="sv" href="https://toonifyit.com/sv/">
-  <link rel="alternate" hreflang="ar" href="https://toonifyit.com/ar/">
-  <link rel="alternate" hreflang="he" href="https://toonifyit.com/he/">
-  <link rel="alternate" hreflang="it" href="https://toonifyit.com/it/">
-  <link rel="alternate" hreflang="pl" href="https://toonifyit.com/pl/">
-  <link rel="alternate" hreflang="ru" href="https://toonifyit.com/ru/">
-  <link rel="alternate" hreflang="tr" href="https://toonifyit.com/tr/">
+  <link rel="alternate" hreflang="zh" href="https://toonifyit.com/zh/">
   <link rel="alternate" hreflang="x-default" href="https://toonifyit.com/">
   
   <link rel="icon" type="image/x-icon" href="img/favicon.png" >
@@ -49,35 +30,32 @@
   
   <title>JSON to TOON Converter - Free Online Tool | Convert JSON to TOON Format</title>
   
+  <!-- Consolidated Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Toonifyit",
-    "url": "https://toonifyit.com/",
-    "description": "Free JSON to TOON converter tool. Convert JSON to TOON format and reduce LLM token usage by 30-60%."
-  }
-  </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Toonifyit JSON to TOON Converter",
-    "applicationCategory": "DeveloperApplication",
-    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-    "operatingSystem": "Web Browser"
-  }
-  </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "What is TOON format?", "acceptedAnswer": {"@type": "Answer", "text": "TOON (Token-Oriented Object Notation) is a data serialization format designed for LLM prompts. It reduces token usage by 30-60% compared to JSON."}},
-      {"@type": "Question", "name": "Is my data safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All conversions happen locally in your browser. Your data never leaves your device."}},
-      {"@type": "Question", "name": "Can I convert TOON back to JSON?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! TOON is fully reversible. Our converter supports both JSON to TOON and TOON to JSON."}}
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Toonifyit",
+        "url": "https://toonifyit.com/",
+        "description": "Free JSON to TOON converter tool. Convert JSON to TOON format and reduce LLM token usage by 30-60%."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Toonifyit JSON to TOON Converter",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "operatingSystem": "Web Browser"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What is TOON format?", "acceptedAnswer": {"@type": "Answer", "text": "TOON (Token-Oriented Object Notation) is a data serialization format designed for LLM prompts. It reduces token usage by 30-60% compared to JSON."}},
+          {"@type": "Question", "name": "Is my data safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All conversions happen locally in your browser. Your data never leaves your device."}},
+          {"@type": "Question", "name": "Can I convert TOON back to JSON?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! TOON is fully reversible. Our converter supports both JSON to TOON and TOON to JSON."}}
+        ]
+      }
     ]
   }
   </script>
@@ -129,25 +107,51 @@
     @media(max-width:768px){.nav__toggle{display:flex!important}.nav__links{position:fixed;top:130px;left:0;width:100%;height:calc(100vh - 130px);background:var(--bg-primary);flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:1rem;transform:translateX(-100%);transition:transform 0.3s;z-index:500}.nav__links.active{transform:translateX(0)}.hero__title{font-size:1.75rem}.converter__grid{grid-template-columns:1fr}.cta__title{font-size:1.75rem}.footer__content{flex-direction:column;text-align:center}.footer__links{justify-content:center}}
   </style>
   
-  <!-- Load ALL CSS asynchronously to prevent render blocking -->
-  <link rel="preload" href="/css/common.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="/css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="/css/faq.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="/css/cta.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <!-- Simple async CSS loading (no polyfill needed) -->
+  <link rel="stylesheet" href="/css/common.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/index.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/faq.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/cta.css" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/faq.css">
     <link rel="stylesheet" href="/css/cta.css">
   </noscript>
-  
-  <!-- Polyfill for loadCSS (ensures preload works on all browsers) -->
-  <script>
-    !function(e){"use strict";var t=function(t,n,r){var o,i=e.document,s=i.createElement("link");if(n)o=n;else{var a=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=a[a.length-1]}var d=i.styleSheets;s.rel="stylesheet",s.href=t,s.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(s,n?o:o.nextSibling)});var l=function(e){for(var t=s.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){l(e)})};return s.addEventListener&&s.addEventListener("load",l),s.onloadcssdefined=l,l(),s};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
-  </script>
 </head>
 <body>
-  <div data-template="navbar"></div>
+  <!-- Inlined navbar for faster LCP -->
+  <header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32" class="logo__icon" role="img" aria-label="Toonifyit JSON to TOON Converter Logo">
+          <title>Toonifyit - JSON to TOON Converter</title>
+          <defs>
+            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0056b3;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="48" fill="url(#logo-grad)"/>
+          <text x="50" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="60" font-weight="800" fill="white" text-anchor="middle">T</text>
+        </svg>
+        <span class="logo__text">Toonifyit</span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <div class="nav__links">
+        <a href="/" class="nav__link">Converter</a>
+        <a href="/blogs.html" class="nav__link">Blog</a>
+        <a href="/docs.html" class="nav__link">Docs</a>
+        <a href="/contact.html" class="nav__link">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
   <main class="main">
     <section class="hero">
